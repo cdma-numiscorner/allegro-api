@@ -12,6 +12,14 @@ For more information, please visit [https://github.com/allegro/allegro-api/issue
 
 PHP 7.2 and later.
 
+### REGENERATE THE PACKAGE
+
+```
+docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli:v5.0.1 generate     -i https://developer.allegro.pl/swagger.yaml     -g php  --git-user-id cdma-numiscorner --git-host github.com --git-repo-id allegro-api --invoker-package 'AllegroApi' --artifact-version 1.0 --release-note "Initial commit" -o /local
+```
+
+
+
 ### Composer
 
 To install the bindings via [Composer](https://getcomposer.org/), add the following to `composer.json`:
