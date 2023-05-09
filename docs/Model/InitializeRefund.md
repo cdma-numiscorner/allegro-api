@@ -1,0 +1,16 @@
+# # InitializeRefund
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**payment** | [**\AllegroApi\Model\RefundPayment**](RefundPayment.md) |  |
+**reason** | **string** | Reason for a payment refund. |
+**line_items** | [**\AllegroApi\Model\RefundLineItem[]**](RefundLineItem.md) | List of order&#39;s line items which can be refunded. | [optional]
+**delivery** | [**\AllegroApi\Model\InitializeRefundDelivery**](InitializeRefundDelivery.md) |  | [optional]
+**overpaid** | [**\AllegroApi\Model\InitializeRefundOverpaid**](InitializeRefundOverpaid.md) |  | [optional]
+**surcharges** | [**\AllegroApi\Model\PaymentsSurcharge[]**](PaymentsSurcharge.md) | List of surcharges for payment which can be refunded. | [optional]
+**additional_services** | [**\AllegroApi\Model\InitializeRefundAdditionalServices**](InitializeRefundAdditionalServices.md) |  | [optional]
+**seller_comment** | **string** | Sellers optional justification for refund. | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
