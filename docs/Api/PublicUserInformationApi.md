@@ -1,10 +1,10 @@
 # AllegroApi\PublicUserInformationApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getUserSummaryUsingGET()**](PublicUserInformationApi.md#getUserSummaryUsingGET) | **GET** /users/{userId}/ratings-summary | Get any user&#39;s ratings summary
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getUserSummaryUsingGET()**](PublicUserInformationApi.md#getUserSummaryUsingGET) | **GET** /users/{userId}/ratings-summary | Get any user&#39;s ratings summary |
 
 
 ## `getUserSummaryUsingGET()`
@@ -46,9 +46,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **string**| The ID of the user. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **user_id** | **string**| The ID of the user. | |
 
 ### Return type
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | [**\DateTime**](\DateTime.md) |  | [optional]
+**created_at** | **\DateTime** |  | [optional]
 **waybill** | **string** |  | [optional]
 **carrier_id** | **string** |  | [optional]
 **sender** | [**\AllegroApi\Model\CustomerReturnParcelSender**](CustomerReturnParcelSender.md) |  | [optional]

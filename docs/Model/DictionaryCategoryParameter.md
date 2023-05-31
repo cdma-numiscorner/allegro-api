@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [default to 'dictionary']
+**type** | **string** |  | [optional] [default to 'dictionary']
 **restrictions** | [**\AllegroApi\Model\DictionaryCategoryProductParameterAllOfRestrictions**](DictionaryCategoryProductParameterAllOfRestrictions.md) |  | [optional]
 **dictionary** | [**\AllegroApi\Model\DictionaryCategoryParameterAllOfDictionary[]**](DictionaryCategoryParameterAllOfDictionary.md) | Defines the values accepted for this parameter. | [optional]
 

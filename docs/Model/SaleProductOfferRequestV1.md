@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**product_set** | [**ProductSetElement[]**](ProductSetElement.md) |  | [optional]
+**product_set** | [**\AllegroApi\Model\SaleProductOfferRequestV1AllOfProductSetInner[]**](SaleProductOfferRequestV1AllOfProductSetInner.md) |  | [optional]
 **b2b** | [**\AllegroApi\Model\B2b**](B2b.md) |  | [optional]
-**attachments** | **object[]** | An array of offer attachments. | [optional]
+**attachments** | [**\AllegroApi\Model\ProductOfferAttachmentInner[]**](ProductOfferAttachmentInner.md) | An array of offer attachments. | [optional]
 **fundraising_campaign** | [**\AllegroApi\Model\ProductOfferFundraisingCampaignRequest**](ProductOfferFundraisingCampaignRequest.md) |  | [optional]
 **additional_services** | [**\AllegroApi\Model\ProductOfferAdditionalServicesRequest**](ProductOfferAdditionalServicesRequest.md) |  | [optional]
 **stock** | [**\AllegroApi\Model\SaleProductOffersRequestStock**](SaleProductOffersRequestStock.md) |  |
-**delivery** | [**DeliveryProductOfferRequest**](DeliveryProductOfferRequest.md) |  | [optional]
+**delivery** | [**\AllegroApi\Model\SaleProductOfferRequestBaseAllOfDelivery**](SaleProductOfferRequestBaseAllOfDelivery.md) |  | [optional]
 **publication** | [**\AllegroApi\Model\SaleProductOfferRequestBaseAllOfPublication**](SaleProductOfferRequestBaseAllOfPublication.md) |  | [optional]
-**additional_marketplaces** | [**map[string,\AllegroApi\Model\OfferAdditionalMarketplace]**](OfferAdditionalMarketplace.md) | Settings for each additional marketplace. | [optional]
-**compatibility_list** | [**CompatibilityListManualType**](CompatibilityListManualType.md) | For the &#x60;/sale/product-offers&#x60; resources you can send only definition of the MANUAL compatibility list. If compatibility list is provided for the product assigned to the offer, it will be used automatically. | [optional]
+**additional_marketplaces** | [**array<string,\AllegroApi\Model\OfferAdditionalMarketplace>**](OfferAdditionalMarketplace.md) | Settings for each additional marketplace. | [optional]
+**compatibility_list** | [**\AllegroApi\Model\SaleProductOfferRequestV1AllOfCompatibilityList**](SaleProductOfferRequestV1AllOfCompatibilityList.md) |  | [optional]
 **language** | **string** | Declared base language of the offer. | [optional]
-**category** | [**OfferCategoryRequest**](OfferCategoryRequest.md) |  | [optional]
+**category** | [**\AllegroApi\Model\SaleProductOfferRequestBaseAllOfCategory**](SaleProductOfferRequestBaseAllOfCategory.md) |  | [optional]
 **parameters** | [**\AllegroApi\Model\ParameterProductOfferRequest[]**](ParameterProductOfferRequest.md) |  | [optional]
 **after_sales_services** | [**\AllegroApi\Model\AfterSalesServicesProductOfferRequest**](AfterSalesServicesProductOfferRequest.md) |  | [optional]
 **size_table** | [**\AllegroApi\Model\SizeTable**](SizeTable.md) |  | [optional]

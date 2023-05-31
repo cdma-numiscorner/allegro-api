@@ -1,15 +1,15 @@
 # AllegroApi\OfferTagsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**assignTagToOfferPOST()**](OfferTagsApi.md#assignTagToOfferPOST) | **POST** /sale/offers/{offerId}/tags | Assign tags to an offer
-[**createTagPOST1()**](OfferTagsApi.md#createTagPOST1) | **POST** /sale/offer-tags | Create a tag
-[**deleteTagUsingDELETE()**](OfferTagsApi.md#deleteTagUsingDELETE) | **DELETE** /sale/offer-tags/{tagId} | Delete a tag
-[**listAssignedOfferTagsGET()**](OfferTagsApi.md#listAssignedOfferTagsGET) | **GET** /sale/offers/{offerId}/tags | Get tags assigned to an offer
-[**listSellerTagsGET1()**](OfferTagsApi.md#listSellerTagsGET1) | **GET** /sale/offer-tags | Get the user&#39;s tags
-[**updateTagPUT()**](OfferTagsApi.md#updateTagPUT) | **PUT** /sale/offer-tags/{tagId} | Modify a tag
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**assignTagToOfferPOST()**](OfferTagsApi.md#assignTagToOfferPOST) | **POST** /sale/offers/{offerId}/tags | Assign tags to an offer |
+| [**createTagPOST1()**](OfferTagsApi.md#createTagPOST1) | **POST** /sale/offer-tags | Create a tag |
+| [**deleteTagUsingDELETE()**](OfferTagsApi.md#deleteTagUsingDELETE) | **DELETE** /sale/offer-tags/{tagId} | Delete a tag |
+| [**listAssignedOfferTagsGET()**](OfferTagsApi.md#listAssignedOfferTagsGET) | **GET** /sale/offers/{offerId}/tags | Get tags assigned to an offer |
+| [**listSellerTagsGET1()**](OfferTagsApi.md#listSellerTagsGET1) | **GET** /sale/offer-tags | Get the user&#39;s tags |
+| [**updateTagPUT()**](OfferTagsApi.md#updateTagPUT) | **PUT** /sale/offer-tags/{tagId} | Modify a tag |
 
 
 ## `assignTagToOfferPOST()`
@@ -51,10 +51,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer identifier. |
- **tag_ids_request** | [**\AllegroApi\Model\TagIdsRequest**](../Model/TagIdsRequest.md)| request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer identifier. | |
+| **tag_ids_request** | [**\AllegroApi\Model\TagIdsRequest**](../Model/TagIdsRequest.md)| request | |
 
 ### Return type
 
@@ -112,9 +112,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tag_request** | [**\AllegroApi\Model\TagRequest**](../Model/TagRequest.md)| request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tag_request** | [**\AllegroApi\Model\TagRequest**](../Model/TagRequest.md)| request | |
 
 ### Return type
 
@@ -171,9 +171,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tag_id** | **string**| Tag identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tag_id** | **string**| Tag identifier. | |
 
 ### Return type
 
@@ -231,9 +231,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer identifier. | |
 
 ### Return type
 
@@ -292,10 +292,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **int**| The limit of elements in the response. | [optional] [default to 1000]
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **int**| The limit of elements in the response. | [optional] [default to 1000] |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
 
 ### Return type
 
@@ -353,10 +353,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tag_id** | **string**| Tag identifier. |
- **tag_request** | [**\AllegroApi\Model\TagRequest**](../Model/TagRequest.md)| request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tag_id** | **string**| Tag identifier. | |
+| **tag_request** | [**\AllegroApi\Model\TagRequest**](../Model/TagRequest.md)| request | |
 
 ### Return type
 

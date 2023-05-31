@@ -1,14 +1,14 @@
 # AllegroApi\OfferVariantsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createVariantSet()**](OfferVariantsApi.md#createVariantSet) | **POST** /sale/offer-variants | Create variant set
-[**deleteVariantSet()**](OfferVariantsApi.md#deleteVariantSet) | **DELETE** /sale/offer-variants/{setId} | Delete a variant set
-[**getVariantSet()**](OfferVariantsApi.md#getVariantSet) | **GET** /sale/offer-variants/{setId} | Get a variant set
-[**getVariantSets()**](OfferVariantsApi.md#getVariantSets) | **GET** /sale/offer-variants | Get the user&#39;s variant sets
-[**updateVariantSet()**](OfferVariantsApi.md#updateVariantSet) | **PUT** /sale/offer-variants/{setId} | Update variant set
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createVariantSet()**](OfferVariantsApi.md#createVariantSet) | **POST** /sale/offer-variants | Create variant set |
+| [**deleteVariantSet()**](OfferVariantsApi.md#deleteVariantSet) | **DELETE** /sale/offer-variants/{setId} | Delete a variant set |
+| [**getVariantSet()**](OfferVariantsApi.md#getVariantSet) | **GET** /sale/offer-variants/{setId} | Get a variant set |
+| [**getVariantSets()**](OfferVariantsApi.md#getVariantSets) | **GET** /sale/offer-variants | Get the user&#39;s variant sets |
+| [**updateVariantSet()**](OfferVariantsApi.md#updateVariantSet) | **PUT** /sale/offer-variants/{setId} | Update variant set |
 
 
 ## `createVariantSet()`
@@ -50,9 +50,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **variant_set** | [**\AllegroApi\Model\VariantSet**](../Model/VariantSet.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **variant_set** | [**\AllegroApi\Model\VariantSet**](../Model/VariantSet.md)|  | |
 
 ### Return type
 
@@ -109,9 +109,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **set_id** | **string**| Variant set identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **set_id** | **string**| Variant set identifier. | |
 
 ### Return type
 
@@ -169,9 +169,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **set_id** | **string**| Variant set identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **set_id** | **string**| Variant set identifier. | |
 
 ### Return type
 
@@ -231,11 +231,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| Index of first returned variant set. | [optional] [default to 0]
- **limit** | **int**| Maximum number of returned variant sets. | [optional] [default to 10]
- **query** | **string**| Filter variant sets by name or offer id. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**| Index of first returned variant set. | [optional] [default to 0] |
+| **limit** | **int**| Maximum number of returned variant sets. | [optional] [default to 10] |
+| **query** | **string**| Filter variant sets by name or offer id. | [optional] |
 
 ### Return type
 
@@ -294,10 +294,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **set_id** | **string**| Variant set identifier. |
- **variant_set** | [**\AllegroApi\Model\VariantSet**](../Model/VariantSet.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **set_id** | **string**| Variant set identifier. | |
+| **variant_set** | [**\AllegroApi\Model\VariantSet**](../Model/VariantSet.md)|  | |
 
 ### Return type
 

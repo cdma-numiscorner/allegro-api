@@ -1,14 +1,14 @@
 # AllegroApi\SizeTablesApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createTableUsingPOST()**](SizeTablesApi.md#createTableUsingPOST) | **POST** /sale/size-tables | Create a size table
-[**getTableUsingGET()**](SizeTablesApi.md#getTableUsingGET) | **GET** /sale/size-tables/{tableId} | Get a size table
-[**getTablesTemplatesUsingGET()**](SizeTablesApi.md#getTablesTemplatesUsingGET) | **GET** /sale/size-tables-templates | Get the size tables templates
-[**getTablesUsingGET()**](SizeTablesApi.md#getTablesUsingGET) | **GET** /sale/size-tables | Get the user&#39;s size tables
-[**modifyTableUsingPUT()**](SizeTablesApi.md#modifyTableUsingPUT) | **PUT** /sale/size-tables/{tableId} | Update a size table
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createTableUsingPOST()**](SizeTablesApi.md#createTableUsingPOST) | **POST** /sale/size-tables | Create a size table |
+| [**getTableUsingGET()**](SizeTablesApi.md#getTableUsingGET) | **GET** /sale/size-tables/{tableId} | Get a size table |
+| [**getTablesTemplatesUsingGET()**](SizeTablesApi.md#getTablesTemplatesUsingGET) | **GET** /sale/size-tables-templates | Get the size tables templates |
+| [**getTablesUsingGET()**](SizeTablesApi.md#getTablesUsingGET) | **GET** /sale/size-tables | Get the user&#39;s size tables |
+| [**modifyTableUsingPUT()**](SizeTablesApi.md#modifyTableUsingPUT) | **PUT** /sale/size-tables/{tableId} | Update a size table |
 
 
 ## `createTableUsingPOST()`
@@ -50,9 +50,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **size_table_post_request** | [**\AllegroApi\Model\SizeTablePostRequest**](../Model/SizeTablePostRequest.md)| Size table details |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **size_table_post_request** | [**\AllegroApi\Model\SizeTablePostRequest**](../Model/SizeTablePostRequest.md)| Size table details | |
 
 ### Return type
 
@@ -110,9 +110,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **table_id** | **string**| Table identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **table_id** | **string**| Table identifier. | |
 
 ### Return type
 
@@ -285,10 +285,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **table_id** | **string**| Table identifier. |
- **size_table_put_request** | [**\AllegroApi\Model\SizeTablePutRequest**](../Model/SizeTablePutRequest.md)| Size table details |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **table_id** | **string**| Table identifier. | |
+| **size_table_put_request** | [**\AllegroApi\Model\SizeTablePutRequest**](../Model/SizeTablePutRequest.md)| Size table details | |
 
 ### Return type
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | Product id. |
 **name** | **string** | Product name. |
-**category** | [**ProductCategory**](ProductCategory.md) |  |
+**category** | [**\AllegroApi\Model\SaleProductDtoCategory**](SaleProductDtoCategory.md) |  |
 **images** | [**\AllegroApi\Model\ImageUrl[]**](ImageUrl.md) | List of product images. | [optional]
 **parameters** | [**\AllegroApi\Model\ProductParameterDto[]**](ProductParameterDto.md) | List of product parameters. | [optional]
 **offer_requirements** | [**\AllegroApi\Model\OfferRequirements**](OfferRequirements.md) |  | [optional]

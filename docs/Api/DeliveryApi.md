@@ -1,16 +1,16 @@
 # AllegroApi\DeliveryApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createShippingRatesSetUsingPOST()**](DeliveryApi.md#createShippingRatesSetUsingPOST) | **POST** /sale/shipping-rates | Create a new shipping rates set
-[**getListOfDeliveryMethodsUsingGET()**](DeliveryApi.md#getListOfDeliveryMethodsUsingGET) | **GET** /sale/delivery-methods | Get the list of delivery methods
-[**getListOfShippingRatestUsingGET()**](DeliveryApi.md#getListOfShippingRatestUsingGET) | **GET** /sale/shipping-rates | Get the user&#39;s shipping rates
-[**getSaleDeliverySettings()**](DeliveryApi.md#getSaleDeliverySettings) | **GET** /sale/delivery-settings | Get the user&#39;s delivery settings
-[**getShippingRatesSetUsingGET()**](DeliveryApi.md#getShippingRatesSetUsingGET) | **GET** /sale/shipping-rates/{id} | Get the details of a shipping rates set
-[**modifyShippingRatesSetUsingPUT()**](DeliveryApi.md#modifyShippingRatesSetUsingPUT) | **PUT** /sale/shipping-rates/{id} | Edit a user&#39;s shipping rates set
-[**putSaleDeliverySettings()**](DeliveryApi.md#putSaleDeliverySettings) | **PUT** /sale/delivery-settings | Modify the user&#39;s delivery settings
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createShippingRatesSetUsingPOST()**](DeliveryApi.md#createShippingRatesSetUsingPOST) | **POST** /sale/shipping-rates | Create a new shipping rates set |
+| [**getListOfDeliveryMethodsUsingGET()**](DeliveryApi.md#getListOfDeliveryMethodsUsingGET) | **GET** /sale/delivery-methods | Get the list of delivery methods |
+| [**getListOfShippingRatestUsingGET()**](DeliveryApi.md#getListOfShippingRatestUsingGET) | **GET** /sale/shipping-rates | Get the user&#39;s shipping rates |
+| [**getSaleDeliverySettings()**](DeliveryApi.md#getSaleDeliverySettings) | **GET** /sale/delivery-settings | Get the user&#39;s delivery settings |
+| [**getShippingRatesSetUsingGET()**](DeliveryApi.md#getShippingRatesSetUsingGET) | **GET** /sale/shipping-rates/{id} | Get the details of a shipping rates set |
+| [**modifyShippingRatesSetUsingPUT()**](DeliveryApi.md#modifyShippingRatesSetUsingPUT) | **PUT** /sale/shipping-rates/{id} | Edit a user&#39;s shipping rates set |
+| [**putSaleDeliverySettings()**](DeliveryApi.md#putSaleDeliverySettings) | **PUT** /sale/delivery-settings | Modify the user&#39;s delivery settings |
 
 
 ## `createShippingRatesSetUsingPOST()`
@@ -52,9 +52,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **shipping_rates_set** | [**\AllegroApi\Model\ShippingRatesSet**](../Model/ShippingRatesSet.md)| Shipping rates set |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **shipping_rates_set** | [**\AllegroApi\Model\ShippingRatesSet**](../Model/ShippingRatesSet.md)| Shipping rates set | |
 
 ### Return type
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 ## `getListOfDeliveryMethodsUsingGET()`
 
 ```php
-getListOfDeliveryMethodsUsingGET($marketplace): \AllegroApi\Model\InlineResponse2001
+getListOfDeliveryMethodsUsingGET($marketplace): \AllegroApi\Model\GetListOfDeliveryMethodsUsingGET200Response
 ```
 
 Get the list of delivery methods
@@ -90,10 +90,10 @@ Use this resource to get a list of all delivery methods currently available on t
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure OAuth2 access token for authorization: bearer-token-for-application
+// Configure OAuth2 access token for authorization: bearer-token-for-user
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: bearer-token-for-user
+// Configure OAuth2 access token for authorization: bearer-token-for-application
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -115,17 +115,17 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **marketplace** | **string**| Allows to filter delivery methods by marketplace id. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **marketplace** | **string**| Allows to filter delivery methods by marketplace id. | [optional] |
 
 ### Return type
 
-[**\AllegroApi\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\AllegroApi\Model\GetListOfDeliveryMethodsUsingGET200Response**](../Model/GetListOfDeliveryMethodsUsingGET200Response.md)
 
 ### Authorization
 
-[bearer-token-for-application](../../README.md#bearer-token-for-application), [bearer-token-for-user](../../README.md#bearer-token-for-user)
+[bearer-token-for-user](../../README.md#bearer-token-for-user), [bearer-token-for-application](../../README.md#bearer-token-for-application)
 
 ### HTTP request headers
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 ## `getListOfShippingRatestUsingGET()`
 
 ```php
-getListOfShippingRatestUsingGET(): \AllegroApi\Model\InlineResponse200
+getListOfShippingRatestUsingGET(): \AllegroApi\Model\GetListOfShippingRatestUsingGET200Response
 ```
 
 Get the user's shipping rates
@@ -178,7 +178,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\AllegroApi\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\AllegroApi\Model\GetListOfShippingRatestUsingGET200Response**](../Model/GetListOfShippingRatestUsingGET200Response.md)
 
 ### Authorization
 
@@ -232,9 +232,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **marketplace_id** | **string**| Marketplace for which delivery settings will be returned. By default (if the marketplace parameter is not set) the marketplace on which the seller has registered is used. However, we recommend that the marketplace.id query parameter should always be explicitly set. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **marketplace_id** | **string**| Marketplace for which delivery settings will be returned. By default (if the marketplace parameter is not set) the marketplace on which the seller has registered is used. However, we recommend that the marketplace.id query parameter should always be explicitly set. | [optional] |
 
 ### Return type
 
@@ -292,9 +292,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Shipping rates set identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Shipping rates set identifier. | |
 
 ### Return type
 
@@ -353,10 +353,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Shipping rates set identifier. |
- **shipping_rates_set** | [**\AllegroApi\Model\ShippingRatesSet**](../Model/ShippingRatesSet.md)| Shipping rates set |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Shipping rates set identifier. | |
+| **shipping_rates_set** | [**\AllegroApi\Model\ShippingRatesSet**](../Model/ShippingRatesSet.md)| Shipping rates set | |
 
 ### Return type
 
@@ -414,9 +414,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **delivery_settings_request** | [**\AllegroApi\Model\DeliverySettingsRequest**](../Model/DeliverySettingsRequest.md)| Delivery settings set |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **delivery_settings_request** | [**\AllegroApi\Model\DeliverySettingsRequest**](../Model/DeliverySettingsRequest.md)| Delivery settings set | |
 
 ### Return type
 

@@ -1,16 +1,16 @@
 # AllegroApi\DisputesApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addMessageToDisputeUsingPOST()**](DisputesApi.md#addMessageToDisputeUsingPOST) | **POST** /sale/disputes/{disputeId}/messages | Add a message to a dispute
-[**createAnAttachmentUsingPOST()**](DisputesApi.md#createAnAttachmentUsingPOST) | **POST** /sale/dispute-attachments | Create an attachment declaration
-[**getAttachmentUsingGET()**](DisputesApi.md#getAttachmentUsingGET) | **GET** /sale/dispute-attachments/{attachmentId} | Get an attachment
-[**getDisputeUsingGET()**](DisputesApi.md#getDisputeUsingGET) | **GET** /sale/disputes/{disputeId} | Get a single dispute
-[**getListOfDisputesUsingGET()**](DisputesApi.md#getListOfDisputesUsingGET) | **GET** /sale/disputes | Get the user&#39;s disputes
-[**getMessagesFromDisputeUsingGET()**](DisputesApi.md#getMessagesFromDisputeUsingGET) | **GET** /sale/disputes/{disputeId}/messages | Get the messages within a dispute
-[**uploadDisputeAttachmentUsingPUT()**](DisputesApi.md#uploadDisputeAttachmentUsingPUT) | **PUT** /sale/dispute-attachments/{attachmentId} | Upload a dispute message attachment
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**addMessageToDisputeUsingPOST()**](DisputesApi.md#addMessageToDisputeUsingPOST) | **POST** /sale/disputes/{disputeId}/messages | Add a message to a dispute |
+| [**createAnAttachmentUsingPOST()**](DisputesApi.md#createAnAttachmentUsingPOST) | **POST** /sale/dispute-attachments | Create an attachment declaration |
+| [**getAttachmentUsingGET()**](DisputesApi.md#getAttachmentUsingGET) | **GET** /sale/dispute-attachments/{attachmentId} | Get an attachment |
+| [**getDisputeUsingGET()**](DisputesApi.md#getDisputeUsingGET) | **GET** /sale/disputes/{disputeId} | Get a single dispute |
+| [**getListOfDisputesUsingGET()**](DisputesApi.md#getListOfDisputesUsingGET) | **GET** /sale/disputes | Get the user&#39;s disputes |
+| [**getMessagesFromDisputeUsingGET()**](DisputesApi.md#getMessagesFromDisputeUsingGET) | **GET** /sale/disputes/{disputeId}/messages | Get the messages within a dispute |
+| [**uploadDisputeAttachmentUsingPUT()**](DisputesApi.md#uploadDisputeAttachmentUsingPUT) | **PUT** /sale/dispute-attachments/{attachmentId} | Upload a dispute message attachment |
 
 
 ## `addMessageToDisputeUsingPOST()`
@@ -53,10 +53,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dispute_id** | [**string**](../Model/.md)| Dispute identifier. |
- **message_request** | [**\AllegroApi\Model\MessageRequest**](../Model/MessageRequest.md)| Message request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dispute_id** | **string**| Dispute identifier. | |
+| **message_request** | [**\AllegroApi\Model\MessageRequest**](../Model/MessageRequest.md)| Message request | |
 
 ### Return type
 
@@ -114,9 +114,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **attachment_declaration** | [**\AllegroApi\Model\AttachmentDeclaration**](../Model/AttachmentDeclaration.md)| A detailed declaration of a file to be uploaded |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **attachment_declaration** | [**\AllegroApi\Model\AttachmentDeclaration**](../Model/AttachmentDeclaration.md)| A detailed declaration of a file to be uploaded | |
 
 ### Return type
 
@@ -174,13 +174,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **attachment_id** | [**string**](../Model/.md)| Attachment identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **attachment_id** | **string**| Attachment identifier. | |
 
 ### Return type
 
-[**\SplFileObject**](../Model/\SplFileObject.md)
+**\SplFileObject**
 
 ### Authorization
 
@@ -234,9 +234,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dispute_id** | [**string**](../Model/.md)| Dispute identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dispute_id** | **string**| Dispute identifier. | |
 
 ### Return type
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 ## `getListOfDisputesUsingGET()`
 
 ```php
-getListOfDisputesUsingGET($checkout_form_id, $limit, $offset): \AllegroApi\Model\DisputeListResponse
+getListOfDisputesUsingGET($checkout_form_id, $limit, $offset, $status): \AllegroApi\Model\DisputeListResponse
 ```
 
 Get the user's disputes
@@ -285,9 +285,10 @@ $apiInstance = new AllegroApi\Api\DisputesApi(
 $checkout_form_id = 29738e61-7f6a-11e8-ac45-09db60ede9d6; // string | Checkout form identifier.
 $limit = 10; // int | The maximum number of disputes in a response.
 $offset = 0; // int | Index of first returned dispute.
+$status = array('status_example'); // string[] | Filter disputes with given set of statuses.
 
 try {
-    $result = $apiInstance->getListOfDisputesUsingGET($checkout_form_id, $limit, $offset);
+    $result = $apiInstance->getListOfDisputesUsingGET($checkout_form_id, $limit, $offset, $status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DisputesApi->getListOfDisputesUsingGET: ', $e->getMessage(), PHP_EOL;
@@ -296,11 +297,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **checkout_form_id** | [**string**](../Model/.md)| Checkout form identifier. | [optional]
- **limit** | **int**| The maximum number of disputes in a response. | [optional] [default to 10]
- **offset** | **int**| Index of first returned dispute. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **checkout_form_id** | **string**| Checkout form identifier. | [optional] |
+| **limit** | **int**| The maximum number of disputes in a response. | [optional] [default to 10] |
+| **offset** | **int**| Index of first returned dispute. | [optional] [default to 0] |
+| **status** | [**string[]**](../Model/string.md)| Filter disputes with given set of statuses. | [optional] |
 
 ### Return type
 
@@ -360,11 +362,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dispute_id** | [**string**](../Model/.md)| Dispute identifier. |
- **limit** | **int**| The maximum number of messages within dispute returned in a response. | [optional] [default to 10]
- **offset** | **int**| Index of first returned message within dispute. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dispute_id** | **string**| Dispute identifier. | |
+| **limit** | **int**| The maximum number of messages within dispute returned in a response. | [optional] [default to 10] |
+| **offset** | **int**| Index of first returned message within dispute. | [optional] [default to 0] |
 
 ### Return type
 
@@ -388,6 +390,14 @@ Name | Type | Description  | Notes
 ```php
 uploadDisputeAttachmentUsingPUT($attachment_id, $body)
 ```
+### URI(s):
+- https://upload.{environment} 
+    - Variables:
+      - environment:  No description provided
+        - Allowed values:
+          - allegro.pl
+          - allegro.pl.allegrosandbox.pl
+        - Default value: allegro.pl
 
 Upload a dispute message attachment
 
@@ -413,8 +423,13 @@ $apiInstance = new AllegroApi\Api\DisputesApi(
 $attachment_id = 'attachment_id_example'; // string | Attachment identifier.
 $body = "/path/to/file.txt"; // \SplFileObject
 
+$hostIndex = 0;
+$variables = [
+    'environment' => 'YOUR_VALUE',
+];
+
 try {
-    $apiInstance->uploadDisputeAttachmentUsingPUT($attachment_id, $body);
+    $apiInstance->uploadDisputeAttachmentUsingPUT($attachment_id, $body, $hostIndex, $variables);
 } catch (Exception $e) {
     echo 'Exception when calling DisputesApi->uploadDisputeAttachmentUsingPUT: ', $e->getMessage(), PHP_EOL;
 }
@@ -422,10 +437,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **attachment_id** | [**string**](../Model/.md)| Attachment identifier. |
- **body** | **\SplFileObject****\SplFileObject**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **attachment_id** | **string**| Attachment identifier. | |
+| **body** | **\SplFileObject****\SplFileObject**|  | |
+| hostIndex | null|int | Host index. Defaults to null. If null, then the library will use $this->hostIndex instead | [optional] |
+| variables | array | Associative array of variables to pass to the host. Defaults to empty array. | [optional] |
 
 ### Return type
 

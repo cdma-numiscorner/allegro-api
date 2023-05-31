@@ -1,14 +1,14 @@
 # AllegroApi\PromotionCampaignsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addPromotionToCampaignUsingPOST()**](PromotionCampaignsApi.md#addPromotionToCampaignUsingPOST) | **POST** /sale/loyalty/promotion-campaigns | Create an application for a promotion campaign
-[**deleteCampaignFromPromotionUsingDELETE()**](PromotionCampaignsApi.md#deleteCampaignFromPromotionUsingDELETE) | **DELETE** /sale/loyalty/promotion-campaigns | Delete a campaign in a promotion
-[**deletePromotionCampaignApplicationUsingDELETE()**](PromotionCampaignsApi.md#deletePromotionCampaignApplicationUsingDELETE) | **DELETE** /sale/loyalty/promotion-campaign-applications/{applicationId} | Delete an application for promotion campaign
-[**getPromotionCampaignApplicationUsingGET()**](PromotionCampaignsApi.md#getPromotionCampaignApplicationUsingGET) | **GET** /sale/loyalty/promotion-campaign-applications/{applicationId} | Get an application for promotion campaign
-[**getPromotionCampaignsUsingGET()**](PromotionCampaignsApi.md#getPromotionCampaignsUsingGET) | **GET** /sale/loyalty/promotion-campaigns | Get the user&#39;s promotion campaigns
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**addPromotionToCampaignUsingPOST()**](PromotionCampaignsApi.md#addPromotionToCampaignUsingPOST) | **POST** /sale/loyalty/promotion-campaigns | Create an application for a promotion campaign |
+| [**deleteCampaignFromPromotionUsingDELETE()**](PromotionCampaignsApi.md#deleteCampaignFromPromotionUsingDELETE) | **DELETE** /sale/loyalty/promotion-campaigns | Delete a campaign in a promotion |
+| [**deletePromotionCampaignApplicationUsingDELETE()**](PromotionCampaignsApi.md#deletePromotionCampaignApplicationUsingDELETE) | **DELETE** /sale/loyalty/promotion-campaign-applications/{applicationId} | Delete an application for promotion campaign |
+| [**getPromotionCampaignApplicationUsingGET()**](PromotionCampaignsApi.md#getPromotionCampaignApplicationUsingGET) | **GET** /sale/loyalty/promotion-campaign-applications/{applicationId} | Get an application for promotion campaign |
+| [**getPromotionCampaignsUsingGET()**](PromotionCampaignsApi.md#getPromotionCampaignsUsingGET) | **GET** /sale/loyalty/promotion-campaigns | Get the user&#39;s promotion campaigns |
 
 
 ## `addPromotionToCampaignUsingPOST()`
@@ -50,9 +50,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **promotion_campaign_request_dto** | [**\AllegroApi\Model\PromotionCampaignRequestDto**](../Model/PromotionCampaignRequestDto.md)| request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promotion_campaign_request_dto** | [**\AllegroApi\Model\PromotionCampaignRequestDto**](../Model/PromotionCampaignRequestDto.md)| request | |
 
 ### Return type
 
@@ -110,10 +110,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **promotion_id** | **string**| The promotion unique id. |
- **campaign_id** | **string**| The campaign unique id. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promotion_id** | **string**| The promotion unique id. | |
+| **campaign_id** | **string**| The campaign unique id. | |
 
 ### Return type
 
@@ -170,9 +170,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_id** | **string**| The application unique id. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **application_id** | **string**| The application unique id. | |
 
 ### Return type
 
@@ -230,9 +230,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_id** | **string**| The application unique id. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **application_id** | **string**| The application unique id. | |
 
 ### Return type
 
@@ -292,11 +292,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **promotion_id** | **string**| The promotion unique id. | [optional]
- **limit** | **int**| The limit of elements in the response. | [optional] [default to 50]
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promotion_id** | **string**| The promotion unique id. | [optional] |
+| **limit** | **int**| The limit of elements in the response. | [optional] [default to 50] |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
 
 ### Return type
 

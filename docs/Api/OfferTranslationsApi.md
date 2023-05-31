@@ -1,12 +1,12 @@
 # AllegroApi\OfferTranslationsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteManualTranslationUsingDELETE()**](OfferTranslationsApi.md#deleteManualTranslationUsingDELETE) | **DELETE** /sale/offers/{offerId}/translations/{language} | Delete offer translation
-[**getOfferTranslationUsingGET()**](OfferTranslationsApi.md#getOfferTranslationUsingGET) | **GET** /sale/offers/{offerId}/translations | Get offer translations
-[**updateOfferTranslationUsingPATCH()**](OfferTranslationsApi.md#updateOfferTranslationUsingPATCH) | **PATCH** /sale/offers/{offerId}/translations/{language} | Update offer translation
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**deleteManualTranslationUsingDELETE()**](OfferTranslationsApi.md#deleteManualTranslationUsingDELETE) | **DELETE** /sale/offers/{offerId}/translations/{language} | Delete offer translation |
+| [**getOfferTranslationUsingGET()**](OfferTranslationsApi.md#getOfferTranslationUsingGET) | **GET** /sale/offers/{offerId}/translations | Get offer translations |
+| [**updateOfferTranslationUsingPATCH()**](OfferTranslationsApi.md#updateOfferTranslationUsingPATCH) | **PATCH** /sale/offers/{offerId}/translations/{language} | Update offer translation |
 
 
 ## `deleteManualTranslationUsingDELETE()`
@@ -49,11 +49,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **string**| Language of the translation to delete. |
- **offer_id** | **string**| Offer identifier. |
- **element** | **string**| Offer element for which translation should be deleted. If not provided, translations for all elements will be deleted. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **language** | **string**| Language of the translation to delete. | |
+| **offer_id** | **string**| Offer identifier. | |
+| **element** | **string**| Offer element for which translation should be deleted. If not provided, translations for all elements will be deleted. | [optional] |
 
 ### Return type
 
@@ -112,10 +112,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer identifier. |
- **language** | **string**| Language for translation to retrieve. If not provided, all translations as well as base content for offer will be returned. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer identifier. | |
+| **language** | **string**| Language for translation to retrieve. If not provided, all translations as well as base content for offer will be returned. | [optional] |
 
 ### Return type
 
@@ -174,11 +174,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **string**| Language of the provided translation. |
- **offer_id** | **string**| Offer identifier. |
- **manual_translation_update_request** | [**\AllegroApi\Model\ManualTranslationUpdateRequest**](../Model/ManualTranslationUpdateRequest.md)| Request with manual translation for offer, must contain at least one translated offer element (title or description). |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **language** | **string**| Language of the provided translation. | |
+| **offer_id** | **string**| Offer identifier. | |
+| **manual_translation_update_request** | [**\AllegroApi\Model\ManualTranslationUpdateRequest**](../Model/ManualTranslationUpdateRequest.md)| Request with manual translation for offer, must contain at least one translated offer element (title or description). | |
 
 ### Return type
 

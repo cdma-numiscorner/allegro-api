@@ -1,13 +1,13 @@
 # AllegroApi\CommissionRefundsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**cancelRefundApplication()**](CommissionRefundsApi.md#cancelRefundApplication) | **DELETE** /order/refund-claims/{claimId} | Cancel a refund application
-[**createRefundApplication()**](CommissionRefundsApi.md#createRefundApplication) | **POST** /order/refund-claims | Create a refund application
-[**getRefundApplication()**](CommissionRefundsApi.md#getRefundApplication) | **GET** /order/refund-claims/{claimId} | Get a refund application details
-[**getRefundApplications()**](CommissionRefundsApi.md#getRefundApplications) | **GET** /order/refund-claims | Get a list of refund applications
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**cancelRefundApplication()**](CommissionRefundsApi.md#cancelRefundApplication) | **DELETE** /order/refund-claims/{claimId} | Cancel a refund application |
+| [**createRefundApplication()**](CommissionRefundsApi.md#createRefundApplication) | **POST** /order/refund-claims | Create a refund application |
+| [**getRefundApplication()**](CommissionRefundsApi.md#getRefundApplication) | **GET** /order/refund-claims/{claimId} | Get a refund application details |
+| [**getRefundApplications()**](CommissionRefundsApi.md#getRefundApplications) | **GET** /order/refund-claims | Get a list of refund applications |
 
 
 ## `cancelRefundApplication()`
@@ -48,9 +48,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **claim_id** | **string**| Refund application ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **claim_id** | **string**| Refund application ID. | |
 
 ### Return type
 
@@ -108,9 +108,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **refund_claim_request** | [**\AllegroApi\Model\RefundClaimRequest**](../Model/RefundClaimRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **refund_claim_request** | [**\AllegroApi\Model\RefundClaimRequest**](../Model/RefundClaimRequest.md)|  | |
 
 ### Return type
 
@@ -168,9 +168,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **claim_id** | **string**| Refund application ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **claim_id** | **string**| Refund application ID. | |
 
 ### Return type
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 ## `getRefundApplications()`
 
 ```php
-getRefundApplications($line_item_offer_id, $buyer_login, $status, $limit, $offset): object
+getRefundApplications($line_item_offer_id, $buyer_login, $status, $limit, $offset): \AllegroApi\Model\GetRefundApplications200Response
 ```
 
 Get a list of refund applications
@@ -232,17 +232,17 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **line_item_offer_id** | **string**| ID of the offer associated with the refund application. | [optional]
- **buyer_login** | **string**| Login of the buyer that made the purchase associated with the refund application. | [optional]
- **status** | **string**| Status of the refund application. | [optional]
- **limit** | **int**| Maximum number of returned refund applications in response. | [optional] [default to 25]
- **offset** | **int**| Index of the first returned refund application from all search results. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **line_item_offer_id** | **string**| ID of the offer associated with the refund application. | [optional] |
+| **buyer_login** | **string**| Login of the buyer that made the purchase associated with the refund application. | [optional] |
+| **status** | **string**| Status of the refund application. | [optional] |
+| **limit** | **int**| Maximum number of returned refund applications in response. | [optional] [default to 25] |
+| **offset** | **int**| Index of the first returned refund application from all search results. | [optional] [default to 0] |
 
 ### Return type
 
-**object**
+[**\AllegroApi\Model\GetRefundApplications200Response**](../Model/GetRefundApplications200Response.md)
 
 ### Authorization
 

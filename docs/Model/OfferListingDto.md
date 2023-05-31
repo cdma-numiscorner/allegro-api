@@ -19,6 +19,6 @@ Name | Type | Description | Notes
 **delivery** | [**\AllegroApi\Model\OfferListingDtoV1Delivery**](OfferListingDtoV1Delivery.md) |  | [optional]
 **b2b** | [**\AllegroApi\Model\OfferListingDtoV1B2b**](OfferListingDtoV1B2b.md) |  | [optional]
 **fundraising_campaign** | [**\AllegroApi\Model\JustId**](JustId.md) |  | [optional]
-**additional_marketplaces** | [**map[string,\AllegroApi\Model\OfferListingDtoV1AdditionalMarketplace]**](OfferListingDtoV1AdditionalMarketplace.md) | Properties of the offer for each additional marketplace. | [optional]
+**additional_marketplaces** | [**array<string,\AllegroApi\Model\OfferListingDtoV1AdditionalMarketplace>**](OfferListingDtoV1AdditionalMarketplace.md) | Properties of the offer for each additional marketplace. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

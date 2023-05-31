@@ -1,18 +1,18 @@
 # AllegroApi\InformationAboutUserApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addAdditionalEmailUsingPOST()**](InformationAboutUserApi.md#addAdditionalEmailUsingPOST) | **POST** /account/additional-emails | Add a new additional email address to user&#39;s account
-[**answerUserRatingUsingPUT()**](InformationAboutUserApi.md#answerUserRatingUsingPUT) | **PUT** /sale/user-ratings/{ratingId}/answer | Answer for user&#39;s rating
-[**deleteAdditionalEmailUsingDELETE()**](InformationAboutUserApi.md#deleteAdditionalEmailUsingDELETE) | **DELETE** /account/additional-emails/{emailId} | Delete an additional email address
-[**getAdditionalEmailUsingGET()**](InformationAboutUserApi.md#getAdditionalEmailUsingGET) | **GET** /account/additional-emails/{emailId} | Get information about a particular additional email
-[**getListOfAdditionalEmailsUsingGET()**](InformationAboutUserApi.md#getListOfAdditionalEmailsUsingGET) | **GET** /account/additional-emails | Get user&#39;s additional emails
-[**getSellerSmartClassificationGET()**](InformationAboutUserApi.md#getSellerSmartClassificationGET) | **GET** /sale/smart | Get Smart! seller classification report
-[**getUserRatingsUsingGET()**](InformationAboutUserApi.md#getUserRatingsUsingGET) | **GET** /sale/user-ratings | Get the user&#39;s ratings
-[**meGET()**](InformationAboutUserApi.md#meGET) | **GET** /me | Get basic information about user
-[**userRatingRemovalUsingPUT()**](InformationAboutUserApi.md#userRatingRemovalUsingPUT) | **PUT** /sale/user-ratings/{ratingId}/removal | Request removal of user&#39;s rating
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**addAdditionalEmailUsingPOST()**](InformationAboutUserApi.md#addAdditionalEmailUsingPOST) | **POST** /account/additional-emails | Add a new additional email address to user&#39;s account |
+| [**answerUserRatingUsingPUT()**](InformationAboutUserApi.md#answerUserRatingUsingPUT) | **PUT** /sale/user-ratings/{ratingId}/answer | Answer for user&#39;s rating |
+| [**deleteAdditionalEmailUsingDELETE()**](InformationAboutUserApi.md#deleteAdditionalEmailUsingDELETE) | **DELETE** /account/additional-emails/{emailId} | Delete an additional email address |
+| [**getAdditionalEmailUsingGET()**](InformationAboutUserApi.md#getAdditionalEmailUsingGET) | **GET** /account/additional-emails/{emailId} | Get information about a particular additional email |
+| [**getListOfAdditionalEmailsUsingGET()**](InformationAboutUserApi.md#getListOfAdditionalEmailsUsingGET) | **GET** /account/additional-emails | Get user&#39;s additional emails |
+| [**getSellerSmartClassificationGET()**](InformationAboutUserApi.md#getSellerSmartClassificationGET) | **GET** /sale/smart | Get Smart! seller classification report |
+| [**getUserRatingsUsingGET()**](InformationAboutUserApi.md#getUserRatingsUsingGET) | **GET** /sale/user-ratings | Get the user&#39;s ratings |
+| [**meGET()**](InformationAboutUserApi.md#meGET) | **GET** /me | Get basic information about user |
+| [**userRatingRemovalUsingPUT()**](InformationAboutUserApi.md#userRatingRemovalUsingPUT) | **PUT** /sale/user-ratings/{ratingId}/removal | Request removal of user&#39;s rating |
 
 
 ## `addAdditionalEmailUsingPOST()`
@@ -54,9 +54,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **additional_email_request** | [**\AllegroApi\Model\AdditionalEmailRequest**](../Model/AdditionalEmailRequest.md)| request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **additional_email_request** | [**\AllegroApi\Model\AdditionalEmailRequest**](../Model/AdditionalEmailRequest.md)| request | |
 
 ### Return type
 
@@ -115,10 +115,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rating_id** | **string**| ID of the rating. |
- **user_rating_answer_request** | [**\AllegroApi\Model\UserRatingAnswerRequest**](../Model/UserRatingAnswerRequest.md)| User rating answer request. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **rating_id** | **string**| ID of the rating. | |
+| **user_rating_answer_request** | [**\AllegroApi\Model\UserRatingAnswerRequest**](../Model/UserRatingAnswerRequest.md)| User rating answer request. | |
 
 ### Return type
 
@@ -175,9 +175,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email_id** | **string**| Id of the additional email to be deleted. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **email_id** | **string**| Id of the additional email to be deleted. | |
 
 ### Return type
 
@@ -235,9 +235,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email_id** | **string**| Id of the additional email. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **email_id** | **string**| Id of the additional email. | |
 
 ### Return type
 
@@ -352,9 +352,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **marketplace_id** | **string**| Marketplace for which seller classification report will be returned. If not specified, the classification result for the seller&#39;s registration marketplace will be returned. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **marketplace_id** | **string**| Marketplace for which seller classification report will be returned. If not specified, the classification result for the seller&#39;s registration marketplace will be returned. | [optional] |
 
 ### Return type
 
@@ -416,13 +416,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recommended** | **string**| Filter by recommended. | [optional]
- **last_changed_at_gte** | **\DateTime**| Last change (creation or latest edition) date time in ISO 8601 format. The lower bound of date time range from which ratings will be fetched. | [optional]
- **last_changed_at_lte** | **\DateTime**| Last change (creation or latest edition) date time in ISO 8601 format. The upper bound of date time range from which ratings will be fetched. | [optional]
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
- **limit** | **int**| The limit of elements in the response. | [optional] [default to 20]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **recommended** | **string**| Filter by recommended. | [optional] |
+| **last_changed_at_gte** | **\DateTime**| Last change (creation or latest edition) date time in ISO 8601 format. The lower bound of date time range from which ratings will be fetched. | [optional] |
+| **last_changed_at_lte** | **\DateTime**| Last change (creation or latest edition) date time in ISO 8601 format. The upper bound of date time range from which ratings will be fetched. | [optional] |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
+| **limit** | **int**| The limit of elements in the response. | [optional] [default to 20] |
 
 ### Return type
 
@@ -538,10 +538,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rating_id** | **string**| ID of the rating. |
- **user_rating_removal_request** | [**\AllegroApi\Model\UserRatingRemovalRequest**](../Model/UserRatingRemovalRequest.md)| User rating removal request. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **rating_id** | **string**| ID of the rating. | |
+| **user_rating_removal_request** | [**\AllegroApi\Model\UserRatingRemovalRequest**](../Model/UserRatingRemovalRequest.md)| User rating removal request. | |
 
 ### Return type
 

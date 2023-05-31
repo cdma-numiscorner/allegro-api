@@ -1,29 +1,29 @@
 # AllegroApi\AfterSaleServicesApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createAfterSalesServiceConditionsAttachmentUsingPOST()**](AfterSaleServicesApi.md#createAfterSalesServiceConditionsAttachmentUsingPOST) | **POST** /after-sales-service-conditions/attachments | Create a warranty attachment metadata
-[**createAfterSalesServiceImpliedWarrantyUsingPOST()**](AfterSaleServicesApi.md#createAfterSalesServiceImpliedWarrantyUsingPOST) | **POST** /after-sales-service-conditions/implied-warranties | Create new user&#39;s implied warranty
-[**createAfterSalesServiceReturnPolicyUsingPOST()**](AfterSaleServicesApi.md#createAfterSalesServiceReturnPolicyUsingPOST) | **POST** /after-sales-service-conditions/return-policies | Create new user&#39;s return policy
-[**createAfterSalesServiceWarrantyUsingPOST()**](AfterSaleServicesApi.md#createAfterSalesServiceWarrantyUsingPOST) | **POST** /after-sales-service-conditions/warranties | Create new user&#39;s warranty
-[**getAfterSalesServiceImpliedWarrantyUsingGET()**](AfterSaleServicesApi.md#getAfterSalesServiceImpliedWarrantyUsingGET) | **GET** /after-sales-service-conditions/implied-warranties/{impliedWarrantyId} | Get the user&#39;s implied warranty
-[**getAfterSalesServiceReturnPolicyUsingGET()**](AfterSaleServicesApi.md#getAfterSalesServiceReturnPolicyUsingGET) | **GET** /after-sales-service-conditions/return-policies/{returnPolicyId} | Get the user&#39;s return policy
-[**getAfterSalesServiceWarrantyUsingGET()**](AfterSaleServicesApi.md#getAfterSalesServiceWarrantyUsingGET) | **GET** /after-sales-service-conditions/warranties/{warrantyId} | Get the user&#39;s warranty
-[**getPublicSellerListingUsingGET()**](AfterSaleServicesApi.md#getPublicSellerListingUsingGET) | **GET** /after-sales-service-conditions/implied-warranties | Get the user&#39;s implied warranties
-[**getPublicSellerListingUsingGET1()**](AfterSaleServicesApi.md#getPublicSellerListingUsingGET1) | **GET** /after-sales-service-conditions/return-policies | Get the user&#39;s return policies
-[**getPublicSellerListingUsingGET2()**](AfterSaleServicesApi.md#getPublicSellerListingUsingGET2) | **GET** /after-sales-service-conditions/warranties | Get the user&#39;s warranties
-[**updateAfterSalesServiceImpliedWarrantyUsingPUT()**](AfterSaleServicesApi.md#updateAfterSalesServiceImpliedWarrantyUsingPUT) | **PUT** /after-sales-service-conditions/implied-warranties/{impliedWarrantyId} | Change the user&#39;s implied warranty
-[**updateAfterSalesServiceReturnPolicyUsingPUT()**](AfterSaleServicesApi.md#updateAfterSalesServiceReturnPolicyUsingPUT) | **PUT** /after-sales-service-conditions/return-policies/{returnPolicyId} | Change the user&#39;s return policy
-[**updateAfterSalesServiceWarrantyUsingPUT()**](AfterSaleServicesApi.md#updateAfterSalesServiceWarrantyUsingPUT) | **PUT** /after-sales-service-conditions/warranties/{warrantyId} | Change the user&#39;s warranty
-[**uploadAfterSalesServiceConditionsAttachmentUsingPUT()**](AfterSaleServicesApi.md#uploadAfterSalesServiceConditionsAttachmentUsingPUT) | **PUT** /after-sales-service-conditions/attachments/{attachmentId} | Upload an warranty attachment
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createAfterSalesServiceConditionsAttachmentUsingPOST()**](AfterSaleServicesApi.md#createAfterSalesServiceConditionsAttachmentUsingPOST) | **POST** /after-sales-service-conditions/attachments | Create a warranty attachment metadata |
+| [**createAfterSalesServiceImpliedWarrantyUsingPOST()**](AfterSaleServicesApi.md#createAfterSalesServiceImpliedWarrantyUsingPOST) | **POST** /after-sales-service-conditions/implied-warranties | Create new user&#39;s implied warranty |
+| [**createAfterSalesServiceReturnPolicyUsingPOST()**](AfterSaleServicesApi.md#createAfterSalesServiceReturnPolicyUsingPOST) | **POST** /after-sales-service-conditions/return-policies | Create new user&#39;s return policy |
+| [**createAfterSalesServiceWarrantyUsingPOST()**](AfterSaleServicesApi.md#createAfterSalesServiceWarrantyUsingPOST) | **POST** /after-sales-service-conditions/warranties | Create new user&#39;s warranty |
+| [**getAfterSalesServiceImpliedWarrantyUsingGET()**](AfterSaleServicesApi.md#getAfterSalesServiceImpliedWarrantyUsingGET) | **GET** /after-sales-service-conditions/implied-warranties/{impliedWarrantyId} | Get the user&#39;s implied warranty |
+| [**getAfterSalesServiceReturnPolicyUsingGET()**](AfterSaleServicesApi.md#getAfterSalesServiceReturnPolicyUsingGET) | **GET** /after-sales-service-conditions/return-policies/{returnPolicyId} | Get the user&#39;s return policy |
+| [**getAfterSalesServiceWarrantyUsingGET()**](AfterSaleServicesApi.md#getAfterSalesServiceWarrantyUsingGET) | **GET** /after-sales-service-conditions/warranties/{warrantyId} | Get the user&#39;s warranty |
+| [**getPublicSellerListingUsingGET()**](AfterSaleServicesApi.md#getPublicSellerListingUsingGET) | **GET** /after-sales-service-conditions/implied-warranties | Get the user&#39;s implied warranties |
+| [**getPublicSellerListingUsingGET1()**](AfterSaleServicesApi.md#getPublicSellerListingUsingGET1) | **GET** /after-sales-service-conditions/return-policies | Get the user&#39;s return policies |
+| [**getPublicSellerListingUsingGET2()**](AfterSaleServicesApi.md#getPublicSellerListingUsingGET2) | **GET** /after-sales-service-conditions/warranties | Get the user&#39;s warranties |
+| [**updateAfterSalesServiceImpliedWarrantyUsingPUT()**](AfterSaleServicesApi.md#updateAfterSalesServiceImpliedWarrantyUsingPUT) | **PUT** /after-sales-service-conditions/implied-warranties/{impliedWarrantyId} | Change the user&#39;s implied warranty |
+| [**updateAfterSalesServiceReturnPolicyUsingPUT()**](AfterSaleServicesApi.md#updateAfterSalesServiceReturnPolicyUsingPUT) | **PUT** /after-sales-service-conditions/return-policies/{returnPolicyId} | Change the user&#39;s return policy |
+| [**updateAfterSalesServiceWarrantyUsingPUT()**](AfterSaleServicesApi.md#updateAfterSalesServiceWarrantyUsingPUT) | **PUT** /after-sales-service-conditions/warranties/{warrantyId} | Change the user&#39;s warranty |
+| [**uploadAfterSalesServiceConditionsAttachmentUsingPUT()**](AfterSaleServicesApi.md#uploadAfterSalesServiceConditionsAttachmentUsingPUT) | **PUT** /after-sales-service-conditions/attachments/{attachmentId} | Upload an warranty attachment |
 
 
 ## `createAfterSalesServiceConditionsAttachmentUsingPOST()`
 
 ```php
-createAfterSalesServiceConditionsAttachmentUsingPOST($inline_object): \AllegroApi\Model\AfterSalesServicesAttachment
+createAfterSalesServiceConditionsAttachmentUsingPOST($create_after_sales_service_conditions_attachment_using_post_request): \AllegroApi\Model\AfterSalesServicesAttachment
 ```
 
 Create a warranty attachment metadata
@@ -47,10 +47,10 @@ $apiInstance = new AllegroApi\Api\AfterSaleServicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object = new \AllegroApi\Model\InlineObject(); // \AllegroApi\Model\InlineObject
+$create_after_sales_service_conditions_attachment_using_post_request = new \AllegroApi\Model\CreateAfterSalesServiceConditionsAttachmentUsingPOSTRequest(); // \AllegroApi\Model\CreateAfterSalesServiceConditionsAttachmentUsingPOSTRequest | After sale services attachment
 
 try {
-    $result = $apiInstance->createAfterSalesServiceConditionsAttachmentUsingPOST($inline_object);
+    $result = $apiInstance->createAfterSalesServiceConditionsAttachmentUsingPOST($create_after_sales_service_conditions_attachment_using_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AfterSaleServicesApi->createAfterSalesServiceConditionsAttachmentUsingPOST: ', $e->getMessage(), PHP_EOL;
@@ -59,9 +59,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inline_object** | [**\AllegroApi\Model\InlineObject**](../Model/InlineObject.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_after_sales_service_conditions_attachment_using_post_request** | [**\AllegroApi\Model\CreateAfterSalesServiceConditionsAttachmentUsingPOSTRequest**](../Model/CreateAfterSalesServiceConditionsAttachmentUsingPOSTRequest.md)| After sale services attachment | |
 
 ### Return type
 
@@ -119,9 +119,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **implied_warranty_request** | [**\AllegroApi\Model\ImpliedWarrantyRequest**](../Model/ImpliedWarrantyRequest.md)| Implied warranty |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **implied_warranty_request** | [**\AllegroApi\Model\ImpliedWarrantyRequest**](../Model/ImpliedWarrantyRequest.md)| Implied warranty | |
 
 ### Return type
 
@@ -179,9 +179,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **return_policy_request** | [**\AllegroApi\Model\ReturnPolicyRequest**](../Model/ReturnPolicyRequest.md)| Return Policy |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **return_policy_request** | [**\AllegroApi\Model\ReturnPolicyRequest**](../Model/ReturnPolicyRequest.md)| Return Policy | |
 
 ### Return type
 
@@ -239,9 +239,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **warranty_request** | [**\AllegroApi\Model\WarrantyRequest**](../Model/WarrantyRequest.md)| Warranty |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **warranty_request** | [**\AllegroApi\Model\WarrantyRequest**](../Model/WarrantyRequest.md)| Warranty | |
 
 ### Return type
 
@@ -299,9 +299,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **implied_warranty_id** | **string**| The ID of the implied warranty. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **implied_warranty_id** | **string**| The ID of the implied warranty. | |
 
 ### Return type
 
@@ -359,9 +359,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **return_policy_id** | **string**| The ID of the return policy. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **return_policy_id** | **string**| The ID of the return policy. | |
 
 ### Return type
 
@@ -419,9 +419,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **warranty_id** | **string**| The ID of the warranty. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **warranty_id** | **string**| The ID of the warranty. | |
 
 ### Return type
 
@@ -480,10 +480,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **int**| The limit of elements in the response. | [optional] [default to 60]
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **int**| The limit of elements in the response. | [optional] [default to 60] |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
 
 ### Return type
 
@@ -542,10 +542,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **int**| The limit of elements in the response. | [optional] [default to 60]
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **int**| The limit of elements in the response. | [optional] [default to 60] |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
 
 ### Return type
 
@@ -604,10 +604,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **int**| The limit of elements in the response. | [optional] [default to 60]
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **int**| The limit of elements in the response. | [optional] [default to 60] |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
 
 ### Return type
 
@@ -666,10 +666,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **implied_warranty_id** | **string**| The ID of the implied warranty. |
- **implied_warranty_request** | [**\AllegroApi\Model\ImpliedWarrantyRequest**](../Model/ImpliedWarrantyRequest.md)| Implied warranty |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **implied_warranty_id** | **string**| The ID of the implied warranty. | |
+| **implied_warranty_request** | [**\AllegroApi\Model\ImpliedWarrantyRequest**](../Model/ImpliedWarrantyRequest.md)| Implied warranty | |
 
 ### Return type
 
@@ -728,10 +728,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **return_policy_id** | **string**| The ID of the return policy. |
- **return_policy_request** | [**\AllegroApi\Model\ReturnPolicyRequest**](../Model/ReturnPolicyRequest.md)| Return Policy |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **return_policy_id** | **string**| The ID of the return policy. | |
+| **return_policy_request** | [**\AllegroApi\Model\ReturnPolicyRequest**](../Model/ReturnPolicyRequest.md)| Return Policy | |
 
 ### Return type
 
@@ -790,10 +790,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **warranty_id** | **string**| The ID of the warranty. |
- **warranty_request** | [**\AllegroApi\Model\WarrantyRequest**](../Model/WarrantyRequest.md)| Warranty |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **warranty_id** | **string**| The ID of the warranty. | |
+| **warranty_request** | [**\AllegroApi\Model\WarrantyRequest**](../Model/WarrantyRequest.md)| Warranty | |
 
 ### Return type
 
@@ -817,6 +817,14 @@ Name | Type | Description  | Notes
 ```php
 uploadAfterSalesServiceConditionsAttachmentUsingPUT($attachment_id, $body): \AllegroApi\Model\AfterSalesServicesAttachment
 ```
+### URI(s):
+- https://upload.{environment} 
+    - Variables:
+      - environment:  No description provided
+        - Allowed values:
+          - allegro.pl
+          - allegro.pl.allegrosandbox.pl
+        - Default value: allegro.pl
 
 Upload an warranty attachment
 
@@ -842,8 +850,13 @@ $apiInstance = new AllegroApi\Api\AfterSaleServicesApi(
 $attachment_id = 'attachment_id_example'; // string | The ID of the attachment.
 $body = "/path/to/file.txt"; // \SplFileObject
 
+$hostIndex = 0;
+$variables = [
+    'environment' => 'YOUR_VALUE',
+];
+
 try {
-    $result = $apiInstance->uploadAfterSalesServiceConditionsAttachmentUsingPUT($attachment_id, $body);
+    $result = $apiInstance->uploadAfterSalesServiceConditionsAttachmentUsingPUT($attachment_id, $body, $hostIndex, $variables);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AfterSaleServicesApi->uploadAfterSalesServiceConditionsAttachmentUsingPUT: ', $e->getMessage(), PHP_EOL;
@@ -852,10 +865,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **attachment_id** | **string**| The ID of the attachment. |
- **body** | **\SplFileObject****\SplFileObject**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **attachment_id** | **string**| The ID of the attachment. | |
+| **body** | **\SplFileObject****\SplFileObject**|  | [optional] |
+| hostIndex | null|int | Host index. Defaults to null. If null, then the library will use $this->hostIndex instead | [optional] |
+| variables | array | Associative array of variables to pass to the host. Defaults to empty array. | [optional] |
 
 ### Return type
 

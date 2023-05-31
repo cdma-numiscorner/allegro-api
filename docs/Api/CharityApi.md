@@ -1,10 +1,10 @@
 # AllegroApi\CharityApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**searchFundraisingCampaigns()**](CharityApi.md#searchFundraisingCampaigns) | **GET** /charity/fundraising-campaigns | Search fundraising campaigns
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**searchFundraisingCampaigns()**](CharityApi.md#searchFundraisingCampaigns) | **GET** /charity/fundraising-campaigns | Search fundraising campaigns |
 
 
 ## `searchFundraisingCampaigns()`
@@ -47,10 +47,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **int**| Maximum number of returned results. |
- **phrase** | **string**| Fundraising campaign name or it&#39;s Organization name prefix to search for. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **int**| Maximum number of returned results. | |
+| **phrase** | **string**| Fundraising campaign name or it&#39;s Organization name prefix to search for. | |
 
 ### Return type
 

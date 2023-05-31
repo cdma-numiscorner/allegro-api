@@ -1,11 +1,11 @@
 # AllegroApi\BillingApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getBillingEntries()**](BillingApi.md#getBillingEntries) | **GET** /billing/billing-entries | Get a list of billing entries
-[**getBillingTypes()**](BillingApi.md#getBillingTypes) | **GET** /billing/billing-types | Get a list of billing types
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getBillingEntries()**](BillingApi.md#getBillingEntries) | **GET** /billing/billing-entries | Get a list of billing entries |
+| [**getBillingTypes()**](BillingApi.md#getBillingTypes) | **GET** /billing/billing-types | Get a list of billing types |
 
 
 ## `getBillingEntries()`
@@ -54,16 +54,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **marketplace_id** | **string**| The marketplace ID where operation was made. By default the marketplace ID where the user is registered. | [optional]
- **occurred_at_gte** | **\DateTime**| Date from which billing entries are filtered. If occurredAt.lte is also set, occurredAt.gte cannot be later. | [optional]
- **occurred_at_lte** | **\DateTime**| Date to which billing entries are filtered. If occurredAt.gte is also set, occurredAt.lte cannot be earlier. | [optional]
- **type_id** | [**string[]**](../Model/string.md)| List of billing types by which billing entries are filtered. | [optional]
- **offer_id** | **string**| Offer ID by which billing entries are filtered. | [optional]
- **order_id** | [**string**](../Model/.md)| Order UUID by which billing entries are filtered. | [optional]
- **limit** | **int**| Number of returned operations. | [optional] [default to 100]
- **offset** | **int**| Index of the first returned payment operation from all search results. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **marketplace_id** | **string**| The marketplace ID where operation was made. By default the marketplace ID where the user is registered. | [optional] |
+| **occurred_at_gte** | **\DateTime**| Date from which billing entries are filtered. If occurredAt.lte is also set, occurredAt.gte cannot be later. | [optional] |
+| **occurred_at_lte** | **\DateTime**| Date to which billing entries are filtered. If occurredAt.gte is also set, occurredAt.lte cannot be earlier. | [optional] |
+| **type_id** | [**string[]**](../Model/string.md)| List of billing types by which billing entries are filtered. | [optional] |
+| **offer_id** | **string**| Offer ID by which billing entries are filtered. | [optional] |
+| **order_id** | **string**| Order UUID by which billing entries are filtered. | [optional] |
+| **limit** | **int**| Number of returned operations. | [optional] [default to 100] |
+| **offset** | **int**| Index of the first returned payment operation from all search results. | [optional] [default to 0] |
 
 ### Return type
 
@@ -99,10 +99,10 @@ List of all billing types. Type names are localized according to \"Accept-Langua
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure OAuth2 access token for authorization: bearer-token-for-application
+// Configure OAuth2 access token for authorization: bearer-token-for-user
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: bearer-token-for-user
+// Configure OAuth2 access token for authorization: bearer-token-for-application
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -124,9 +124,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accept_language** | **string**| Expected language of name translations. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accept_language** | **string**| Expected language of name translations. | [optional] |
 
 ### Return type
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer-token-for-application](../../README.md#bearer-token-for-application), [bearer-token-for-user](../../README.md#bearer-token-for-user)
+[bearer-token-for-user](../../README.md#bearer-token-for-user), [bearer-token-for-application](../../README.md#bearer-token-for-application)
 
 ### HTTP request headers
 

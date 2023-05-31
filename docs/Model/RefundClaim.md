@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **quantity** | **int** | Quantity of product for which the seller filed the refund application. | [optional]
 **commission** | [**\AllegroApi\Model\RefundClaimCommission**](RefundClaimCommission.md) |  | [optional]
 **buyer** | [**\AllegroApi\Model\RefundClaimBuyer**](RefundClaimBuyer.md) |  | [optional]
-**created_at** | [**\DateTime**](\DateTime.md) | Date when the refund application was created. | [optional]
+**created_at** | **\DateTime** | Date when the refund application was created. | [optional]
 **line_item** | [**\AllegroApi\Model\RefundClaimLineItem**](RefundClaimLineItem.md) |  | [optional]
 **type** | **string** | Type of commission refund application. - &#x60;MANUAL&#x60; - the application was created manually by the seller. - &#x60;AUTOMATIC&#x60; - the application was created automatically. | [optional]
 

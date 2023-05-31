@@ -15,6 +15,6 @@ Name | Type | Description | Notes
 **tax** | [**\AllegroApi\Model\ExtendedTax**](ExtendedTax.md) |  | [optional]
 **tax_settings** | [**\AllegroApi\Model\OfferTaxSettings**](OfferTaxSettings.md) |  | [optional]
 **message_to_seller_settings** | [**\AllegroApi\Model\MessageToSellerSettings**](MessageToSellerSettings.md) |  | [optional]
-**additional_marketplaces** | [**map[string,\AllegroApi\Model\OfferAdditionalMarketplace]**](OfferAdditionalMarketplace.md) | Settings for each additional marketplace. | [optional]
+**additional_marketplaces** | [**array<string,\AllegroApi\Model\OfferAdditionalMarketplace>**](OfferAdditionalMarketplace.md) | Settings for each additional marketplace. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

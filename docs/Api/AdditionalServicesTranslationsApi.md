@@ -1,12 +1,12 @@
 # AllegroApi\AdditionalServicesTranslationsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteAdditionalServiceGroupTranslation()**](AdditionalServicesTranslationsApi.md#deleteAdditionalServiceGroupTranslation) | **DELETE** /sale/offer-additional-services/groups/{groupId}/translations/{language} | Delete a translation for a specified group and language
-[**getAdditionalServiceGroupTranslations()**](AdditionalServicesTranslationsApi.md#getAdditionalServiceGroupTranslations) | **GET** /sale/offer-additional-services/groups/{groupId}/translations | Get translations for specified group
-[**updateAdditionalServiceGroupTranslation()**](AdditionalServicesTranslationsApi.md#updateAdditionalServiceGroupTranslation) | **PATCH** /sale/offer-additional-services/groups/{groupId}/translations/{language} | Create/Update translations for specified group and language
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**deleteAdditionalServiceGroupTranslation()**](AdditionalServicesTranslationsApi.md#deleteAdditionalServiceGroupTranslation) | **DELETE** /sale/offer-additional-services/groups/{groupId}/translations/{language} | Delete a translation for a specified group and language |
+| [**getAdditionalServiceGroupTranslations()**](AdditionalServicesTranslationsApi.md#getAdditionalServiceGroupTranslations) | **GET** /sale/offer-additional-services/groups/{groupId}/translations | Get translations for specified group |
+| [**updateAdditionalServiceGroupTranslation()**](AdditionalServicesTranslationsApi.md#updateAdditionalServiceGroupTranslation) | **PATCH** /sale/offer-additional-services/groups/{groupId}/translations/{language} | Create/Update translations for specified group and language |
 
 
 ## `deleteAdditionalServiceGroupTranslation()`
@@ -48,10 +48,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**| Additional service group ID. |
- **language** | **string**| IETF Language tag. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**| Additional service group ID. | |
+| **language** | **string**| IETF Language tag. | |
 
 ### Return type
 
@@ -110,10 +110,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**| Additional Service Group ID. |
- **language** | **string**| IETF language tag. When provided, the response will contain translations in only that language (if exists). | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**| Additional Service Group ID. | |
+| **language** | **string**| IETF language tag. When provided, the response will contain translations in only that language (if exists). | [optional] |
 
 ### Return type
 
@@ -173,11 +173,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**| Additional Service Group ID. |
- **language** | **string**| IETF Language tag. |
- **additional_services_group_translation_request** | [**\AllegroApi\Model\AdditionalServicesGroupTranslationRequest**](../Model/AdditionalServicesGroupTranslationRequest.md)| Additonal service group translation. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**| Additional Service Group ID. | |
+| **language** | **string**| IETF Language tag. | |
+| **additional_services_group_translation_request** | [**\AllegroApi\Model\AdditionalServicesGroupTranslationRequest**](../Model/AdditionalServicesGroupTranslationRequest.md)| Additonal service group translation. | |
 
 ### Return type
 

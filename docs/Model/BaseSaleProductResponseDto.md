@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  |
 **name** | **string** | Name of the product. |
 **description** | [**\AllegroApi\Model\StandardizedDescription**](StandardizedDescription.md) |  | [optional]
-**category** | [**ProductCategory**](ProductCategory.md) |  |
+**category** | [**\AllegroApi\Model\BaseSaleProductResponseDtoCategory**](BaseSaleProductResponseDtoCategory.md) |  |
 **images** | [**\AllegroApi\Model\ImageUrl[]**](ImageUrl.md) |  | [optional]
 **parameters** | [**\AllegroApi\Model\ProductParameterDto[]**](ProductParameterDto.md) |  | [optional]
 **is_draft** | **bool** | Flag that informs if product is waiting for resolution of basic parameters change proposal. | [optional]

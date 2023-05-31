@@ -1,15 +1,15 @@
 # AllegroApi\ClassifiedsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**assignClassifiedPackagesUsingPUT()**](ClassifiedsApi.md#assignClassifiedPackagesUsingPUT) | **PUT** /sale/offer-classifieds-packages/{offerId} | Assign packages to a classified
-[**classifiedOffersStatsGET()**](ClassifiedsApi.md#classifiedOffersStatsGET) | **GET** /sale/classified-offers-stats | Get the advertisements daily statistics
-[**classifiedSellerOfferStatsGET()**](ClassifiedsApi.md#classifiedSellerOfferStatsGET) | **GET** /sale/classified-seller-stats | Get the seller&#39;s advertisements daily statistics
-[**getClassifiedPackageConfigurationUsingGET()**](ClassifiedsApi.md#getClassifiedPackageConfigurationUsingGET) | **GET** /sale/classifieds-packages/{packageId} | Get the configuration of a package
-[**getClassifiedPackageConfigurationsForCategoryUsingGET()**](ClassifiedsApi.md#getClassifiedPackageConfigurationsForCategoryUsingGET) | **GET** /sale/classifieds-packages | Get configurations of packages
-[**getClassifiedPackagesUsingGET()**](ClassifiedsApi.md#getClassifiedPackagesUsingGET) | **GET** /sale/offer-classifieds-packages/{offerId} | Get classified packages assigned to an offer
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**assignClassifiedPackagesUsingPUT()**](ClassifiedsApi.md#assignClassifiedPackagesUsingPUT) | **PUT** /sale/offer-classifieds-packages/{offerId} | Assign packages to a classified |
+| [**classifiedOffersStatsGET()**](ClassifiedsApi.md#classifiedOffersStatsGET) | **GET** /sale/classified-offers-stats | Get the advertisements daily statistics |
+| [**classifiedSellerOfferStatsGET()**](ClassifiedsApi.md#classifiedSellerOfferStatsGET) | **GET** /sale/classified-seller-stats | Get the seller&#39;s advertisements daily statistics |
+| [**getClassifiedPackageConfigurationUsingGET()**](ClassifiedsApi.md#getClassifiedPackageConfigurationUsingGET) | **GET** /sale/classifieds-packages/{packageId} | Get the configuration of a package |
+| [**getClassifiedPackageConfigurationsForCategoryUsingGET()**](ClassifiedsApi.md#getClassifiedPackageConfigurationsForCategoryUsingGET) | **GET** /sale/classifieds-packages | Get configurations of packages |
+| [**getClassifiedPackagesUsingGET()**](ClassifiedsApi.md#getClassifiedPackagesUsingGET) | **GET** /sale/offer-classifieds-packages/{offerId} | Get classified packages assigned to an offer |
 
 
 ## `assignClassifiedPackagesUsingPUT()`
@@ -51,10 +51,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| The offer ID. |
- **classified_packages** | [**\AllegroApi\Model\ClassifiedPackages**](../Model/ClassifiedPackages.md)| Packages that should be assigned to the classified. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| The offer ID. | |
+| **classified_packages** | [**\AllegroApi\Model\ClassifiedPackages**](../Model/ClassifiedPackages.md)| Packages that should be assigned to the classified. | |
 
 ### Return type
 
@@ -114,11 +114,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | [**string[]**](../Model/string.md)| List of offer Ids, maximum 50 values. |
- **date_gte** | **\DateTime**| The minimum date and time from which the events will be fetched in ISO 8601 format. The value should be less than the current date time and greater than date.lte. The difference between date.gte and date.lte should be less than 3 months. | [optional]
- **date_lte** | **\DateTime**| The maximum date and time from which the events will be fetched in ISO 8601 format. The value should be less than the current date time. The difference between date.gte and date.lte should be less than 3 months. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | [**string[]**](../Model/string.md)| List of offer Ids, maximum 50 values. | |
+| **date_gte** | **\DateTime**| The minimum date and time from which the events will be fetched in ISO 8601 format. The value should be less than the current date time and greater than date.lte. The difference between date.gte and date.lte should be less than 3 months. | [optional] |
+| **date_lte** | **\DateTime**| The maximum date and time from which the events will be fetched in ISO 8601 format. The value should be less than the current date time. The difference between date.gte and date.lte should be less than 3 months. | [optional] |
 
 ### Return type
 
@@ -177,10 +177,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **date_gte** | **\DateTime**| The minimum date and time from which the events will be fetched in ISO 8601 format. The value should be less than the current date time and greater than date.lte. The difference between date.gte and date.lte should be less than 3 months. | [optional]
- **date_lte** | **\DateTime**| The maximum date and time from which the events will be fetched in ISO 8601 format. The value should be less than the current date time. The difference between date.gte and date.lte should be less than 3 months. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **date_gte** | **\DateTime**| The minimum date and time from which the events will be fetched in ISO 8601 format. The value should be less than the current date time and greater than date.lte. The difference between date.gte and date.lte should be less than 3 months. | [optional] |
+| **date_lte** | **\DateTime**| The maximum date and time from which the events will be fetched in ISO 8601 format. The value should be less than the current date time. The difference between date.gte and date.lte should be less than 3 months. | [optional] |
 
 ### Return type
 
@@ -238,9 +238,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **package_id** | **string**| The classifieds package ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **package_id** | **string**| The classifieds package ID. | |
 
 ### Return type
 
@@ -298,9 +298,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **category_id** | **string**| The category ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **category_id** | **string**| The category ID. | |
 
 ### Return type
 
@@ -358,9 +358,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer ID. | |
 
 ### Return type
 

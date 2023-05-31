@@ -1,20 +1,20 @@
 # AllegroApi\MessageCenterApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**changeReadFlagOnThreadPUT()**](MessageCenterApi.md#changeReadFlagOnThreadPUT) | **PUT** /messaging/threads/{threadId}/read | Mark a particular thread as read
-[**deleteMessageDELETE()**](MessageCenterApi.md#deleteMessageDELETE) | **DELETE** /messaging/messages/{messageId} | Delete single message
-[**downloadAttachmentGET()**](MessageCenterApi.md#downloadAttachmentGET) | **GET** /messaging/message-attachments/{attachmentId} | Download attachment
-[**getMessageGET()**](MessageCenterApi.md#getMessageGET) | **GET** /messaging/messages/{messageId} | Get single message
-[**getThreadGET()**](MessageCenterApi.md#getThreadGET) | **GET** /messaging/threads/{threadId} | Get user thread
-[**listMessagesGET()**](MessageCenterApi.md#listMessagesGET) | **GET** /messaging/threads/{threadId}/messages | List messages in thread
-[**listThreadsGET()**](MessageCenterApi.md#listThreadsGET) | **GET** /messaging/threads | List user threads
-[**newAttachmentDeclarationPOST()**](MessageCenterApi.md#newAttachmentDeclarationPOST) | **POST** /messaging/message-attachments | Add attachment declaration
-[**newMessageInThreadPOST()**](MessageCenterApi.md#newMessageInThreadPOST) | **POST** /messaging/threads/{threadId}/messages | Write a new message in thread
-[**newMessagePOST()**](MessageCenterApi.md#newMessagePOST) | **POST** /messaging/messages | Write a new message
-[**uploadAttachmentPUT()**](MessageCenterApi.md#uploadAttachmentPUT) | **PUT** /messaging/message-attachments/{attachmentId} | Upload attachment binary data
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**changeReadFlagOnThreadPUT()**](MessageCenterApi.md#changeReadFlagOnThreadPUT) | **PUT** /messaging/threads/{threadId}/read | Mark a particular thread as read |
+| [**deleteMessageDELETE()**](MessageCenterApi.md#deleteMessageDELETE) | **DELETE** /messaging/messages/{messageId} | Delete single message |
+| [**downloadAttachmentGET()**](MessageCenterApi.md#downloadAttachmentGET) | **GET** /messaging/message-attachments/{attachmentId} | Download attachment |
+| [**getMessageGET()**](MessageCenterApi.md#getMessageGET) | **GET** /messaging/messages/{messageId} | Get single message |
+| [**getThreadGET()**](MessageCenterApi.md#getThreadGET) | **GET** /messaging/threads/{threadId} | Get user thread |
+| [**listMessagesGET()**](MessageCenterApi.md#listMessagesGET) | **GET** /messaging/threads/{threadId}/messages | List messages in thread |
+| [**listThreadsGET()**](MessageCenterApi.md#listThreadsGET) | **GET** /messaging/threads | List user threads |
+| [**newAttachmentDeclarationPOST()**](MessageCenterApi.md#newAttachmentDeclarationPOST) | **POST** /messaging/message-attachments | Add attachment declaration |
+| [**newMessageInThreadPOST()**](MessageCenterApi.md#newMessageInThreadPOST) | **POST** /messaging/threads/{threadId}/messages | Write a new message in thread |
+| [**newMessagePOST()**](MessageCenterApi.md#newMessagePOST) | **POST** /messaging/messages | Write a new message |
+| [**uploadAttachmentPUT()**](MessageCenterApi.md#uploadAttachmentPUT) | **PUT** /messaging/message-attachments/{attachmentId} | Upload attachment binary data |
 
 
 ## `changeReadFlagOnThreadPUT()`
@@ -57,10 +57,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **thread_id** | **string**| Identifier of thread to be marked. |
- **thread_read_flag** | [**\AllegroApi\Model\ThreadReadFlag**](../Model/ThreadReadFlag.md)| Updated read flag |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **thread_id** | **string**| Identifier of thread to be marked. | |
+| **thread_read_flag** | [**\AllegroApi\Model\ThreadReadFlag**](../Model/ThreadReadFlag.md)| Updated read flag | |
 
 ### Return type
 
@@ -117,9 +117,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **message_id** | **string**| Identifier of the message to delete. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **message_id** | **string**| Identifier of the message to delete. | |
 
 ### Return type
 
@@ -177,13 +177,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **attachment_id** | **string**| Identifier of the attachment that will be downloaded. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **attachment_id** | **string**| Identifier of the attachment that will be downloaded. | |
 
 ### Return type
 
-[**\SplFileObject**](../Model/\SplFileObject.md)
+**\SplFileObject**
 
 ### Authorization
 
@@ -237,9 +237,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **message_id** | **string**| Identifier of message to be returned. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **message_id** | **string**| Identifier of message to be returned. | |
 
 ### Return type
 
@@ -297,9 +297,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **thread_id** | **string**| Identifier of thread to get. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **thread_id** | **string**| Identifier of thread to get. | |
 
 ### Return type
 
@@ -361,13 +361,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **thread_id** | **string**| Identifier of thread to get messages from. |
- **limit** | **int**| The maximum number of messages returned in the response. | [optional] [default to 20]
- **offset** | **int**| Index of the first returned message from all results. | [optional] [default to 0]
- **before** | **\DateTime**| Message creation date before filter parameter (exclusive) - cannot be used with offset. | [optional]
- **after** | **\DateTime**| Message creation date after filter parameter (exclusive). | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **thread_id** | **string**| Identifier of thread to get messages from. | |
+| **limit** | **int**| The maximum number of messages returned in the response. | [optional] [default to 20] |
+| **offset** | **int**| Index of the first returned message from all results. | [optional] [default to 0] |
+| **before** | **\DateTime**| Message creation date before filter parameter (exclusive) - cannot be used with offset. | [optional] |
+| **after** | **\DateTime**| Message creation date after filter parameter (exclusive). | [optional] |
 
 ### Return type
 
@@ -426,10 +426,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **int**| The maximum number of threads returned in the response. | [optional] [default to 20]
- **offset** | **int**| Index of the first returned thread from all results. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **int**| The maximum number of threads returned in the response. | [optional] [default to 20] |
+| **offset** | **int**| Index of the first returned thread from all results. | [optional] [default to 0] |
 
 ### Return type
 
@@ -487,9 +487,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **new_attachment_declaration** | [**\AllegroApi\Model\NewAttachmentDeclaration**](../Model/NewAttachmentDeclaration.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **new_attachment_declaration** | [**\AllegroApi\Model\NewAttachmentDeclaration**](../Model/NewAttachmentDeclaration.md)|  | |
 
 ### Return type
 
@@ -548,10 +548,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **thread_id** | **string**| Identifier of thread to write message to. |
- **new_message_in_thread** | [**\AllegroApi\Model\NewMessageInThread**](../Model/NewMessageInThread.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **thread_id** | **string**| Identifier of thread to write message to. | |
+| **new_message_in_thread** | [**\AllegroApi\Model\NewMessageInThread**](../Model/NewMessageInThread.md)|  | |
 
 ### Return type
 
@@ -609,9 +609,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **new_message** | [**\AllegroApi\Model\NewMessage**](../Model/NewMessage.md)| Object representing new message. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **new_message** | [**\AllegroApi\Model\NewMessage**](../Model/NewMessage.md)| Object representing new message. | |
 
 ### Return type
 
@@ -670,10 +670,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **attachment_id** | **string**| The identifier of attachment that will be uploaded. |
- **body** | **\SplFileObject****\SplFileObject**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **attachment_id** | **string**| The identifier of attachment that will be uploaded. | |
+| **body** | **\SplFileObject****\SplFileObject**|  | |
 
 ### Return type
 

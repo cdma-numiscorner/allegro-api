@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **checkout_form** | [**\AllegroApi\Model\DisputeCheckoutForm**](DisputeCheckoutForm.md) |  |
 **message** | [**\AllegroApi\Model\DisputeFirstMessage**](DisputeFirstMessage.md) |  |
 **messages_count** | **int** |  |
-**last_message_creation_date** | [**\DateTime**](\DateTime.md) |  |
+**last_message_creation_date** | **\DateTime** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

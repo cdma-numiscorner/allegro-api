@@ -1,14 +1,14 @@
 # AllegroApi\PointsOfServiceApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createPOSUsingPOST()**](PointsOfServiceApi.md#createPOSUsingPOST) | **POST** /points-of-service | Create a point of service
-[**deletePOSUsingDELETE()**](PointsOfServiceApi.md#deletePOSUsingDELETE) | **DELETE** /points-of-service/{id} | Delete a point of service
-[**getPOSDataUsingGET()**](PointsOfServiceApi.md#getPOSDataUsingGET) | **GET** /points-of-service/{id} | Get the details of a point of service
-[**getPOSListUsingGET()**](PointsOfServiceApi.md#getPOSListUsingGET) | **GET** /points-of-service | Get the user&#39;s points of service
-[**modifyPOSUsingPUT()**](PointsOfServiceApi.md#modifyPOSUsingPUT) | **PUT** /points-of-service/{id} | Modify a point of service
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createPOSUsingPOST()**](PointsOfServiceApi.md#createPOSUsingPOST) | **POST** /points-of-service | Create a point of service |
+| [**deletePOSUsingDELETE()**](PointsOfServiceApi.md#deletePOSUsingDELETE) | **DELETE** /points-of-service/{id} | Delete a point of service |
+| [**getPOSDataUsingGET()**](PointsOfServiceApi.md#getPOSDataUsingGET) | **GET** /points-of-service/{id} | Get the details of a point of service |
+| [**getPOSListUsingGET()**](PointsOfServiceApi.md#getPOSListUsingGET) | **GET** /points-of-service | Get the user&#39;s points of service |
+| [**modifyPOSUsingPUT()**](PointsOfServiceApi.md#modifyPOSUsingPUT) | **PUT** /points-of-service/{id} | Modify a point of service |
 
 
 ## `createPOSUsingPOST()`
@@ -50,9 +50,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pos** | [**\AllegroApi\Model\Pos**](../Model/Pos.md)| Point of service |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pos** | [**\AllegroApi\Model\Pos**](../Model/Pos.md)| Point of service | |
 
 ### Return type
 
@@ -109,9 +109,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Point of service ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Point of service ID. | |
 
 ### Return type
 
@@ -169,9 +169,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Point of service ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Point of service ID. | |
 
 ### Return type
 
@@ -229,9 +229,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **seller_id** | **string**| User identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **seller_id** | **string**| User identifier. | |
 
 ### Return type
 
@@ -290,10 +290,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Point of service ID. Must match values with &#39;id&#39; property from the body. |
- **pos** | [**\AllegroApi\Model\Pos**](../Model/Pos.md)| Point of service |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Point of service ID. Must match values with &#39;id&#39; property from the body. | |
+| **pos** | [**\AllegroApi\Model\Pos**](../Model/Pos.md)| Point of service | |
 
 ### Return type
 

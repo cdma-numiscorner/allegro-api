@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | ID of the returned billing entry. | [optional]
-**occurred_at** | [**\DateTime**](\DateTime.md) | Date of billing entry. | [optional]
+**occurred_at** | **\DateTime** | Date of billing entry. | [optional]
 **type** | [**\AllegroApi\Model\BillingEntryType**](BillingEntryType.md) |  | [optional]
 **offer** | [**\AllegroApi\Model\BillingEntryOffer**](BillingEntryOffer.md) |  | [optional]
 **value** | [**\AllegroApi\Model\BillingEntryValue**](BillingEntryValue.md) |  | [optional]

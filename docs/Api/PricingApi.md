@@ -1,11 +1,11 @@
 # AllegroApi\PricingApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**calculateFeePreviewUsingPOST()**](PricingApi.md#calculateFeePreviewUsingPOST) | **POST** /pricing/offer-fee-preview | Calculate fee and commission for an offer
-[**offerQuotesPublicUsingGET()**](PricingApi.md#offerQuotesPublicUsingGET) | **GET** /pricing/offer-quotes | Get the user&#39;s current offer quotes
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**calculateFeePreviewUsingPOST()**](PricingApi.md#calculateFeePreviewUsingPOST) | **POST** /pricing/offer-fee-preview | Calculate fee and commission for an offer |
+| [**offerQuotesPublicUsingGET()**](PricingApi.md#offerQuotesPublicUsingGET) | **GET** /pricing/offer-quotes | Get the user&#39;s current offer quotes |
 
 
 ## `calculateFeePreviewUsingPOST()`
@@ -47,9 +47,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **public_offer_preview_request** | [**\AllegroApi\Model\PublicOfferPreviewRequest**](../Model/PublicOfferPreviewRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **public_offer_preview_request** | [**\AllegroApi\Model\PublicOfferPreviewRequest**](../Model/PublicOfferPreviewRequest.md)|  | |
 
 ### Return type
 
@@ -107,9 +107,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | [**string[]**](../Model/string.md)| List of offer Ids, maximum 20 values. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | [**string[]**](../Model/string.md)| List of offer Ids, maximum 20 values. | |
 
 ### Return type
 

@@ -1,13 +1,13 @@
 # AllegroApi\AllegroPricesApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getAllegroPricesConsentForOffer()**](AllegroPricesApi.md#getAllegroPricesConsentForOffer) | **GET** /sale/allegro-prices-offer-consents/{offerId} | Get the current consent value for an offer
-[**getAllegroPricesEligibilityForAccount()**](AllegroPricesApi.md#getAllegroPricesEligibilityForAccount) | **GET** /sale/allegro-prices-account-eligibility | Get the current eligibility information for the account
-[**updateAllegroPricesConsentForAccount()**](AllegroPricesApi.md#updateAllegroPricesConsentForAccount) | **PUT** /sale/allegro-prices-account-consent | Update consent value for the account
-[**updateAllegroPricesConsentForOffer()**](AllegroPricesApi.md#updateAllegroPricesConsentForOffer) | **PUT** /sale/allegro-prices-offer-consents/{offerId} | Update consent value for an offer
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getAllegroPricesConsentForOffer()**](AllegroPricesApi.md#getAllegroPricesConsentForOffer) | **GET** /sale/allegro-prices-offer-consents/{offerId} | Get the current consent value for an offer |
+| [**getAllegroPricesEligibilityForAccount()**](AllegroPricesApi.md#getAllegroPricesEligibilityForAccount) | **GET** /sale/allegro-prices-account-eligibility | Get the current eligibility information for the account |
+| [**updateAllegroPricesConsentForAccount()**](AllegroPricesApi.md#updateAllegroPricesConsentForAccount) | **PUT** /sale/allegro-prices-account-consent | Update consent value for the account |
+| [**updateAllegroPricesConsentForOffer()**](AllegroPricesApi.md#updateAllegroPricesConsentForOffer) | **PUT** /sale/allegro-prices-offer-consents/{offerId} | Update consent value for an offer |
 
 
 ## `getAllegroPricesConsentForOffer()`
@@ -49,9 +49,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| The offer ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| The offer ID. | |
 
 ### Return type
 
@@ -166,9 +166,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **allegro_prices_change_request** | [**\AllegroApi\Model\AllegroPricesChangeRequest**](../Model/AllegroPricesChangeRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **allegro_prices_change_request** | [**\AllegroApi\Model\AllegroPricesChangeRequest**](../Model/AllegroPricesChangeRequest.md)|  | |
 
 ### Return type
 
@@ -227,10 +227,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| The offer ID. |
- **allegro_prices_change_request** | [**\AllegroApi\Model\AllegroPricesChangeRequest**](../Model/AllegroPricesChangeRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| The offer ID. | |
+| **allegro_prices_change_request** | [**\AllegroApi\Model\AllegroPricesChangeRequest**](../Model/AllegroPricesChangeRequest.md)|  | |
 
 ### Return type
 

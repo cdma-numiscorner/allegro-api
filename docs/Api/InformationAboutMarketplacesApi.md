@@ -1,10 +1,10 @@
 # AllegroApi\InformationAboutMarketplacesApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**marketplacesGET()**](InformationAboutMarketplacesApi.md#marketplacesGET) | **GET** /marketplaces | Get details for all marketplaces in allegro
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**marketplacesGET()**](InformationAboutMarketplacesApi.md#marketplacesGET) | **GET** /marketplaces | Get details for all marketplaces in allegro |
 
 
 ## `marketplacesGET()`

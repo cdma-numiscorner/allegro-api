@@ -1,10 +1,10 @@
 # AllegroApi\FulfillmentProductsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getAvailableProducts()**](FulfillmentProductsApi.md#getAvailableProducts) | **GET** /fulfillment/available-products | Get list of available products
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getAvailableProducts()**](FulfillmentProductsApi.md#getAvailableProducts) | **GET** /fulfillment/available-products | Get list of available products |
 
 
 ## `getAvailableProducts()`
@@ -47,10 +47,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
- **limit** | **int**| Maximum number of elements in response. | [optional] [default to 50]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
+| **limit** | **int**| Maximum number of elements in response. | [optional] [default to 50] |
 
 ### Return type
 

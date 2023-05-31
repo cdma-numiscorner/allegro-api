@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  |
 **status** | **string** |  |
 **type** | **string** |  |
-**created_at** | [**\DateTime**](\DateTime.md) |  |
+**created_at** | **\DateTime** |  |
 **thread** | [**\AllegroApi\Model\ThreadId**](ThreadId.md) |  |
 **author** | [**\AllegroApi\Model\MessageAuthor**](MessageAuthor.md) |  |
 **text** | **string** |  |

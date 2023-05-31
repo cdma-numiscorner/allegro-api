@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [default to 'SURCHARGE']
+**type** | **string** |  | [optional] [default to 'SURCHARGE']
 **payment** | [**\AllegroApi\Model\OperationPayment**](OperationPayment.md) |  |
 **surcharge** | [**\AllegroApi\Model\Surcharge**](Surcharge.md) |  |
 **participant** | [**\AllegroApi\Model\BuyerParticipant**](BuyerParticipant.md) |  |

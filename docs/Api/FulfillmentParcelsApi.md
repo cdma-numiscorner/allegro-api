@@ -1,10 +1,10 @@
 # AllegroApi\FulfillmentParcelsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getFulfillmentOrderParcels()**](FulfillmentParcelsApi.md#getFulfillmentOrderParcels) | **GET** /fulfillment/orders/{orderId}/parcels | Get list of shipped parcels
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getFulfillmentOrderParcels()**](FulfillmentParcelsApi.md#getFulfillmentOrderParcels) | **GET** /fulfillment/orders/{orderId}/parcels | Get list of shipped parcels |
 
 
 ## `getFulfillmentOrderParcels()`
@@ -46,9 +46,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **order_id** | [**string**](../Model/.md)| The Allegro&#39;s platform order identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **order_id** | **string**| The Allegro&#39;s platform order identifier. | |
 
 ### Return type
 

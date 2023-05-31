@@ -1,20 +1,20 @@
 # AllegroApi\AdvanceShipNoticesApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createAdvanceShipNotice()**](AdvanceShipNoticesApi.md#createAdvanceShipNotice) | **POST** /fulfillment/advance-ship-notices | Create an Advance Ship Notice
-[**createLabelsCommand()**](AdvanceShipNoticesApi.md#createLabelsCommand) | **PUT** /fulfillment/create-labels-commands/{command-id} | Create labels
-[**deleteAdvanceShipNotice()**](AdvanceShipNoticesApi.md#deleteAdvanceShipNotice) | **DELETE** /fulfillment/advance-ship-notices/{id} | Delete Advance Ship Notice
-[**getAdvanceShipNotice()**](AdvanceShipNoticesApi.md#getAdvanceShipNotice) | **GET** /fulfillment/advance-ship-notices/{id} | Get single Advance Ship Notice
-[**getAdvanceShipNoticeLabels()**](AdvanceShipNoticesApi.md#getAdvanceShipNoticeLabels) | **GET** /fulfillment/advance-ship-notices/{id}/labels | Get labels for Advance Ship Notice
-[**getAdvanceShipNoticeReceivingState()**](AdvanceShipNoticesApi.md#getAdvanceShipNoticeReceivingState) | **GET** /fulfillment/advance-ship-notices/{id}/receiving-state | Check current state and details of Advance Ship Notice receiving
-[**getAdvanceShipNotices()**](AdvanceShipNoticesApi.md#getAdvanceShipNotices) | **GET** /fulfillment/advance-ship-notices | Get list of Advance Ship Notices
-[**getLabelCommand()**](AdvanceShipNoticesApi.md#getLabelCommand) | **GET** /fulfillment/create-labels-commands/{command-id} | Get labels
-[**getSubmitCommand()**](AdvanceShipNoticesApi.md#getSubmitCommand) | **GET** /fulfillment/submit-commands/{command-id} | Get submit status
-[**submitCommand()**](AdvanceShipNoticesApi.md#submitCommand) | **PUT** /fulfillment/submit-commands/{command-id} | Submit the Advance Ship Notice
-[**updateAdvanceShipNotice()**](AdvanceShipNoticesApi.md#updateAdvanceShipNotice) | **PUT** /fulfillment/advance-ship-notices/{id} | Update Advance Ship Notice
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createAdvanceShipNotice()**](AdvanceShipNoticesApi.md#createAdvanceShipNotice) | **POST** /fulfillment/advance-ship-notices | Create an Advance Ship Notice |
+| [**createLabelsCommand()**](AdvanceShipNoticesApi.md#createLabelsCommand) | **PUT** /fulfillment/create-labels-commands/{command-id} | Create labels |
+| [**deleteAdvanceShipNotice()**](AdvanceShipNoticesApi.md#deleteAdvanceShipNotice) | **DELETE** /fulfillment/advance-ship-notices/{id} | Delete Advance Ship Notice |
+| [**getAdvanceShipNotice()**](AdvanceShipNoticesApi.md#getAdvanceShipNotice) | **GET** /fulfillment/advance-ship-notices/{id} | Get single Advance Ship Notice |
+| [**getAdvanceShipNoticeLabels()**](AdvanceShipNoticesApi.md#getAdvanceShipNoticeLabels) | **GET** /fulfillment/advance-ship-notices/{id}/labels | Get labels for Advance Ship Notice |
+| [**getAdvanceShipNoticeReceivingState()**](AdvanceShipNoticesApi.md#getAdvanceShipNoticeReceivingState) | **GET** /fulfillment/advance-ship-notices/{id}/receiving-state | Check current state and details of Advance Ship Notice receiving |
+| [**getAdvanceShipNotices()**](AdvanceShipNoticesApi.md#getAdvanceShipNotices) | **GET** /fulfillment/advance-ship-notices | Get list of Advance Ship Notices |
+| [**getLabelCommand()**](AdvanceShipNoticesApi.md#getLabelCommand) | **GET** /fulfillment/create-labels-commands/{command-id} | Get labels |
+| [**getSubmitCommand()**](AdvanceShipNoticesApi.md#getSubmitCommand) | **GET** /fulfillment/submit-commands/{command-id} | Get submit status |
+| [**submitCommand()**](AdvanceShipNoticesApi.md#submitCommand) | **PUT** /fulfillment/submit-commands/{command-id} | Submit the Advance Ship Notice |
+| [**updateAdvanceShipNotice()**](AdvanceShipNoticesApi.md#updateAdvanceShipNotice) | **PUT** /fulfillment/advance-ship-notices/{id} | Update Advance Ship Notice |
 
 
 ## `createAdvanceShipNotice()`
@@ -56,9 +56,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_advance_ship_notice_request** | [**\AllegroApi\Model\CreateAdvanceShipNoticeRequest**](../Model/CreateAdvanceShipNoticeRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_advance_ship_notice_request** | [**\AllegroApi\Model\CreateAdvanceShipNoticeRequest**](../Model/CreateAdvanceShipNoticeRequest.md)|  | |
 
 ### Return type
 
@@ -117,10 +117,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | [**string**](../Model/.md)| The identifier of the command. | [default to &#39;712fa46c-7d4a-4ba0-b094-b5d1d4f6155d&#39;]
- **create_labels_command_only_input** | [**\AllegroApi\Model\CreateLabelsCommandOnlyInput**](../Model/CreateLabelsCommandOnlyInput.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| The identifier of the command. | [default to &#39;712fa46c-7d4a-4ba0-b094-b5d1d4f6155d&#39;] |
+| **create_labels_command_only_input** | [**\AllegroApi\Model\CreateLabelsCommandOnlyInput**](../Model/CreateLabelsCommandOnlyInput.md)|  | |
 
 ### Return type
 
@@ -178,10 +178,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**string**](../Model/.md)| An identifier of the Advance Ship Notice to delete. | [default to &#39;0b488a23-bc99-470d-8842-0c585adf2479&#39;]
- **accept** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| An identifier of the Advance Ship Notice to delete. | [default to &#39;0b488a23-bc99-470d-8842-0c585adf2479&#39;] |
+| **accept** | **string**|  | |
 
 ### Return type
 
@@ -239,9 +239,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**string**](../Model/.md)| The identifier of returned Advance Ship Notice. | [default to &#39;84529ad2-2265-4e15-b76b-c17025d848f6&#39;]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| The identifier of returned Advance Ship Notice. | [default to &#39;84529ad2-2265-4e15-b76b-c17025d848f6&#39;] |
 
 ### Return type
 
@@ -300,14 +300,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**string**](../Model/.md)| An identifier of the Advance Ship Notice. |
- **accept** | **string**| Content-type of generated labels |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| An identifier of the Advance Ship Notice. | |
+| **accept** | **string**| Content-type of generated labels | |
 
 ### Return type
 
-[**\SplFileObject**](../Model/\SplFileObject.md)
+**\SplFileObject**
 
 ### Authorization
 
@@ -361,9 +361,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**string**](../Model/.md)| An identifier of advance ship notice. | [default to &#39;712fa46c-7d4a-4ba0-b094-b5d1d4f6155d&#39;]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| An identifier of advance ship notice. | [default to &#39;712fa46c-7d4a-4ba0-b094-b5d1d4f6155d&#39;] |
 
 ### Return type
 
@@ -423,11 +423,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
- **limit** | **int**| Maximum number of elements in response. | [optional] [default to 50]
- **status** | [**\AllegroApi\Model\AdvanceShipNoticeStatus[]**](../Model/\AllegroApi\Model\AdvanceShipNoticeStatus.md)| A status of the Advance Ship Notices in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
+| **limit** | **int**| Maximum number of elements in response. | [optional] [default to 50] |
+| **status** | [**\AllegroApi\Model\AdvanceShipNoticeStatus[]**](../Model/\AllegroApi\Model\AdvanceShipNoticeStatus.md)| A status of the Advance Ship Notices in the response. | [optional] |
 
 ### Return type
 
@@ -485,9 +485,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | [**string**](../Model/.md)| An identifier of the command. | [default to &#39;882202c8-15ab-4a83-aeef-29ea505bf0d0&#39;]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| An identifier of the command. | [default to &#39;882202c8-15ab-4a83-aeef-29ea505bf0d0&#39;] |
 
 ### Return type
 
@@ -545,9 +545,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | [**string**](../Model/.md)| An identifier of the command. | [default to &#39;882202c8-15ab-4a83-aeef-29ea505bf0d0&#39;]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| An identifier of the command. | [default to &#39;882202c8-15ab-4a83-aeef-29ea505bf0d0&#39;] |
 
 ### Return type
 
@@ -606,10 +606,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | [**string**](../Model/.md)| The identifier of the command. | [default to &#39;725432a9-ae9e-43de-b8c5-7430606a81a4&#39;]
- **submit_command** | [**\AllegroApi\Model\SubmitCommand**](../Model/SubmitCommand.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| The identifier of the command. | [default to &#39;725432a9-ae9e-43de-b8c5-7430606a81a4&#39;] |
+| **submit_command** | [**\AllegroApi\Model\SubmitCommand**](../Model/SubmitCommand.md)|  | |
 
 ### Return type
 
@@ -669,11 +669,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**string**](../Model/.md)| An identifier of Advance Ship Notice. | [default to &#39;84529ad2-2265-4e15-b76b-c17025d848f6&#39;]
- **if_match** | **string**| A current version of Advance Ship Notice (e.g. from etag header obtained via get). |
- **advance_ship_notice** | [**\AllegroApi\Model\AdvanceShipNotice**](../Model/AdvanceShipNotice.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| An identifier of Advance Ship Notice. | [default to &#39;84529ad2-2265-4e15-b76b-c17025d848f6&#39;] |
+| **if_match** | **string**| A current version of Advance Ship Notice (e.g. from etag header obtained via get). | |
+| **advance_ship_notice** | [**\AllegroApi\Model\AdvanceShipNotice**](../Model/AdvanceShipNotice.md)|  | |
 
 ### Return type
 

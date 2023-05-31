@@ -1,12 +1,12 @@
 # AllegroApi\CustomerReturnsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getCustomerReturnById()**](CustomerReturnsApi.md#getCustomerReturnById) | **GET** /order/customer-returns/{customerReturnId} | [BETA] Get customer return by id
-[**getCustomerReturns()**](CustomerReturnsApi.md#getCustomerReturns) | **GET** /order/customer-returns | [BETA] Get customer returns by provided query parameters
-[**rejectCustomerReturnRefund()**](CustomerReturnsApi.md#rejectCustomerReturnRefund) | **POST** /order/customer-returns/{customerReturnId}/rejection | [BETA] Reject customer return refund
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getCustomerReturnById()**](CustomerReturnsApi.md#getCustomerReturnById) | **GET** /order/customer-returns/{customerReturnId} | [BETA] Get customer return by id |
+| [**getCustomerReturns()**](CustomerReturnsApi.md#getCustomerReturns) | **GET** /order/customer-returns | [BETA] Get customer returns by provided query parameters |
+| [**rejectCustomerReturnRefund()**](CustomerReturnsApi.md#rejectCustomerReturnRefund) | **POST** /order/customer-returns/{customerReturnId}/rejection | [BETA] Reject customer return refund |
 
 
 ## `getCustomerReturnById()`
@@ -48,9 +48,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customer_return_id** | **string**| Id of the customer return. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **customer_return_id** | **string**| Id of the customer return. | |
 
 ### Return type
 
@@ -121,22 +121,22 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customer_return_id** | **string**| One or more customer return id&#39;s. | [optional]
- **order_id** | **string**| One or more order id&#39;s. | [optional]
- **items_offer_id** | **string**| One or more returned item offer id&#39;s. | [optional]
- **items_name** | **string**| One or more item names. | [optional]
- **parcels_waybill** | **string**| One or more waybill id&#39;s. | [optional]
- **parcels_carrier_id** | **string**| One or more carrier id&#39;s. | [optional]
- **parcels_sender_phone_number** | **string**| One or more phone numbers. | [optional]
- **reference_number** | **string**| One or more reference numbers. | [optional]
- **from** | **string**| The ID of the last seen customer return. Customer returns created after the given customer return will be returned. | [optional]
- **created_at_gte** | **string**| Date of the return in ISO 8601 format to search by greater or equal. | [optional]
- **created_at_lte** | **string**| Date of the return in ISO 8601 format to search by lower or equal. | [optional]
- **marketplace_id** | **string**| The marketplace ID where operation was made. When the parameter is omitted, searches for operations with all marketplaces. | [optional]
- **limit** | **int**| Limit of customer returns per page. | [optional] [default to 100]
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **customer_return_id** | **string**| One or more customer return id&#39;s. | [optional] |
+| **order_id** | **string**| One or more order id&#39;s. | [optional] |
+| **items_offer_id** | **string**| One or more returned item offer id&#39;s. | [optional] |
+| **items_name** | **string**| One or more item names. | [optional] |
+| **parcels_waybill** | **string**| One or more waybill id&#39;s. | [optional] |
+| **parcels_carrier_id** | **string**| One or more carrier id&#39;s. | [optional] |
+| **parcels_sender_phone_number** | **string**| One or more phone numbers. | [optional] |
+| **reference_number** | **string**| One or more reference numbers. | [optional] |
+| **from** | **string**| The ID of the last seen customer return. Customer returns created after the given customer return will be returned. | [optional] |
+| **created_at_gte** | **string**| Date of the return in ISO 8601 format to search by greater or equal. | [optional] |
+| **created_at_lte** | **string**| Date of the return in ISO 8601 format to search by lower or equal. | [optional] |
+| **marketplace_id** | **string**| The marketplace ID where operation was made. When the parameter is omitted, searches for operations with all marketplaces. | [optional] |
+| **limit** | **int**| Limit of customer returns per page. | [optional] [default to 100] |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
 
 ### Return type
 
@@ -195,10 +195,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customer_return_id** | **string**| Id of the customer return. |
- **customer_return_refund_rejection_request** | [**\AllegroApi\Model\CustomerReturnRefundRejectionRequest**](../Model/CustomerReturnRefundRejectionRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **customer_return_id** | **string**| Id of the customer return. | |
+| **customer_return_refund_rejection_request** | [**\AllegroApi\Model\CustomerReturnRefundRejectionRequest**](../Model/CustomerReturnRefundRejectionRequest.md)|  | |
 
 ### Return type
 

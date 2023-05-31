@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **payment** | [**\AllegroApi\Model\RefundPayment**](RefundPayment.md) |  |
 **reason** | **string** | Reason for a payment refund. |
 **status** | **string** | Current status of payment refund. |
-**created_at** | [**\DateTime**](\DateTime.md) | Date and time when the refund was created provided in ISO 8601 format. |
+**created_at** | **\DateTime** | Date and time when the refund was created provided in ISO 8601 format. |
 **total_value** | [**\AllegroApi\Model\RefundTotalValue**](RefundTotalValue.md) |  |
 **line_items** | [**\AllegroApi\Model\RefundLineItem[]**](RefundLineItem.md) | List of order&#39;s line items which can be refunded. | [optional]
 **delivery** | [**\AllegroApi\Model\InitializeRefundDelivery**](InitializeRefundDelivery.md) |  | [optional]

@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **description** | [**\AllegroApi\Model\CategoryDefinitionDescriptionResponse**](CategoryDefinitionDescriptionResponse.md) |  | [optional]
 **max_price** | [**\AllegroApi\Model\Price**](Price.md) |  | [optional]
 **available_constraints** | [**\AllegroApi\Model\AvailableConstraint[]**](AvailableConstraint.md) |  | [optional]
-**updated_at** | [**\DateTime**](\DateTime.md) |  | [optional]
+**updated_at** | **\DateTime** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

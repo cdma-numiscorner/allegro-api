@@ -1,28 +1,28 @@
 # AllegroApi\OfferManagementApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**changePublicationStatusUsingPUT()**](OfferManagementApi.md#changePublicationStatusUsingPUT) | **PUT** /sale/offer-publication-commands/{commandId} | Batch offer publish / unpublish
-[**createChangePriceCommandUsingPUT()**](OfferManagementApi.md#createChangePriceCommandUsingPUT) | **PUT** /offers/{offerId}/change-price-commands/{commandId} | Modify the Buy Now price in an offer
-[**createOfferUsingPOST()**](OfferManagementApi.md#createOfferUsingPOST) | **POST** /sale/offers | Create a draft offer
-[**createProductOffers()**](OfferManagementApi.md#createProductOffers) | **POST** /sale/product-offers | Create offer based on product
-[**deleteOfferUsingDELETE()**](OfferManagementApi.md#deleteOfferUsingDELETE) | **DELETE** /sale/offers/{offerId} | Delete a draft offer
-[**editProductOffers()**](OfferManagementApi.md#editProductOffers) | **PATCH** /sale/product-offers/{offerId} | Edit an offer
-[**getAvailableOfferPromotionPackages()**](OfferManagementApi.md#getAvailableOfferPromotionPackages) | **GET** /sale/offer-promotion-packages | Get all available offer promotion packages
-[**getOfferPromoOptionsUsingGET()**](OfferManagementApi.md#getOfferPromoOptionsUsingGET) | **GET** /sale/offers/{offerId}/promo-options | Get offer promotion packages
-[**getOffersUnfilledParametersUsingGET1()**](OfferManagementApi.md#getOffersUnfilledParametersUsingGET1) | **GET** /sale/offers/unfilled-parameters | Get offers with missing parameters
-[**getProductOffer()**](OfferManagementApi.md#getProductOffer) | **GET** /sale/product-offers/{offerId} | Get all data of the particular product-offer
-[**getProductOfferProcessingStatus()**](OfferManagementApi.md#getProductOfferProcessingStatus) | **GET** /sale/product-offers/{offerId}/operations/{operationId} | Check the processing status of a POST or PATCH request
-[**getPromoModificationCommandDetailedResultUsingGET()**](OfferManagementApi.md#getPromoModificationCommandDetailedResultUsingGET) | **GET** /sale/offers/promo-options-commands/{commandId}/tasks | Modification command detailed result
-[**getPromoModificationCommandResultUsingGET()**](OfferManagementApi.md#getPromoModificationCommandResultUsingGET) | **GET** /sale/offers/promo-options-commands/{commandId} | Modification command summary
-[**getPromoOptionsForSellerOffersUsingGET()**](OfferManagementApi.md#getPromoOptionsForSellerOffersUsingGET) | **GET** /sale/offers/promo-options | Get promo options for seller&#39;s offers
-[**getPublicationReportUsingGET()**](OfferManagementApi.md#getPublicationReportUsingGET) | **GET** /sale/offer-publication-commands/{commandId} | Publish command summary
-[**getPublicationTasksUsingGET()**](OfferManagementApi.md#getPublicationTasksUsingGET) | **GET** /sale/offer-publication-commands/{commandId}/tasks | Publish command detailed report
-[**modifyOfferPromoOptionsUsingPOST()**](OfferManagementApi.md#modifyOfferPromoOptionsUsingPOST) | **POST** /sale/offers/{offerId}/promo-options-modification | Modify offer promotion packages
-[**promoModificationCommandUsingPUT()**](OfferManagementApi.md#promoModificationCommandUsingPUT) | **PUT** /sale/offers/promo-options-commands/{commandId} | Batch offer promotion package modification
-[**updateOfferUsingPUT()**](OfferManagementApi.md#updateOfferUsingPUT) | **PUT** /sale/offers/{offerId} | Complete a draft offer or edit an offer
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**changePublicationStatusUsingPUT()**](OfferManagementApi.md#changePublicationStatusUsingPUT) | **PUT** /sale/offer-publication-commands/{commandId} | Batch offer publish / unpublish |
+| [**createChangePriceCommandUsingPUT()**](OfferManagementApi.md#createChangePriceCommandUsingPUT) | **PUT** /offers/{offerId}/change-price-commands/{commandId} | Modify the Buy Now price in an offer |
+| [**createOfferUsingPOST()**](OfferManagementApi.md#createOfferUsingPOST) | **POST** /sale/offers | Create a draft offer |
+| [**createProductOffers()**](OfferManagementApi.md#createProductOffers) | **POST** /sale/product-offers | Create offer based on product |
+| [**deleteOfferUsingDELETE()**](OfferManagementApi.md#deleteOfferUsingDELETE) | **DELETE** /sale/offers/{offerId} | Delete a draft offer |
+| [**editProductOffers()**](OfferManagementApi.md#editProductOffers) | **PATCH** /sale/product-offers/{offerId} | Edit an offer |
+| [**getAvailableOfferPromotionPackages()**](OfferManagementApi.md#getAvailableOfferPromotionPackages) | **GET** /sale/offer-promotion-packages | Get all available offer promotion packages |
+| [**getOfferPromoOptionsUsingGET()**](OfferManagementApi.md#getOfferPromoOptionsUsingGET) | **GET** /sale/offers/{offerId}/promo-options | Get offer promotion packages |
+| [**getOffersUnfilledParametersUsingGET1()**](OfferManagementApi.md#getOffersUnfilledParametersUsingGET1) | **GET** /sale/offers/unfilled-parameters | Get offers with missing parameters |
+| [**getProductOffer()**](OfferManagementApi.md#getProductOffer) | **GET** /sale/product-offers/{offerId} | Get all data of the particular product-offer |
+| [**getProductOfferProcessingStatus()**](OfferManagementApi.md#getProductOfferProcessingStatus) | **GET** /sale/product-offers/{offerId}/operations/{operationId} | Check the processing status of a POST or PATCH request |
+| [**getPromoModificationCommandDetailedResultUsingGET()**](OfferManagementApi.md#getPromoModificationCommandDetailedResultUsingGET) | **GET** /sale/offers/promo-options-commands/{commandId}/tasks | Modification command detailed result |
+| [**getPromoModificationCommandResultUsingGET()**](OfferManagementApi.md#getPromoModificationCommandResultUsingGET) | **GET** /sale/offers/promo-options-commands/{commandId} | Modification command summary |
+| [**getPromoOptionsForSellerOffersUsingGET()**](OfferManagementApi.md#getPromoOptionsForSellerOffersUsingGET) | **GET** /sale/offers/promo-options | Get promo options for seller&#39;s offers |
+| [**getPublicationReportUsingGET()**](OfferManagementApi.md#getPublicationReportUsingGET) | **GET** /sale/offer-publication-commands/{commandId} | Publish command summary |
+| [**getPublicationTasksUsingGET()**](OfferManagementApi.md#getPublicationTasksUsingGET) | **GET** /sale/offer-publication-commands/{commandId}/tasks | Publish command detailed report |
+| [**modifyOfferPromoOptionsUsingPOST()**](OfferManagementApi.md#modifyOfferPromoOptionsUsingPOST) | **POST** /sale/offers/{offerId}/promo-options-modification | Modify offer promotion packages |
+| [**promoModificationCommandUsingPUT()**](OfferManagementApi.md#promoModificationCommandUsingPUT) | **PUT** /sale/offers/promo-options-commands/{commandId} | Batch offer promotion package modification |
+| [**updateOfferUsingPUT()**](OfferManagementApi.md#updateOfferUsingPUT) | **PUT** /sale/offers/{offerId} | Complete a draft offer or edit an offer |
 
 
 ## `changePublicationStatusUsingPUT()`
@@ -65,10 +65,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
- **publication_change_command_dto** | [**\AllegroApi\Model\PublicationChangeCommandDto**](../Model/PublicationChangeCommandDto.md)| publicationChangeCommandDto |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
+| **publication_change_command_dto** | [**\AllegroApi\Model\PublicationChangeCommandDto**](../Model/PublicationChangeCommandDto.md)| publicationChangeCommandDto | |
 
 ### Return type
 
@@ -128,11 +128,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| The offer identifier. |
- **command_id** | [**string**](../Model/.md)| The unique command id generated by you. |
- **change_price_without_output** | [**\AllegroApi\Model\ChangePriceWithoutOutput**](../Model/ChangePriceWithoutOutput.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| The offer identifier. | |
+| **command_id** | **string**| The unique command id generated by you. | |
+| **change_price_without_output** | [**\AllegroApi\Model\ChangePriceWithoutOutput**](../Model/ChangePriceWithoutOutput.md)|  | |
 
 ### Return type
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 ## `createOfferUsingPOST()`
 
 ```php
-createOfferUsingPOST($unknown_base_type): \AllegroApi\Model\OfferResponse
+createOfferUsingPOST($create_offer_using_post_request): \AllegroApi\Model\OfferResponse
 ```
 
 Create a draft offer
@@ -178,10 +178,10 @@ $apiInstance = new AllegroApi\Api\OfferManagementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$unknown_base_type = new \AllegroApi\Model\UNKNOWN_BASE_TYPE(); // \AllegroApi\Model\UNKNOWN_BASE_TYPE | offer
+$create_offer_using_post_request = new \AllegroApi\Model\CreateOfferUsingPOSTRequest(); // \AllegroApi\Model\CreateOfferUsingPOSTRequest | offer
 
 try {
-    $result = $apiInstance->createOfferUsingPOST($unknown_base_type);
+    $result = $apiInstance->createOfferUsingPOST($create_offer_using_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OfferManagementApi->createOfferUsingPOST: ', $e->getMessage(), PHP_EOL;
@@ -190,9 +190,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **unknown_base_type** | [**\AllegroApi\Model\UNKNOWN_BASE_TYPE**](../Model/UNKNOWN_BASE_TYPE.md)| offer |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_offer_using_post_request** | [**\AllegroApi\Model\CreateOfferUsingPOSTRequest**](../Model/CreateOfferUsingPOSTRequest.md)| offer | |
 
 ### Return type
 
@@ -250,9 +250,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sale_product_offer_request_v1** | [**\AllegroApi\Model\SaleProductOfferRequestV1**](../Model/SaleProductOfferRequestV1.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sale_product_offer_request_v1** | [**\AllegroApi\Model\SaleProductOfferRequestV1**](../Model/SaleProductOfferRequestV1.md)|  | |
 
 ### Return type
 
@@ -309,9 +309,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer identifier. | |
 
 ### Return type
 
@@ -370,10 +370,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| The offer identifier. |
- **sale_product_offer_patch_request_v1** | [**\AllegroApi\Model\SaleProductOfferPatchRequestV1**](../Model/SaleProductOfferPatchRequestV1.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| The offer identifier. | |
+| **sale_product_offer_patch_request_v1** | [**\AllegroApi\Model\SaleProductOfferPatchRequestV1**](../Model/SaleProductOfferPatchRequestV1.md)|  | |
 
 ### Return type
 
@@ -409,10 +409,10 @@ Use this resource to retrieve all available offer promotion packages. Read more:
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure OAuth2 access token for authorization: bearer-token-for-application
+// Configure OAuth2 access token for authorization: bearer-token-for-user
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: bearer-token-for-user
+// Configure OAuth2 access token for authorization: bearer-token-for-application
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -441,7 +441,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[bearer-token-for-application](../../README.md#bearer-token-for-application), [bearer-token-for-user](../../README.md#bearer-token-for-user)
+[bearer-token-for-user](../../README.md#bearer-token-for-user), [bearer-token-for-application](../../README.md#bearer-token-for-application)
 
 ### HTTP request headers
 
@@ -491,9 +491,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer identifier. | |
 
 ### Return type
 
@@ -554,12 +554,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | [**string[]**](../Model/string.md)| List of offer ids. If empty all offers with unfilled parameters will be returned. | [optional]
- **parameter_type** | **string**| Filter by parameter type. | [optional]
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
- **limit** | **int**| The limit of elements in the response. | [optional] [default to 100]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | [**string[]**](../Model/string.md)| List of offer ids. If empty all offers with unfilled parameters will be returned. | [optional] |
+| **parameter_type** | **string**| Filter by parameter type. | [optional] |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
+| **limit** | **int**| The limit of elements in the response. | [optional] [default to 100] |
 
 ### Return type
 
@@ -617,9 +617,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer identifier. | |
 
 ### Return type
 
@@ -678,10 +678,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer identifier. |
- **operation_id** | **string**| Operation identifier provided in location header of POST or PATCH request. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer identifier. | |
+| **operation_id** | **string**| Operation identifier provided in location header of POST or PATCH request. | |
 
 ### Return type
 
@@ -741,11 +741,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
- **limit** | **int**| The limit of returned items. | [optional] [default to 100]
- **offset** | **int**| The offset of returned items. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
+| **limit** | **int**| The limit of returned items. | [optional] [default to 100] |
+| **offset** | **int**| The offset of returned items. | [optional] [default to 0] |
 
 ### Return type
 
@@ -803,9 +803,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
 
 ### Return type
 
@@ -864,10 +864,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **int**| Limit of promo options per page. | [optional] [default to 5000]
- **offset** | **int**| Distance between the beginning of the document and the point from which promo options are returned. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **int**| Limit of promo options per page. | [optional] [default to 5000] |
+| **offset** | **int**| Distance between the beginning of the document and the point from which promo options are returned. | [optional] [default to 0] |
 
 ### Return type
 
@@ -925,9 +925,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
 
 ### Return type
 
@@ -987,11 +987,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
- **limit** | **int**| The limit of elements in the response. | [optional] [default to 100]
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
+| **limit** | **int**| The limit of elements in the response. | [optional] [default to 100] |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
 
 ### Return type
 
@@ -1050,10 +1050,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer identifier. |
- **promo_options_modifications** | [**\AllegroApi\Model\PromoOptionsModifications**](../Model/PromoOptionsModifications.md)| request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer identifier. | |
+| **promo_options_modifications** | [**\AllegroApi\Model\PromoOptionsModifications**](../Model/PromoOptionsModifications.md)| request | |
 
 ### Return type
 
@@ -1112,10 +1112,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. Must be a UUID. |
- **promo_options_command** | [**\AllegroApi\Model\PromoOptionsCommand**](../Model/PromoOptionsCommand.md)| Promo packages modification command request. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. Must be a UUID. | |
+| **promo_options_command** | [**\AllegroApi\Model\PromoOptionsCommand**](../Model/PromoOptionsCommand.md)| Promo packages modification command request. | |
 
 ### Return type
 
@@ -1137,7 +1137,7 @@ Name | Type | Description  | Notes
 ## `updateOfferUsingPUT()`
 
 ```php
-updateOfferUsingPUT($offer_id, $unknown_base_type): \AllegroApi\Model\OfferResponse
+updateOfferUsingPUT($offer_id, $create_offer_using_post_request): \AllegroApi\Model\OfferResponse
 ```
 
 Complete a draft offer or edit an offer
@@ -1162,10 +1162,10 @@ $apiInstance = new AllegroApi\Api\OfferManagementApi(
     $config
 );
 $offer_id = 'offer_id_example'; // string | Offer identifier.
-$unknown_base_type = new \AllegroApi\Model\UNKNOWN_BASE_TYPE(); // \AllegroApi\Model\UNKNOWN_BASE_TYPE | offer
+$create_offer_using_post_request = new \AllegroApi\Model\CreateOfferUsingPOSTRequest(); // \AllegroApi\Model\CreateOfferUsingPOSTRequest | offer
 
 try {
-    $result = $apiInstance->updateOfferUsingPUT($offer_id, $unknown_base_type);
+    $result = $apiInstance->updateOfferUsingPUT($offer_id, $create_offer_using_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OfferManagementApi->updateOfferUsingPUT: ', $e->getMessage(), PHP_EOL;
@@ -1174,10 +1174,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer identifier. |
- **unknown_base_type** | [**\AllegroApi\Model\UNKNOWN_BASE_TYPE**](../Model/UNKNOWN_BASE_TYPE.md)| offer |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer identifier. | |
+| **create_offer_using_post_request** | [**\AllegroApi\Model\CreateOfferUsingPOSTRequest**](../Model/CreateOfferUsingPOSTRequest.md)| offer | |
 
 ### Return type
 

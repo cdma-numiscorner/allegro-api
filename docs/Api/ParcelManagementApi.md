@@ -1,26 +1,26 @@
 # AllegroApi\ParcelManagementApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**cancelParcel()**](ParcelManagementApi.md#cancelParcel) | **PUT** /parcel-management/parcel-cancel-commands/{commandId} | Cancel parcel
-[**createNewParcel()**](ParcelManagementApi.md#createNewParcel) | **PUT** /parcel-management/parcel-create-commands/{commandId} | Create a new parcel
-[**getAvailableDeliveryServices()**](ParcelManagementApi.md#getAvailableDeliveryServices) | **GET** /parcel-management/delivery-services | Get available delivery services
-[**getParcelCancellationStatus()**](ParcelManagementApi.md#getParcelCancellationStatus) | **GET** /parcel-management/parcel-cancel-commands/{commandId} | Get parcel cancellation status
-[**getParcelCreationStatus()**](ParcelManagementApi.md#getParcelCreationStatus) | **GET** /parcel-management/parcel-create-commands/{commandId} | Get parcel creation status
-[**getParcelDetails()**](ParcelManagementApi.md#getParcelDetails) | **GET** /parcel-management/parcels/{parcelId} | Get parcel details
-[**getParcelLabel()**](ParcelManagementApi.md#getParcelLabel) | **GET** /parcel-management/parcels/label | Get parcel label
-[**getParcelPickupStatus()**](ParcelManagementApi.md#getParcelPickupStatus) | **GET** /parcel-management/parcel-pickup-request-commands/{commandId} | Get parcel pickup status
-[**getParcelsPickupDateProposals()**](ParcelManagementApi.md#getParcelsPickupDateProposals) | **GET** /parcel-management/pickup-date-proposals | Get parcels pickup date proposals
-[**getParcelsProtocol()**](ParcelManagementApi.md#getParcelsProtocol) | **GET** /parcel-management/parcels/protocol | Get parcels protocol
-[**requestParcelPickup()**](ParcelManagementApi.md#requestParcelPickup) | **PUT** /parcel-management/parcel-pickup-request-commands/{commandId} | Request parcel pickup
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**cancelParcel()**](ParcelManagementApi.md#cancelParcel) | **PUT** /parcel-management/parcel-cancel-commands/{commandId} | Cancel parcel |
+| [**createNewParcel()**](ParcelManagementApi.md#createNewParcel) | **PUT** /parcel-management/parcel-create-commands/{commandId} | Create a new parcel |
+| [**getAvailableDeliveryServices()**](ParcelManagementApi.md#getAvailableDeliveryServices) | **GET** /parcel-management/delivery-services | Get available delivery services |
+| [**getParcelCancellationStatus()**](ParcelManagementApi.md#getParcelCancellationStatus) | **GET** /parcel-management/parcel-cancel-commands/{commandId} | Get parcel cancellation status |
+| [**getParcelCreationStatus()**](ParcelManagementApi.md#getParcelCreationStatus) | **GET** /parcel-management/parcel-create-commands/{commandId} | Get parcel creation status |
+| [**getParcelDetails()**](ParcelManagementApi.md#getParcelDetails) | **GET** /parcel-management/parcels/{parcelId} | Get parcel details |
+| [**getParcelLabel()**](ParcelManagementApi.md#getParcelLabel) | **GET** /parcel-management/parcels/label | Get parcel label |
+| [**getParcelPickupStatus()**](ParcelManagementApi.md#getParcelPickupStatus) | **GET** /parcel-management/parcel-pickup-request-commands/{commandId} | Get parcel pickup status |
+| [**getParcelsPickupDateProposals()**](ParcelManagementApi.md#getParcelsPickupDateProposals) | **GET** /parcel-management/pickup-date-proposals | Get parcels pickup date proposals |
+| [**getParcelsProtocol()**](ParcelManagementApi.md#getParcelsProtocol) | **GET** /parcel-management/parcels/protocol | Get parcels protocol |
+| [**requestParcelPickup()**](ParcelManagementApi.md#requestParcelPickup) | **PUT** /parcel-management/parcel-pickup-request-commands/{commandId} | Request parcel pickup |
 
 
 ## `cancelParcel()`
 
 ```php
-cancelParcel($command_id, $cancel_parcel_parameters): object
+cancelParcel($command_id, $cancel_parcel_parameters): \AllegroApi\Model\CancelParcel201Response
 ```
 
 Cancel parcel
@@ -57,14 +57,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command UUID. |
- **cancel_parcel_parameters** | [**\AllegroApi\Model\CancelParcelParameters**](../Model/CancelParcelParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command UUID. | |
+| **cancel_parcel_parameters** | [**\AllegroApi\Model\CancelParcelParameters**](../Model/CancelParcelParameters.md)|  | |
 
 ### Return type
 
-**object**
+[**\AllegroApi\Model\CancelParcel201Response**](../Model/CancelParcel201Response.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 ## `createNewParcel()`
 
 ```php
-createNewParcel($command_id, $parcel_creation_parameters): object
+createNewParcel($command_id, $parcel_creation_parameters): \AllegroApi\Model\CreateNewParcel201Response
 ```
 
 Create a new parcel
@@ -119,14 +119,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command UUID. |
- **parcel_creation_parameters** | [**\AllegroApi\Model\ParcelCreationParameters**](../Model/ParcelCreationParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command UUID. | |
+| **parcel_creation_parameters** | [**\AllegroApi\Model\ParcelCreationParameters**](../Model/ParcelCreationParameters.md)|  | |
 
 ### Return type
 
-**object**
+[**\AllegroApi\Model\CreateNewParcel201Response**](../Model/CreateNewParcel201Response.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ This endpoint does not need any parameter.
 ## `getParcelCancellationStatus()`
 
 ```php
-getParcelCancellationStatus($command_id): object
+getParcelCancellationStatus($command_id): \AllegroApi\Model\GetParcelCancellationStatus200Response
 ```
 
 Get parcel cancellation status
@@ -237,13 +237,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command UUID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command UUID. | |
 
 ### Return type
 
-**object**
+[**\AllegroApi\Model\GetParcelCancellationStatus200Response**](../Model/GetParcelCancellationStatus200Response.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 ## `getParcelCreationStatus()`
 
 ```php
-getParcelCreationStatus($command_id): object
+getParcelCreationStatus($command_id): \AllegroApi\Model\GetParcelCreationStatus200Response
 ```
 
 Get parcel creation status
@@ -297,13 +297,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command UUID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command UUID. | |
 
 ### Return type
 
-**object**
+[**\AllegroApi\Model\GetParcelCreationStatus200Response**](../Model/GetParcelCreationStatus200Response.md)
 
 ### Authorization
 
@@ -357,9 +357,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **parcel_id** | **string**| Id of parcel. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **parcel_id** | **string**| Id of parcel. | |
 
 ### Return type
 
@@ -418,14 +418,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **parcel_id** | **string**| Id of parcel. |
- **page_format** | **string**| Label page format. Only for PDF file. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **parcel_id** | **string**| Id of parcel. | |
+| **page_format** | **string**| Label page format. Only for PDF file. | [optional] |
 
 ### Return type
 
-[**\SplFileObject**](../Model/\SplFileObject.md)
+**\SplFileObject**
 
 ### Authorization
 
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 ## `getParcelPickupStatus()`
 
 ```php
-getParcelPickupStatus($command_id): object
+getParcelPickupStatus($command_id): \AllegroApi\Model\GetParcelPickupStatus200Response
 ```
 
 Get parcel pickup status
@@ -479,13 +479,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command UUID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command UUID. | |
 
 ### Return type
 
-**object**
+[**\AllegroApi\Model\GetParcelPickupStatus200Response**](../Model/GetParcelPickupStatus200Response.md)
 
 ### Authorization
 
@@ -540,10 +540,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **parcel_id** | [**string[]**](../Model/string.md)| Ids of parcels. Passing more than one value will search pickup dates for all of them separately. Example: &#x60;parcelId&#x3D;adc05c84-a9eb-4981-bbc0-773d8c0017e7&amp;parcelId&#x3D;adc05c84-a9eb-4981-bbc0-773d8c0017e8&#x60; - will return pickup date proposals for parcels with ID &#x60;adc05c84-a9eb-4981-bbc0-773d8c0017e7&#x60; and &#x60;adc05c84-a9eb-4981-bbc0-773d8c0017e8&#x60;. |
- **ready_date** | **\DateTime**| Date when parcels will be ready. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **parcel_id** | [**string[]**](../Model/string.md)| Ids of parcels. Passing more than one value will search pickup dates for all of them separately. Example: &#x60;parcelId&#x3D;adc05c84-a9eb-4981-bbc0-773d8c0017e7&amp;parcelId&#x3D;adc05c84-a9eb-4981-bbc0-773d8c0017e8&#x60; - will return pickup date proposals for parcels with ID &#x60;adc05c84-a9eb-4981-bbc0-773d8c0017e7&#x60; and &#x60;adc05c84-a9eb-4981-bbc0-773d8c0017e8&#x60;. | |
+| **ready_date** | **\DateTime**| Date when parcels will be ready. | [optional] |
 
 ### Return type
 
@@ -601,13 +601,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **parcel_id** | [**string[]**](../Model/string.md)| Ids of parcels. Passing more than one value will generate protocol for all of them. Example: &#x60;parcelId&#x3D;2c6d5ca1-e892-455f-ae24-89ba7c12abcd&amp;parcelId&#x3D;2c6d5ca1-e892-455f-ae24-89ba7c12abc1&#x60; - returns protocol for parcels with ID &#x60;2c6d5ca1-e892-455f-ae24-89ba7c12abcd&#x60; and &#x60;2c6d5ca1-e892-455f-ae24-89ba7c12abc1&#x60;. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **parcel_id** | [**string[]**](../Model/string.md)| Ids of parcels. Passing more than one value will generate protocol for all of them. Example: &#x60;parcelId&#x3D;2c6d5ca1-e892-455f-ae24-89ba7c12abcd&amp;parcelId&#x3D;2c6d5ca1-e892-455f-ae24-89ba7c12abc1&#x60; - returns protocol for parcels with ID &#x60;2c6d5ca1-e892-455f-ae24-89ba7c12abcd&#x60; and &#x60;2c6d5ca1-e892-455f-ae24-89ba7c12abc1&#x60;. | |
 
 ### Return type
 
-[**\SplFileObject**](../Model/\SplFileObject.md)
+**\SplFileObject**
 
 ### Authorization
 
@@ -625,7 +625,7 @@ Name | Type | Description  | Notes
 ## `requestParcelPickup()`
 
 ```php
-requestParcelPickup($command_id, $pickup_parcel_parameters): object
+requestParcelPickup($command_id, $pickup_parcel_parameters): \AllegroApi\Model\RequestParcelPickup201Response
 ```
 
 Request parcel pickup
@@ -662,14 +662,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command UUID. |
- **pickup_parcel_parameters** | [**\AllegroApi\Model\PickupParcelParameters**](../Model/PickupParcelParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command UUID. | |
+| **pickup_parcel_parameters** | [**\AllegroApi\Model\PickupParcelParameters**](../Model/PickupParcelParameters.md)|  | |
 
 ### Return type
 
-**object**
+[**\AllegroApi\Model\RequestParcelPickup201Response**](../Model/RequestParcelPickup201Response.md)
 
 ### Authorization
 

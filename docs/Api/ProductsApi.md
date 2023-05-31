@@ -1,15 +1,15 @@
 # AllegroApi\ProductsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getFlatProductParametersUsingGET()**](ProductsApi.md#getFlatProductParametersUsingGET) | **GET** /sale/categories/{categoryId}/product-parameters | Get product parameters available in given category
-[**getProductChangeProposal()**](ProductsApi.md#getProductChangeProposal) | **GET** /sale/products/change-proposals/{changeProposalId} | Get all data of the particular product changes proposal
-[**getSaleProduct()**](ProductsApi.md#getSaleProduct) | **GET** /sale/products/{productId} | Get all data of the particular product
-[**getSaleProducts()**](ProductsApi.md#getSaleProducts) | **GET** /sale/products | Get search products results
-[**productChangeProposal()**](ProductsApi.md#productChangeProposal) | **POST** /sale/products/{productId}/change-proposals | Propose changes in product
-[**proposeSaleProduct()**](ProductsApi.md#proposeSaleProduct) | **POST** /sale/product-proposals | Propose a product
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getFlatProductParametersUsingGET()**](ProductsApi.md#getFlatProductParametersUsingGET) | **GET** /sale/categories/{categoryId}/product-parameters | Get product parameters available in given category |
+| [**getProductChangeProposal()**](ProductsApi.md#getProductChangeProposal) | **GET** /sale/products/change-proposals/{changeProposalId} | Get all data of the particular product changes proposal |
+| [**getSaleProduct()**](ProductsApi.md#getSaleProduct) | **GET** /sale/products/{productId} | Get all data of the particular product |
+| [**getSaleProducts()**](ProductsApi.md#getSaleProducts) | **GET** /sale/products | Get search products results |
+| [**productChangeProposal()**](ProductsApi.md#productChangeProposal) | **POST** /sale/products/{productId}/change-proposals | Propose changes in product |
+| [**proposeSaleProduct()**](ProductsApi.md#proposeSaleProduct) | **POST** /sale/product-proposals | Propose a product |
 
 
 ## `getFlatProductParametersUsingGET()`
@@ -29,10 +29,10 @@ Use this resource to get the list of product parameters available in given categ
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure OAuth2 access token for authorization: bearer-token-for-application
+// Configure OAuth2 access token for authorization: bearer-token-for-user
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: bearer-token-for-user
+// Configure OAuth2 access token for authorization: bearer-token-for-application
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -54,9 +54,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **category_id** | **string**| The category ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **category_id** | **string**| The category ID. | |
 
 ### Return type
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer-token-for-application](../../README.md#bearer-token-for-application), [bearer-token-for-user](../../README.md#bearer-token-for-user)
+[bearer-token-for-user](../../README.md#bearer-token-for-user), [bearer-token-for-application](../../README.md#bearer-token-for-application)
 
 ### HTTP request headers
 
@@ -114,9 +114,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **change_proposal_id** | **string**| The product changes proposal identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **change_proposal_id** | **string**| The product changes proposal identifier. | |
 
 ### Return type
 
@@ -177,12 +177,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_id** | **string**| The product identifier. |
- **category_id** | **string**| The similar category identifier. You can choose a category from &#39;similar categories&#39; to filter the list of parameters available in the category context. | [optional]
- **include_drafts** | **bool**| Return also if product is in draft state. | [optional]
- **language** | **string**| The language version of product. You can indicate the language for the returned product data. At present we support: \&quot;pl-PL\&quot;, \&quot;cs-CZ\&quot;, \&quot;en-US\&quot; and \&quot;uk-UA\&quot;. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **product_id** | **string**| The product identifier. | |
+| **category_id** | **string**| The similar category identifier. You can choose a category from &#39;similar categories&#39; to filter the list of parameters available in the category context. | [optional] |
+| **include_drafts** | **bool**| Return also if product is in draft state. | [optional] |
+| **language** | **string**| The language version of product. You can indicate the language for the returned product data. At present we support: \&quot;pl-PL\&quot;, \&quot;cs-CZ\&quot;, \&quot;en-US\&quot; and \&quot;uk-UA\&quot;. | [optional] |
 
 ### Return type
 
@@ -233,7 +233,7 @@ $phrase = 'phrase_example'; // string | Search phrase.
 $mode = 'mode_example'; // string | Search mode. If not specified, we are searching by GTIN, MPN, product's name, parameters, etc.  - `GTIN` - restricts the search filtering to GTINs (Global Trade Item Number), e.g. EAN, ISBN, UPC.  - `MPN` - restricts the search filtering to MPNs (Manufacturer Part Number).
 $language = en-US; // string | Language indicates the language for searching products. Allows to specify the language of the given phrase. At present we support: \"pl-PL\" and \"cs-CZ\".
 $category_id = 'category_id_example'; // string | The category identifier to filter results. This can only be used when searching by phrase.
-$dynamic_filters = array('key' => 'dynamic_filters_example'); // map[string,string] | You can filter and customize your search results to find exactly what you need by applying filters ids and their dictionary values to query according to the flowing pattern: id=value. When the filter definition looks like:   ````   {     \"id\": \"127448\",     \"name\": \"Kolor\",     \"type\": \"SINGLE\",     \"values\": [       {         \"name\": \"biały\",         \"value\": \"2\"       },       {         \"name\": \"czarny\",         \"value\": \"1\" }     ]   }   ```` You can use 'Kolor' filter to query results, i.e.:   * `127448=2` for \"biały\"   * `127448=1` for \"czarny\".
+$dynamic_filters = array('key' => 'dynamic_filters_example'); // array<string,string> | You can filter and customize your search results to find exactly what you need by applying filters ids and their dictionary values to query according to the flowing pattern: id=value. When the filter definition looks like:   ````   {     \"id\": \"127448\",     \"name\": \"Kolor\",     \"type\": \"SINGLE\",     \"values\": [       {         \"name\": \"biały\",         \"value\": \"2\"       },       {         \"name\": \"czarny\",         \"value\": \"1\" }     ]   }   ```` You can use 'Kolor' filter to query results, i.e.:   * `127448=2` for \"biały\"   * `127448=1` for \"czarny\".
 $page_id = 'page_id_example'; // string | A \"cursor\" to the next set of results.
 $search_features = 'search_features_example'; // string | Enables additional search options: - *SIMILAR_CATEGORIES* - searching in the indicated category (category.id) and in 'similar categories' (works only if category.id is a leaf category).
 $include_drafts = True; // bool | Include products in draft state.
@@ -248,17 +248,17 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ean** | **string**| The EAN values can include EAN, ISBN, and UPC identifier types. Parameter is depracated and will be removed in the future. Please use combination of phrase and mode (&#x60;GTIN&#x60;) parameters instead. | [optional]
- **phrase** | **string**| Search phrase. | [optional]
- **mode** | **string**| Search mode. If not specified, we are searching by GTIN, MPN, product&#39;s name, parameters, etc.  - &#x60;GTIN&#x60; - restricts the search filtering to GTINs (Global Trade Item Number), e.g. EAN, ISBN, UPC.  - &#x60;MPN&#x60; - restricts the search filtering to MPNs (Manufacturer Part Number). | [optional]
- **language** | **string**| Language indicates the language for searching products. Allows to specify the language of the given phrase. At present we support: \&quot;pl-PL\&quot; and \&quot;cs-CZ\&quot;. | [optional]
- **category_id** | **string**| The category identifier to filter results. This can only be used when searching by phrase. | [optional]
- **dynamic_filters** | [**map[string,string]**](../Model/string.md)| You can filter and customize your search results to find exactly what you need by applying filters ids and their dictionary values to query according to the flowing pattern: id&#x3D;value. When the filter definition looks like:   &#x60;&#x60;&#x60;&#x60;   {     \&quot;id\&quot;: \&quot;127448\&quot;,     \&quot;name\&quot;: \&quot;Kolor\&quot;,     \&quot;type\&quot;: \&quot;SINGLE\&quot;,     \&quot;values\&quot;: [       {         \&quot;name\&quot;: \&quot;biały\&quot;,         \&quot;value\&quot;: \&quot;2\&quot;       },       {         \&quot;name\&quot;: \&quot;czarny\&quot;,         \&quot;value\&quot;: \&quot;1\&quot; }     ]   }   &#x60;&#x60;&#x60;&#x60; You can use &#39;Kolor&#39; filter to query results, i.e.:   * &#x60;127448&#x3D;2&#x60; for \&quot;biały\&quot;   * &#x60;127448&#x3D;1&#x60; for \&quot;czarny\&quot;. | [optional]
- **page_id** | **string**| A \&quot;cursor\&quot; to the next set of results. | [optional]
- **search_features** | **string**| Enables additional search options: - *SIMILAR_CATEGORIES* - searching in the indicated category (category.id) and in &#39;similar categories&#39; (works only if category.id is a leaf category). | [optional]
- **include_drafts** | **bool**| Include products in draft state. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ean** | **string**| The EAN values can include EAN, ISBN, and UPC identifier types. Parameter is depracated and will be removed in the future. Please use combination of phrase and mode (&#x60;GTIN&#x60;) parameters instead. | [optional] |
+| **phrase** | **string**| Search phrase. | [optional] |
+| **mode** | **string**| Search mode. If not specified, we are searching by GTIN, MPN, product&#39;s name, parameters, etc.  - &#x60;GTIN&#x60; - restricts the search filtering to GTINs (Global Trade Item Number), e.g. EAN, ISBN, UPC.  - &#x60;MPN&#x60; - restricts the search filtering to MPNs (Manufacturer Part Number). | [optional] |
+| **language** | **string**| Language indicates the language for searching products. Allows to specify the language of the given phrase. At present we support: \&quot;pl-PL\&quot; and \&quot;cs-CZ\&quot;. | [optional] |
+| **category_id** | **string**| The category identifier to filter results. This can only be used when searching by phrase. | [optional] |
+| **dynamic_filters** | [**array<string,string>**](../Model/string.md)| You can filter and customize your search results to find exactly what you need by applying filters ids and their dictionary values to query according to the flowing pattern: id&#x3D;value. When the filter definition looks like:   &#x60;&#x60;&#x60;&#x60;   {     \&quot;id\&quot;: \&quot;127448\&quot;,     \&quot;name\&quot;: \&quot;Kolor\&quot;,     \&quot;type\&quot;: \&quot;SINGLE\&quot;,     \&quot;values\&quot;: [       {         \&quot;name\&quot;: \&quot;biały\&quot;,         \&quot;value\&quot;: \&quot;2\&quot;       },       {         \&quot;name\&quot;: \&quot;czarny\&quot;,         \&quot;value\&quot;: \&quot;1\&quot; }     ]   }   &#x60;&#x60;&#x60;&#x60; You can use &#39;Kolor&#39; filter to query results, i.e.:   * &#x60;127448&#x3D;2&#x60; for \&quot;biały\&quot;   * &#x60;127448&#x3D;1&#x60; for \&quot;czarny\&quot;. | [optional] |
+| **page_id** | **string**| A \&quot;cursor\&quot; to the next set of results. | [optional] |
+| **search_features** | **string**| Enables additional search options: - *SIMILAR_CATEGORIES* - searching in the indicated category (category.id) and in &#39;similar categories&#39; (works only if category.id is a leaf category). | [optional] |
+| **include_drafts** | **bool**| Include products in draft state. | [optional] |
 
 ### Return type
 
@@ -317,10 +317,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_id** | **string**| The product identifier. |
- **product_change_proposal_request** | [**\AllegroApi\Model\ProductChangeProposalRequest**](../Model/ProductChangeProposalRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **product_id** | **string**| The product identifier. | |
+| **product_change_proposal_request** | [**\AllegroApi\Model\ProductChangeProposalRequest**](../Model/ProductChangeProposalRequest.md)|  | |
 
 ### Return type
 
@@ -378,9 +378,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_proposals_request** | [**\AllegroApi\Model\ProductProposalsRequest**](../Model/ProductProposalsRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **product_proposals_request** | [**\AllegroApi\Model\ProductProposalsRequest**](../Model/ProductProposalsRequest.md)|  | |
 
 ### Return type
 

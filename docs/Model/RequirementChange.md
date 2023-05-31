@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [default to 'REQUIREMENT_CHANGE']
+**type** | **string** |  | [optional] [default to 'REQUIREMENT_CHANGE']
 **category** | [**\AllegroApi\Model\CategoryParametersScheduledBaseChangeCategory**](CategoryParametersScheduledBaseChangeCategory.md) |  |
 **parameter** | [**\AllegroApi\Model\CategoryParametersScheduledBaseChangeParameter**](CategoryParametersScheduledBaseChangeParameter.md) |  |
 

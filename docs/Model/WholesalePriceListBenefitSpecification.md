@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [default to 'WHOLESALE_PRICE_LIST']
+**type** | **string** |  | [optional] [default to 'WHOLESALE_PRICE_LIST']
 **name** | **string** | Price list name (visible to you only). |
 **thresholds** | [**\AllegroApi\Model\WholesalePriceListBenefitSpecificationAllOfThresholds[]**](WholesalePriceListBenefitSpecificationAllOfThresholds.md) | List of discount thresholds. A threshold with a higher quantity.lowerBound than another must also have a higher discount.percentage. |
 

@@ -1,16 +1,16 @@
 # AllegroApi\BadgeCampaignsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**badgeApplicationsGetAll()**](BadgeCampaignsApi.md#badgeApplicationsGetAll) | **GET** /sale/badge-applications | Get a list of badge applications
-[**badgeApplicationsGetOne()**](BadgeCampaignsApi.md#badgeApplicationsGetOne) | **GET** /sale/badge-applications/{applicationId} | Get a badge application details
-[**badgeCampaignsGetAll()**](BadgeCampaignsApi.md#badgeCampaignsGetAll) | **GET** /sale/badge-campaigns | Get a list of available badge campaigns
-[**badgeOperationsGetOne()**](BadgeCampaignsApi.md#badgeOperationsGetOne) | **GET** /sale/badge-operations/{operationId} | Get badge operation details
-[**getBadges()**](BadgeCampaignsApi.md#getBadges) | **GET** /sale/badges | Get a list of badges
-[**patchBadge()**](BadgeCampaignsApi.md#patchBadge) | **PATCH** /sale/badges/offers/{offerId}/campaigns/{campaignId} | Update campaign badge for the given offer
-[**postBadges()**](BadgeCampaignsApi.md#postBadges) | **POST** /sale/badges | Apply for badge in selected offer
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**badgeApplicationsGetAll()**](BadgeCampaignsApi.md#badgeApplicationsGetAll) | **GET** /sale/badge-applications | Get a list of badge applications |
+| [**badgeApplicationsGetOne()**](BadgeCampaignsApi.md#badgeApplicationsGetOne) | **GET** /sale/badge-applications/{applicationId} | Get a badge application details |
+| [**badgeCampaignsGetAll()**](BadgeCampaignsApi.md#badgeCampaignsGetAll) | **GET** /sale/badge-campaigns | Get a list of available badge campaigns |
+| [**badgeOperationsGetOne()**](BadgeCampaignsApi.md#badgeOperationsGetOne) | **GET** /sale/badge-operations/{operationId} | Get badge operation details |
+| [**getBadges()**](BadgeCampaignsApi.md#getBadges) | **GET** /sale/badges | Get a list of badges |
+| [**patchBadge()**](BadgeCampaignsApi.md#patchBadge) | **PATCH** /sale/badges/offers/{offerId}/campaigns/{campaignId} | Update campaign badge for the given offer |
+| [**postBadges()**](BadgeCampaignsApi.md#postBadges) | **POST** /sale/badges | Apply for badge in selected offer |
 
 
 ## `badgeApplicationsGetAll()`
@@ -55,12 +55,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| Campaign ID. | [optional]
- **offer_id** | **string**| Offer ID. | [optional]
- **offset** | **int**| Offset. | [optional]
- **limit** | **int**| The maximum number of applications returned in the response. | [optional] [default to 50]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | **string**| Campaign ID. | [optional] |
+| **offer_id** | **string**| Offer ID. | [optional] |
+| **offset** | **int**| Offset. | [optional] |
+| **limit** | **int**| The maximum number of applications returned in the response. | [optional] [default to 50] |
 
 ### Return type
 
@@ -118,9 +118,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_id** | **string**| Badge application ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **application_id** | **string**| Badge application ID. | |
 
 ### Return type
 
@@ -235,9 +235,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **operation_id** | **string**| Badge operation ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **operation_id** | **string**| Badge operation ID. | |
 
 ### Return type
 
@@ -297,11 +297,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer ID. | [optional]
- **offset** | **int**| Offset. | [optional]
- **limit** | **int**| The maximum number of badges returned in the response. | [optional] [default to 50]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer ID. | [optional] |
+| **offset** | **int**| Offset. | [optional] |
+| **limit** | **int**| The maximum number of badges returned in the response. | [optional] [default to 50] |
 
 ### Return type
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 ## `patchBadge()`
 
 ```php
-patchBadge($offer_id, $campaign_id, $badge_patch_request): \AllegroApi\Model\InlineResponse202
+patchBadge($offer_id, $campaign_id, $badge_patch_request): \AllegroApi\Model\PatchBadge202Response
 ```
 
 Update campaign badge for the given offer
@@ -361,15 +361,15 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer ID. |
- **campaign_id** | **string**| Campaign ID. |
- **badge_patch_request** | [**\AllegroApi\Model\BadgePatchRequest**](../Model/BadgePatchRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer ID. | |
+| **campaign_id** | **string**| Campaign ID. | |
+| **badge_patch_request** | [**\AllegroApi\Model\BadgePatchRequest**](../Model/BadgePatchRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\AllegroApi\Model\InlineResponse202**](../Model/InlineResponse202.md)
+[**\AllegroApi\Model\PatchBadge202Response**](../Model/PatchBadge202Response.md)
 
 ### Authorization
 
@@ -423,9 +423,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **badge_application_request** | [**\AllegroApi\Model\BadgeApplicationRequest**](../Model/BadgeApplicationRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **badge_application_request** | [**\AllegroApi\Model\BadgeApplicationRequest**](../Model/BadgeApplicationRequest.md)|  | [optional] |
 
 ### Return type
 

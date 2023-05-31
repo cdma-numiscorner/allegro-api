@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [default to 'ORDER_FIXED_DISCOUNT']
+**type** | **string** |  | [optional] [default to 'ORDER_FIXED_DISCOUNT']
 **value** | [**\AllegroApi\Model\Price**](Price.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

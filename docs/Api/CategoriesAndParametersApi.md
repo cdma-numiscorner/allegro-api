@@ -1,15 +1,15 @@
 # AllegroApi\CategoriesAndParametersApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**categorySuggestionUsingGET()**](CategoriesAndParametersApi.md#categorySuggestionUsingGET) | **GET** /sale/matching-categories | Get categories suggestions
-[**getCategoriesUsingGET()**](CategoriesAndParametersApi.md#getCategoriesUsingGET) | **GET** /sale/categories | Get IDs of Allegro categories
-[**getCategoryEventsUsingGET1()**](CategoriesAndParametersApi.md#getCategoryEventsUsingGET1) | **GET** /sale/category-events | Get changes in categories
-[**getCategoryParametersScheduledChangesUsingGET1()**](CategoriesAndParametersApi.md#getCategoryParametersScheduledChangesUsingGET1) | **GET** /sale/category-parameters-scheduled-changes | Get planned changes in category parameters
-[**getCategoryUsingGET1()**](CategoriesAndParametersApi.md#getCategoryUsingGET1) | **GET** /sale/categories/{categoryId} | Get a category by ID
-[**getFlatParametersUsingGET2()**](CategoriesAndParametersApi.md#getFlatParametersUsingGET2) | **GET** /sale/categories/{categoryId}/parameters | Get parameters supported by a category
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**categorySuggestionUsingGET()**](CategoriesAndParametersApi.md#categorySuggestionUsingGET) | **GET** /sale/matching-categories | Get categories suggestions |
+| [**getCategoriesUsingGET()**](CategoriesAndParametersApi.md#getCategoriesUsingGET) | **GET** /sale/categories | Get IDs of Allegro categories |
+| [**getCategoryEventsUsingGET1()**](CategoriesAndParametersApi.md#getCategoryEventsUsingGET1) | **GET** /sale/category-events | Get changes in categories |
+| [**getCategoryParametersScheduledChangesUsingGET1()**](CategoriesAndParametersApi.md#getCategoryParametersScheduledChangesUsingGET1) | **GET** /sale/category-parameters-scheduled-changes | Get planned changes in category parameters |
+| [**getCategoryUsingGET1()**](CategoriesAndParametersApi.md#getCategoryUsingGET1) | **GET** /sale/categories/{categoryId} | Get a category by ID |
+| [**getFlatParametersUsingGET2()**](CategoriesAndParametersApi.md#getFlatParametersUsingGET2) | **GET** /sale/categories/{categoryId}/parameters | Get parameters supported by a category |
 
 
 ## `categorySuggestionUsingGET()`
@@ -51,9 +51,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **string**| Product name for which you want to get suggested categories. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **name** | **string**| Product name for which you want to get suggested categories. | |
 
 ### Return type
 
@@ -89,10 +89,10 @@ Use this resource to traverse the Allegro categories tree. It returns the list o
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure OAuth2 access token for authorization: bearer-token-for-application
+// Configure OAuth2 access token for authorization: bearer-token-for-user
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: bearer-token-for-user
+// Configure OAuth2 access token for authorization: bearer-token-for-application
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -114,9 +114,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **parent_id** | **string**| The ID of the category which children should be returned. If omitted, the list of main Allegro categories will be returned. | [optional] [default to &#39;954b95b6-43cf-4104-8354-dea4d9b10ddf&#39;]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **parent_id** | **string**| The ID of the category which children should be returned. If omitted, the list of main Allegro categories will be returned. | [optional] [default to &#39;954b95b6-43cf-4104-8354-dea4d9b10ddf&#39;] |
 
 ### Return type
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer-token-for-application](../../README.md#bearer-token-for-application), [bearer-token-for-user](../../README.md#bearer-token-for-user)
+[bearer-token-for-user](../../README.md#bearer-token-for-user), [bearer-token-for-application](../../README.md#bearer-token-for-application)
 
 ### HTTP request headers
 
@@ -152,10 +152,10 @@ Use this resource to get information about changes in categories. It returns cha
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure OAuth2 access token for authorization: bearer-token-for-application
+// Configure OAuth2 access token for authorization: bearer-token-for-user
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: bearer-token-for-user
+// Configure OAuth2 access token for authorization: bearer-token-for-application
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -179,11 +179,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **from** | **string**| The ID of the last seen event. Changes that occurred after the given event will be returned. | [optional]
- **limit** | **int**| The number of events that will be returned in the response. | [optional] [default to 100]
- **type** | [**string[]**](../Model/string.md)| The types of events that will be returned in the response. All types of events are returned by default. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **from** | **string**| The ID of the last seen event. Changes that occurred after the given event will be returned. | [optional] |
+| **limit** | **int**| The number of events that will be returned in the response. | [optional] [default to 100] |
+| **type** | [**string[]**](../Model/string.md)| The types of events that will be returned in the response. All types of events are returned by default. | [optional] |
 
 ### Return type
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer-token-for-application](../../README.md#bearer-token-for-application), [bearer-token-for-user](../../README.md#bearer-token-for-user)
+[bearer-token-for-user](../../README.md#bearer-token-for-user), [bearer-token-for-application](../../README.md#bearer-token-for-application)
 
 ### HTTP request headers
 
@@ -219,10 +219,10 @@ Use this resource to get information about planned changes in category parameter
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure OAuth2 access token for authorization: bearer-token-for-application
+// Configure OAuth2 access token for authorization: bearer-token-for-user
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: bearer-token-for-user
+// Configure OAuth2 access token for authorization: bearer-token-for-application
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -250,15 +250,15 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **scheduled_for_gte** | **\DateTime**| The minimum date and time from which the change will be effective from in ISO 8601 format. Should be greater than the current date time and less than 3 months from the current date. | [optional]
- **scheduled_for_lte** | **\DateTime**| The maximum date and time from which the change will be effective from in ISO 8601 format. Should be greater than the current date time and less than 3 months from the current date. | [optional]
- **scheduled_at_gte** | **\DateTime**| The minimum date and time at which the change was scheduled in ISO 8601 format. | [optional]
- **scheduled_at_lte** | **\DateTime**| The maximum date and time at which the change was scheduled in ISO 8601 format. | [optional]
- **type** | [**string[]**](../Model/string.md)| The types of changes that will be returned in the response. All types of changes are returned by default. | [optional]
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
- **limit** | **int**| The limit of elements in the response. | [optional] [default to 100]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scheduled_for_gte** | **\DateTime**| The minimum date and time from which the change will be effective from in ISO 8601 format. Should be greater than the current date time and less than 3 months from the current date. | [optional] |
+| **scheduled_for_lte** | **\DateTime**| The maximum date and time from which the change will be effective from in ISO 8601 format. Should be greater than the current date time and less than 3 months from the current date. | [optional] |
+| **scheduled_at_gte** | **\DateTime**| The minimum date and time at which the change was scheduled in ISO 8601 format. | [optional] |
+| **scheduled_at_lte** | **\DateTime**| The maximum date and time at which the change was scheduled in ISO 8601 format. | [optional] |
+| **type** | [**string[]**](../Model/string.md)| The types of changes that will be returned in the response. All types of changes are returned by default. | [optional] |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
+| **limit** | **int**| The limit of elements in the response. | [optional] [default to 100] |
 
 ### Return type
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer-token-for-application](../../README.md#bearer-token-for-application), [bearer-token-for-user](../../README.md#bearer-token-for-user)
+[bearer-token-for-user](../../README.md#bearer-token-for-user), [bearer-token-for-application](../../README.md#bearer-token-for-application)
 
 ### HTTP request headers
 
@@ -294,10 +294,10 @@ Use this resource to get the details of a specific category. Read more: <a href=
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure OAuth2 access token for authorization: bearer-token-for-application
+// Configure OAuth2 access token for authorization: bearer-token-for-user
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: bearer-token-for-user
+// Configure OAuth2 access token for authorization: bearer-token-for-application
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -319,9 +319,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **category_id** | **string**| The category ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **category_id** | **string**| The category ID. | |
 
 ### Return type
 
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer-token-for-application](../../README.md#bearer-token-for-application), [bearer-token-for-user](../../README.md#bearer-token-for-user)
+[bearer-token-for-user](../../README.md#bearer-token-for-user), [bearer-token-for-application](../../README.md#bearer-token-for-application)
 
 ### HTTP request headers
 
@@ -357,10 +357,10 @@ Use this resource to get the list of parameters that are supported by the given 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure OAuth2 access token for authorization: bearer-token-for-application
+// Configure OAuth2 access token for authorization: bearer-token-for-user
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: bearer-token-for-user
+// Configure OAuth2 access token for authorization: bearer-token-for-application
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -382,9 +382,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **category_id** | **string**| The category ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **category_id** | **string**| The category ID. | |
 
 ### Return type
 
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer-token-for-application](../../README.md#bearer-token-for-application), [bearer-token-for-user](../../README.md#bearer-token-for-user)
+[bearer-token-for-user](../../README.md#bearer-token-for-user), [bearer-token-for-application](../../README.md#bearer-token-for-application)
 
 ### HTTP request headers
 

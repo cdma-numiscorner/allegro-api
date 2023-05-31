@@ -10,15 +10,8 @@ For more information, please visit [https://github.com/allegro/allegro-api/issue
 
 ### Requirements
 
-PHP 7.2 and later.
-
-### REGENERATE THE PACKAGE
-
-```
-docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli:v5.0.1 generate     -i https://developer.allegro.pl/swagger.yaml     -g php  --git-user-id cdma-numiscorner --git-host github.com --git-repo-id allegro-api --invoker-package 'AllegroApi' --artifact-version 1.0 --release-note "Initial commit" -o /local
-```
-
-
+PHP 7.4 and later.
+Should also work with PHP 8.0.
 
 ### Composer
 
@@ -300,6 +293,7 @@ Class | Method | HTTP request | Description
 *RebatesAndPromotionsApi* | [**getPromotionUsingGET**](docs/Api/RebatesAndPromotionsApi.md#getpromotionusingget) | **GET** /sale/loyalty/promotions/{promotionId} | Get a promotion data by id
 *RebatesAndPromotionsApi* | [**listSellerPromotionsUsingGET1**](docs/Api/RebatesAndPromotionsApi.md#listsellerpromotionsusingget1) | **GET** /sale/loyalty/promotions | Get the user&#39;s list of promotions
 *RebatesAndPromotionsApi* | [**updatePromotionUsingPUT**](docs/Api/RebatesAndPromotionsApi.md#updatepromotionusingput) | **PUT** /sale/loyalty/promotions/{promotionId} | Modify a promotion
+*SelectionInsightsApi* | [**getSaleSelectionInsights**](docs/Api/SelectionInsightsApi.md#getsaleselectioninsights) | **GET** /sale/selection-insights | [BETA] Get selection insights.
 *SizeTablesApi* | [**createTableUsingPOST**](docs/Api/SizeTablesApi.md#createtableusingpost) | **POST** /sale/size-tables | Create a size table
 *SizeTablesApi* | [**getTableUsingGET**](docs/Api/SizeTablesApi.md#gettableusingget) | **GET** /sale/size-tables/{tableId} | Get a size table
 *SizeTablesApi* | [**getTablesTemplatesUsingGET**](docs/Api/SizeTablesApi.md#gettablestemplatesusingget) | **GET** /sale/size-tables-templates | Get the size tables templates
@@ -322,6 +316,12 @@ Class | Method | HTTP request | Description
 - [AdditionalMarketplacePublicationState](docs/Model/AdditionalMarketplacePublicationState.md)
 - [AdditionalMarketplacePublicationStatus](docs/Model/AdditionalMarketplacePublicationStatus.md)
 - [AdditionalMarketplaceSellingMode](docs/Model/AdditionalMarketplaceSellingMode.md)
+- [AdditionalMarketplacesRequestValue](docs/Model/AdditionalMarketplacesRequestValue.md)
+- [AdditionalMarketplacesRequestValueSellingMode](docs/Model/AdditionalMarketplacesRequestValueSellingMode.md)
+- [AdditionalMarketplacesRequestValueSellingModePrice](docs/Model/AdditionalMarketplacesRequestValueSellingModePrice.md)
+- [AdditionalMarketplacesResponseValue](docs/Model/AdditionalMarketplacesResponseValue.md)
+- [AdditionalMarketplacesResponseValuePublication](docs/Model/AdditionalMarketplacesResponseValuePublication.md)
+- [AdditionalMarketplacesResponseValueSellingMode](docs/Model/AdditionalMarketplacesResponseValueSellingMode.md)
 - [AdditionalMarketplacesVisibility](docs/Model/AdditionalMarketplacesVisibility.md)
 - [AdditionalServiceDefinitionRequest](docs/Model/AdditionalServiceDefinitionRequest.md)
 - [AdditionalServiceGroupTranslation](docs/Model/AdditionalServiceGroupTranslation.md)
@@ -346,6 +346,12 @@ Class | Method | HTTP request | Description
 - [AfterSalesServicesAddress](docs/Model/AfterSalesServicesAddress.md)
 - [AfterSalesServicesAttachment](docs/Model/AfterSalesServicesAttachment.md)
 - [AfterSalesServicesProductOfferRequest](docs/Model/AfterSalesServicesProductOfferRequest.md)
+- [AfterSalesServicesProductOfferRequestImpliedWarranty](docs/Model/AfterSalesServicesProductOfferRequestImpliedWarranty.md)
+- [AfterSalesServicesProductOfferRequestImpliedWarrantyAllOf](docs/Model/AfterSalesServicesProductOfferRequestImpliedWarrantyAllOf.md)
+- [AfterSalesServicesProductOfferRequestReturnPolicy](docs/Model/AfterSalesServicesProductOfferRequestReturnPolicy.md)
+- [AfterSalesServicesProductOfferRequestReturnPolicyAllOf](docs/Model/AfterSalesServicesProductOfferRequestReturnPolicyAllOf.md)
+- [AfterSalesServicesProductOfferRequestWarranty](docs/Model/AfterSalesServicesProductOfferRequestWarranty.md)
+- [AfterSalesServicesProductOfferRequestWarrantyAllOf](docs/Model/AfterSalesServicesProductOfferRequestWarrantyAllOf.md)
 - [AllegroCarrier](docs/Model/AllegroCarrier.md)
 - [AllegroMarketplaces](docs/Model/AllegroMarketplaces.md)
 - [AllegroParcelTrackingHistory](docs/Model/AllegroParcelTrackingHistory.md)
@@ -353,10 +359,10 @@ Class | Method | HTTP request | Description
 - [AllegroParcelTrackingStatus](docs/Model/AllegroParcelTrackingStatus.md)
 - [AllegroPickupDropOffPoint](docs/Model/AllegroPickupDropOffPoint.md)
 - [AllegroPickupDropOffPointAddress](docs/Model/AllegroPickupDropOffPointAddress.md)
-- [AllegroPickupDropOffPointOpening](docs/Model/AllegroPickupDropOffPointOpening.md)
-- [AllegroPickupDropOffPointPayments](docs/Model/AllegroPickupDropOffPointPayments.md)
-- [AllegroPickupDropOffPointRestrictions](docs/Model/AllegroPickupDropOffPointRestrictions.md)
-- [AllegroPickupDropOffPointServices](docs/Model/AllegroPickupDropOffPointServices.md)
+- [AllegroPickupDropOffPointOpeningInner](docs/Model/AllegroPickupDropOffPointOpeningInner.md)
+- [AllegroPickupDropOffPointPaymentsInner](docs/Model/AllegroPickupDropOffPointPaymentsInner.md)
+- [AllegroPickupDropOffPointRestrictionsInner](docs/Model/AllegroPickupDropOffPointRestrictionsInner.md)
+- [AllegroPickupDropOffPointServicesInner](docs/Model/AllegroPickupDropOffPointServicesInner.md)
 - [AllegroPickupDropOffPointsResponse](docs/Model/AllegroPickupDropOffPointsResponse.md)
 - [AllegroPricesChangeRequest](docs/Model/AllegroPricesChangeRequest.md)
 - [AllegroPricesConsentChangeResponse](docs/Model/AllegroPricesConsentChangeResponse.md)
@@ -412,6 +418,8 @@ Class | Method | HTTP request | Description
 - [BadgesList](docs/Model/BadgesList.md)
 - [BaseOperation](docs/Model/BaseOperation.md)
 - [BaseSaleProductResponseDto](docs/Model/BaseSaleProductResponseDto.md)
+- [BaseSaleProductResponseDtoCategory](docs/Model/BaseSaleProductResponseDtoCategory.md)
+- [BaseSaleProductResponseDtoCategoryAllOf](docs/Model/BaseSaleProductResponseDtoCategoryAllOf.md)
 - [BasicDefinitionResponse](docs/Model/BasicDefinitionResponse.md)
 - [Benefit](docs/Model/Benefit.md)
 - [BenefitSpecification](docs/Model/BenefitSpecification.md)
@@ -442,6 +450,7 @@ Class | Method | HTTP request | Description
 - [CampaignRefusalReason](docs/Model/CampaignRefusalReason.md)
 - [CampaignRequestDto](docs/Model/CampaignRequestDto.md)
 - [CampaignResponseDto](docs/Model/CampaignResponseDto.md)
+- [CancelParcel201Response](docs/Model/CancelParcel201Response.md)
 - [CancelParcelParameters](docs/Model/CancelParcelParameters.md)
 - [Caption](docs/Model/Caption.md)
 - [CarrierParcelTrackingResponse](docs/Model/CarrierParcelTrackingResponse.md)
@@ -494,7 +503,9 @@ Class | Method | HTTP request | Description
 - [CheckFormsNewOrderInvoiceId](docs/Model/CheckFormsNewOrderInvoiceId.md)
 - [CheckoutForm](docs/Model/CheckoutForm.md)
 - [CheckoutFormAddWaybillCreated](docs/Model/CheckoutFormAddWaybillCreated.md)
+- [CheckoutFormAddWaybillCreatedLineItemsInner](docs/Model/CheckoutFormAddWaybillCreatedLineItemsInner.md)
 - [CheckoutFormAddWaybillRequest](docs/Model/CheckoutFormAddWaybillRequest.md)
+- [CheckoutFormAddWaybillRequestLineItemsInner](docs/Model/CheckoutFormAddWaybillRequestLineItemsInner.md)
 - [CheckoutFormAdditionalService](docs/Model/CheckoutFormAdditionalService.md)
 - [CheckoutFormBuyerAddressReference](docs/Model/CheckoutFormBuyerAddressReference.md)
 - [CheckoutFormBuyerReference](docs/Model/CheckoutFormBuyerReference.md)
@@ -523,6 +534,7 @@ Class | Method | HTTP request | Description
 - [CheckoutFormReference](docs/Model/CheckoutFormReference.md)
 - [CheckoutFormStatus](docs/Model/CheckoutFormStatus.md)
 - [CheckoutFormSummary](docs/Model/CheckoutFormSummary.md)
+- [CheckoutFormSummaryTotalToPay](docs/Model/CheckoutFormSummaryTotalToPay.md)
 - [CheckoutForms](docs/Model/CheckoutForms.md)
 - [CheckoutFormsOrderInvoice](docs/Model/CheckoutFormsOrderInvoice.md)
 - [CheckoutFormsOrderInvoiceEptVerification](docs/Model/CheckoutFormsOrderInvoiceEptVerification.md)
@@ -561,15 +573,15 @@ Class | Method | HTTP request | Description
 - [CompatibilityListProductBasedProductOfferResponseAllOf](docs/Model/CompatibilityListProductBasedProductOfferResponseAllOf.md)
 - [CompatibilityListProductOfferResponse](docs/Model/CompatibilityListProductOfferResponse.md)
 - [CompatibilityListSupportedCategoriesDto](docs/Model/CompatibilityListSupportedCategoriesDto.md)
-- [CompatibilityListSupportedCategoriesDtoSupportedCategories](docs/Model/CompatibilityListSupportedCategoriesDtoSupportedCategories.md)
-- [CompatibilityListSupportedCategoriesDtoValidationRules](docs/Model/CompatibilityListSupportedCategoriesDtoValidationRules.md)
+- [CompatibilityListSupportedCategoriesDtoSupportedCategoriesInner](docs/Model/CompatibilityListSupportedCategoriesDtoSupportedCategoriesInner.md)
+- [CompatibilityListSupportedCategoriesDtoSupportedCategoriesInnerValidationRules](docs/Model/CompatibilityListSupportedCategoriesDtoSupportedCategoriesInnerValidationRules.md)
 - [CompatibilityListTextItem](docs/Model/CompatibilityListTextItem.md)
 - [CompatibilityListTextItemAllOf](docs/Model/CompatibilityListTextItemAllOf.md)
 - [CompatibleProductDto](docs/Model/CompatibleProductDto.md)
-- [CompatibleProductDtoAttributes](docs/Model/CompatibleProductDtoAttributes.md)
+- [CompatibleProductDtoAttributesInner](docs/Model/CompatibleProductDtoAttributesInner.md)
 - [CompatibleProductDtoGroup](docs/Model/CompatibleProductDtoGroup.md)
 - [CompatibleProductsGroupsDto](docs/Model/CompatibleProductsGroupsDto.md)
-- [CompatibleProductsGroupsDtoGroups](docs/Model/CompatibleProductsGroupsDtoGroups.md)
+- [CompatibleProductsGroupsDtoGroupsInner](docs/Model/CompatibleProductsGroupsDtoGroupsInner.md)
 - [CompatibleProductsListDto](docs/Model/CompatibleProductsListDto.md)
 - [CompensationOperation](docs/Model/CompensationOperation.md)
 - [CompensationOperationAllOf](docs/Model/CompensationOperationAllOf.md)
@@ -587,6 +599,7 @@ Class | Method | HTTP request | Description
 - [CourierBySellerShippingAllOf](docs/Model/CourierBySellerShippingAllOf.md)
 - [CreateAdvanceShipNoticeRequest](docs/Model/CreateAdvanceShipNoticeRequest.md)
 - [CreateAdvanceShipNoticeResponse](docs/Model/CreateAdvanceShipNoticeResponse.md)
+- [CreateAfterSalesServiceConditionsAttachmentUsingPOSTRequest](docs/Model/CreateAfterSalesServiceConditionsAttachmentUsingPOSTRequest.md)
 - [CreateLabelsCommand](docs/Model/CreateLabelsCommand.md)
 - [CreateLabelsCommandInput](docs/Model/CreateLabelsCommandInput.md)
 - [CreateLabelsCommandOnlyInput](docs/Model/CreateLabelsCommandOnlyInput.md)
@@ -598,6 +611,10 @@ Class | Method | HTTP request | Description
 - [CreateLabelsSuccessfulCommandOutput](docs/Model/CreateLabelsSuccessfulCommandOutput.md)
 - [CreateLabelsSuccessfulCommandOutputAllOf](docs/Model/CreateLabelsSuccessfulCommandOutputAllOf.md)
 - [CreateLabelsSuccessfulCommandOutputAllOfLabels](docs/Model/CreateLabelsSuccessfulCommandOutputAllOfLabels.md)
+- [CreateNewParcel201Response](docs/Model/CreateNewParcel201Response.md)
+- [CreateOfferUsingPOSTRequest](docs/Model/CreateOfferUsingPOSTRequest.md)
+- [CreateOfferUsingPOSTRequestAllOf](docs/Model/CreateOfferUsingPOSTRequestAllOf.md)
+- [CreateOfferUsingPOSTRequestAllOfCategory](docs/Model/CreateOfferUsingPOSTRequestAllOfCategory.md)
 - [CurrentPrice](docs/Model/CurrentPrice.md)
 - [CustomParameter](docs/Model/CustomParameter.md)
 - [CustomerReturn](docs/Model/CustomerReturn.md)
@@ -622,6 +639,8 @@ Class | Method | HTTP request | Description
 - [DeliveryFullAllOf](docs/Model/DeliveryFullAllOf.md)
 - [DeliveryMethodId](docs/Model/DeliveryMethodId.md)
 - [DeliveryProductOfferRequest](docs/Model/DeliveryProductOfferRequest.md)
+- [DeliveryProductOfferRequestShippingRates](docs/Model/DeliveryProductOfferRequestShippingRates.md)
+- [DeliveryProductOfferRequestShippingRatesAllOf](docs/Model/DeliveryProductOfferRequestShippingRatesAllOf.md)
 - [DeliveryProductOfferResponse](docs/Model/DeliveryProductOfferResponse.md)
 - [DeliveryService](docs/Model/DeliveryService.md)
 - [DeliveryServices](docs/Model/DeliveryServices.md)
@@ -691,9 +710,30 @@ Class | Method | HTTP request | Description
 - [FundraisingCampaign](docs/Model/FundraisingCampaign.md)
 - [FundraisingCampaigns](docs/Model/FundraisingCampaigns.md)
 - [GeneralReport](docs/Model/GeneralReport.md)
+- [GetAvailableDeliveryServices504Response](docs/Model/GetAvailableDeliveryServices504Response.md)
 - [GetBadgeCampaignsList](docs/Model/GetBadgeCampaignsList.md)
+- [GetListOfDeliveryMethodsUsingGET200Response](docs/Model/GetListOfDeliveryMethodsUsingGET200Response.md)
+- [GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInner](docs/Model/GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInner.md)
+- [GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraints](docs/Model/GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraints.md)
+- [GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraintsFirstItemRate](docs/Model/GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraintsFirstItemRate.md)
+- [GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraintsMaxPackageWeight](docs/Model/GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraintsMaxPackageWeight.md)
+- [GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraintsMaxQuantityPerPackage](docs/Model/GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraintsMaxQuantityPerPackage.md)
+- [GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraintsNextItemRate](docs/Model/GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraintsNextItemRate.md)
+- [GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraintsShippingTime](docs/Model/GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraintsShippingTime.md)
+- [GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraintsShippingTimeDefault](docs/Model/GetListOfDeliveryMethodsUsingGET200ResponseDeliveryMethodsInnerShippingRatesConstraintsShippingTimeDefault.md)
+- [GetListOfShippingRatestUsingGET200Response](docs/Model/GetListOfShippingRatestUsingGET200Response.md)
+- [GetListOfShippingRatestUsingGET200ResponseShippingRatesInner](docs/Model/GetListOfShippingRatestUsingGET200ResponseShippingRatesInner.md)
+- [GetOfferSmartClassificationGET400Response](docs/Model/GetOfferSmartClassificationGET400Response.md)
+- [GetOfferSmartClassificationGET403Response](docs/Model/GetOfferSmartClassificationGET403Response.md)
+- [GetParcelCancellationStatus200Response](docs/Model/GetParcelCancellationStatus200Response.md)
+- [GetParcelCreationStatus200Response](docs/Model/GetParcelCreationStatus200Response.md)
+- [GetParcelDetails404Response](docs/Model/GetParcelDetails404Response.md)
+- [GetParcelPickupStatus200Response](docs/Model/GetParcelPickupStatus200Response.md)
+- [GetRefundApplications200Response](docs/Model/GetRefundApplications200Response.md)
+- [GetRefundedPayments200Response](docs/Model/GetRefundedPayments200Response.md)
 - [GetSaleProductsResponse](docs/Model/GetSaleProductsResponse.md)
 - [GetSaleProductsResponseNextPage](docs/Model/GetSaleProductsResponseNextPage.md)
+- [GetSelectionInsightsResponse](docs/Model/GetSelectionInsightsResponse.md)
 - [HandlingUnit](docs/Model/HandlingUnit.md)
 - [Header](docs/Model/Header.md)
 - [ImageUrl](docs/Model/ImageUrl.md)
@@ -707,19 +747,6 @@ Class | Method | HTTP request | Description
 - [InitializeRefundAdditionalServices](docs/Model/InitializeRefundAdditionalServices.md)
 - [InitializeRefundDelivery](docs/Model/InitializeRefundDelivery.md)
 - [InitializeRefundOverpaid](docs/Model/InitializeRefundOverpaid.md)
-- [InlineObject](docs/Model/InlineObject.md)
-- [InlineResponse200](docs/Model/InlineResponse200.md)
-- [InlineResponse2001](docs/Model/InlineResponse2001.md)
-- [InlineResponse2001DeliveryMethods](docs/Model/InlineResponse2001DeliveryMethods.md)
-- [InlineResponse2001ShippingRatesConstraints](docs/Model/InlineResponse2001ShippingRatesConstraints.md)
-- [InlineResponse2001ShippingRatesConstraintsFirstItemRate](docs/Model/InlineResponse2001ShippingRatesConstraintsFirstItemRate.md)
-- [InlineResponse2001ShippingRatesConstraintsMaxPackageWeight](docs/Model/InlineResponse2001ShippingRatesConstraintsMaxPackageWeight.md)
-- [InlineResponse2001ShippingRatesConstraintsMaxQuantityPerPackage](docs/Model/InlineResponse2001ShippingRatesConstraintsMaxQuantityPerPackage.md)
-- [InlineResponse2001ShippingRatesConstraintsNextItemRate](docs/Model/InlineResponse2001ShippingRatesConstraintsNextItemRate.md)
-- [InlineResponse2001ShippingRatesConstraintsShippingTime](docs/Model/InlineResponse2001ShippingRatesConstraintsShippingTime.md)
-- [InlineResponse2001ShippingRatesConstraintsShippingTimeDefault](docs/Model/InlineResponse2001ShippingRatesConstraintsShippingTimeDefault.md)
-- [InlineResponse200ShippingRates](docs/Model/InlineResponse200ShippingRates.md)
-- [InlineResponse202](docs/Model/InlineResponse202.md)
 - [IntegerCategoryParameter](docs/Model/IntegerCategoryParameter.md)
 - [IntegerCategoryProductParameter](docs/Model/IntegerCategoryProductParameter.md)
 - [IntegerCategoryProductParameterAllOf](docs/Model/IntegerCategoryProductParameterAllOf.md)
@@ -784,6 +811,7 @@ Class | Method | HTTP request | Description
 - [ModificationPublication](docs/Model/ModificationPublication.md)
 - [ModificationPublicationMarketplaces](docs/Model/ModificationPublicationMarketplaces.md)
 - [ModificationPublicationMarketplacesAdditional](docs/Model/ModificationPublicationMarketplacesAdditional.md)
+- [ModificationPublicationMarketplacesAdditionalRemoveInner](docs/Model/ModificationPublicationMarketplacesAdditionalRemoveInner.md)
 - [MultiPackBenefitSpecification](docs/Model/MultiPackBenefitSpecification.md)
 - [MultiPackBenefitSpecificationAllOf](docs/Model/MultiPackBenefitSpecificationAllOf.md)
 - [MultiPackBenefitSpecificationAllOfConfiguration](docs/Model/MultiPackBenefitSpecificationAllOfConfiguration.md)
@@ -835,11 +863,14 @@ Class | Method | HTTP request | Description
 - [OfferListingDtoV1AdditionalMarketplace](docs/Model/OfferListingDtoV1AdditionalMarketplace.md)
 - [OfferListingDtoV1AdditionalMarketplacePublication](docs/Model/OfferListingDtoV1AdditionalMarketplacePublication.md)
 - [OfferListingDtoV1AdditionalMarketplaceSellingMode](docs/Model/OfferListingDtoV1AdditionalMarketplaceSellingMode.md)
+- [OfferListingDtoV1AdditionalMarketplaceSellingModePrice](docs/Model/OfferListingDtoV1AdditionalMarketplaceSellingModePrice.md)
+- [OfferListingDtoV1AdditionalMarketplaceStats](docs/Model/OfferListingDtoV1AdditionalMarketplaceStats.md)
 - [OfferListingDtoV1AdditionalMarketplaceStock](docs/Model/OfferListingDtoV1AdditionalMarketplaceStock.md)
 - [OfferListingDtoV1B2b](docs/Model/OfferListingDtoV1B2b.md)
 - [OfferListingDtoV1Delivery](docs/Model/OfferListingDtoV1Delivery.md)
 - [OfferListingDtoV1Publication](docs/Model/OfferListingDtoV1Publication.md)
 - [OfferListingDtoV1PublicationMarketplaces](docs/Model/OfferListingDtoV1PublicationMarketplaces.md)
+- [OfferListingDtoV1PublicationMarketplacesBase](docs/Model/OfferListingDtoV1PublicationMarketplacesBase.md)
 - [OfferListingDtoV1SaleInfo](docs/Model/OfferListingDtoV1SaleInfo.md)
 - [OfferListingDtoV1Stats](docs/Model/OfferListingDtoV1Stats.md)
 - [OfferListingDtoV1Stock](docs/Model/OfferListingDtoV1Stock.md)
@@ -861,8 +892,8 @@ Class | Method | HTTP request | Description
 - [OfferQuoteDto](docs/Model/OfferQuoteDto.md)
 - [OfferQuotesDto](docs/Model/OfferQuotesDto.md)
 - [OfferRating](docs/Model/OfferRating.md)
-- [OfferRatingScoreDistribution](docs/Model/OfferRatingScoreDistribution.md)
-- [OfferRatingSizeFeedback](docs/Model/OfferRatingSizeFeedback.md)
+- [OfferRatingScoreDistributionInner](docs/Model/OfferRatingScoreDistributionInner.md)
+- [OfferRatingSizeFeedbackInner](docs/Model/OfferRatingSizeFeedbackInner.md)
 - [OfferReference](docs/Model/OfferReference.md)
 - [OfferRequirements](docs/Model/OfferRequirements.md)
 - [OfferResponse](docs/Model/OfferResponse.md)
@@ -901,7 +932,7 @@ Class | Method | HTTP request | Description
 - [OrderEventsList](docs/Model/OrderEventsList.md)
 - [OrderLineItem](docs/Model/OrderLineItem.md)
 - [OrderMarketplace](docs/Model/OrderMarketplace.md)
-- [OrderOffers](docs/Model/OrderOffers.md)
+- [OrderOffersInner](docs/Model/OrderOffersInner.md)
 - [OrdersShippingCarrier](docs/Model/OrdersShippingCarrier.md)
 - [OrdersShippingCarriersResponse](docs/Model/OrdersShippingCarriersResponse.md)
 - [OwnTransportShipping](docs/Model/OwnTransportShipping.md)
@@ -932,6 +963,7 @@ Class | Method | HTTP request | Description
 - [ParcelTrackingHistoryTrackingDetails](docs/Model/ParcelTrackingHistoryTrackingDetails.md)
 - [ParcelTrackingStatus](docs/Model/ParcelTrackingStatus.md)
 - [Participant](docs/Model/Participant.md)
+- [PatchBadge202Response](docs/Model/PatchBadge202Response.md)
 - [Payment](docs/Model/Payment.md)
 - [PaymentOperations](docs/Model/PaymentOperations.md)
 - [Payments](docs/Model/Payments.md)
@@ -980,6 +1012,7 @@ Class | Method | HTTP request | Description
 - [ProductOfferAdditionalServicesRequest](docs/Model/ProductOfferAdditionalServicesRequest.md)
 - [ProductOfferAdditionalServicesResponse](docs/Model/ProductOfferAdditionalServicesResponse.md)
 - [ProductOfferAllOf](docs/Model/ProductOfferAllOf.md)
+- [ProductOfferAttachmentInner](docs/Model/ProductOfferAttachmentInner.md)
 - [ProductOfferBase](docs/Model/ProductOfferBase.md)
 - [ProductOfferFundraisingCampaignRequest](docs/Model/ProductOfferFundraisingCampaignRequest.md)
 - [ProductOfferFundraisingCampaignResponse](docs/Model/ProductOfferFundraisingCampaignResponse.md)
@@ -995,6 +1028,7 @@ Class | Method | HTTP request | Description
 - [ProductProposalsResponse](docs/Model/ProductProposalsResponse.md)
 - [ProductProposalsResponseAllOf](docs/Model/ProductProposalsResponseAllOf.md)
 - [ProductSetElement](docs/Model/ProductSetElement.md)
+- [ProductSetElementProduct](docs/Model/ProductSetElementProduct.md)
 - [ProductSetElementQuantity](docs/Model/ProductSetElementQuantity.md)
 - [ProductSetElementQuantityQuantity](docs/Model/ProductSetElementQuantityQuantity.md)
 - [ProductsCategoryPath](docs/Model/ProductsCategoryPath.md)
@@ -1003,6 +1037,7 @@ Class | Method | HTTP request | Description
 - [PromoModificationTask](docs/Model/PromoModificationTask.md)
 - [PromoOptionsCommand](docs/Model/PromoOptionsCommand.md)
 - [PromoOptionsCommandModification](docs/Model/PromoOptionsCommandModification.md)
+- [PromoOptionsCommandModificationBasePackage](docs/Model/PromoOptionsCommandModificationBasePackage.md)
 - [PromoOptionsCommandModificationPackage](docs/Model/PromoOptionsCommandModificationPackage.md)
 - [PromoOptionsModification](docs/Model/PromoOptionsModification.md)
 - [PromoOptionsModifications](docs/Model/PromoOptionsModifications.md)
@@ -1058,6 +1093,7 @@ Class | Method | HTTP request | Description
 - [RelatedReasonAllOf](docs/Model/RelatedReasonAllOf.md)
 - [Removal](docs/Model/Removal.md)
 - [RemovalRequest](docs/Model/RemovalRequest.md)
+- [RequestParcelPickup201Response](docs/Model/RequestParcelPickup201Response.md)
 - [RequirementChange](docs/Model/RequirementChange.md)
 - [RequirementChangeAllOf](docs/Model/RequirementChangeAllOf.md)
 - [ReserveInfo](docs/Model/ReserveInfo.md)
@@ -1074,28 +1110,48 @@ Class | Method | HTTP request | Description
 - [ReturnPolicyReturnCost](docs/Model/ReturnPolicyReturnCost.md)
 - [SaleProductCompatibilityList](docs/Model/SaleProductCompatibilityList.md)
 - [SaleProductDto](docs/Model/SaleProductDto.md)
+- [SaleProductDtoCategory](docs/Model/SaleProductDtoCategory.md)
+- [SaleProductDtoCategoryAllOf](docs/Model/SaleProductDtoCategoryAllOf.md)
+- [SaleProductDtoCategoryAllOfSimilarInner](docs/Model/SaleProductDtoCategoryAllOfSimilarInner.md)
 - [SaleProductOffer](docs/Model/SaleProductOffer.md)
 - [SaleProductOfferPatchRequestV1](docs/Model/SaleProductOfferPatchRequestV1.md)
 - [SaleProductOfferPatchRequestV1AllOf](docs/Model/SaleProductOfferPatchRequestV1AllOf.md)
 - [SaleProductOfferPublicationBase](docs/Model/SaleProductOfferPublicationBase.md)
 - [SaleProductOfferPublicationMarketplacesRequest](docs/Model/SaleProductOfferPublicationMarketplacesRequest.md)
 - [SaleProductOfferPublicationMarketplacesResponse](docs/Model/SaleProductOfferPublicationMarketplacesResponse.md)
+- [SaleProductOfferPublicationMarketplacesResponseBase](docs/Model/SaleProductOfferPublicationMarketplacesResponseBase.md)
 - [SaleProductOfferPublicationRequest](docs/Model/SaleProductOfferPublicationRequest.md)
 - [SaleProductOfferPublicationRequestAllOf](docs/Model/SaleProductOfferPublicationRequestAllOf.md)
 - [SaleProductOfferPublicationResponse](docs/Model/SaleProductOfferPublicationResponse.md)
 - [SaleProductOfferPublicationResponseAllOf](docs/Model/SaleProductOfferPublicationResponseAllOf.md)
 - [SaleProductOfferRequestBase](docs/Model/SaleProductOfferRequestBase.md)
 - [SaleProductOfferRequestBaseAllOf](docs/Model/SaleProductOfferRequestBaseAllOf.md)
+- [SaleProductOfferRequestBaseAllOfCategory](docs/Model/SaleProductOfferRequestBaseAllOfCategory.md)
+- [SaleProductOfferRequestBaseAllOfDelivery](docs/Model/SaleProductOfferRequestBaseAllOfDelivery.md)
+- [SaleProductOfferRequestBaseAllOfDeliveryAllOf](docs/Model/SaleProductOfferRequestBaseAllOfDeliveryAllOf.md)
 - [SaleProductOfferRequestBaseAllOfPublication](docs/Model/SaleProductOfferRequestBaseAllOfPublication.md)
+- [SaleProductOfferRequestBaseAllOfSizeTable](docs/Model/SaleProductOfferRequestBaseAllOfSizeTable.md)
+- [SaleProductOfferRequestBaseAllOfSizeTableAllOf](docs/Model/SaleProductOfferRequestBaseAllOfSizeTableAllOf.md)
 - [SaleProductOfferRequestV1](docs/Model/SaleProductOfferRequestV1.md)
 - [SaleProductOfferRequestV1AllOf](docs/Model/SaleProductOfferRequestV1AllOf.md)
+- [SaleProductOfferRequestV1AllOfCompatibilityList](docs/Model/SaleProductOfferRequestV1AllOfCompatibilityList.md)
+- [SaleProductOfferRequestV1AllOfDelivery](docs/Model/SaleProductOfferRequestV1AllOfDelivery.md)
+- [SaleProductOfferRequestV1AllOfDeliveryAllOf](docs/Model/SaleProductOfferRequestV1AllOfDeliveryAllOf.md)
+- [SaleProductOfferRequestV1AllOfProductSetInner](docs/Model/SaleProductOfferRequestV1AllOfProductSetInner.md)
 - [SaleProductOfferResponseV1](docs/Model/SaleProductOfferResponseV1.md)
 - [SaleProductOfferResponseV1AllOf](docs/Model/SaleProductOfferResponseV1AllOf.md)
+- [SaleProductOfferResponseV1AllOfContact](docs/Model/SaleProductOfferResponseV1AllOfContact.md)
+- [SaleProductOfferResponseV1AllOfProductSetInner](docs/Model/SaleProductOfferResponseV1AllOfProductSetInner.md)
+- [SaleProductOfferResponseV1AllOfProductSetInnerAllOf](docs/Model/SaleProductOfferResponseV1AllOfProductSetInnerAllOf.md)
+- [SaleProductOfferResponseV1AllOfProductSetInnerAllOfProduct](docs/Model/SaleProductOfferResponseV1AllOfProductSetInnerAllOfProduct.md)
+- [SaleProductOfferResponseV1AllOfProductSetInnerAllOfProductAllOf](docs/Model/SaleProductOfferResponseV1AllOfProductSetInnerAllOfProductAllOf.md)
 - [SaleProductOfferStatusResponse](docs/Model/SaleProductOfferStatusResponse.md)
 - [SaleProductOfferStatusResponseOperation](docs/Model/SaleProductOfferStatusResponseOperation.md)
 - [SaleProductOffersRequestStock](docs/Model/SaleProductOffersRequestStock.md)
 - [SaleProductResponseCategoriesDto](docs/Model/SaleProductResponseCategoriesDto.md)
 - [SearchResult](docs/Model/SearchResult.md)
+- [SelectionProductDto](docs/Model/SelectionProductDto.md)
+- [SelectionProductDtoCategory](docs/Model/SelectionProductDtoCategory.md)
 - [Seller](docs/Model/Seller.md)
 - [SellerCreateRebateRequestDto](docs/Model/SellerCreateRebateRequestDto.md)
 - [SellerOfferBaseEvent](docs/Model/SellerOfferBaseEvent.md)
@@ -1105,7 +1161,7 @@ Class | Method | HTTP request | Description
 - [SellerParticipantAllOf](docs/Model/SellerParticipantAllOf.md)
 - [SellerRebateDto](docs/Model/SellerRebateDto.md)
 - [SellerRebateOfferCriterion](docs/Model/SellerRebateOfferCriterion.md)
-- [SellerRebateOfferCriterionOffers](docs/Model/SellerRebateOfferCriterionOffers.md)
+- [SellerRebateOfferCriterionOffersInner](docs/Model/SellerRebateOfferCriterionOffersInner.md)
 - [SellerRebatesDto](docs/Model/SellerRebatesDto.md)
 - [SellerReference](docs/Model/SellerReference.md)
 - [SellingMode](docs/Model/SellingMode.md)
@@ -1131,10 +1187,10 @@ Class | Method | HTTP request | Description
 - [SmartDeliveryMethod](docs/Model/SmartDeliveryMethod.md)
 - [SmartOfferClassificationReport](docs/Model/SmartOfferClassificationReport.md)
 - [SmartOfferClassificationReportClassification](docs/Model/SmartOfferClassificationReportClassification.md)
-- [SmartOfferClassificationReportConditions](docs/Model/SmartOfferClassificationReportConditions.md)
+- [SmartOfferClassificationReportConditionsInner](docs/Model/SmartOfferClassificationReportConditionsInner.md)
 - [SmartSellerClassificationReport](docs/Model/SmartSellerClassificationReport.md)
 - [SmartSellerClassificationReportClassification](docs/Model/SmartSellerClassificationReportClassification.md)
-- [SmartSellerClassificationReportConditions](docs/Model/SmartSellerClassificationReportConditions.md)
+- [SmartSellerClassificationReportConditionsInner](docs/Model/SmartSellerClassificationReportConditionsInner.md)
 - [StandardizedDescription](docs/Model/StandardizedDescription.md)
 - [StartingPrice](docs/Model/StartingPrice.md)
 - [Stock](docs/Model/Stock.md)
@@ -1183,9 +1239,9 @@ Class | Method | HTTP request | Description
 - [ThreadReadFlag](docs/Model/ThreadReadFlag.md)
 - [ThreadsList](docs/Model/ThreadsList.md)
 - [UnfilledParametersResponse](docs/Model/UnfilledParametersResponse.md)
-- [UnfilledParametersResponseCategory](docs/Model/UnfilledParametersResponseCategory.md)
-- [UnfilledParametersResponseOffers](docs/Model/UnfilledParametersResponseOffers.md)
-- [UnfilledParametersResponseParameters](docs/Model/UnfilledParametersResponseParameters.md)
+- [UnfilledParametersResponseOffersInner](docs/Model/UnfilledParametersResponseOffersInner.md)
+- [UnfilledParametersResponseOffersInnerCategory](docs/Model/UnfilledParametersResponseOffersInnerCategory.md)
+- [UnfilledParametersResponseOffersInnerParametersInner](docs/Model/UnfilledParametersResponseOffersInnerParametersInner.md)
 - [User](docs/Model/User.md)
 - [UserCampaignEligibility](docs/Model/UserCampaignEligibility.md)
 - [UserRating](docs/Model/UserRating.md)
@@ -1226,19 +1282,19 @@ Class | Method | HTTP request | Description
 
 ## Authorization
 
-### bearer-token-for-application
-
-- **Type**: `OAuth`
-- **Flow**: `application`
-- **Authorization URL**: ``
-- **Scopes**: N/A
-
-
+Authentication schemes defined for the API:
 ### bearer-token-for-user
 
 - **Type**: `OAuth`
 - **Flow**: `accessCode`
 - **Authorization URL**: `https://allegro.pl/auth/oauth/authorize`
+- **Scopes**: N/A
+
+### bearer-token-for-application
+
+- **Type**: `OAuth`
+- **Flow**: `application`
+- **Authorization URL**: ``
 - **Scopes**: N/A
 
 ## Tests
@@ -1259,5 +1315,5 @@ vendor/bin/phpunit
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `latest`
-    - Package version: `1.0`
+    - Package version: `2.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

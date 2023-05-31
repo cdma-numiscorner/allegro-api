@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | [**OfferCategoryRequest**](OfferCategoryRequest.md) |  | [optional]
+**category** | [**\AllegroApi\Model\SaleProductOfferRequestBaseAllOfCategory**](SaleProductOfferRequestBaseAllOfCategory.md) |  | [optional]
 **parameters** | [**\AllegroApi\Model\ParameterProductOfferRequest[]**](ParameterProductOfferRequest.md) |  | [optional]
 **publication** | [**\AllegroApi\Model\SaleProductOfferRequestBaseAllOfPublication**](SaleProductOfferRequestBaseAllOfPublication.md) |  | [optional]
-**delivery** | [**DeliveryProductOfferRequest**](DeliveryProductOfferRequest.md) |  | [optional]
+**delivery** | [**\AllegroApi\Model\SaleProductOfferRequestBaseAllOfDelivery**](SaleProductOfferRequestBaseAllOfDelivery.md) |  | [optional]
 **after_sales_services** | [**\AllegroApi\Model\AfterSalesServicesProductOfferRequest**](AfterSalesServicesProductOfferRequest.md) |  | [optional]
 **size_table** | [**\AllegroApi\Model\SizeTable**](SizeTable.md) |  | [optional]
 **discounts** | [**\AllegroApi\Model\DiscountsProductOfferRequest**](DiscountsProductOfferRequest.md) |  | [optional]
@@ -21,6 +21,6 @@ Name | Type | Description | Notes
 **tax** | [**\AllegroApi\Model\ExtendedTax**](ExtendedTax.md) |  | [optional]
 **tax_settings** | [**\AllegroApi\Model\OfferTaxSettings**](OfferTaxSettings.md) |  | [optional]
 **message_to_seller_settings** | [**\AllegroApi\Model\MessageToSellerSettings**](MessageToSellerSettings.md) |  | [optional]
-**additional_marketplaces** | [**map[string,\AllegroApi\Model\OfferAdditionalMarketplace]**](OfferAdditionalMarketplace.md) | Settings for each additional marketplace. | [optional]
+**additional_marketplaces** | [**array<string,\AllegroApi\Model\OfferAdditionalMarketplace>**](OfferAdditionalMarketplace.md) | Settings for each additional marketplace. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

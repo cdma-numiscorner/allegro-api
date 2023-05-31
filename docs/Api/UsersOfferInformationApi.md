@@ -1,13 +1,13 @@
 # AllegroApi\UsersOfferInformationApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getOfferEvents()**](UsersOfferInformationApi.md#getOfferEvents) | **GET** /sale/offer-events | Get events about the seller&#39;s offers
-[**getOfferSmartClassificationGET()**](UsersOfferInformationApi.md#getOfferSmartClassificationGET) | **GET** /sale/offers/{offerId}/smart | Get Smart! classification report of the particular offer
-[**getOfferUsingGET()**](UsersOfferInformationApi.md#getOfferUsingGET) | **GET** /sale/offers/{offerId} | Get all fields of the particular offer
-[**searchOffersUsingGET()**](UsersOfferInformationApi.md#searchOffersUsingGET) | **GET** /sale/offers | Get seller&#39;s offers
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getOfferEvents()**](UsersOfferInformationApi.md#getOfferEvents) | **GET** /sale/offer-events | Get events about the seller&#39;s offers |
+| [**getOfferSmartClassificationGET()**](UsersOfferInformationApi.md#getOfferSmartClassificationGET) | **GET** /sale/offers/{offerId}/smart | Get Smart! classification report of the particular offer |
+| [**getOfferUsingGET()**](UsersOfferInformationApi.md#getOfferUsingGET) | **GET** /sale/offers/{offerId} | Get all fields of the particular offer |
+| [**searchOffersUsingGET()**](UsersOfferInformationApi.md#searchOffersUsingGET) | **GET** /sale/offers | Get seller&#39;s offers |
 
 
 ## `getOfferEvents()`
@@ -51,11 +51,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **from** | **string**| The ID of the last seen event. Events that occured after the given event will be returned. | [optional]
- **limit** | **int**| The number of events that will be returned in the response. | [optional] [default to 100]
- **type** | [**string[]**](../Model/string.md)| The types of events that will be returned in the response. All types of events are returned by default. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **from** | **string**| The ID of the last seen event. Events that occured after the given event will be returned. | [optional] |
+| **limit** | **int**| The number of events that will be returned in the response. | [optional] [default to 100] |
+| **type** | [**string[]**](../Model/string.md)| The types of events that will be returned in the response. All types of events are returned by default. | [optional] |
 
 ### Return type
 
@@ -114,10 +114,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer identifier. |
- **marketplace_id** | **string**| Marketplace for which offer classification report will be returned. If not specified, the result of the offer&#39;s base marketplace will be returned. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer identifier. | |
+| **marketplace_id** | **string**| Marketplace for which offer classification report will be returned. If not specified, the result of the offer&#39;s base marketplace will be returned. | [optional] |
 
 ### Return type
 
@@ -175,9 +175,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer identifier. | |
 
 ### Return type
 
@@ -228,7 +228,7 @@ $name = 'name_example'; // string | The text to search in the offer title.
 $selling_mode_price_amount_gte = 9.99; // float | The lower threshold of price.  If additionally a `publication.marketplace` is provided, searches using the price on the given marketplace.
 $selling_mode_price_amount_lte = 125.99; // float | The upper threshold of price.  If additionally a `publication.marketplace` is provided, searches using the price on the given marketplace.
 $publication_status = array('publication_status_example'); // string[] | The publication status of the offer. Passing more than one value will search for offers with any of the given statuses. By default all statuses are included. Example: `publication.status=INACTIVE&publication.status=ACTIVE` - returns offers with status `INACTIVE` or `ACTIVE`.
-$publication_marketplace = new \AllegroApi\Model\\AllegroApi\Model\MarketplaceId(); // \AllegroApi\Model\MarketplaceId | Either the base marketplace or an additional marketplace of the offer.  When passing the parameter `publication.marketplace`, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace.
+$publication_marketplace = new \AllegroApi\Model\MarketplaceId(); // MarketplaceId | Either the base marketplace or an additional marketplace of the offer.  When passing the parameter `publication.marketplace`, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace.
 $selling_mode_format = array('selling_mode_format_example'); // string[] | The offer's selling format. Passing more than one value will search for offers with any of the given formats. By default all formats are included. Example: `sellingMode.format=BUY_NOW&sellingMode.format=ADVERTISEMENT` - returns offers with with format `BUY_NOW` or `ADVERTISEMENT`.
 $external_id = array('external_id_example'); // string[] | The ID from the client's external system. Passing more than one value will search for offers with any of the given IDs. By default no ID is included. Example: `external.id=1233&external.id=1234` - returns offers with ID `1233` or `1234`. Single ID length shouldn't exceed 100 characters.
 $delivery_shipping_rates_id = 'delivery_shipping_rates_id_example'; // string | The ID of shipping rates. Returns offers with given shipping rates ID.
@@ -253,27 +253,27 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer ID. | [optional]
- **name** | **string**| The text to search in the offer title. | [optional]
- **selling_mode_price_amount_gte** | **float**| The lower threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. | [optional]
- **selling_mode_price_amount_lte** | **float**| The upper threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. | [optional]
- **publication_status** | [**string[]**](../Model/string.md)| The publication status of the offer. Passing more than one value will search for offers with any of the given statuses. By default all statuses are included. Example: &#x60;publication.status&#x3D;INACTIVE&amp;publication.status&#x3D;ACTIVE&#x60; - returns offers with status &#x60;INACTIVE&#x60; or &#x60;ACTIVE&#x60;. | [optional]
- **publication_marketplace** | [**\AllegroApi\Model\MarketplaceId**](../Model/.md)| Either the base marketplace or an additional marketplace of the offer.  When passing the parameter &#x60;publication.marketplace&#x60;, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace. | [optional]
- **selling_mode_format** | [**string[]**](../Model/string.md)| The offer&#39;s selling format. Passing more than one value will search for offers with any of the given formats. By default all formats are included. Example: &#x60;sellingMode.format&#x3D;BUY_NOW&amp;sellingMode.format&#x3D;ADVERTISEMENT&#x60; - returns offers with with format &#x60;BUY_NOW&#x60; or &#x60;ADVERTISEMENT&#x60;. | [optional]
- **external_id** | [**string[]**](../Model/string.md)| The ID from the client&#39;s external system. Passing more than one value will search for offers with any of the given IDs. By default no ID is included. Example: &#x60;external.id&#x3D;1233&amp;external.id&#x3D;1234&#x60; - returns offers with ID &#x60;1233&#x60; or &#x60;1234&#x60;. Single ID length shouldn&#39;t exceed 100 characters. | [optional]
- **delivery_shipping_rates_id** | [**string**](../Model/.md)| The ID of shipping rates. Returns offers with given shipping rates ID. | [optional]
- **delivery_shipping_rates_id_empty** | **bool**| Allows to filter offers by existence of shipping rates ID. | [optional]
- **sort** | **string**| The results&#39; sorting order. No prefix in the value means ascending order. &#x60;-&#x60; prefix means descending order. If you don&#39;t provide the sort parameter, the list is sorted by offer creation time, descending.  If additionally a &#x60;publication.marketplace&#x60; is provided, sorts by price and &#x60;stock.sold&#x60; using the data on the given marketplace. | [optional]
- **limit** | **int**| The maximum number of offers returned in the response. | [optional] [default to 20]
- **offset** | **int**| Index of the first returned offer from all search results. Maximum sum of offset and limit is 10 000 000. | [optional]
- **category_id** | **string**| The identifier of the category, where you want to search for offers. | [optional]
- **product_id_empty** | **bool**| Allows to filter offers by existence of product ID. | [optional]
- **productization_required** | **bool**| Allows to search for offers from categories where productization is required. | [optional]
- **b2b_buyable_only_by_business** | **bool**| Allows to search for offers buyable only by businesses. | [optional]
- **fundraising_campaign_id** | [**string**](../Model/.md)| ID of the charity fundraising campaign that benefits from this offer. | [optional]
- **fundraising_campaign_id_empty** | **bool**| Allows to search for charity or commercial offers. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer ID. | [optional] |
+| **name** | **string**| The text to search in the offer title. | [optional] |
+| **selling_mode_price_amount_gte** | **float**| The lower threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. | [optional] |
+| **selling_mode_price_amount_lte** | **float**| The upper threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. | [optional] |
+| **publication_status** | [**string[]**](../Model/string.md)| The publication status of the offer. Passing more than one value will search for offers with any of the given statuses. By default all statuses are included. Example: &#x60;publication.status&#x3D;INACTIVE&amp;publication.status&#x3D;ACTIVE&#x60; - returns offers with status &#x60;INACTIVE&#x60; or &#x60;ACTIVE&#x60;. | [optional] |
+| **publication_marketplace** | [**MarketplaceId**](../Model/.md)| Either the base marketplace or an additional marketplace of the offer.  When passing the parameter &#x60;publication.marketplace&#x60;, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace. | [optional] |
+| **selling_mode_format** | [**string[]**](../Model/string.md)| The offer&#39;s selling format. Passing more than one value will search for offers with any of the given formats. By default all formats are included. Example: &#x60;sellingMode.format&#x3D;BUY_NOW&amp;sellingMode.format&#x3D;ADVERTISEMENT&#x60; - returns offers with with format &#x60;BUY_NOW&#x60; or &#x60;ADVERTISEMENT&#x60;. | [optional] |
+| **external_id** | [**string[]**](../Model/string.md)| The ID from the client&#39;s external system. Passing more than one value will search for offers with any of the given IDs. By default no ID is included. Example: &#x60;external.id&#x3D;1233&amp;external.id&#x3D;1234&#x60; - returns offers with ID &#x60;1233&#x60; or &#x60;1234&#x60;. Single ID length shouldn&#39;t exceed 100 characters. | [optional] |
+| **delivery_shipping_rates_id** | **string**| The ID of shipping rates. Returns offers with given shipping rates ID. | [optional] |
+| **delivery_shipping_rates_id_empty** | **bool**| Allows to filter offers by existence of shipping rates ID. | [optional] |
+| **sort** | **string**| The results&#39; sorting order. No prefix in the value means ascending order. &#x60;-&#x60; prefix means descending order. If you don&#39;t provide the sort parameter, the list is sorted by offer creation time, descending.  If additionally a &#x60;publication.marketplace&#x60; is provided, sorts by price and &#x60;stock.sold&#x60; using the data on the given marketplace. | [optional] |
+| **limit** | **int**| The maximum number of offers returned in the response. | [optional] [default to 20] |
+| **offset** | **int**| Index of the first returned offer from all search results. Maximum sum of offset and limit is 10 000 000. | [optional] |
+| **category_id** | **string**| The identifier of the category, where you want to search for offers. | [optional] |
+| **product_id_empty** | **bool**| Allows to filter offers by existence of product ID. | [optional] |
+| **productization_required** | **bool**| Allows to search for offers from categories where productization is required. | [optional] |
+| **b2b_buyable_only_by_business** | **bool**| Allows to search for offers buyable only by businesses. | [optional] |
+| **fundraising_campaign_id** | **string**| ID of the charity fundraising campaign that benefits from this offer. | [optional] |
+| **fundraising_campaign_id_empty** | **bool**| Allows to search for charity or commercial offers. | [optional] |
 
 ### Return type
 

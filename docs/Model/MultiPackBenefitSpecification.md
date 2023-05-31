@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [default to 'UNIT_PERCENTAGE_DISCOUNT']
+**type** | **string** |  | [optional] [default to 'UNIT_PERCENTAGE_DISCOUNT']
 **configuration** | [**\AllegroApi\Model\MultiPackBenefitSpecificationAllOfConfiguration**](MultiPackBenefitSpecificationAllOfConfiguration.md) |  |
 **trigger** | [**\AllegroApi\Model\MultiPackBenefitSpecificationAllOfTrigger**](MultiPackBenefitSpecificationAllOfTrigger.md) |  |
 

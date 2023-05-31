@@ -1,10 +1,10 @@
 # AllegroApi\TaxSettingsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getTaxSettingsForCategory()**](TaxSettingsApi.md#getTaxSettingsForCategory) | **GET** /sale/tax-settings | Get all tax settings for category
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getTaxSettingsForCategory()**](TaxSettingsApi.md#getTaxSettingsForCategory) | **GET** /sale/tax-settings | Get all tax settings for category |
 
 
 ## `getTaxSettingsForCategory()`
@@ -47,10 +47,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **category_id** | **string**| An identifier of a category for which all available tax settings will be returned. |
- **country_code** | [**string[]**](../Model/string.md)| Country code for which tax settings will be returned. If not provided settings for all countries will be returned. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **category_id** | **string**| An identifier of a category for which all available tax settings will be returned. | |
+| **country_code** | [**string[]**](../Model/string.md)| Country code for which tax settings will be returned. If not provided settings for all countries will be returned. | [optional] |
 
 ### Return type
 

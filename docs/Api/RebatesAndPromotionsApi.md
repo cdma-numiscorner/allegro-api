@@ -1,14 +1,14 @@
 # AllegroApi\RebatesAndPromotionsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createPromotionUsingPOST1()**](RebatesAndPromotionsApi.md#createPromotionUsingPOST1) | **POST** /sale/loyalty/promotions | Create a new promotion
-[**deactivatePromotionUsingDELETE()**](RebatesAndPromotionsApi.md#deactivatePromotionUsingDELETE) | **DELETE** /sale/loyalty/promotions/{promotionId} | Deactivate a promotion by id
-[**getPromotionUsingGET()**](RebatesAndPromotionsApi.md#getPromotionUsingGET) | **GET** /sale/loyalty/promotions/{promotionId} | Get a promotion data by id
-[**listSellerPromotionsUsingGET1()**](RebatesAndPromotionsApi.md#listSellerPromotionsUsingGET1) | **GET** /sale/loyalty/promotions | Get the user&#39;s list of promotions
-[**updatePromotionUsingPUT()**](RebatesAndPromotionsApi.md#updatePromotionUsingPUT) | **PUT** /sale/loyalty/promotions/{promotionId} | Modify a promotion
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createPromotionUsingPOST1()**](RebatesAndPromotionsApi.md#createPromotionUsingPOST1) | **POST** /sale/loyalty/promotions | Create a new promotion |
+| [**deactivatePromotionUsingDELETE()**](RebatesAndPromotionsApi.md#deactivatePromotionUsingDELETE) | **DELETE** /sale/loyalty/promotions/{promotionId} | Deactivate a promotion by id |
+| [**getPromotionUsingGET()**](RebatesAndPromotionsApi.md#getPromotionUsingGET) | **GET** /sale/loyalty/promotions/{promotionId} | Get a promotion data by id |
+| [**listSellerPromotionsUsingGET1()**](RebatesAndPromotionsApi.md#listSellerPromotionsUsingGET1) | **GET** /sale/loyalty/promotions | Get the user&#39;s list of promotions |
+| [**updatePromotionUsingPUT()**](RebatesAndPromotionsApi.md#updatePromotionUsingPUT) | **PUT** /sale/loyalty/promotions/{promotionId} | Modify a promotion |
 
 
 ## `createPromotionUsingPOST1()`
@@ -50,9 +50,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **seller_create_rebate_request_dto** | [**\AllegroApi\Model\SellerCreateRebateRequestDto**](../Model/SellerCreateRebateRequestDto.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **seller_create_rebate_request_dto** | [**\AllegroApi\Model\SellerCreateRebateRequestDto**](../Model/SellerCreateRebateRequestDto.md)|  | |
 
 ### Return type
 
@@ -109,9 +109,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **promotion_id** | **string**| Promotion identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promotion_id** | **string**| Promotion identifier. | |
 
 ### Return type
 
@@ -169,9 +169,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **promotion_id** | **string**| Promotion identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promotion_id** | **string**| Promotion identifier. | |
 
 ### Return type
 
@@ -232,12 +232,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **int**| Limit of promotions per page. | [optional] [default to 50]
- **offset** | **int**| Distance between the beginning of the document and the point from which promotions are returned. | [optional] [default to 0]
- **offer_id** | **string**| Filter by offer id. No promotions with &#x60;OFFERS_ASSIGNED_EXTERNALLY&#x60; or &#x60;ALL_OFFERS&#x60; criteria will be returned if this parameter is present. | [optional]
- **promotion_type** | **string**| Filter by promotion type. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **int**| Limit of promotions per page. | [optional] [default to 50] |
+| **offset** | **int**| Distance between the beginning of the document and the point from which promotions are returned. | [optional] [default to 0] |
+| **offer_id** | **string**| Filter by offer id. No promotions with &#x60;OFFERS_ASSIGNED_EXTERNALLY&#x60; or &#x60;ALL_OFFERS&#x60; criteria will be returned if this parameter is present. | [optional] |
+| **promotion_type** | **string**| Filter by promotion type. | [optional] |
 
 ### Return type
 
@@ -296,10 +296,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **promotion_id** | **string**| Promotion identifier. |
- **seller_create_rebate_request_dto** | [**\AllegroApi\Model\SellerCreateRebateRequestDto**](../Model/SellerCreateRebateRequestDto.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promotion_id** | **string**| Promotion identifier. | |
+| **seller_create_rebate_request_dto** | [**\AllegroApi\Model\SellerCreateRebateRequestDto**](../Model/SellerCreateRebateRequestDto.md)|  | |
 
 ### Return type
 

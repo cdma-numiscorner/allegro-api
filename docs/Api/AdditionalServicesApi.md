@@ -1,14 +1,14 @@
 # AllegroApi\AdditionalServicesApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createAdditionalServicesGroupUsingPOST()**](AdditionalServicesApi.md#createAdditionalServicesGroupUsingPOST) | **POST** /sale/offer-additional-services/groups | Create additional services group
-[**getAdditionalServicesGroupUsingGET()**](AdditionalServicesApi.md#getAdditionalServicesGroupUsingGET) | **GET** /sale/offer-additional-services/groups/{groupId} | Get the details of an additional services group
-[**getListOfAdditionalServicesDefinitionsCategoriesUsingGET()**](AdditionalServicesApi.md#getListOfAdditionalServicesDefinitionsCategoriesUsingGET) | **GET** /sale/offer-additional-services/categories | Get the additional services definitions by categories
-[**getListOfAdditionalServicesGroupsUsingGET()**](AdditionalServicesApi.md#getListOfAdditionalServicesGroupsUsingGET) | **GET** /sale/offer-additional-services/groups | Get the user&#39;s additional services groups
-[**modifyAdditionalServicesGroupUsingPUT()**](AdditionalServicesApi.md#modifyAdditionalServicesGroupUsingPUT) | **PUT** /sale/offer-additional-services/groups/{groupId} | Modify an additional services group
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createAdditionalServicesGroupUsingPOST()**](AdditionalServicesApi.md#createAdditionalServicesGroupUsingPOST) | **POST** /sale/offer-additional-services/groups | Create additional services group |
+| [**getAdditionalServicesGroupUsingGET()**](AdditionalServicesApi.md#getAdditionalServicesGroupUsingGET) | **GET** /sale/offer-additional-services/groups/{groupId} | Get the details of an additional services group |
+| [**getListOfAdditionalServicesDefinitionsCategoriesUsingGET()**](AdditionalServicesApi.md#getListOfAdditionalServicesDefinitionsCategoriesUsingGET) | **GET** /sale/offer-additional-services/categories | Get the additional services definitions by categories |
+| [**getListOfAdditionalServicesGroupsUsingGET()**](AdditionalServicesApi.md#getListOfAdditionalServicesGroupsUsingGET) | **GET** /sale/offer-additional-services/groups | Get the user&#39;s additional services groups |
+| [**modifyAdditionalServicesGroupUsingPUT()**](AdditionalServicesApi.md#modifyAdditionalServicesGroupUsingPUT) | **PUT** /sale/offer-additional-services/groups/{groupId} | Modify an additional services group |
 
 
 ## `createAdditionalServicesGroupUsingPOST()`
@@ -50,9 +50,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **additional_services_group_request** | [**\AllegroApi\Model\AdditionalServicesGroupRequest**](../Model/AdditionalServicesGroupRequest.md)| Additional service group body |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **additional_services_group_request** | [**\AllegroApi\Model\AdditionalServicesGroupRequest**](../Model/AdditionalServicesGroupRequest.md)| Additional service group body | |
 
 ### Return type
 
@@ -110,9 +110,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**| Additional Service Group ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**| Additional Service Group ID. | |
 
 ### Return type
 
@@ -228,10 +228,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
- **limit** | **int**| The limit of elements in the response. | [optional] [default to 100]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
+| **limit** | **int**| The limit of elements in the response. | [optional] [default to 100] |
 
 ### Return type
 
@@ -290,10 +290,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**| Additional service group ID. |
- **additional_services_group_request** | [**\AllegroApi\Model\AdditionalServicesGroupRequest**](../Model/AdditionalServicesGroupRequest.md)| Additional service group body |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**| Additional service group ID. | |
+| **additional_services_group_request** | [**\AllegroApi\Model\AdditionalServicesGroupRequest**](../Model/AdditionalServicesGroupRequest.md)| Additional service group body | |
 
 ### Return type
 

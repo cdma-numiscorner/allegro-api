@@ -1,13 +1,13 @@
 # AllegroApi\CompatibilityListApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getCategoriesThatSupportCompatibilityList()**](CompatibilityListApi.md#getCategoriesThatSupportCompatibilityList) | **GET** /sale/compatibility-list/supported-categories | Get list of categories where compatibility list is supported
-[**getCompatibilityListSuggestion()**](CompatibilityListApi.md#getCompatibilityListSuggestion) | **GET** /sale/compatibility-list-suggestions | Get suggested compatibility list.
-[**getCompatibleProducts()**](CompatibilityListApi.md#getCompatibleProducts) | **GET** /sale/compatible-products | Get list of compatible products
-[**getCompatibleProductsGroups()**](CompatibilityListApi.md#getCompatibleProductsGroups) | **GET** /sale/compatible-products/groups | Get list of compatible product groups
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getCategoriesThatSupportCompatibilityList()**](CompatibilityListApi.md#getCategoriesThatSupportCompatibilityList) | **GET** /sale/compatibility-list/supported-categories | Get list of categories where compatibility list is supported |
+| [**getCompatibilityListSuggestion()**](CompatibilityListApi.md#getCompatibilityListSuggestion) | **GET** /sale/compatibility-list-suggestions | Get suggested compatibility list. |
+| [**getCompatibleProducts()**](CompatibilityListApi.md#getCompatibleProducts) | **GET** /sale/compatible-products | Get list of compatible products |
+| [**getCompatibleProductsGroups()**](CompatibilityListApi.md#getCompatibleProductsGroups) | **GET** /sale/compatible-products/groups | Get list of compatible product groups |
 
 
 ## `getCategoriesThatSupportCompatibilityList()`
@@ -108,11 +108,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| Offer id on the basis of which we will return the suggested compatibility list. | [optional]
- **product_id** | **string**| Product id on the basis of which we will return the suggested compatibility list. | [optional]
- **language** | **string**| Locale on the basis of which we will return the suggested compatibility list. For product-based suggestions if missing pl-PL will be used. For offer-based suggestions if missing offer language will be used. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| Offer id on the basis of which we will return the suggested compatibility list. | [optional] |
+| **product_id** | **string**| Product id on the basis of which we will return the suggested compatibility list. | [optional] |
+| **language** | **string**| Locale on the basis of which we will return the suggested compatibility list. For product-based suggestions if missing pl-PL will be used. For offer-based suggestions if missing offer language will be used. | [optional] |
 
 ### Return type
 
@@ -177,16 +177,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **string**| Type of compatible products. You can find available types in the response for the GET &lt;a href&#x3D;\&quot;/documentation/#tag/Compatibility-List/paths/~1sale~1compatibility-list~1supported-categories/get\&quot;&gt;supported-categories&lt;/a&gt; resource. You can use value provided in &#x60;itemsType&#x60;, for categories where &#x60;inputType&#x3D;ID&#x60;. |
- **if_modified_since** | **string**| Date of last data modification. If data has been modified after specified date, full set of data is returned. If header is not specified, full set of data is returned. Date has to be provided in HTTP-date format. Header is ignored if &#x60;phrase&#x60; parameter is used. | [optional]
- **group_id** | **string**| Group identifier from &#x60;/sale/compatible-products/groups&#x60; resource. Parameter is required when parameter &#x60;tecdoc.kTypNr&#x60; or &#x60;tecdoc.nTypNr&#x60; or &#x60;phrase&#x60; is not specified. | [optional]
- **tecdoc_k_typ_nr** | **string**| Identifier of passenger vehicle (kTypNr) from TecDoc database. When used, &#x60;group.id&#x60; parameter is ignored. | [optional]
- **tecdoc_n_typ_nr** | **string**| Identifier of commercial vehicle (nTypNr) from TecDoc database. When used, &#x60;group.id&#x60; parameter is ignored. | [optional]
- **phrase** | **string**| Query for compatible products. When used, parameters: &#x60;group.id&#x60;, &#x60;limit&#x60;, &#x60;offset&#x60; and header &#x60;If-Modified-Since&#x60; are ignored. | [optional]
- **limit** | **int**| The limit of returned items. If &#x60;phrase&#x60; parameter is present, parameter is ignored and maximum value is set to &#x60;200&#x60;. | [optional] [default to 200]
- **offset** | **int**| The offset of returned items. If &#x60;phrase&#x60; parameter is present, parameter is ignored. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **type** | **string**| Type of compatible products. You can find available types in the response for the GET &lt;a href&#x3D;\&quot;/documentation/#tag/Compatibility-List/paths/~1sale~1compatibility-list~1supported-categories/get\&quot;&gt;supported-categories&lt;/a&gt; resource. You can use value provided in &#x60;itemsType&#x60;, for categories where &#x60;inputType&#x3D;ID&#x60;. | |
+| **if_modified_since** | **string**| Date of last data modification. If data has been modified after specified date, full set of data is returned. If header is not specified, full set of data is returned. Date has to be provided in HTTP-date format. Header is ignored if &#x60;phrase&#x60; parameter is used. | [optional] |
+| **group_id** | **string**| Group identifier from &#x60;/sale/compatible-products/groups&#x60; resource. Parameter is required when parameter &#x60;tecdoc.kTypNr&#x60; or &#x60;tecdoc.nTypNr&#x60; or &#x60;phrase&#x60; is not specified. | [optional] |
+| **tecdoc_k_typ_nr** | **string**| Identifier of passenger vehicle (kTypNr) from TecDoc database. When used, &#x60;group.id&#x60; parameter is ignored. | [optional] |
+| **tecdoc_n_typ_nr** | **string**| Identifier of commercial vehicle (nTypNr) from TecDoc database. When used, &#x60;group.id&#x60; parameter is ignored. | [optional] |
+| **phrase** | **string**| Query for compatible products. When used, parameters: &#x60;group.id&#x60;, &#x60;limit&#x60;, &#x60;offset&#x60; and header &#x60;If-Modified-Since&#x60; are ignored. | [optional] |
+| **limit** | **int**| The limit of returned items. If &#x60;phrase&#x60; parameter is present, parameter is ignored and maximum value is set to &#x60;200&#x60;. | [optional] [default to 200] |
+| **offset** | **int**| The offset of returned items. If &#x60;phrase&#x60; parameter is present, parameter is ignored. | [optional] [default to 0] |
 
 ### Return type
 
@@ -247,12 +247,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **string**| Type of compatible products. You can find available types in the response for the GET &lt;a href&#x3D;\&quot;/documentation/#tag/Compatibility-List/paths/~1sale~1compatibility-list~1supported-categories/get\&quot;&gt;supported-categories&lt;/a&gt; resource. You can use value provided in &#x60;itemsType&#x60;, for categories where &#x60;inputType&#x3D;ID&#x60;. |
- **if_modified_since** | **string**| Date of last data modification. If data has been modified after specified date, full set of data is returned. If header is not specified, full set of data is returned. Date has to be provided in HTTP-date format. | [optional]
- **limit** | **int**| The limit of returned items. | [optional] [default to 200]
- **offset** | **int**| The offset of returned items. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **type** | **string**| Type of compatible products. You can find available types in the response for the GET &lt;a href&#x3D;\&quot;/documentation/#tag/Compatibility-List/paths/~1sale~1compatibility-list~1supported-categories/get\&quot;&gt;supported-categories&lt;/a&gt; resource. You can use value provided in &#x60;itemsType&#x60;, for categories where &#x60;inputType&#x3D;ID&#x60;. | |
+| **if_modified_since** | **string**| Date of last data modification. If data has been modified after specified date, full set of data is returned. If header is not specified, full set of data is returned. Date has to be provided in HTTP-date format. | [optional] |
+| **limit** | **int**| The limit of returned items. | [optional] [default to 200] |
+| **offset** | **int**| The offset of returned items. | [optional] [default to 0] |
 
 ### Return type
 

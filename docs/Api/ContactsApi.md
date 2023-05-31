@@ -1,13 +1,13 @@
 # AllegroApi\ContactsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createContactUsingPOST()**](ContactsApi.md#createContactUsingPOST) | **POST** /sale/offer-contacts | Create a new contact
-[**getContactUsingGET()**](ContactsApi.md#getContactUsingGET) | **GET** /sale/offer-contacts/{id} | Get contact details
-[**getListOfContactsUsingGET()**](ContactsApi.md#getListOfContactsUsingGET) | **GET** /sale/offer-contacts | Get the user&#39;s contacts
-[**modifyContactUsingPUT()**](ContactsApi.md#modifyContactUsingPUT) | **PUT** /sale/offer-contacts/{id} | Modify contact details
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createContactUsingPOST()**](ContactsApi.md#createContactUsingPOST) | **POST** /sale/offer-contacts | Create a new contact |
+| [**getContactUsingGET()**](ContactsApi.md#getContactUsingGET) | **GET** /sale/offer-contacts/{id} | Get contact details |
+| [**getListOfContactsUsingGET()**](ContactsApi.md#getListOfContactsUsingGET) | **GET** /sale/offer-contacts | Get the user&#39;s contacts |
+| [**modifyContactUsingPUT()**](ContactsApi.md#modifyContactUsingPUT) | **PUT** /sale/offer-contacts/{id} | Modify contact details |
 
 
 ## `createContactUsingPOST()`
@@ -49,9 +49,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contact_request** | [**\AllegroApi\Model\ContactRequest**](../Model/ContactRequest.md)| New contact |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contact_request** | [**\AllegroApi\Model\ContactRequest**](../Model/ContactRequest.md)| New contact | |
 
 ### Return type
 
@@ -109,9 +109,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Contact identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Contact identifier. | |
 
 ### Return type
 
@@ -227,10 +227,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Contact identifier. |
- **contact_request** | [**\AllegroApi\Model\ContactRequest**](../Model/ContactRequest.md)| Contact |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Contact identifier. | |
+| **contact_request** | [**\AllegroApi\Model\ContactRequest**](../Model/ContactRequest.md)| Contact | |
 
 ### Return type
 

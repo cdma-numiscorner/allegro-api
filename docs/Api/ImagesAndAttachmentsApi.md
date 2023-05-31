@@ -1,12 +1,12 @@
 # AllegroApi\ImagesAndAttachmentsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createOfferAttachmentUsingPOST()**](ImagesAndAttachmentsApi.md#createOfferAttachmentUsingPOST) | **POST** /sale/offer-attachments | Create an offer attachment
-[**uploadOfferAttachmentUsingPUT()**](ImagesAndAttachmentsApi.md#uploadOfferAttachmentUsingPUT) | **PUT** /sale/offer-attachments/{attachmentId} | Upload an offer attachment
-[**uploadOfferImageUsingPOST()**](ImagesAndAttachmentsApi.md#uploadOfferImageUsingPOST) | **POST** /sale/images | Upload an offer image
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createOfferAttachmentUsingPOST()**](ImagesAndAttachmentsApi.md#createOfferAttachmentUsingPOST) | **POST** /sale/offer-attachments | Create an offer attachment |
+| [**uploadOfferAttachmentUsingPUT()**](ImagesAndAttachmentsApi.md#uploadOfferAttachmentUsingPUT) | **PUT** /sale/offer-attachments/{attachmentId} | Upload an offer attachment |
+| [**uploadOfferImageUsingPOST()**](ImagesAndAttachmentsApi.md#uploadOfferImageUsingPOST) | **POST** /sale/images | Upload an offer image |
 
 
 ## `createOfferAttachmentUsingPOST()`
@@ -48,9 +48,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_attachment_request** | [**\AllegroApi\Model\OfferAttachmentRequest**](../Model/OfferAttachmentRequest.md)| offer attachment |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_attachment_request** | [**\AllegroApi\Model\OfferAttachmentRequest**](../Model/OfferAttachmentRequest.md)| offer attachment | |
 
 ### Return type
 
@@ -74,6 +74,14 @@ Name | Type | Description  | Notes
 ```php
 uploadOfferAttachmentUsingPUT($attachment_id, $body): \AllegroApi\Model\OfferAttachment
 ```
+### URI(s):
+- https://upload.{environment} 
+    - Variables:
+      - environment:  No description provided
+        - Allowed values:
+          - allegro.pl
+          - allegro.pl.allegrosandbox.pl
+        - Default value: allegro.pl
 
 Upload an offer attachment
 
@@ -99,8 +107,13 @@ $apiInstance = new AllegroApi\Api\ImagesAndAttachmentsApi(
 $attachment_id = 'attachment_id_example'; // string | The ID of the attachment.
 $body = "/path/to/file.txt"; // \SplFileObject
 
+$hostIndex = 0;
+$variables = [
+    'environment' => 'YOUR_VALUE',
+];
+
 try {
-    $result = $apiInstance->uploadOfferAttachmentUsingPUT($attachment_id, $body);
+    $result = $apiInstance->uploadOfferAttachmentUsingPUT($attachment_id, $body, $hostIndex, $variables);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ImagesAndAttachmentsApi->uploadOfferAttachmentUsingPUT: ', $e->getMessage(), PHP_EOL;
@@ -109,10 +122,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **attachment_id** | [**string**](../Model/.md)| The ID of the attachment. |
- **body** | **\SplFileObject****\SplFileObject**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **attachment_id** | **string**| The ID of the attachment. | |
+| **body** | **\SplFileObject****\SplFileObject**|  | [optional] |
+| hostIndex | null|int | Host index. Defaults to null. If null, then the library will use $this->hostIndex instead | [optional] |
+| variables | array | Associative array of variables to pass to the host. Defaults to empty array. | [optional] |
 
 ### Return type
 
@@ -136,6 +151,14 @@ Name | Type | Description  | Notes
 ```php
 uploadOfferImageUsingPOST($offer_image_link_upload_request): \AllegroApi\Model\OfferImageUploadResponse
 ```
+### URI(s):
+- https://upload.{environment} 
+    - Variables:
+      - environment:  No description provided
+        - Allowed values:
+          - allegro.pl
+          - allegro.pl.allegrosandbox.pl
+        - Default value: allegro.pl
 
 Upload an offer image
 
@@ -160,8 +183,13 @@ $apiInstance = new AllegroApi\Api\ImagesAndAttachmentsApi(
 );
 $offer_image_link_upload_request = new \AllegroApi\Model\OfferImageLinkUploadRequest(); // \AllegroApi\Model\OfferImageLinkUploadRequest
 
+$hostIndex = 0;
+$variables = [
+    'environment' => 'YOUR_VALUE',
+];
+
 try {
-    $result = $apiInstance->uploadOfferImageUsingPOST($offer_image_link_upload_request);
+    $result = $apiInstance->uploadOfferImageUsingPOST($offer_image_link_upload_request, $hostIndex, $variables);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ImagesAndAttachmentsApi->uploadOfferImageUsingPOST: ', $e->getMessage(), PHP_EOL;
@@ -170,9 +198,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_image_link_upload_request** | [**\AllegroApi\Model\OfferImageLinkUploadRequest**](../Model/OfferImageLinkUploadRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_image_link_upload_request** | [**\AllegroApi\Model\OfferImageLinkUploadRequest**](../Model/OfferImageLinkUploadRequest.md)|  | |
+| hostIndex | null|int | Host index. Defaults to null. If null, then the library will use $this->hostIndex instead | [optional] |
+| variables | array | Associative array of variables to pass to the host. Defaults to empty array. | [optional] |
 
 ### Return type
 

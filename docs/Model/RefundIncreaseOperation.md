@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [default to 'REFUND_INCREASE']
+**type** | **string** |  | [optional] [default to 'REFUND_INCREASE']
 **payment** | [**\AllegroApi\Model\OperationPayment**](OperationPayment.md) |  |
 **participant** | [**\AllegroApi\Model\SellerParticipant**](SellerParticipant.md) |  |
 

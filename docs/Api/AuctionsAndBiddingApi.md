@@ -1,11 +1,11 @@
 # AllegroApi\AuctionsAndBiddingApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getBid()**](AuctionsAndBiddingApi.md#getBid) | **GET** /bidding/offers/{offerId}/bid | Get current user&#39;s bid information
-[**placeBid()**](AuctionsAndBiddingApi.md#placeBid) | **PUT** /bidding/offers/{offerId}/bid | Place a bid in an auction
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getBid()**](AuctionsAndBiddingApi.md#getBid) | **GET** /bidding/offers/{offerId}/bid | Get current user&#39;s bid information |
+| [**placeBid()**](AuctionsAndBiddingApi.md#placeBid) | **PUT** /bidding/offers/{offerId}/bid | Place a bid in an auction |
 
 
 ## `getBid()`
@@ -47,9 +47,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| The offer ID. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| The offer ID. | |
 
 ### Return type
 
@@ -108,10 +108,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offer_id** | **string**| The offer ID. |
- **bid_request** | [**\AllegroApi\Model\BidRequest**](../Model/BidRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_id** | **string**| The offer ID. | |
+| **bid_request** | [**\AllegroApi\Model\BidRequest**](../Model/BidRequest.md)|  | [optional] |
 
 ### Return type
 

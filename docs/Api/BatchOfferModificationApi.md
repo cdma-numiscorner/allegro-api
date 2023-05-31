@@ -1,18 +1,18 @@
 # AllegroApi\BatchOfferModificationApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getGeneralReportUsingGET()**](BatchOfferModificationApi.md#getGeneralReportUsingGET) | **GET** /sale/offer-modification-commands/{commandId} | Modification command summary
-[**getPriceModificationCommandStatusUsingGET()**](BatchOfferModificationApi.md#getPriceModificationCommandStatusUsingGET) | **GET** /sale/offer-price-change-commands/{commandId} | Change price command summary
-[**getPriceModificationCommandTasksStatusesUsingGET()**](BatchOfferModificationApi.md#getPriceModificationCommandTasksStatusesUsingGET) | **GET** /sale/offer-price-change-commands/{commandId}/tasks | Change price command detailed report
-[**getQuantityModificationCommandStatusUsingGET()**](BatchOfferModificationApi.md#getQuantityModificationCommandStatusUsingGET) | **GET** /sale/offer-quantity-change-commands/{commandId} | Change quantity command summary
-[**getQuantityModificationCommandTasksStatusesUsingGET()**](BatchOfferModificationApi.md#getQuantityModificationCommandTasksStatusesUsingGET) | **GET** /sale/offer-quantity-change-commands/{commandId}/tasks | Change quantity command detailed report
-[**getTasksUsingGET()**](BatchOfferModificationApi.md#getTasksUsingGET) | **GET** /sale/offer-modification-commands/{commandId}/tasks | Modification command detailed report
-[**modificationCommandUsingPUT()**](BatchOfferModificationApi.md#modificationCommandUsingPUT) | **PUT** /sale/offer-modification-commands/{commandId} | Batch offer modification
-[**priceModificationCommandUsingPUT()**](BatchOfferModificationApi.md#priceModificationCommandUsingPUT) | **PUT** /sale/offer-price-change-commands/{commandId} | Batch offer price modification
-[**quantityModificationCommandUsingPUT()**](BatchOfferModificationApi.md#quantityModificationCommandUsingPUT) | **PUT** /sale/offer-quantity-change-commands/{commandId} | Batch offer quantity modification
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getGeneralReportUsingGET()**](BatchOfferModificationApi.md#getGeneralReportUsingGET) | **GET** /sale/offer-modification-commands/{commandId} | Modification command summary |
+| [**getPriceModificationCommandStatusUsingGET()**](BatchOfferModificationApi.md#getPriceModificationCommandStatusUsingGET) | **GET** /sale/offer-price-change-commands/{commandId} | Change price command summary |
+| [**getPriceModificationCommandTasksStatusesUsingGET()**](BatchOfferModificationApi.md#getPriceModificationCommandTasksStatusesUsingGET) | **GET** /sale/offer-price-change-commands/{commandId}/tasks | Change price command detailed report |
+| [**getQuantityModificationCommandStatusUsingGET()**](BatchOfferModificationApi.md#getQuantityModificationCommandStatusUsingGET) | **GET** /sale/offer-quantity-change-commands/{commandId} | Change quantity command summary |
+| [**getQuantityModificationCommandTasksStatusesUsingGET()**](BatchOfferModificationApi.md#getQuantityModificationCommandTasksStatusesUsingGET) | **GET** /sale/offer-quantity-change-commands/{commandId}/tasks | Change quantity command detailed report |
+| [**getTasksUsingGET()**](BatchOfferModificationApi.md#getTasksUsingGET) | **GET** /sale/offer-modification-commands/{commandId}/tasks | Modification command detailed report |
+| [**modificationCommandUsingPUT()**](BatchOfferModificationApi.md#modificationCommandUsingPUT) | **PUT** /sale/offer-modification-commands/{commandId} | Batch offer modification |
+| [**priceModificationCommandUsingPUT()**](BatchOfferModificationApi.md#priceModificationCommandUsingPUT) | **PUT** /sale/offer-price-change-commands/{commandId} | Batch offer price modification |
+| [**quantityModificationCommandUsingPUT()**](BatchOfferModificationApi.md#quantityModificationCommandUsingPUT) | **PUT** /sale/offer-quantity-change-commands/{commandId} | Batch offer quantity modification |
 
 
 ## `getGeneralReportUsingGET()`
@@ -54,9 +54,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
 
 ### Return type
 
@@ -114,9 +114,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
 
 ### Return type
 
@@ -176,11 +176,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
- **limit** | **int**| The limit of elements in the response. | [optional] [default to 100]
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
+| **limit** | **int**| The limit of elements in the response. | [optional] [default to 100] |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
 
 ### Return type
 
@@ -238,9 +238,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
 
 ### Return type
 
@@ -300,11 +300,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
- **limit** | **int**| The limit of elements in the response. | [optional] [default to 100]
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
+| **limit** | **int**| The limit of elements in the response. | [optional] [default to 100] |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
 
 ### Return type
 
@@ -364,11 +364,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
- **limit** | **int**| The limit of elements in the response. | [optional] [default to 100]
- **offset** | **int**| The offset of elements in the response. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
+| **limit** | **int**| The limit of elements in the response. | [optional] [default to 100] |
+| **offset** | **int**| The offset of elements in the response. | [optional] [default to 0] |
 
 ### Return type
 
@@ -427,10 +427,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
- **offer_change_command** | [**\AllegroApi\Model\OfferChangeCommand**](../Model/OfferChangeCommand.md)| offerChangeCommandDto |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
+| **offer_change_command** | [**\AllegroApi\Model\OfferChangeCommand**](../Model/OfferChangeCommand.md)| offerChangeCommandDto | |
 
 ### Return type
 
@@ -489,10 +489,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
- **offer_price_change_command** | [**\AllegroApi\Model\OfferPriceChangeCommand**](../Model/OfferPriceChangeCommand.md)| offerPriceChangeCommandDto |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
+| **offer_price_change_command** | [**\AllegroApi\Model\OfferPriceChangeCommand**](../Model/OfferPriceChangeCommand.md)| offerPriceChangeCommandDto | |
 
 ### Return type
 
@@ -551,10 +551,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command_id** | **string**| Command identifier. |
- **offer_quantity_change_command** | [**\AllegroApi\Model\OfferQuantityChangeCommand**](../Model/OfferQuantityChangeCommand.md)| offerQuantityChangeCommandDto |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command_id** | **string**| Command identifier. | |
+| **offer_quantity_change_command** | [**\AllegroApi\Model\OfferQuantityChangeCommand**](../Model/OfferQuantityChangeCommand.md)| offerQuantityChangeCommandDto | |
 
 ### Return type
 

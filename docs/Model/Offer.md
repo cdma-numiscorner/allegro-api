@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**additional_marketplaces** | [**map[string,\AllegroApi\Model\OfferAdditionalMarketplace]**](OfferAdditionalMarketplace.md) | Settings for each additional marketplace. | [optional]
+**additional_marketplaces** | [**array<string,\AllegroApi\Model\OfferAdditionalMarketplace>**](OfferAdditionalMarketplace.md) | Settings for each additional marketplace. | [optional]
 **additional_services** | [**\AllegroApi\Model\JustId**](JustId.md) |  | [optional]
 **after_sales_services** | [**\AllegroApi\Model\AfterSalesServices**](AfterSalesServices.md) |  | [optional]
 **attachments** | [**\AllegroApi\Model\Attachment[]**](Attachment.md) | List of offer attachments. You can attach up to 7 files to the offer – one per each attachment type as described in &lt;a href&#x3D;\&quot;/documentation/#operation/createOfferAttachmentUsingPOST\&quot; target&#x3D;\&quot;_blank\&quot;&gt;uploading offer attachments flow&lt;/a&gt;. | [optional]
 **compatibility_list** | [**\AllegroApi\Model\CompatibilityList**](CompatibilityList.md) |  | [optional]
 **contact** | [**\AllegroApi\Model\JustId**](JustId.md) |  | [optional]
-**created_at** | [**\DateTime**](\DateTime.md) | Creation date: Format (ISO 8601) - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ. Cannot be modified. | [optional]
+**created_at** | **\DateTime** | Creation date: Format (ISO 8601) - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ. Cannot be modified. | [optional]
 **custom_parameters** | [**\AllegroApi\Model\CustomParameter[]**](CustomParameter.md) | List of custom parameters. You can add up to 4 custom parameters, each containing exactly one value. | [optional]
 **delivery** | [**\AllegroApi\Model\DeliveryFull**](DeliveryFull.md) |  | [optional]
 **description** | [**\AllegroApi\Model\StandardizedDescription**](StandardizedDescription.md) |  | [optional]
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **tecdoc_specification** | [**\AllegroApi\Model\TecdocSpecification**](TecdocSpecification.md) |  | [optional]
 **b2b** | [**\AllegroApi\Model\B2b**](B2b.md) |  | [optional]
 **message_to_seller_settings** | [**\AllegroApi\Model\MessageToSellerSettings**](MessageToSellerSettings.md) |  | [optional]
-**updated_at** | [**\DateTime**](\DateTime.md) | Last update date: Format (ISO 8601) - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ. Cannot be modified | [optional]
+**updated_at** | **\DateTime** | Last update date: Format (ISO 8601) - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ. Cannot be modified | [optional]
 **validation** | [**\AllegroApi\Model\Validation**](Validation.md) |  | [optional]
 **language** | **string** | Declared base language of the offer. | [optional]
 

@@ -1,22 +1,22 @@
 # AllegroApi\OrderManagementApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addOrderInvoicesMetadata()**](OrderManagementApi.md#addOrderInvoicesMetadata) | **POST** /order/checkout-forms/{id}/invoices | Post new invoice
-[**createOrderShipmentsUsingPOST()**](OrderManagementApi.md#createOrderShipmentsUsingPOST) | **POST** /order/checkout-forms/{id}/shipments | Add a parcel tracking number
-[**getAllegroPickupDropOffPointsGET()**](OrderManagementApi.md#getAllegroPickupDropOffPointsGET) | **GET** /order/carriers/ALLEGRO/points | Get Allegro pickup drop off points
-[**getListOfOrdersUsingGET()**](OrderManagementApi.md#getListOfOrdersUsingGET) | **GET** /order/checkout-forms | Get the user&#39;s orders
-[**getOrderEventsStatisticsUsingGET()**](OrderManagementApi.md#getOrderEventsStatisticsUsingGET) | **GET** /order/event-stats | Get order events statistics
-[**getOrderEventsUsingGET()**](OrderManagementApi.md#getOrderEventsUsingGET) | **GET** /order/events | Get order events
-[**getOrderInvoicesDetails()**](OrderManagementApi.md#getOrderInvoicesDetails) | **GET** /order/checkout-forms/{id}/invoices | Get order invoices details
-[**getOrderShipmentsUsingGET()**](OrderManagementApi.md#getOrderShipmentsUsingGET) | **GET** /order/checkout-forms/{id}/shipments | Get a list of parcel tracking numbers
-[**getOrdersCarriersUsingGET()**](OrderManagementApi.md#getOrdersCarriersUsingGET) | **GET** /order/carriers | Get a list of available shipping carriers
-[**getOrdersDetailsUsingGET()**](OrderManagementApi.md#getOrdersDetailsUsingGET) | **GET** /order/checkout-forms/{id} | Get an order&#39;s details
-[**getParcelTrackingUsingGET()**](OrderManagementApi.md#getParcelTrackingUsingGET) | **GET** /order/carriers/{carrierId}/tracking | Get carrier parcel tracking history
-[**setOrderFulfillmentUsingPUT()**](OrderManagementApi.md#setOrderFulfillmentUsingPUT) | **PUT** /order/checkout-forms/{id}/fulfillment | Set seller order status
-[**uploadOrderInvoiceFile()**](OrderManagementApi.md#uploadOrderInvoiceFile) | **PUT** /order/checkout-forms/{id}/invoices/{invoiceId}/file | Upload invoice file
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**addOrderInvoicesMetadata()**](OrderManagementApi.md#addOrderInvoicesMetadata) | **POST** /order/checkout-forms/{id}/invoices | Post new invoice |
+| [**createOrderShipmentsUsingPOST()**](OrderManagementApi.md#createOrderShipmentsUsingPOST) | **POST** /order/checkout-forms/{id}/shipments | Add a parcel tracking number |
+| [**getAllegroPickupDropOffPointsGET()**](OrderManagementApi.md#getAllegroPickupDropOffPointsGET) | **GET** /order/carriers/ALLEGRO/points | Get Allegro pickup drop off points |
+| [**getListOfOrdersUsingGET()**](OrderManagementApi.md#getListOfOrdersUsingGET) | **GET** /order/checkout-forms | Get the user&#39;s orders |
+| [**getOrderEventsStatisticsUsingGET()**](OrderManagementApi.md#getOrderEventsStatisticsUsingGET) | **GET** /order/event-stats | Get order events statistics |
+| [**getOrderEventsUsingGET()**](OrderManagementApi.md#getOrderEventsUsingGET) | **GET** /order/events | Get order events |
+| [**getOrderInvoicesDetails()**](OrderManagementApi.md#getOrderInvoicesDetails) | **GET** /order/checkout-forms/{id}/invoices | Get order invoices details |
+| [**getOrderShipmentsUsingGET()**](OrderManagementApi.md#getOrderShipmentsUsingGET) | **GET** /order/checkout-forms/{id}/shipments | Get a list of parcel tracking numbers |
+| [**getOrdersCarriersUsingGET()**](OrderManagementApi.md#getOrdersCarriersUsingGET) | **GET** /order/carriers | Get a list of available shipping carriers |
+| [**getOrdersDetailsUsingGET()**](OrderManagementApi.md#getOrdersDetailsUsingGET) | **GET** /order/checkout-forms/{id} | Get an order&#39;s details |
+| [**getParcelTrackingUsingGET()**](OrderManagementApi.md#getParcelTrackingUsingGET) | **GET** /order/carriers/{carrierId}/tracking | Get carrier parcel tracking history |
+| [**setOrderFulfillmentUsingPUT()**](OrderManagementApi.md#setOrderFulfillmentUsingPUT) | **PUT** /order/checkout-forms/{id}/fulfillment | Set seller order status |
+| [**uploadOrderInvoiceFile()**](OrderManagementApi.md#uploadOrderInvoiceFile) | **PUT** /order/checkout-forms/{id}/invoices/{invoiceId}/file | Upload invoice file |
 
 
 ## `addOrderInvoicesMetadata()`
@@ -59,10 +59,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Order identifier. |
- **check_forms_new_order_invoice** | [**\AllegroApi\Model\CheckFormsNewOrderInvoice**](../Model/CheckFormsNewOrderInvoice.md)| request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Order identifier. | |
+| **check_forms_new_order_invoice** | [**\AllegroApi\Model\CheckFormsNewOrderInvoice**](../Model/CheckFormsNewOrderInvoice.md)| request | |
 
 ### Return type
 
@@ -121,10 +121,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Order identifier. |
- **checkout_form_add_waybill_request** | [**\AllegroApi\Model\CheckoutFormAddWaybillRequest**](../Model/CheckoutFormAddWaybillRequest.md)| request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Order identifier. | |
+| **checkout_form_add_waybill_request** | [**\AllegroApi\Model\CheckoutFormAddWaybillRequest**](../Model/CheckoutFormAddWaybillRequest.md)| request | |
 
 ### Return type
 
@@ -160,10 +160,10 @@ Get a list of Allegro pickup drop off points. Read more: <a href=\"../../tutoria
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure OAuth2 access token for authorization: bearer-token-for-application
+// Configure OAuth2 access token for authorization: bearer-token-for-user
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: bearer-token-for-user
+// Configure OAuth2 access token for authorization: bearer-token-for-application
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -186,10 +186,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **carriers** | [**\AllegroApi\Model\AllegroCarrier[]**](../Model/\AllegroApi\Model\AllegroCarrier.md)| List of carrier ids to filter the drop off/pick up points to only the ones where any of the listed carriers operate. In case of an empty list, all points are returned. | [optional]
- **if_modified_since** | **string**| Date of last data modification. If data has been modified after specified date, full set of data is returned. If header is not specified, full set of data is returned. Date has to be provided in HTTP-date format. Information about date (the same HTTP-date format) of last modified data is available in response - &#x60;Last-Modified&#x60;. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **carriers** | [**\AllegroApi\Model\AllegroCarrier[]**](../Model/\AllegroApi\Model\AllegroCarrier.md)| List of carrier ids to filter the drop off/pick up points to only the ones where any of the listed carriers operate. In case of an empty list, all points are returned. | [optional] |
+| **if_modified_since** | **string**| Date of last data modification. If data has been modified after specified date, full set of data is returned. If header is not specified, full set of data is returned. Date has to be provided in HTTP-date format. Information about date (the same HTTP-date format) of last modified data is available in response - &#x60;Last-Modified&#x60;. | [optional] |
 
 ### Return type
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer-token-for-application](../../README.md#bearer-token-for-application), [bearer-token-for-user](../../README.md#bearer-token-for-user)
+[bearer-token-for-user](../../README.md#bearer-token-for-user), [bearer-token-for-application](../../README.md#bearer-token-for-application)
 
 ### HTTP request headers
 
@@ -261,23 +261,23 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| Index of first returned checkout-form from all search results. | [optional] [default to 0]
- **limit** | **int**| Maximum number of checkout-forms in response. | [optional] [default to 100]
- **status** | **string**| Specify status value that checkout-forms must have to be included in the output. Allowed values are:   * &#x60;BOUGHT&#x60;: purchase without checkout form filled in.   * &#x60;FILLED_IN&#x60;: checkout form filled in but payment is not completed yet so data could still change.   * &#x60;READY_FOR_PROCESSING&#x60;: payment completed. Purchase is ready for processing.   * &#x60;CANCELLED&#x60;: purchase cancelled by buyer. | [optional]
- **fulfillment_status** | **string**| Specify seller status value that checkout-forms must have to be included in the output. Allowed values are:   * &#x60;NEW&#x60;   * &#x60;PROCESSING&#x60;   * &#x60;READY_FOR_SHIPMENT&#x60;   * &#x60;READY_FOR_PICKUP&#x60;   * &#x60;SENT&#x60;   * &#x60;PICKED_UP&#x60;   * &#x60;CANCELLED&#x60;   * &#x60;SUSPENDED&#x60;. | [optional]
- **fulfillment_shipment_summary_line_items_sent** | **string**| Specify filter for line items sending status. Allowed values are:   * &#x60;NONE&#x60;: none of line items have tracking number specified   * &#x60;SOME&#x60;: some of line items have tracking number specified   * &#x60;ALL&#x60;: all of line items have tracking number specified. | [optional]
- **line_items_bought_at_lte** | **\DateTime**| Latest line item bought date. The upper bound of date time range from which checkout forms will be taken. | [optional]
- **line_items_bought_at_gte** | **\DateTime**| Latest line item bought date. The lower bound of date time range from which checkout forms will be taken. | [optional]
- **payment_id** | **string**| Find checkout-forms having specified payment id. | [optional]
- **surcharges_id** | **string**| Find checkout-forms having specified surcharge id. | [optional]
- **delivery_method_id** | **string**| Find checkout-forms having specified delivery method id. | [optional]
- **buyer_login** | **string**| Find checkout-forms having specified buyer login. | [optional]
- **marketplace_id** | **string**| Find checkout-forms of orders purchased on specified marketplace | [optional]
- **updated_at_lte** | **\DateTime**| Checkout form last modification date. The upper bound of date time range from which checkout forms will be taken. | [optional]
- **updated_at_gte** | **\DateTime**| Checkout form last modification date. The lower bound of date time range from which checkout forms will be taken. | [optional]
- **sort** | **string**| The results&#39; sorting order. No prefix in the value means ascending order. &#x60;-&#x60; prefix means descending order. If you don&#39;t provide the sort parameter, the list is sorted by line item boughtAt date, descending. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**| Index of first returned checkout-form from all search results. | [optional] [default to 0] |
+| **limit** | **int**| Maximum number of checkout-forms in response. | [optional] [default to 100] |
+| **status** | **string**| Specify status value that checkout-forms must have to be included in the output. Allowed values are:   * &#x60;BOUGHT&#x60;: purchase without checkout form filled in.   * &#x60;FILLED_IN&#x60;: checkout form filled in but payment is not completed yet so data could still change.   * &#x60;READY_FOR_PROCESSING&#x60;: payment completed. Purchase is ready for processing.   * &#x60;CANCELLED&#x60;: purchase cancelled by buyer. | [optional] |
+| **fulfillment_status** | **string**| Specify seller status value that checkout-forms must have to be included in the output. Allowed values are:   * &#x60;NEW&#x60;   * &#x60;PROCESSING&#x60;   * &#x60;READY_FOR_SHIPMENT&#x60;   * &#x60;READY_FOR_PICKUP&#x60;   * &#x60;SENT&#x60;   * &#x60;PICKED_UP&#x60;   * &#x60;CANCELLED&#x60;   * &#x60;SUSPENDED&#x60;. | [optional] |
+| **fulfillment_shipment_summary_line_items_sent** | **string**| Specify filter for line items sending status. Allowed values are:   * &#x60;NONE&#x60;: none of line items have tracking number specified   * &#x60;SOME&#x60;: some of line items have tracking number specified   * &#x60;ALL&#x60;: all of line items have tracking number specified. | [optional] |
+| **line_items_bought_at_lte** | **\DateTime**| Latest line item bought date. The upper bound of date time range from which checkout forms will be taken. | [optional] |
+| **line_items_bought_at_gte** | **\DateTime**| Latest line item bought date. The lower bound of date time range from which checkout forms will be taken. | [optional] |
+| **payment_id** | **string**| Find checkout-forms having specified payment id. | [optional] |
+| **surcharges_id** | **string**| Find checkout-forms having specified surcharge id. | [optional] |
+| **delivery_method_id** | **string**| Find checkout-forms having specified delivery method id. | [optional] |
+| **buyer_login** | **string**| Find checkout-forms having specified buyer login. | [optional] |
+| **marketplace_id** | **string**| Find checkout-forms of orders purchased on specified marketplace | [optional] |
+| **updated_at_lte** | **\DateTime**| Checkout form last modification date. The upper bound of date time range from which checkout forms will be taken. | [optional] |
+| **updated_at_gte** | **\DateTime**| Checkout form last modification date. The lower bound of date time range from which checkout forms will be taken. | [optional] |
+| **sort** | **string**| The results&#39; sorting order. No prefix in the value means ascending order. &#x60;-&#x60; prefix means descending order. If you don&#39;t provide the sort parameter, the list is sorted by line item boughtAt date, descending. | [optional] |
 
 ### Return type
 
@@ -394,11 +394,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **from** | **string**| You can use the event ID to retrieve subsequent chunks of events. | [optional]
- **type** | [**string[]**](../Model/string.md)| Specify array of event types for filtering. Allowed values are:   * &#x60;BOUGHT&#x60;: purchase without checkout form filled in   * &#x60;FILLED_IN&#x60;: checkout form filled in but payment is not completed yet so data could still change   * &#x60;READY_FOR_PROCESSING&#x60;: payment completed. Purchase is ready for processing   * &#x60;BUYER_CANCELLED&#x60;: purchase was cancelled by buyer   * &#x60;FULFILLMENT_STATUS_CHANGED&#x60;: fulfillment status changed   * &#x60;AUTO_CANCELLED&#x60;: purchase was cancelled automatically by Allegro. | [optional]
- **limit** | **int**| The maximum number of events returned in the response. | [optional] [default to 100]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **from** | **string**| You can use the event ID to retrieve subsequent chunks of events. | [optional] |
+| **type** | [**string[]**](../Model/string.md)| Specify array of event types for filtering. Allowed values are:   * &#x60;BOUGHT&#x60;: purchase without checkout form filled in   * &#x60;FILLED_IN&#x60;: checkout form filled in but payment is not completed yet so data could still change   * &#x60;READY_FOR_PROCESSING&#x60;: payment completed. Purchase is ready for processing   * &#x60;BUYER_CANCELLED&#x60;: purchase was cancelled by buyer   * &#x60;FULFILLMENT_STATUS_CHANGED&#x60;: fulfillment status changed   * &#x60;AUTO_CANCELLED&#x60;: purchase was cancelled automatically by Allegro. | [optional] |
+| **limit** | **int**| The maximum number of events returned in the response. | [optional] [default to 100] |
 
 ### Return type
 
@@ -456,9 +456,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Order identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Order identifier. | |
 
 ### Return type
 
@@ -516,9 +516,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Order identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Order identifier. | |
 
 ### Return type
 
@@ -554,10 +554,10 @@ Shipping carriers are essential to provide accurate tracking experience for cust
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure OAuth2 access token for authorization: bearer-token-for-application
+// Configure OAuth2 access token for authorization: bearer-token-for-user
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: bearer-token-for-user
+// Configure OAuth2 access token for authorization: bearer-token-for-application
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -586,7 +586,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[bearer-token-for-application](../../README.md#bearer-token-for-application), [bearer-token-for-user](../../README.md#bearer-token-for-user)
+[bearer-token-for-user](../../README.md#bearer-token-for-user), [bearer-token-for-application](../../README.md#bearer-token-for-application)
 
 ### HTTP request headers
 
@@ -636,9 +636,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**string**](../Model/.md)| Checkout form identifier. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Checkout form identifier. | |
 
 ### Return type
 
@@ -674,10 +674,10 @@ Get tracking history for parcels sent via the Ship with Allegro tool using <a hr
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure OAuth2 access token for authorization: bearer-token-for-application
+// Configure OAuth2 access token for authorization: bearer-token-for-user
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: bearer-token-for-user
+// Configure OAuth2 access token for authorization: bearer-token-for-application
 $config = AllegroApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -700,10 +700,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **carrier_id** | **string**| Carrier identifier. |
- **waybill** | [**string[]**](../Model/string.md)| Waybill number (parcel tracking number). Example: &#x60;waybill&#x3D;AAA0000E5D201&amp;waybill&#x3D;BBB00000E5D202&#x60; - returns parcel tracking history for &#x60;AAA0000E5D201&#x60; as well as for &#x60;BBB00000E5D202&#x60;. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **carrier_id** | **string**| Carrier identifier. | |
+| **waybill** | [**string[]**](../Model/string.md)| Waybill number (parcel tracking number). Example: &#x60;waybill&#x3D;AAA0000E5D201&amp;waybill&#x3D;BBB00000E5D202&#x60; - returns parcel tracking history for &#x60;AAA0000E5D201&#x60; as well as for &#x60;BBB00000E5D202&#x60;. | |
 
 ### Return type
 
@@ -711,7 +711,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer-token-for-application](../../README.md#bearer-token-for-application), [bearer-token-for-user](../../README.md#bearer-token-for-user)
+[bearer-token-for-user](../../README.md#bearer-token-for-user), [bearer-token-for-application](../../README.md#bearer-token-for-application)
 
 ### HTTP request headers
 
@@ -762,11 +762,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Order identifier. |
- **checkout_form_fulfillment** | [**\AllegroApi\Model\CheckoutFormFulfillment**](../Model/CheckoutFormFulfillment.md)| request |
- **checkout_form_revision** | **string**| Checkout form revision. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Order identifier. | |
+| **checkout_form_fulfillment** | [**\AllegroApi\Model\CheckoutFormFulfillment**](../Model/CheckoutFormFulfillment.md)| request | |
+| **checkout_form_revision** | **string**| Checkout form revision. | [optional] |
 
 ### Return type
 
@@ -825,11 +825,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Order identifier. |
- **invoice_id** | **string**| Invoice identifier. |
- **body** | **\SplFileObject****\SplFileObject**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Order identifier. | |
+| **invoice_id** | **string**| Invoice identifier. | |
+| **body** | **\SplFileObject****\SplFileObject**|  | [optional] |
 
 ### Return type
 

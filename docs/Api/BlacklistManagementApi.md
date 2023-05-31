@@ -1,11 +1,11 @@
 # AllegroApi\BlacklistManagementApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**doAddToBlackList()**](BlacklistManagementApi.md#doAddToBlackList) | **POST** /sale/blacklisted-users | Add a users to the blacklist
-[**doRemoveFromBlackList()**](BlacklistManagementApi.md#doRemoveFromBlackList) | **DELETE** /sale/blacklisted-users/{excludedUserId} | Remove users from the blacklist
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**doAddToBlackList()**](BlacklistManagementApi.md#doAddToBlackList) | **POST** /sale/blacklisted-users | Add a users to the blacklist |
+| [**doRemoveFromBlackList()**](BlacklistManagementApi.md#doRemoveFromBlackList) | **DELETE** /sale/blacklisted-users/{excludedUserId} | Remove users from the blacklist |
 
 
 ## `doAddToBlackList()`
@@ -47,9 +47,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **blacklist_request** | [**\AllegroApi\Model\BlacklistRequest**](../Model/BlacklistRequest.md)| request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **blacklist_request** | [**\AllegroApi\Model\BlacklistRequest**](../Model/BlacklistRequest.md)| request | |
 
 ### Return type
 
@@ -106,9 +106,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **excluded_user_id** | **int**| Remove users from the blacklist. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **excluded_user_id** | **int**| Remove users from the blacklist. | |
 
 ### Return type
 

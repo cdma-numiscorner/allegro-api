@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **invoice_number** | **string** |  | [optional]
-**created_at** | [**\DateTime**](\DateTime.md) |  | [optional]
+**created_at** | **\DateTime** |  | [optional]
 **file** | [**\AllegroApi\Model\CheckoutFormsOrderInvoiceFile**](CheckoutFormsOrderInvoiceFile.md) |  | [optional]
 **ept_verification** | [**\AllegroApi\Model\CheckoutFormsOrderInvoiceEptVerification**](CheckoutFormsOrderInvoiceEptVerification.md) |  | [optional]
 

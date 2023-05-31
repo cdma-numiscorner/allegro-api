@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [default to 'CONTRIBUTION']
+**type** | **string** |  | [optional] [default to 'CONTRIBUTION']
 **payment** | [**\AllegroApi\Model\OperationPayment**](OperationPayment.md) |  |
 **participant** | [**\AllegroApi\Model\BuyerParticipant**](BuyerParticipant.md) |  |
 

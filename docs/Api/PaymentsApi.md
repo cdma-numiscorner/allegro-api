@@ -1,12 +1,12 @@
 # AllegroApi\PaymentsApi
 
-All URIs are relative to https://api.allegro.pl.
+All URIs are relative to https://api.allegro.pl, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getPaymentsOperationHistory()**](PaymentsApi.md#getPaymentsOperationHistory) | **GET** /payments/payment-operations | Payment operations history
-[**getRefundedPayments()**](PaymentsApi.md#getRefundedPayments) | **GET** /payments/refunds | Get a list of refunded payments
-[**initiateRefund()**](PaymentsApi.md#initiateRefund) | **POST** /payments/refunds | Initiate a refund of a payment
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getPaymentsOperationHistory()**](PaymentsApi.md#getPaymentsOperationHistory) | **GET** /payments/payment-operations | Payment operations history |
+| [**getRefundedPayments()**](PaymentsApi.md#getRefundedPayments) | **GET** /payments/refunds | Get a list of refunded payments |
+| [**initiateRefund()**](PaymentsApi.md#initiateRefund) | **POST** /payments/refunds | Initiate a refund of a payment |
 
 
 ## `getPaymentsOperationHistory()`
@@ -58,19 +58,19 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wallet_type** | **string**| Type of the wallet: * AVAILABLE - operations available for payout. * WAITING - operations temporarily suspended for payout. | [optional] [default to &#39;AVAILABLE&#39;]
- **wallet_payment_operator** | **string**| Payment operator: * PAYU - operations processed by PAYU operator. * P24 - operations processed by PRZELEWY24 operator. | [optional]
- **payment_id** | [**string**](../Model/.md)| The payment ID. | [optional]
- **participant_login** | **string**| Login of the participant. In case of REFUND_INCREASE operation this is the login of the seller, in other cases, of the buyer. | [optional]
- **occurred_at_gte** | **\DateTime**| The minimum date and time of operation occurrence in ISO 8601 format. | [optional]
- **occurred_at_lte** | **\DateTime**| The maximum date and time of operation occurrence in ISO 8601 format. | [optional]
- **group** | [**string[]**](../Model/string.md)| Group of operation types: * INCOME - CONTRIBUTION, SURCHARGE, CORRECTION, DEDUCTION_INCREASE, COMPENSATION. * OUTCOME - PAYOUT, PAYOUT_CANCEL, DEDUCTION_CHARGE. * REFUND - REFUND_CHARGE, REFUND_CANCEL, REFUND_INCREASE, CORRECTION. * BLOCKADES - BLOCKADE, BLOCKADE_RELEASE. | [optional]
- **marketplace_id** | **string**| The marketplace ID where operation was made. When the parameter is omitted, searches for operations with all marketplaces. Note, that there are operations not assigned to any marketplace. | [optional]
- **currency** | **string**| Currency of the operations. | [optional]
- **limit** | **int**| Number of returned operations. | [optional] [default to 50]
- **offset** | **int**| Index of the first returned payment operation from all search results. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wallet_type** | **string**| Type of the wallet: * AVAILABLE - operations available for payout. * WAITING - operations temporarily suspended for payout. | [optional] [default to &#39;AVAILABLE&#39;] |
+| **wallet_payment_operator** | **string**| Payment operator: * PAYU - operations processed by PAYU operator. * P24 - operations processed by PRZELEWY24 operator. | [optional] |
+| **payment_id** | **string**| The payment ID. | [optional] |
+| **participant_login** | **string**| Login of the participant. In case of REFUND_INCREASE operation this is the login of the seller, in other cases, of the buyer. | [optional] |
+| **occurred_at_gte** | **\DateTime**| The minimum date and time of operation occurrence in ISO 8601 format. | [optional] |
+| **occurred_at_lte** | **\DateTime**| The maximum date and time of operation occurrence in ISO 8601 format. | [optional] |
+| **group** | [**string[]**](../Model/string.md)| Group of operation types: * INCOME - CONTRIBUTION, SURCHARGE, CORRECTION, DEDUCTION_INCREASE, COMPENSATION. * OUTCOME - PAYOUT, PAYOUT_CANCEL, DEDUCTION_CHARGE. * REFUND - REFUND_CHARGE, REFUND_CANCEL, REFUND_INCREASE, CORRECTION. * BLOCKADES - BLOCKADE, BLOCKADE_RELEASE. | [optional] |
+| **marketplace_id** | **string**| The marketplace ID where operation was made. When the parameter is omitted, searches for operations with all marketplaces. Note, that there are operations not assigned to any marketplace. | [optional] |
+| **currency** | **string**| Currency of the operations. | [optional] |
+| **limit** | **int**| Number of returned operations. | [optional] [default to 50] |
+| **offset** | **int**| Index of the first returned payment operation from all search results. | [optional] [default to 0] |
 
 ### Return type
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 ## `getRefundedPayments()`
 
 ```php
-getRefundedPayments($limit, $offset, $id, $payment_id, $occurred_at_gte, $occurred_at_lte, $status): object
+getRefundedPayments($limit, $offset, $id, $payment_id, $occurred_at_gte, $occurred_at_lte, $status): \AllegroApi\Model\GetRefundedPayments200Response
 ```
 
 Get a list of refunded payments
@@ -134,19 +134,19 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **int**| Number of returned operations. | [optional] [default to 50]
- **offset** | **int**| Index of the first returned payment operation from all search results. | [optional] [default to 0]
- **id** | [**string**](../Model/.md)| ID of the refund. | [optional]
- **payment_id** | [**string**](../Model/.md)| ID of the payment. | [optional]
- **occurred_at_gte** | **\DateTime**| Minimum date and time when the refund occurred provided in ISO 8601 format. | [optional]
- **occurred_at_lte** | **\DateTime**| Maximum date and time when the refund occurred provided in ISO 8601 format. | [optional]
- **status** | [**string[]**](../Model/string.md)| Current status of payment refund. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **int**| Number of returned operations. | [optional] [default to 50] |
+| **offset** | **int**| Index of the first returned payment operation from all search results. | [optional] [default to 0] |
+| **id** | **string**| ID of the refund. | [optional] |
+| **payment_id** | **string**| ID of the payment. | [optional] |
+| **occurred_at_gte** | **\DateTime**| Minimum date and time when the refund occurred provided in ISO 8601 format. | [optional] |
+| **occurred_at_lte** | **\DateTime**| Maximum date and time when the refund occurred provided in ISO 8601 format. | [optional] |
+| **status** | [**string[]**](../Model/string.md)| Current status of payment refund. | [optional] |
 
 ### Return type
 
-**object**
+[**\AllegroApi\Model\GetRefundedPayments200Response**](../Model/GetRefundedPayments200Response.md)
 
 ### Authorization
 
@@ -200,9 +200,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **initialize_refund** | [**\AllegroApi\Model\InitializeRefund**](../Model/InitializeRefund.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **initialize_refund** | [**\AllegroApi\Model\InitializeRefund**](../Model/InitializeRefund.md)|  | [optional] |
 
 ### Return type
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
-**created_at** | [**\DateTime**](\DateTime.md) |  | [optional]
+**created_at** | **\DateTime** |  | [optional]
 **reference_number** | **string** |  | [optional]
 **order_id** | **string** |  | [optional]
 **items** | [**\AllegroApi\Model\CustomerReturnItem[]**](CustomerReturnItem.md) | List of returned items. | [optional]
