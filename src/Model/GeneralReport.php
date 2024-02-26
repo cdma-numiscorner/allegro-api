@@ -62,6 +62,8 @@ class GeneralReport implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
+        'created_at' => '\DateTime',
+        'completed_at' => '\DateTime',
         'task_count' => '\AllegroApi\Model\TaskCount'
     ];
 
@@ -74,6 +76,8 @@ class GeneralReport implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
+        'created_at' => 'date-time',
+        'completed_at' => 'date-time',
         'task_count' => null
     ];
 
@@ -105,6 +109,8 @@ class GeneralReport implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
+        'created_at' => 'createdAt',
+        'completed_at' => 'completedAt',
         'task_count' => 'taskCount'
     ];
 
@@ -115,6 +121,8 @@ class GeneralReport implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
+        'created_at' => 'setCreatedAt',
+        'completed_at' => 'setCompletedAt',
         'task_count' => 'setTaskCount'
     ];
 
@@ -125,6 +133,8 @@ class GeneralReport implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
+        'created_at' => 'getCreatedAt',
+        'completed_at' => 'getCompletedAt',
         'task_count' => 'getTaskCount'
     ];
 
@@ -189,6 +199,8 @@ class GeneralReport implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['completed_at'] = $data['completed_at'] ?? null;
         $this->container['task_count'] = $data['task_count'] ?? null;
     }
 
@@ -236,6 +248,54 @@ class GeneralReport implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime|null $created_at Date of command creation. Format (ISO 8601) - yyyy-MM-dd'T'HH:mm:ss.SSSZ
+     *
+     * @return self
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets completed_at
+     *
+     * @return \DateTime|null
+     */
+    public function getCompletedAt()
+    {
+        return $this->container['completed_at'];
+    }
+
+    /**
+     * Sets completed_at
+     *
+     * @param \DateTime|null $completed_at Date of command completion. Format (ISO 8601) - yyyy-MM-dd'T'HH:mm:ss.SSSZ
+     *
+     * @return self
+     */
+    public function setCompletedAt($completed_at)
+    {
+        $this->container['completed_at'] = $completed_at;
 
         return $this;
     }

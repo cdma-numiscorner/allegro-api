@@ -62,6 +62,7 @@ class BadgeCampaign implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
+        'marketplace' => '\AllegroApi\Model\MarketplaceReference',
         'type' => 'string',
         'eligibility' => '\AllegroApi\Model\UserCampaignEligibility',
         'application' => '\AllegroApi\Model\ApplicationTimePolicy',
@@ -80,6 +81,7 @@ class BadgeCampaign implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
+        'marketplace' => null,
         'type' => null,
         'eligibility' => null,
         'application' => null,
@@ -117,6 +119,7 @@ class BadgeCampaign implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
+        'marketplace' => 'marketplace',
         'type' => 'type',
         'eligibility' => 'eligibility',
         'application' => 'application',
@@ -133,6 +136,7 @@ class BadgeCampaign implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
+        'marketplace' => 'setMarketplace',
         'type' => 'setType',
         'eligibility' => 'setEligibility',
         'application' => 'setApplication',
@@ -149,6 +153,7 @@ class BadgeCampaign implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
+        'marketplace' => 'getMarketplace',
         'type' => 'getType',
         'eligibility' => 'getEligibility',
         'application' => 'getApplication',
@@ -236,6 +241,7 @@ class BadgeCampaign implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['marketplace'] = $data['marketplace'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
         $this->container['eligibility'] = $data['eligibility'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
@@ -258,6 +264,9 @@ class BadgeCampaign implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['marketplace'] === null) {
+            $invalidProperties[] = "'marketplace' can't be null";
         }
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
@@ -345,6 +354,30 @@ class BadgeCampaign implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets marketplace
+     *
+     * @return \AllegroApi\Model\MarketplaceReference
+     */
+    public function getMarketplace()
+    {
+        return $this->container['marketplace'];
+    }
+
+    /**
+     * Sets marketplace
+     *
+     * @param \AllegroApi\Model\MarketplaceReference $marketplace marketplace
+     *
+     * @return self
+     */
+    public function setMarketplace($marketplace)
+    {
+        $this->container['marketplace'] = $marketplace;
 
         return $this;
     }

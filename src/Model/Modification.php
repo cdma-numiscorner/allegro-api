@@ -66,7 +66,6 @@ class Modification implements ModelInterface, ArrayAccess, \JsonSerializable
         'discounts' => '\AllegroApi\Model\ModificationDiscounts',
         'location' => '\AllegroApi\Model\Location',
         'payments' => '\AllegroApi\Model\ModificationPayments',
-        'promotion' => '\AllegroApi\Model\ModificationPromotion',
         'size_table' => '\AllegroApi\Model\SizeTable',
         'publication' => '\AllegroApi\Model\ModificationPublication'
     ];
@@ -84,7 +83,6 @@ class Modification implements ModelInterface, ArrayAccess, \JsonSerializable
         'discounts' => null,
         'location' => null,
         'payments' => null,
-        'promotion' => null,
         'size_table' => null,
         'publication' => null
     ];
@@ -121,7 +119,6 @@ class Modification implements ModelInterface, ArrayAccess, \JsonSerializable
         'discounts' => 'discounts',
         'location' => 'location',
         'payments' => 'payments',
-        'promotion' => 'promotion',
         'size_table' => 'sizeTable',
         'publication' => 'publication'
     ];
@@ -137,7 +134,6 @@ class Modification implements ModelInterface, ArrayAccess, \JsonSerializable
         'discounts' => 'setDiscounts',
         'location' => 'setLocation',
         'payments' => 'setPayments',
-        'promotion' => 'setPromotion',
         'size_table' => 'setSizeTable',
         'publication' => 'setPublication'
     ];
@@ -153,7 +149,6 @@ class Modification implements ModelInterface, ArrayAccess, \JsonSerializable
         'discounts' => 'getDiscounts',
         'location' => 'getLocation',
         'payments' => 'getPayments',
-        'promotion' => 'getPromotion',
         'size_table' => 'getSizeTable',
         'publication' => 'getPublication'
     ];
@@ -223,7 +218,6 @@ class Modification implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['discounts'] = $data['discounts'] ?? null;
         $this->container['location'] = $data['location'] ?? null;
         $this->container['payments'] = $data['payments'] ?? null;
-        $this->container['promotion'] = $data['promotion'] ?? null;
         $this->container['size_table'] = $data['size_table'] ?? null;
         $this->container['publication'] = $data['publication'] ?? null;
     }
@@ -368,30 +362,6 @@ class Modification implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPayments($payments)
     {
         $this->container['payments'] = $payments;
-
-        return $this;
-    }
-
-    /**
-     * Gets promotion
-     *
-     * @return \AllegroApi\Model\ModificationPromotion|null
-     */
-    public function getPromotion()
-    {
-        return $this->container['promotion'];
-    }
-
-    /**
-     * Sets promotion
-     *
-     * @param \AllegroApi\Model\ModificationPromotion|null $promotion promotion
-     *
-     * @return self
-     */
-    public function setPromotion($promotion)
-    {
-        $this->container['promotion'] = $promotion;
 
         return $this;
     }

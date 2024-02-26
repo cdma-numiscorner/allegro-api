@@ -36,7 +36,7 @@ use \AllegroApi\ObjectSerializer;
  * TecdocSpecification Class Doc Comment
  *
  * @category Class
- * @description Contains additional information describing products from automotive categories. Technical specification is created based on TecDoc database and can only be used while creating offer with assigned product to it. &lt;a href&#x3D;\&quot;../../productization\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Read more&lt;/a&gt;.
+ * @description Contains additional information describing products from automotive categories. Technical specification is created based on TecDoc database and can only be used while creating offer with assigned product to it. &lt;a href&#x3D;\&quot;../../tutorials/jak-jednym-requestem-wystawic-oferte-powiazana-z-produktem-D7Kj9gw4xFA\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Read more&lt;/a&gt;.
  * @package  AllegroApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

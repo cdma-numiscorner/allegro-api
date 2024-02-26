@@ -187,6 +187,7 @@ class ReceivingStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     const REASON_CODE_UNACCEPTABLE_PRODUCT_SIZE = 'UNACCEPTABLE_PRODUCT_SIZE';
     const REASON_CODE_UNKNOWN_DAMAGE = 'UNKNOWN_DAMAGE';
     const REASON_CODE_UNKNOWN_REJECT = 'UNKNOWN_REJECT';
+    const REASON_CODE_UNSCANNABLE_BARCODE = 'UNSCANNABLE_BARCODE';
     
 
     
@@ -223,6 +224,7 @@ class ReceivingStatus implements ModelInterface, ArrayAccess, \JsonSerializable
             self::REASON_CODE_UNACCEPTABLE_PRODUCT_SIZE,
             self::REASON_CODE_UNKNOWN_DAMAGE,
             self::REASON_CODE_UNKNOWN_REJECT,
+            self::REASON_CODE_UNSCANNABLE_BARCODE,
         ];
     }
     

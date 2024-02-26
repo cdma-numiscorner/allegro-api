@@ -125,7 +125,7 @@ class OrderManagementApi
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \AllegroApi\Model\CheckFormsNewOrderInvoiceId|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
+     * @return \AllegroApi\Model\CheckFormsNewOrderInvoiceId|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
      */
     public function addOrderInvoicesMetadata($id, $check_forms_new_order_invoice)
     {
@@ -143,7 +143,7 @@ class OrderManagementApi
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \AllegroApi\Model\CheckFormsNewOrderInvoiceId|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AllegroApi\Model\CheckFormsNewOrderInvoiceId|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
      */
     public function addOrderInvoicesMetadataWithHttpInfo($id, $check_forms_new_order_invoice)
     {
@@ -239,6 +239,18 @@ class OrderManagementApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 429:
+                    if ('\AllegroApi\Model\ErrorsHolder' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\ErrorsHolder', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\AllegroApi\Model\CheckFormsNewOrderInvoiceId';
@@ -290,6 +302,14 @@ class OrderManagementApi
                     $e->setResponseObject($data);
                     break;
                 case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AllegroApi\Model\ErrorsHolder',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\AllegroApi\Model\ErrorsHolder',

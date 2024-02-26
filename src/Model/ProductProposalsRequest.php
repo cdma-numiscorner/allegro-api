@@ -227,8 +227,8 @@ class ProductProposalsRequest implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ((mb_strlen($this->container['name']) > 50)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 50.";
+        if ((mb_strlen($this->container['name']) > 75)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 75.";
         }
 
         if ($this->container['category'] === null) {
@@ -239,6 +239,9 @@ class ProductProposalsRequest implements ModelInterface, ArrayAccess, \JsonSeria
         }
         if ($this->container['parameters'] === null) {
             $invalidProperties[] = "'parameters' can't be null";
+        }
+        if ($this->container['language'] === null) {
+            $invalidProperties[] = "'language' can't be null";
         }
         return $invalidProperties;
     }
@@ -274,8 +277,8 @@ class ProductProposalsRequest implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setName($name)
     {
-        if ((mb_strlen($name) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling ProductProposalsRequest., must be smaller than or equal to 50.');
+        if ((mb_strlen($name) > 75)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling ProductProposalsRequest., must be smaller than or equal to 75.');
         }
 
         $this->container['name'] = $name;
@@ -382,7 +385,7 @@ class ProductProposalsRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets language
      *
-     * @return string|null
+     * @return string
      */
     public function getLanguage()
     {
@@ -392,7 +395,7 @@ class ProductProposalsRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets language
      *
-     * @param string|null $language Language of provided product data (name, description, parameters's values).
+     * @param string $language Language of provided product data (name, description, parameters's values).
      *
      * @return self
      */

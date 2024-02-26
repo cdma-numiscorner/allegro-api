@@ -36,7 +36,7 @@ use \AllegroApi\ObjectSerializer;
  * Shipping Class Doc Comment
  *
  * @category Class
- * @description Represents information about package shipment. Constraints:   * for method OWN_TRANSPORT: truckLicencePlat, estimatedTimeOfArrival and countryCode are required.   * for method COURIER_BY_SELLER: trackingNumber, estimatedTimeOfArrival and countryCode are required.   * for method THIRD_PARTY_DELIVERY: thirdParty, estimatedTimeOfArrival and countryCode are required.
+ * @description Represents information about package shipment. Constraints:   * for method OWN_TRANSPORT: truckLicencePlate, estimatedTimeOfArrival and countryCode are required.   * for method COURIER_BY_SELLER: trackingNumber, estimatedTimeOfArrival and countryCode are required.   * for method THIRD_PARTY_DELIVERY: thirdParty, estimatedTimeOfArrival and countryCode are required.
  * @package  AllegroApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

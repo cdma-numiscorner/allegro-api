@@ -68,6 +68,7 @@ class CheckoutFormLineItem implements ModelInterface, ArrayAccess, \JsonSerializ
         'price' => '\AllegroApi\Model\Price',
         'reconciliation' => '\AllegroApi\Model\LineItemReconciliation',
         'selected_additional_services' => '\AllegroApi\Model\CheckoutFormAdditionalService[]',
+        'vouchers' => '\AllegroApi\Model\LineItemVoucher[]',
         'bought_at' => '\DateTime'
     ];
 
@@ -86,6 +87,7 @@ class CheckoutFormLineItem implements ModelInterface, ArrayAccess, \JsonSerializ
         'price' => null,
         'reconciliation' => null,
         'selected_additional_services' => null,
+        'vouchers' => null,
         'bought_at' => 'date-time'
     ];
 
@@ -123,6 +125,7 @@ class CheckoutFormLineItem implements ModelInterface, ArrayAccess, \JsonSerializ
         'price' => 'price',
         'reconciliation' => 'reconciliation',
         'selected_additional_services' => 'selectedAdditionalServices',
+        'vouchers' => 'vouchers',
         'bought_at' => 'boughtAt'
     ];
 
@@ -139,6 +142,7 @@ class CheckoutFormLineItem implements ModelInterface, ArrayAccess, \JsonSerializ
         'price' => 'setPrice',
         'reconciliation' => 'setReconciliation',
         'selected_additional_services' => 'setSelectedAdditionalServices',
+        'vouchers' => 'setVouchers',
         'bought_at' => 'setBoughtAt'
     ];
 
@@ -155,6 +159,7 @@ class CheckoutFormLineItem implements ModelInterface, ArrayAccess, \JsonSerializ
         'price' => 'getPrice',
         'reconciliation' => 'getReconciliation',
         'selected_additional_services' => 'getSelectedAdditionalServices',
+        'vouchers' => 'getVouchers',
         'bought_at' => 'getBoughtAt'
     ];
 
@@ -225,6 +230,7 @@ class CheckoutFormLineItem implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->container['price'] = $data['price'] ?? null;
         $this->container['reconciliation'] = $data['reconciliation'] ?? null;
         $this->container['selected_additional_services'] = $data['selected_additional_services'] ?? null;
+        $this->container['vouchers'] = $data['vouchers'] ?? null;
         $this->container['bought_at'] = $data['bought_at'] ?? null;
     }
 
@@ -440,6 +446,30 @@ class CheckoutFormLineItem implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setSelectedAdditionalServices($selected_additional_services)
     {
         $this->container['selected_additional_services'] = $selected_additional_services;
+
+        return $this;
+    }
+
+    /**
+     * Gets vouchers
+     *
+     * @return \AllegroApi\Model\LineItemVoucher[]|null
+     */
+    public function getVouchers()
+    {
+        return $this->container['vouchers'];
+    }
+
+    /**
+     * Sets vouchers
+     *
+     * @param \AllegroApi\Model\LineItemVoucher[]|null $vouchers vouchers
+     *
+     * @return self
+     */
+    public function setVouchers($vouchers)
+    {
+        $this->container['vouchers'] = $vouchers;
 
         return $this;
     }

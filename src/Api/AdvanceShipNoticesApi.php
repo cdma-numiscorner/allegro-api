@@ -3343,6 +3343,329 @@ class AdvanceShipNoticesApi
     }
 
     /**
+     * Operation updateSubmittedAdvanceShipNotice
+     *
+     * Update submitted Advance Ship Notice
+     *
+     * @param  string $id An identifier of Advance Ship Notice. (required)
+     * @param  string $if_match A current version of Advance Ship Notice (e.g. from etag header obtained via get). (required)
+     * @param  \AllegroApi\Model\UpdateSubmittedAdvanceShipNoticeRequest $update_submitted_advance_ship_notice_request update_submitted_advance_ship_notice_request (required)
+     *
+     * @throws \AllegroApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \AllegroApi\Model\AdvanceShipNoticeResponse|\AllegroApi\Model\ErrorsHolder
+     */
+    public function updateSubmittedAdvanceShipNotice($id, $if_match, $update_submitted_advance_ship_notice_request)
+    {
+        list($response) = $this->updateSubmittedAdvanceShipNoticeWithHttpInfo($id, $if_match, $update_submitted_advance_ship_notice_request);
+        return $response;
+    }
+
+    /**
+     * Operation updateSubmittedAdvanceShipNoticeWithHttpInfo
+     *
+     * Update submitted Advance Ship Notice
+     *
+     * @param  string $id An identifier of Advance Ship Notice. (required)
+     * @param  string $if_match A current version of Advance Ship Notice (e.g. from etag header obtained via get). (required)
+     * @param  \AllegroApi\Model\UpdateSubmittedAdvanceShipNoticeRequest $update_submitted_advance_ship_notice_request (required)
+     *
+     * @throws \AllegroApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \AllegroApi\Model\AdvanceShipNoticeResponse|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateSubmittedAdvanceShipNoticeWithHttpInfo($id, $if_match, $update_submitted_advance_ship_notice_request)
+    {
+        $request = $this->updateSubmittedAdvanceShipNoticeRequest($id, $if_match, $update_submitted_advance_ship_notice_request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\AllegroApi\Model\AdvanceShipNoticeResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\AdvanceShipNoticeResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\AllegroApi\Model\ErrorsHolder' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\ErrorsHolder', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\AllegroApi\Model\AdvanceShipNoticeResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AllegroApi\Model\AdvanceShipNoticeResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AllegroApi\Model\ErrorsHolder',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateSubmittedAdvanceShipNoticeAsync
+     *
+     * Update submitted Advance Ship Notice
+     *
+     * @param  string $id An identifier of Advance Ship Notice. (required)
+     * @param  string $if_match A current version of Advance Ship Notice (e.g. from etag header obtained via get). (required)
+     * @param  \AllegroApi\Model\UpdateSubmittedAdvanceShipNoticeRequest $update_submitted_advance_ship_notice_request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateSubmittedAdvanceShipNoticeAsync($id, $if_match, $update_submitted_advance_ship_notice_request)
+    {
+        return $this->updateSubmittedAdvanceShipNoticeAsyncWithHttpInfo($id, $if_match, $update_submitted_advance_ship_notice_request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateSubmittedAdvanceShipNoticeAsyncWithHttpInfo
+     *
+     * Update submitted Advance Ship Notice
+     *
+     * @param  string $id An identifier of Advance Ship Notice. (required)
+     * @param  string $if_match A current version of Advance Ship Notice (e.g. from etag header obtained via get). (required)
+     * @param  \AllegroApi\Model\UpdateSubmittedAdvanceShipNoticeRequest $update_submitted_advance_ship_notice_request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateSubmittedAdvanceShipNoticeAsyncWithHttpInfo($id, $if_match, $update_submitted_advance_ship_notice_request)
+    {
+        $returnType = '\AllegroApi\Model\AdvanceShipNoticeResponse';
+        $request = $this->updateSubmittedAdvanceShipNoticeRequest($id, $if_match, $update_submitted_advance_ship_notice_request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateSubmittedAdvanceShipNotice'
+     *
+     * @param  string $id An identifier of Advance Ship Notice. (required)
+     * @param  string $if_match A current version of Advance Ship Notice (e.g. from etag header obtained via get). (required)
+     * @param  \AllegroApi\Model\UpdateSubmittedAdvanceShipNoticeRequest $update_submitted_advance_ship_notice_request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateSubmittedAdvanceShipNoticeRequest($id, $if_match, $update_submitted_advance_ship_notice_request)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling updateSubmittedAdvanceShipNotice'
+            );
+        }
+        // verify the required parameter 'if_match' is set
+        if ($if_match === null || (is_array($if_match) && count($if_match) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $if_match when calling updateSubmittedAdvanceShipNotice'
+            );
+        }
+        // verify the required parameter 'update_submitted_advance_ship_notice_request' is set
+        if ($update_submitted_advance_ship_notice_request === null || (is_array($update_submitted_advance_ship_notice_request) && count($update_submitted_advance_ship_notice_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_submitted_advance_ship_notice_request when calling updateSubmittedAdvanceShipNotice'
+            );
+        }
+
+        $resourcePath = '/fulfillment/advance-ship-notice/{id}/submitted';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($if_match !== null) {
+            $headerParams['if-match'] = ObjectSerializer::toHeaderValue($if_match);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/vnd.allegro.public.v1+json', 'application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/vnd.allegro.public.v1+json', 'application/json'],
+                ['application/vnd.allegro.public.v1+json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($update_submitted_advance_ship_notice_request)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($update_submitted_advance_ship_notice_request));
+            } else {
+                $httpBody = $update_submitted_advance_ship_notice_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Create http client option
      *
      * @throws \RuntimeException on file opening failure

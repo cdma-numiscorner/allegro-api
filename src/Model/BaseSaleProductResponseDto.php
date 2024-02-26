@@ -63,10 +63,11 @@ class BaseSaleProductResponseDto implements ModelInterface, ArrayAccess, \JsonSe
         'id' => 'string',
         'name' => 'string',
         'description' => '\AllegroApi\Model\StandardizedDescription',
-        'category' => 'ProductCategory',
+        'category' => '\AllegroApi\Model\ProductCategoryWithPath',
         'images' => '\AllegroApi\Model\ImageUrl[]',
         'parameters' => '\AllegroApi\Model\ProductParameterDto[]',
-        'is_draft' => 'bool'
+        'is_draft' => 'bool',
+        'ai_co_created_content' => '\AllegroApi\Model\AiCoCreatedContent'
     ];
 
     /**
@@ -83,7 +84,8 @@ class BaseSaleProductResponseDto implements ModelInterface, ArrayAccess, \JsonSe
         'category' => null,
         'images' => null,
         'parameters' => null,
-        'is_draft' => null
+        'is_draft' => null,
+        'ai_co_created_content' => null
     ];
 
     /**
@@ -119,7 +121,8 @@ class BaseSaleProductResponseDto implements ModelInterface, ArrayAccess, \JsonSe
         'category' => 'category',
         'images' => 'images',
         'parameters' => 'parameters',
-        'is_draft' => 'isDraft'
+        'is_draft' => 'isDraft',
+        'ai_co_created_content' => 'aiCoCreatedContent'
     ];
 
     /**
@@ -134,7 +137,8 @@ class BaseSaleProductResponseDto implements ModelInterface, ArrayAccess, \JsonSe
         'category' => 'setCategory',
         'images' => 'setImages',
         'parameters' => 'setParameters',
-        'is_draft' => 'setIsDraft'
+        'is_draft' => 'setIsDraft',
+        'ai_co_created_content' => 'setAiCoCreatedContent'
     ];
 
     /**
@@ -149,7 +153,8 @@ class BaseSaleProductResponseDto implements ModelInterface, ArrayAccess, \JsonSe
         'category' => 'getCategory',
         'images' => 'getImages',
         'parameters' => 'getParameters',
-        'is_draft' => 'getIsDraft'
+        'is_draft' => 'getIsDraft',
+        'ai_co_created_content' => 'getAiCoCreatedContent'
     ];
 
     /**
@@ -219,6 +224,7 @@ class BaseSaleProductResponseDto implements ModelInterface, ArrayAccess, \JsonSe
         $this->container['images'] = $data['images'] ?? null;
         $this->container['parameters'] = $data['parameters'] ?? null;
         $this->container['is_draft'] = $data['is_draft'] ?? null;
+        $this->container['ai_co_created_content'] = $data['ai_co_created_content'] ?? null;
     }
 
     /**
@@ -329,7 +335,7 @@ class BaseSaleProductResponseDto implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets category
      *
-     * @return ProductCategory
+     * @return \AllegroApi\Model\ProductCategoryWithPath
      */
     public function getCategory()
     {
@@ -339,7 +345,7 @@ class BaseSaleProductResponseDto implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets category
      *
-     * @param ProductCategory $category category
+     * @param \AllegroApi\Model\ProductCategoryWithPath $category category
      *
      * @return self
      */
@@ -418,6 +424,30 @@ class BaseSaleProductResponseDto implements ModelInterface, ArrayAccess, \JsonSe
     public function setIsDraft($is_draft)
     {
         $this->container['is_draft'] = $is_draft;
+
+        return $this;
+    }
+
+    /**
+     * Gets ai_co_created_content
+     *
+     * @return \AllegroApi\Model\AiCoCreatedContent|null
+     */
+    public function getAiCoCreatedContent()
+    {
+        return $this->container['ai_co_created_content'];
+    }
+
+    /**
+     * Sets ai_co_created_content
+     *
+     * @param \AllegroApi\Model\AiCoCreatedContent|null $ai_co_created_content ai_co_created_content
+     *
+     * @return self
+     */
+    public function setAiCoCreatedContent($ai_co_created_content)
+    {
+        $this->container['ai_co_created_content'] = $ai_co_created_content;
 
         return $this;
     }

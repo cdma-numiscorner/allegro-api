@@ -510,7 +510,7 @@ class AdvanceShipNoticeResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets submitted_at
      *
-     * @param \DateTime|null $submitted_at The date and time of Advance Ship Notice submition. Provided in [ISO 8601 format](link: https://en.wikipedia.org/wiki/ISO_8601).
+     * @param \DateTime|null $submitted_at The date and time of Advance Ship Notice submission. Provided in [ISO 8601 format](link: https://en.wikipedia.org/wiki/ISO_8601).
      *
      * @return self
      */

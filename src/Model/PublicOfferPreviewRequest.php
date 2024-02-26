@@ -60,7 +60,7 @@ class PublicOfferPreviewRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'offer' => '\AllegroApi\Model\Offer',
+        'offer' => '\AllegroApi\Model\PricingOffer',
         'classifieds_packages' => '\AllegroApi\Model\ClassifiedsPackages',
         'marketplace_id' => 'string'
     ];
@@ -224,7 +224,7 @@ class PublicOfferPreviewRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets offer
      *
-     * @return \AllegroApi\Model\Offer|null
+     * @return \AllegroApi\Model\PricingOffer|null
      */
     public function getOffer()
     {
@@ -234,7 +234,7 @@ class PublicOfferPreviewRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets offer
      *
-     * @param \AllegroApi\Model\Offer|null $offer offer
+     * @param \AllegroApi\Model\PricingOffer|null $offer offer
      *
      * @return self
      */

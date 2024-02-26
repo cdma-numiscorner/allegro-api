@@ -65,7 +65,8 @@ class ProductChangeProposalRequest implements ModelInterface, ArrayAccess, \Json
         'category' => '\AllegroApi\Model\ProductCategory',
         'images' => '\AllegroApi\Model\ImageUrl[]',
         'parameters' => '\AllegroApi\Model\ProductParameter[]',
-        'notify_via_email_after_verification' => 'bool'
+        'notify_via_email_after_verification' => 'bool',
+        'language' => 'string'
     ];
 
     /**
@@ -81,7 +82,8 @@ class ProductChangeProposalRequest implements ModelInterface, ArrayAccess, \Json
         'category' => null,
         'images' => null,
         'parameters' => null,
-        'notify_via_email_after_verification' => null
+        'notify_via_email_after_verification' => null,
+        'language' => 'BCP-47 language code'
     ];
 
     /**
@@ -116,7 +118,8 @@ class ProductChangeProposalRequest implements ModelInterface, ArrayAccess, \Json
         'category' => 'category',
         'images' => 'images',
         'parameters' => 'parameters',
-        'notify_via_email_after_verification' => 'notifyViaEmailAfterVerification'
+        'notify_via_email_after_verification' => 'notifyViaEmailAfterVerification',
+        'language' => 'language'
     ];
 
     /**
@@ -130,7 +133,8 @@ class ProductChangeProposalRequest implements ModelInterface, ArrayAccess, \Json
         'category' => 'setCategory',
         'images' => 'setImages',
         'parameters' => 'setParameters',
-        'notify_via_email_after_verification' => 'setNotifyViaEmailAfterVerification'
+        'notify_via_email_after_verification' => 'setNotifyViaEmailAfterVerification',
+        'language' => 'setLanguage'
     ];
 
     /**
@@ -144,7 +148,8 @@ class ProductChangeProposalRequest implements ModelInterface, ArrayAccess, \Json
         'category' => 'getCategory',
         'images' => 'getImages',
         'parameters' => 'getParameters',
-        'notify_via_email_after_verification' => 'getNotifyViaEmailAfterVerification'
+        'notify_via_email_after_verification' => 'getNotifyViaEmailAfterVerification',
+        'language' => 'getLanguage'
     ];
 
     /**
@@ -213,6 +218,7 @@ class ProductChangeProposalRequest implements ModelInterface, ArrayAccess, \Json
         $this->container['images'] = $data['images'] ?? null;
         $this->container['parameters'] = $data['parameters'] ?? null;
         $this->container['notify_via_email_after_verification'] = $data['notify_via_email_after_verification'] ?? null;
+        $this->container['language'] = $data['language'] ?? 'pl-PL';
     }
 
     /**
@@ -243,6 +249,9 @@ class ProductChangeProposalRequest implements ModelInterface, ArrayAccess, \Json
         }
         if ($this->container['parameters'] === null) {
             $invalidProperties[] = "'parameters' can't be null";
+        }
+        if ($this->container['language'] === null) {
+            $invalidProperties[] = "'language' can't be null";
         }
         return $invalidProperties;
     }
@@ -407,6 +416,30 @@ class ProductChangeProposalRequest implements ModelInterface, ArrayAccess, \Json
     public function setNotifyViaEmailAfterVerification($notify_via_email_after_verification)
     {
         $this->container['notify_via_email_after_verification'] = $notify_via_email_after_verification;
+
+        return $this;
+    }
+
+    /**
+     * Gets language
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->container['language'];
+    }
+
+    /**
+     * Sets language
+     *
+     * @param string $language Language of provided proposal data.
+     *
+     * @return self
+     */
+    public function setLanguage($language)
+    {
+        $this->container['language'] = $language;
 
         return $this;
     }

@@ -64,12 +64,10 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
         'name' => 'string',
         'category' => 'ProductCategory',
         'images' => '\AllegroApi\Model\ImageUrl[]',
-        'parameters' => '\AllegroApi\Model\ProductParameterDto[]',
-        'offer_requirements' => '\AllegroApi\Model\OfferRequirements',
-        'compatibility_list' => '\AllegroApi\Model\SaleProductCompatibilityList',
-        'tecdoc_specification' => '\AllegroApi\Model\TecdocSpecification',
+        'parameters' => '\AllegroApi\Model\NewProductParameterDto[]',
         'description' => '\AllegroApi\Model\StandardizedDescription',
-        'is_draft' => 'bool',
+        'supplier' => '\AllegroApi\Model\SupplierDto',
+        'offer_id' => 'string',
         'language' => 'string'
     ];
 
@@ -86,11 +84,9 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
         'category' => null,
         'images' => null,
         'parameters' => null,
-        'offer_requirements' => null,
-        'compatibility_list' => null,
-        'tecdoc_specification' => null,
         'description' => null,
-        'is_draft' => null,
+        'supplier' => null,
+        'offer_id' => null,
         'language' => 'BCP-47 language code'
     ];
 
@@ -126,11 +122,9 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
         'category' => 'category',
         'images' => 'images',
         'parameters' => 'parameters',
-        'offer_requirements' => 'offerRequirements',
-        'compatibility_list' => 'compatibilityList',
-        'tecdoc_specification' => 'tecdocSpecification',
         'description' => 'description',
-        'is_draft' => 'isDraft',
+        'supplier' => 'supplier',
+        'offer_id' => 'offerId',
         'language' => 'language'
     ];
 
@@ -145,11 +139,9 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
         'category' => 'setCategory',
         'images' => 'setImages',
         'parameters' => 'setParameters',
-        'offer_requirements' => 'setOfferRequirements',
-        'compatibility_list' => 'setCompatibilityList',
-        'tecdoc_specification' => 'setTecdocSpecification',
         'description' => 'setDescription',
-        'is_draft' => 'setIsDraft',
+        'supplier' => 'setSupplier',
+        'offer_id' => 'setOfferId',
         'language' => 'setLanguage'
     ];
 
@@ -164,11 +156,9 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
         'category' => 'getCategory',
         'images' => 'getImages',
         'parameters' => 'getParameters',
-        'offer_requirements' => 'getOfferRequirements',
-        'compatibility_list' => 'getCompatibilityList',
-        'tecdoc_specification' => 'getTecdocSpecification',
         'description' => 'getDescription',
-        'is_draft' => 'getIsDraft',
+        'supplier' => 'getSupplier',
+        'offer_id' => 'getOfferId',
         'language' => 'getLanguage'
     ];
 
@@ -237,11 +227,9 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
         $this->container['category'] = $data['category'] ?? null;
         $this->container['images'] = $data['images'] ?? null;
         $this->container['parameters'] = $data['parameters'] ?? null;
-        $this->container['offer_requirements'] = $data['offer_requirements'] ?? null;
-        $this->container['compatibility_list'] = $data['compatibility_list'] ?? null;
-        $this->container['tecdoc_specification'] = $data['tecdoc_specification'] ?? null;
         $this->container['description'] = $data['description'] ?? null;
-        $this->container['is_draft'] = $data['is_draft'] ?? null;
+        $this->container['supplier'] = $data['supplier'] ?? null;
+        $this->container['offer_id'] = $data['offer_id'] ?? null;
         $this->container['language'] = $data['language'] ?? null;
     }
 
@@ -254,15 +242,6 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['category'] === null) {
-            $invalidProperties[] = "'category' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -281,7 +260,7 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets id
      *
-     * @return string
+     * @return string|null
      */
     public function getId()
     {
@@ -291,7 +270,7 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets id
      *
-     * @param string $id Product id.
+     * @param string|null $id Product id.
      *
      * @return self
      */
@@ -305,7 +284,7 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -315,7 +294,7 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets name
      *
-     * @param string $name Product name.
+     * @param string|null $name Product name.
      *
      * @return self
      */
@@ -329,7 +308,7 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets category
      *
-     * @return ProductCategory
+     * @return ProductCategory|null
      */
     public function getCategory()
     {
@@ -339,7 +318,7 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets category
      *
-     * @param ProductCategory $category category
+     * @param ProductCategory|null $category category
      *
      * @return self
      */
@@ -377,7 +356,7 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets parameters
      *
-     * @return \AllegroApi\Model\ProductParameterDto[]|null
+     * @return \AllegroApi\Model\NewProductParameterDto[]|null
      */
     public function getParameters()
     {
@@ -387,85 +366,13 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets parameters
      *
-     * @param \AllegroApi\Model\ProductParameterDto[]|null $parameters List of product parameters.
+     * @param \AllegroApi\Model\NewProductParameterDto[]|null $parameters List of product parameters.
      *
      * @return self
      */
     public function setParameters($parameters)
     {
         $this->container['parameters'] = $parameters;
-
-        return $this;
-    }
-
-    /**
-     * Gets offer_requirements
-     *
-     * @return \AllegroApi\Model\OfferRequirements|null
-     */
-    public function getOfferRequirements()
-    {
-        return $this->container['offer_requirements'];
-    }
-
-    /**
-     * Sets offer_requirements
-     *
-     * @param \AllegroApi\Model\OfferRequirements|null $offer_requirements offer_requirements
-     *
-     * @return self
-     */
-    public function setOfferRequirements($offer_requirements)
-    {
-        $this->container['offer_requirements'] = $offer_requirements;
-
-        return $this;
-    }
-
-    /**
-     * Gets compatibility_list
-     *
-     * @return \AllegroApi\Model\SaleProductCompatibilityList|null
-     */
-    public function getCompatibilityList()
-    {
-        return $this->container['compatibility_list'];
-    }
-
-    /**
-     * Sets compatibility_list
-     *
-     * @param \AllegroApi\Model\SaleProductCompatibilityList|null $compatibility_list compatibility_list
-     *
-     * @return self
-     */
-    public function setCompatibilityList($compatibility_list)
-    {
-        $this->container['compatibility_list'] = $compatibility_list;
-
-        return $this;
-    }
-
-    /**
-     * Gets tecdoc_specification
-     *
-     * @return \AllegroApi\Model\TecdocSpecification|null
-     */
-    public function getTecdocSpecification()
-    {
-        return $this->container['tecdoc_specification'];
-    }
-
-    /**
-     * Sets tecdoc_specification
-     *
-     * @param \AllegroApi\Model\TecdocSpecification|null $tecdoc_specification tecdoc_specification
-     *
-     * @return self
-     */
-    public function setTecdocSpecification($tecdoc_specification)
-    {
-        $this->container['tecdoc_specification'] = $tecdoc_specification;
 
         return $this;
     }
@@ -495,25 +402,49 @@ class ProductProposalsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets is_draft
+     * Gets supplier
      *
-     * @return bool|null
+     * @return \AllegroApi\Model\SupplierDto|null
      */
-    public function getIsDraft()
+    public function getSupplier()
     {
-        return $this->container['is_draft'];
+        return $this->container['supplier'];
     }
 
     /**
-     * Sets is_draft
+     * Sets supplier
      *
-     * @param bool|null $is_draft Flag that informs if product is waiting for resolution of basic parameters change proposal.
+     * @param \AllegroApi\Model\SupplierDto|null $supplier supplier
      *
      * @return self
      */
-    public function setIsDraft($is_draft)
+    public function setSupplier($supplier)
     {
-        $this->container['is_draft'] = $is_draft;
+        $this->container['supplier'] = $supplier;
+
+        return $this;
+    }
+
+    /**
+     * Gets offer_id
+     *
+     * @return string|null
+     */
+    public function getOfferId()
+    {
+        return $this->container['offer_id'];
+    }
+
+    /**
+     * Sets offer_id
+     *
+     * @param string|null $offer_id Offer id.
+     *
+     * @return self
+     */
+    public function setOfferId($offer_id)
+    {
+        $this->container['offer_id'] = $offer_id;
 
         return $this;
     }

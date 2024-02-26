@@ -61,11 +61,10 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'bold' => 'bool',
-        'department_page' => 'bool',
-        'emphasized' => 'bool',
-        'emphasized_highlight_bold_package' => 'bool',
-        'highlight' => 'bool'
+        'emphasized1d' => 'bool',
+        'emphasized10d' => 'bool',
+        'promo_package' => 'bool',
+        'department_page' => 'bool'
     ];
 
     /**
@@ -76,11 +75,10 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'bold' => null,
-        'department_page' => null,
-        'emphasized' => null,
-        'emphasized_highlight_bold_package' => null,
-        'highlight' => null
+        'emphasized1d' => null,
+        'emphasized10d' => null,
+        'promo_package' => null,
+        'department_page' => null
     ];
 
     /**
@@ -110,11 +108,10 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'bold' => 'bold',
-        'department_page' => 'departmentPage',
-        'emphasized' => 'emphasized',
-        'emphasized_highlight_bold_package' => 'emphasizedHighlightBoldPackage',
-        'highlight' => 'highlight'
+        'emphasized1d' => 'emphasized1d',
+        'emphasized10d' => 'emphasized10d',
+        'promo_package' => 'promoPackage',
+        'department_page' => 'departmentPage'
     ];
 
     /**
@@ -123,11 +120,10 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'bold' => 'setBold',
-        'department_page' => 'setDepartmentPage',
-        'emphasized' => 'setEmphasized',
-        'emphasized_highlight_bold_package' => 'setEmphasizedHighlightBoldPackage',
-        'highlight' => 'setHighlight'
+        'emphasized1d' => 'setEmphasized1d',
+        'emphasized10d' => 'setEmphasized10d',
+        'promo_package' => 'setPromoPackage',
+        'department_page' => 'setDepartmentPage'
     ];
 
     /**
@@ -136,11 +132,10 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'bold' => 'getBold',
-        'department_page' => 'getDepartmentPage',
-        'emphasized' => 'getEmphasized',
-        'emphasized_highlight_bold_package' => 'getEmphasizedHighlightBoldPackage',
-        'highlight' => 'getHighlight'
+        'emphasized1d' => 'getEmphasized1d',
+        'emphasized10d' => 'getEmphasized10d',
+        'promo_package' => 'getPromoPackage',
+        'department_page' => 'getDepartmentPage'
     ];
 
     /**
@@ -203,11 +198,10 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['bold'] = $data['bold'] ?? null;
+        $this->container['emphasized1d'] = $data['emphasized1d'] ?? null;
+        $this->container['emphasized10d'] = $data['emphasized10d'] ?? null;
+        $this->container['promo_package'] = $data['promo_package'] ?? null;
         $this->container['department_page'] = $data['department_page'] ?? null;
-        $this->container['emphasized'] = $data['emphasized'] ?? null;
-        $this->container['emphasized_highlight_bold_package'] = $data['emphasized_highlight_bold_package'] ?? null;
-        $this->container['highlight'] = $data['highlight'] ?? null;
     }
 
     /**
@@ -235,25 +229,73 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets bold
+     * Gets emphasized1d
      *
      * @return bool|null
      */
-    public function getBold()
+    public function getEmphasized1d()
     {
-        return $this->container['bold'];
+        return $this->container['emphasized1d'];
     }
 
     /**
-     * Sets bold
+     * Sets emphasized1d
      *
-     * @param bool|null $bold bold
+     * @param bool|null $emphasized1d emphasized1d
      *
      * @return self
      */
-    public function setBold($bold)
+    public function setEmphasized1d($emphasized1d)
     {
-        $this->container['bold'] = $bold;
+        $this->container['emphasized1d'] = $emphasized1d;
+
+        return $this;
+    }
+
+    /**
+     * Gets emphasized10d
+     *
+     * @return bool|null
+     */
+    public function getEmphasized10d()
+    {
+        return $this->container['emphasized10d'];
+    }
+
+    /**
+     * Sets emphasized10d
+     *
+     * @param bool|null $emphasized10d emphasized10d
+     *
+     * @return self
+     */
+    public function setEmphasized10d($emphasized10d)
+    {
+        $this->container['emphasized10d'] = $emphasized10d;
+
+        return $this;
+    }
+
+    /**
+     * Gets promo_package
+     *
+     * @return bool|null
+     */
+    public function getPromoPackage()
+    {
+        return $this->container['promo_package'];
+    }
+
+    /**
+     * Sets promo_package
+     *
+     * @param bool|null $promo_package promo_package
+     *
+     * @return self
+     */
+    public function setPromoPackage($promo_package)
+    {
+        $this->container['promo_package'] = $promo_package;
 
         return $this;
     }
@@ -278,78 +320,6 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDepartmentPage($department_page)
     {
         $this->container['department_page'] = $department_page;
-
-        return $this;
-    }
-
-    /**
-     * Gets emphasized
-     *
-     * @return bool|null
-     */
-    public function getEmphasized()
-    {
-        return $this->container['emphasized'];
-    }
-
-    /**
-     * Sets emphasized
-     *
-     * @param bool|null $emphasized emphasized
-     *
-     * @return self
-     */
-    public function setEmphasized($emphasized)
-    {
-        $this->container['emphasized'] = $emphasized;
-
-        return $this;
-    }
-
-    /**
-     * Gets emphasized_highlight_bold_package
-     *
-     * @return bool|null
-     */
-    public function getEmphasizedHighlightBoldPackage()
-    {
-        return $this->container['emphasized_highlight_bold_package'];
-    }
-
-    /**
-     * Sets emphasized_highlight_bold_package
-     *
-     * @param bool|null $emphasized_highlight_bold_package emphasized_highlight_bold_package
-     *
-     * @return self
-     */
-    public function setEmphasizedHighlightBoldPackage($emphasized_highlight_bold_package)
-    {
-        $this->container['emphasized_highlight_bold_package'] = $emphasized_highlight_bold_package;
-
-        return $this;
-    }
-
-    /**
-     * Gets highlight
-     *
-     * @return bool|null
-     */
-    public function getHighlight()
-    {
-        return $this->container['highlight'];
-    }
-
-    /**
-     * Sets highlight
-     *
-     * @param bool|null $highlight highlight
-     *
-     * @return self
-     */
-    public function setHighlight($highlight)
-    {
-        $this->container['highlight'] = $highlight;
 
         return $this;
     }

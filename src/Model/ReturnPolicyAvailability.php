@@ -170,6 +170,7 @@ class ReturnPolicyAvailability implements ModelInterface, ArrayAccess, \JsonSeri
 
     const RANGE_FULL = 'FULL';
     const RANGE_RESTRICTED = 'RESTRICTED';
+    const RANGE_DISABLED = 'DISABLED';
     
 
     
@@ -183,6 +184,7 @@ class ReturnPolicyAvailability implements ModelInterface, ArrayAccess, \JsonSeri
         return [
             self::RANGE_FULL,
             self::RANGE_RESTRICTED,
+            self::RANGE_DISABLED,
         ];
     }
     
@@ -252,7 +254,7 @@ class ReturnPolicyAvailability implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets range
      *
-     * @param string|null $range Indicates if return policy is full or restricted.
+     * @param string|null $range Indicates if return policy is full, restricted or disabled.
      *
      * @return self
      */

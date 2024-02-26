@@ -731,275 +731,6 @@ class OfferManagementApi
     }
 
     /**
-     * Operation createOfferUsingPOST
-     *
-     * Create a draft offer
-     *
-     * @param  \AllegroApi\Model\UNKNOWN_BASE_TYPE $unknown_base_type offer (required)
-     *
-     * @throws \AllegroApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \AllegroApi\Model\OfferResponse
-     */
-    public function createOfferUsingPOST($unknown_base_type)
-    {
-        list($response) = $this->createOfferUsingPOSTWithHttpInfo($unknown_base_type);
-        return $response;
-    }
-
-    /**
-     * Operation createOfferUsingPOSTWithHttpInfo
-     *
-     * Create a draft offer
-     *
-     * @param  \AllegroApi\Model\UNKNOWN_BASE_TYPE $unknown_base_type offer (required)
-     *
-     * @throws \AllegroApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \AllegroApi\Model\OfferResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function createOfferUsingPOSTWithHttpInfo($unknown_base_type)
-    {
-        $request = $this->createOfferUsingPOSTRequest($unknown_base_type);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\AllegroApi\Model\OfferResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\OfferResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\AllegroApi\Model\OfferResponse';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\AllegroApi\Model\OfferResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation createOfferUsingPOSTAsync
-     *
-     * Create a draft offer
-     *
-     * @param  \AllegroApi\Model\UNKNOWN_BASE_TYPE $unknown_base_type offer (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createOfferUsingPOSTAsync($unknown_base_type)
-    {
-        return $this->createOfferUsingPOSTAsyncWithHttpInfo($unknown_base_type)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation createOfferUsingPOSTAsyncWithHttpInfo
-     *
-     * Create a draft offer
-     *
-     * @param  \AllegroApi\Model\UNKNOWN_BASE_TYPE $unknown_base_type offer (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createOfferUsingPOSTAsyncWithHttpInfo($unknown_base_type)
-    {
-        $returnType = '\AllegroApi\Model\OfferResponse';
-        $request = $this->createOfferUsingPOSTRequest($unknown_base_type);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'createOfferUsingPOST'
-     *
-     * @param  \AllegroApi\Model\UNKNOWN_BASE_TYPE $unknown_base_type offer (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function createOfferUsingPOSTRequest($unknown_base_type)
-    {
-        // verify the required parameter 'unknown_base_type' is set
-        if ($unknown_base_type === null || (is_array($unknown_base_type) && count($unknown_base_type) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $unknown_base_type when calling createOfferUsingPOST'
-            );
-        }
-
-        $resourcePath = '/sale/offers';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/vnd.allegro.public.v1+json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/vnd.allegro.public.v1+json'],
-                ['application/vnd.allegro.public.v1+json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($unknown_base_type)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($unknown_base_type));
-            } else {
-                $httpBody = $unknown_base_type;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation createProductOffers
      *
      * Create offer based on product
@@ -1601,7 +1332,7 @@ class OfferManagementApi
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \AllegroApi\Model\SaleProductOfferResponseV1|\AllegroApi\Model\SaleProductOfferResponseV1|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
+     * @return \AllegroApi\Model\SaleProductOfferResponseV1|\AllegroApi\Model\SaleProductOfferResponseV1|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
      */
     public function editProductOffers($offer_id, $sale_product_offer_patch_request_v1)
     {
@@ -1619,7 +1350,7 @@ class OfferManagementApi
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \AllegroApi\Model\SaleProductOfferResponseV1|\AllegroApi\Model\SaleProductOfferResponseV1|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AllegroApi\Model\SaleProductOfferResponseV1|\AllegroApi\Model\SaleProductOfferResponseV1|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
      */
     public function editProductOffersWithHttpInfo($offer_id, $sale_product_offer_patch_request_v1)
     {
@@ -1715,6 +1446,30 @@ class OfferManagementApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 404:
+                    if ('\AllegroApi\Model\ErrorsHolder' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\ErrorsHolder', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\AllegroApi\Model\ErrorsHolder' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\ErrorsHolder', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 422:
                     if ('\AllegroApi\Model\ErrorsHolder' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1778,6 +1533,22 @@ class OfferManagementApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AllegroApi\Model\ErrorsHolder',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AllegroApi\Model\ErrorsHolder',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\AllegroApi\Model\ErrorsHolder',
@@ -2894,277 +2665,6 @@ class OfferManagementApi
     }
 
     /**
-     * Operation getProductOffer
-     *
-     * Get all data of the particular product-offer
-     *
-     * @param  string $offer_id Offer identifier. (required)
-     *
-     * @throws \AllegroApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \AllegroApi\Model\SaleProductOfferResponseV1
-     */
-    public function getProductOffer($offer_id)
-    {
-        list($response) = $this->getProductOfferWithHttpInfo($offer_id);
-        return $response;
-    }
-
-    /**
-     * Operation getProductOfferWithHttpInfo
-     *
-     * Get all data of the particular product-offer
-     *
-     * @param  string $offer_id Offer identifier. (required)
-     *
-     * @throws \AllegroApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \AllegroApi\Model\SaleProductOfferResponseV1, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getProductOfferWithHttpInfo($offer_id)
-    {
-        $request = $this->getProductOfferRequest($offer_id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\AllegroApi\Model\SaleProductOfferResponseV1' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\SaleProductOfferResponseV1', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\AllegroApi\Model\SaleProductOfferResponseV1';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\AllegroApi\Model\SaleProductOfferResponseV1',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getProductOfferAsync
-     *
-     * Get all data of the particular product-offer
-     *
-     * @param  string $offer_id Offer identifier. (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getProductOfferAsync($offer_id)
-    {
-        return $this->getProductOfferAsyncWithHttpInfo($offer_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getProductOfferAsyncWithHttpInfo
-     *
-     * Get all data of the particular product-offer
-     *
-     * @param  string $offer_id Offer identifier. (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getProductOfferAsyncWithHttpInfo($offer_id)
-    {
-        $returnType = '\AllegroApi\Model\SaleProductOfferResponseV1';
-        $request = $this->getProductOfferRequest($offer_id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getProductOffer'
-     *
-     * @param  string $offer_id Offer identifier. (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getProductOfferRequest($offer_id)
-    {
-        // verify the required parameter 'offer_id' is set
-        if ($offer_id === null || (is_array($offer_id) && count($offer_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $offer_id when calling getProductOffer'
-            );
-        }
-
-        $resourcePath = '/sale/product-offers/{offerId}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($offer_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'offerId' . '}',
-                ObjectSerializer::toPathValue($offer_id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/vnd.allegro.public.v1+json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/vnd.allegro.public.v1+json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation getProductOfferProcessingStatus
      *
      * Check the processing status of a POST or PATCH request
@@ -3837,7 +3337,7 @@ class OfferManagementApi
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \AllegroApi\Model\GeneralReport|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
+     * @return \AllegroApi\Model\PromoGeneralReport|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
      */
     public function getPromoModificationCommandResultUsingGET($command_id)
     {
@@ -3854,7 +3354,7 @@ class OfferManagementApi
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \AllegroApi\Model\GeneralReport|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AllegroApi\Model\PromoGeneralReport|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPromoModificationCommandResultUsingGETWithHttpInfo($command_id)
     {
@@ -3891,14 +3391,14 @@ class OfferManagementApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\AllegroApi\Model\GeneralReport' === '\SplFileObject') {
+                    if ('\AllegroApi\Model\PromoGeneralReport' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\GeneralReport', []),
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\PromoGeneralReport', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3940,7 +3440,7 @@ class OfferManagementApi
                     ];
             }
 
-            $returnType = '\AllegroApi\Model\GeneralReport';
+            $returnType = '\AllegroApi\Model\PromoGeneralReport';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -3959,7 +3459,7 @@ class OfferManagementApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AllegroApi\Model\GeneralReport',
+                        '\AllegroApi\Model\PromoGeneralReport',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4025,7 +3525,7 @@ class OfferManagementApi
      */
     public function getPromoModificationCommandResultUsingGETAsyncWithHttpInfo($command_id)
     {
-        $returnType = '\AllegroApi\Model\GeneralReport';
+        $returnType = '\AllegroApi\Model\PromoGeneralReport';
         $request = $this->getPromoModificationCommandResultUsingGETRequest($command_id);
 
         return $this->client
@@ -5440,7 +4940,7 @@ class OfferManagementApi
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \AllegroApi\Model\GeneralReport|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
+     * @return \AllegroApi\Model\PromoGeneralReport|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
      */
     public function promoModificationCommandUsingPUT($command_id, $promo_options_command)
     {
@@ -5458,7 +4958,7 @@ class OfferManagementApi
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \AllegroApi\Model\GeneralReport|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AllegroApi\Model\PromoGeneralReport|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
      */
     public function promoModificationCommandUsingPUTWithHttpInfo($command_id, $promo_options_command)
     {
@@ -5495,14 +4995,14 @@ class OfferManagementApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 201:
-                    if ('\AllegroApi\Model\GeneralReport' === '\SplFileObject') {
+                    if ('\AllegroApi\Model\PromoGeneralReport' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\GeneralReport', []),
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\PromoGeneralReport', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -5544,7 +5044,7 @@ class OfferManagementApi
                     ];
             }
 
-            $returnType = '\AllegroApi\Model\GeneralReport';
+            $returnType = '\AllegroApi\Model\PromoGeneralReport';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -5563,7 +5063,7 @@ class OfferManagementApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AllegroApi\Model\GeneralReport',
+                        '\AllegroApi\Model\PromoGeneralReport',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5631,7 +5131,7 @@ class OfferManagementApi
      */
     public function promoModificationCommandUsingPUTAsyncWithHttpInfo($command_id, $promo_options_command)
     {
-        $returnType = '\AllegroApi\Model\GeneralReport';
+        $returnType = '\AllegroApi\Model\PromoGeneralReport';
         $request = $this->promoModificationCommandUsingPUTRequest($command_id, $promo_options_command);
 
         return $this->client
@@ -5728,294 +5228,6 @@ class OfferManagementApi
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($promo_options_command));
             } else {
                 $httpBody = $promo_options_command;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'PUT',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation updateOfferUsingPUT
-     *
-     * Complete a draft offer or edit an offer
-     *
-     * @param  string $offer_id Offer identifier. (required)
-     * @param  \AllegroApi\Model\UNKNOWN_BASE_TYPE $unknown_base_type offer (required)
-     *
-     * @throws \AllegroApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \AllegroApi\Model\OfferResponse
-     */
-    public function updateOfferUsingPUT($offer_id, $unknown_base_type)
-    {
-        list($response) = $this->updateOfferUsingPUTWithHttpInfo($offer_id, $unknown_base_type);
-        return $response;
-    }
-
-    /**
-     * Operation updateOfferUsingPUTWithHttpInfo
-     *
-     * Complete a draft offer or edit an offer
-     *
-     * @param  string $offer_id Offer identifier. (required)
-     * @param  \AllegroApi\Model\UNKNOWN_BASE_TYPE $unknown_base_type offer (required)
-     *
-     * @throws \AllegroApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \AllegroApi\Model\OfferResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function updateOfferUsingPUTWithHttpInfo($offer_id, $unknown_base_type)
-    {
-        $request = $this->updateOfferUsingPUTRequest($offer_id, $unknown_base_type);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\AllegroApi\Model\OfferResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\OfferResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\AllegroApi\Model\OfferResponse';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\AllegroApi\Model\OfferResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation updateOfferUsingPUTAsync
-     *
-     * Complete a draft offer or edit an offer
-     *
-     * @param  string $offer_id Offer identifier. (required)
-     * @param  \AllegroApi\Model\UNKNOWN_BASE_TYPE $unknown_base_type offer (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function updateOfferUsingPUTAsync($offer_id, $unknown_base_type)
-    {
-        return $this->updateOfferUsingPUTAsyncWithHttpInfo($offer_id, $unknown_base_type)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation updateOfferUsingPUTAsyncWithHttpInfo
-     *
-     * Complete a draft offer or edit an offer
-     *
-     * @param  string $offer_id Offer identifier. (required)
-     * @param  \AllegroApi\Model\UNKNOWN_BASE_TYPE $unknown_base_type offer (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function updateOfferUsingPUTAsyncWithHttpInfo($offer_id, $unknown_base_type)
-    {
-        $returnType = '\AllegroApi\Model\OfferResponse';
-        $request = $this->updateOfferUsingPUTRequest($offer_id, $unknown_base_type);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'updateOfferUsingPUT'
-     *
-     * @param  string $offer_id Offer identifier. (required)
-     * @param  \AllegroApi\Model\UNKNOWN_BASE_TYPE $unknown_base_type offer (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function updateOfferUsingPUTRequest($offer_id, $unknown_base_type)
-    {
-        // verify the required parameter 'offer_id' is set
-        if ($offer_id === null || (is_array($offer_id) && count($offer_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $offer_id when calling updateOfferUsingPUT'
-            );
-        }
-        // verify the required parameter 'unknown_base_type' is set
-        if ($unknown_base_type === null || (is_array($unknown_base_type) && count($unknown_base_type) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $unknown_base_type when calling updateOfferUsingPUT'
-            );
-        }
-
-        $resourcePath = '/sale/offers/{offerId}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($offer_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'offerId' . '}',
-                ObjectSerializer::toPathValue($offer_id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/vnd.allegro.public.v1+json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/vnd.allegro.public.v1+json'],
-                ['application/vnd.allegro.public.v1+json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($unknown_base_type)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($unknown_base_type));
-            } else {
-                $httpBody = $unknown_base_type;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

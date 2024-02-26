@@ -62,10 +62,8 @@ class CommandTask implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'field' => 'string',
-        'finished_at' => '\DateTime',
         'message' => 'string',
         'offer' => '\AllegroApi\Model\OfferId',
-        'scheduled_at' => '\DateTime',
         'status' => 'string',
         'errors' => '\AllegroApi\Model\Error[]'
     ];
@@ -79,10 +77,8 @@ class CommandTask implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'field' => null,
-        'finished_at' => 'date-time',
         'message' => null,
         'offer' => null,
-        'scheduled_at' => 'date-time',
         'status' => null,
         'errors' => null
     ];
@@ -115,10 +111,8 @@ class CommandTask implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'field' => 'field',
-        'finished_at' => 'finishedAt',
         'message' => 'message',
         'offer' => 'offer',
-        'scheduled_at' => 'scheduledAt',
         'status' => 'status',
         'errors' => 'errors'
     ];
@@ -130,10 +124,8 @@ class CommandTask implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'field' => 'setField',
-        'finished_at' => 'setFinishedAt',
         'message' => 'setMessage',
         'offer' => 'setOffer',
-        'scheduled_at' => 'setScheduledAt',
         'status' => 'setStatus',
         'errors' => 'setErrors'
     ];
@@ -145,10 +137,8 @@ class CommandTask implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'field' => 'getField',
-        'finished_at' => 'getFinishedAt',
         'message' => 'getMessage',
         'offer' => 'getOffer',
-        'scheduled_at' => 'getScheduledAt',
         'status' => 'getStatus',
         'errors' => 'getErrors'
     ];
@@ -214,10 +204,8 @@ class CommandTask implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['field'] = $data['field'] ?? null;
-        $this->container['finished_at'] = $data['finished_at'] ?? null;
         $this->container['message'] = $data['message'] ?? null;
         $this->container['offer'] = $data['offer'] ?? null;
-        $this->container['scheduled_at'] = $data['scheduled_at'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
         $this->container['errors'] = $data['errors'] ?? null;
     }
@@ -271,30 +259,6 @@ class CommandTask implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets finished_at
-     *
-     * @return \DateTime|null
-     */
-    public function getFinishedAt()
-    {
-        return $this->container['finished_at'];
-    }
-
-    /**
-     * Sets finished_at
-     *
-     * @param \DateTime|null $finished_at Date of completion of the modification. Format (ISO 8601) - yyyy-MM-dd'T'HH:mm:ss.SSSZ
-     *
-     * @return self
-     */
-    public function setFinishedAt($finished_at)
-    {
-        $this->container['finished_at'] = $finished_at;
-
-        return $this;
-    }
-
-    /**
      * Gets message
      *
      * @return string|null
@@ -338,30 +302,6 @@ class CommandTask implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setOffer($offer)
     {
         $this->container['offer'] = $offer;
-
-        return $this;
-    }
-
-    /**
-     * Gets scheduled_at
-     *
-     * @return \DateTime|null
-     */
-    public function getScheduledAt()
-    {
-        return $this->container['scheduled_at'];
-    }
-
-    /**
-     * Sets scheduled_at
-     *
-     * @param \DateTime|null $scheduled_at Date of the modification schedule. Format (ISO 8601) - yyyy-MM-dd'T'HH:mm:ss.SSSZ
-     *
-     * @return self
-     */
-    public function setScheduledAt($scheduled_at)
-    {
-        $this->container['scheduled_at'] = $scheduled_at;
 
         return $this;
     }

@@ -60,6 +60,7 @@ class ThirdPartyDeliveryShippingAllOf implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
+        'method' => 'string',
         'third_party' => '\AllegroApi\Model\ThirdParty',
         'estimated_time_of_arrival' => '\DateTime',
         'country_code' => 'string'
@@ -73,6 +74,7 @@ class ThirdPartyDeliveryShippingAllOf implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'method' => null,
         'third_party' => null,
         'estimated_time_of_arrival' => 'date-time',
         'country_code' => null
@@ -105,6 +107,7 @@ class ThirdPartyDeliveryShippingAllOf implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
+        'method' => 'method',
         'third_party' => 'thirdParty',
         'estimated_time_of_arrival' => 'estimatedTimeOfArrival',
         'country_code' => 'countryCode'
@@ -116,6 +119,7 @@ class ThirdPartyDeliveryShippingAllOf implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
+        'method' => 'setMethod',
         'third_party' => 'setThirdParty',
         'estimated_time_of_arrival' => 'setEstimatedTimeOfArrival',
         'country_code' => 'setCountryCode'
@@ -127,6 +131,7 @@ class ThirdPartyDeliveryShippingAllOf implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
+        'method' => 'getMethod',
         'third_party' => 'getThirdParty',
         'estimated_time_of_arrival' => 'getEstimatedTimeOfArrival',
         'country_code' => 'getCountryCode'
@@ -192,6 +197,7 @@ class ThirdPartyDeliveryShippingAllOf implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
+        $this->container['method'] = $data['method'] ?? 'THIRD_PARTY_DELIVERY';
         $this->container['third_party'] = $data['third_party'] ?? null;
         $this->container['estimated_time_of_arrival'] = $data['estimated_time_of_arrival'] ?? null;
         $this->container['country_code'] = $data['country_code'] ?? null;
@@ -220,6 +226,30 @@ class ThirdPartyDeliveryShippingAllOf implements ModelInterface, ArrayAccess, \J
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets method
+     *
+     * @return string|null
+     */
+    public function getMethod()
+    {
+        return $this->container['method'];
+    }
+
+    /**
+     * Sets method
+     *
+     * @param string|null $method method
+     *
+     * @return self
+     */
+    public function setMethod($method)
+    {
+        $this->container['method'] = $method;
+
+        return $this;
+    }
 
     /**
      * Gets third_party

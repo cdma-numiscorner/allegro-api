@@ -62,7 +62,7 @@ class PriceModification implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'type' => 'string',
-        'marketplace_id' => 'MarketplaceId'
+        'marketplace_id' => 'string'
     ];
 
     /**
@@ -249,7 +249,7 @@ class PriceModification implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets marketplace_id
      *
-     * @return MarketplaceId|null
+     * @return string|null
      */
     public function getMarketplaceId()
     {
@@ -259,7 +259,7 @@ class PriceModification implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets marketplace_id
      *
-     * @param MarketplaceId|null $marketplace_id The marketplace on which the price of the offer should be changed. If omitted, the price will be changed on the base marketplace of the offer.
+     * @param string|null $marketplace_id The marketplace on which the price of the offer should be changed. If omitted, the price will be changed on the base marketplace of the offer.
      *
      * @return self
      */

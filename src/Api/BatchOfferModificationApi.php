@@ -1880,6 +1880,594 @@ class BatchOfferModificationApi
     }
 
     /**
+     * Operation getofferPriceAutomationModificationCommandStatusUsingGET
+     *
+     * Price automation command summary
+     *
+     * @param  string $command_id Command identifier. (required)
+     *
+     * @throws \AllegroApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \AllegroApi\Model\GeneralReport
+     */
+    public function getofferPriceAutomationModificationCommandStatusUsingGET($command_id)
+    {
+        list($response) = $this->getofferPriceAutomationModificationCommandStatusUsingGETWithHttpInfo($command_id);
+        return $response;
+    }
+
+    /**
+     * Operation getofferPriceAutomationModificationCommandStatusUsingGETWithHttpInfo
+     *
+     * Price automation command summary
+     *
+     * @param  string $command_id Command identifier. (required)
+     *
+     * @throws \AllegroApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \AllegroApi\Model\GeneralReport, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getofferPriceAutomationModificationCommandStatusUsingGETWithHttpInfo($command_id)
+    {
+        $request = $this->getofferPriceAutomationModificationCommandStatusUsingGETRequest($command_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\AllegroApi\Model\GeneralReport' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\GeneralReport', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\AllegroApi\Model\GeneralReport';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AllegroApi\Model\GeneralReport',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getofferPriceAutomationModificationCommandStatusUsingGETAsync
+     *
+     * Price automation command summary
+     *
+     * @param  string $command_id Command identifier. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getofferPriceAutomationModificationCommandStatusUsingGETAsync($command_id)
+    {
+        return $this->getofferPriceAutomationModificationCommandStatusUsingGETAsyncWithHttpInfo($command_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getofferPriceAutomationModificationCommandStatusUsingGETAsyncWithHttpInfo
+     *
+     * Price automation command summary
+     *
+     * @param  string $command_id Command identifier. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getofferPriceAutomationModificationCommandStatusUsingGETAsyncWithHttpInfo($command_id)
+    {
+        $returnType = '\AllegroApi\Model\GeneralReport';
+        $request = $this->getofferPriceAutomationModificationCommandStatusUsingGETRequest($command_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getofferPriceAutomationModificationCommandStatusUsingGET'
+     *
+     * @param  string $command_id Command identifier. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getofferPriceAutomationModificationCommandStatusUsingGETRequest($command_id)
+    {
+        // verify the required parameter 'command_id' is set
+        if ($command_id === null || (is_array($command_id) && count($command_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $command_id when calling getofferPriceAutomationModificationCommandStatusUsingGET'
+            );
+        }
+
+        $resourcePath = '/sale/offer-price-automation-commands/{commandId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($command_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'commandId' . '}',
+                ObjectSerializer::toPathValue($command_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/vnd.allegro.public.v1+json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/vnd.allegro.public.v1+json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getofferPriceAutomationModificationCommandTasksStatusesUsingGET
+     *
+     * Price automation command detailed report
+     *
+     * @param  string $command_id Command identifier. (required)
+     * @param  int $limit The limit of elements in the response. (optional, default to 100)
+     * @param  int $offset The offset of elements in the response. (optional, default to 0)
+     *
+     * @throws \AllegroApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \AllegroApi\Model\TaskReport
+     */
+    public function getofferPriceAutomationModificationCommandTasksStatusesUsingGET($command_id, $limit = 100, $offset = 0)
+    {
+        list($response) = $this->getofferPriceAutomationModificationCommandTasksStatusesUsingGETWithHttpInfo($command_id, $limit, $offset);
+        return $response;
+    }
+
+    /**
+     * Operation getofferPriceAutomationModificationCommandTasksStatusesUsingGETWithHttpInfo
+     *
+     * Price automation command detailed report
+     *
+     * @param  string $command_id Command identifier. (required)
+     * @param  int $limit The limit of elements in the response. (optional, default to 100)
+     * @param  int $offset The offset of elements in the response. (optional, default to 0)
+     *
+     * @throws \AllegroApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \AllegroApi\Model\TaskReport, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getofferPriceAutomationModificationCommandTasksStatusesUsingGETWithHttpInfo($command_id, $limit = 100, $offset = 0)
+    {
+        $request = $this->getofferPriceAutomationModificationCommandTasksStatusesUsingGETRequest($command_id, $limit, $offset);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\AllegroApi\Model\TaskReport' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\TaskReport', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\AllegroApi\Model\TaskReport';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AllegroApi\Model\TaskReport',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getofferPriceAutomationModificationCommandTasksStatusesUsingGETAsync
+     *
+     * Price automation command detailed report
+     *
+     * @param  string $command_id Command identifier. (required)
+     * @param  int $limit The limit of elements in the response. (optional, default to 100)
+     * @param  int $offset The offset of elements in the response. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getofferPriceAutomationModificationCommandTasksStatusesUsingGETAsync($command_id, $limit = 100, $offset = 0)
+    {
+        return $this->getofferPriceAutomationModificationCommandTasksStatusesUsingGETAsyncWithHttpInfo($command_id, $limit, $offset)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getofferPriceAutomationModificationCommandTasksStatusesUsingGETAsyncWithHttpInfo
+     *
+     * Price automation command detailed report
+     *
+     * @param  string $command_id Command identifier. (required)
+     * @param  int $limit The limit of elements in the response. (optional, default to 100)
+     * @param  int $offset The offset of elements in the response. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getofferPriceAutomationModificationCommandTasksStatusesUsingGETAsyncWithHttpInfo($command_id, $limit = 100, $offset = 0)
+    {
+        $returnType = '\AllegroApi\Model\TaskReport';
+        $request = $this->getofferPriceAutomationModificationCommandTasksStatusesUsingGETRequest($command_id, $limit, $offset);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getofferPriceAutomationModificationCommandTasksStatusesUsingGET'
+     *
+     * @param  string $command_id Command identifier. (required)
+     * @param  int $limit The limit of elements in the response. (optional, default to 100)
+     * @param  int $offset The offset of elements in the response. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getofferPriceAutomationModificationCommandTasksStatusesUsingGETRequest($command_id, $limit = 100, $offset = 0)
+    {
+        // verify the required parameter 'command_id' is set
+        if ($command_id === null || (is_array($command_id) && count($command_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $command_id when calling getofferPriceAutomationModificationCommandTasksStatusesUsingGET'
+            );
+        }
+        if ($limit !== null && $limit > 1000) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling BatchOfferModificationApi.getofferPriceAutomationModificationCommandTasksStatusesUsingGET, must be smaller than or equal to 1000.');
+        }
+        if ($limit !== null && $limit < 1) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling BatchOfferModificationApi.getofferPriceAutomationModificationCommandTasksStatusesUsingGET, must be bigger than or equal to 1.');
+        }
+
+        if ($offset !== null && $offset > 999) {
+            throw new \InvalidArgumentException('invalid value for "$offset" when calling BatchOfferModificationApi.getofferPriceAutomationModificationCommandTasksStatusesUsingGET, must be smaller than or equal to 999.');
+        }
+        if ($offset !== null && $offset < 0) {
+            throw new \InvalidArgumentException('invalid value for "$offset" when calling BatchOfferModificationApi.getofferPriceAutomationModificationCommandTasksStatusesUsingGET, must be bigger than or equal to 0.');
+        }
+
+
+        $resourcePath = '/sale/offer-price-automation-commands/{commandId}/tasks';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($limit !== null) {
+            if('form' === 'form' && is_array($limit)) {
+                foreach($limit as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['limit'] = $limit;
+            }
+        }
+        // query params
+        if ($offset !== null) {
+            if('form' === 'form' && is_array($offset)) {
+                foreach($offset as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['offset'] = $offset;
+            }
+        }
+
+
+        // path params
+        if ($command_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'commandId' . '}',
+                ObjectSerializer::toPathValue($command_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/vnd.allegro.public.v1+json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/vnd.allegro.public.v1+json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation modificationCommandUsingPUT
      *
      * Batch offer modification
@@ -2161,6 +2749,275 @@ class BatchOfferModificationApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation offerPriceAutomationModificationCommandUsingPOST
+     *
+     * Batch offer price automation rules modification
+     *
+     * @param  \AllegroApi\Model\OfferPriceAutomationCommand $offer_price_automation_command OfferPriceAutomationCommand (required)
+     *
+     * @throws \AllegroApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \AllegroApi\Model\GeneralReport
+     */
+    public function offerPriceAutomationModificationCommandUsingPOST($offer_price_automation_command)
+    {
+        list($response) = $this->offerPriceAutomationModificationCommandUsingPOSTWithHttpInfo($offer_price_automation_command);
+        return $response;
+    }
+
+    /**
+     * Operation offerPriceAutomationModificationCommandUsingPOSTWithHttpInfo
+     *
+     * Batch offer price automation rules modification
+     *
+     * @param  \AllegroApi\Model\OfferPriceAutomationCommand $offer_price_automation_command OfferPriceAutomationCommand (required)
+     *
+     * @throws \AllegroApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \AllegroApi\Model\GeneralReport, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function offerPriceAutomationModificationCommandUsingPOSTWithHttpInfo($offer_price_automation_command)
+    {
+        $request = $this->offerPriceAutomationModificationCommandUsingPOSTRequest($offer_price_automation_command);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 201:
+                    if ('\AllegroApi\Model\GeneralReport' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\GeneralReport', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\AllegroApi\Model\GeneralReport';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AllegroApi\Model\GeneralReport',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation offerPriceAutomationModificationCommandUsingPOSTAsync
+     *
+     * Batch offer price automation rules modification
+     *
+     * @param  \AllegroApi\Model\OfferPriceAutomationCommand $offer_price_automation_command OfferPriceAutomationCommand (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function offerPriceAutomationModificationCommandUsingPOSTAsync($offer_price_automation_command)
+    {
+        return $this->offerPriceAutomationModificationCommandUsingPOSTAsyncWithHttpInfo($offer_price_automation_command)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation offerPriceAutomationModificationCommandUsingPOSTAsyncWithHttpInfo
+     *
+     * Batch offer price automation rules modification
+     *
+     * @param  \AllegroApi\Model\OfferPriceAutomationCommand $offer_price_automation_command OfferPriceAutomationCommand (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function offerPriceAutomationModificationCommandUsingPOSTAsyncWithHttpInfo($offer_price_automation_command)
+    {
+        $returnType = '\AllegroApi\Model\GeneralReport';
+        $request = $this->offerPriceAutomationModificationCommandUsingPOSTRequest($offer_price_automation_command);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'offerPriceAutomationModificationCommandUsingPOST'
+     *
+     * @param  \AllegroApi\Model\OfferPriceAutomationCommand $offer_price_automation_command OfferPriceAutomationCommand (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function offerPriceAutomationModificationCommandUsingPOSTRequest($offer_price_automation_command)
+    {
+        // verify the required parameter 'offer_price_automation_command' is set
+        if ($offer_price_automation_command === null || (is_array($offer_price_automation_command) && count($offer_price_automation_command) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $offer_price_automation_command when calling offerPriceAutomationModificationCommandUsingPOST'
+            );
+        }
+
+        $resourcePath = '/sale/offer-price-automation-commands';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/vnd.allegro.public.v1+json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/vnd.allegro.public.v1+json'],
+                ['application/vnd.allegro.public.v1+json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($offer_price_automation_command)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($offer_price_automation_command));
+            } else {
+                $httpBody = $offer_price_automation_command;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

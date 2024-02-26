@@ -60,7 +60,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'delivery_methods' => '\AllegroApi\Model\InlineResponse2001DeliveryMethods[]'
+        'responsible_persons' => '\AllegroApi\Model\ResponsiblePersonResponse[]'
     ];
 
     /**
@@ -71,7 +71,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'delivery_methods' => null
+        'responsible_persons' => null
     ];
 
     /**
@@ -101,7 +101,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'delivery_methods' => 'deliveryMethods'
+        'responsible_persons' => 'responsiblePersons'
     ];
 
     /**
@@ -110,7 +110,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'delivery_methods' => 'setDeliveryMethods'
+        'responsible_persons' => 'setResponsiblePersons'
     ];
 
     /**
@@ -119,7 +119,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'delivery_methods' => 'getDeliveryMethods'
+        'responsible_persons' => 'getResponsiblePersons'
     ];
 
     /**
@@ -182,7 +182,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['delivery_methods'] = $data['delivery_methods'] ?? null;
+        $this->container['responsible_persons'] = $data['responsible_persons'] ?? null;
     }
 
     /**
@@ -210,25 +210,25 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets delivery_methods
+     * Gets responsible_persons
      *
-     * @return \AllegroApi\Model\InlineResponse2001DeliveryMethods[]|null
+     * @return \AllegroApi\Model\ResponsiblePersonResponse[]|null
      */
-    public function getDeliveryMethods()
+    public function getResponsiblePersons()
     {
-        return $this->container['delivery_methods'];
+        return $this->container['responsible_persons'];
     }
 
     /**
-     * Sets delivery_methods
+     * Sets responsible_persons
      *
-     * @param \AllegroApi\Model\InlineResponse2001DeliveryMethods[]|null $delivery_methods delivery_methods
+     * @param \AllegroApi\Model\ResponsiblePersonResponse[]|null $responsible_persons responsible_persons
      *
      * @return self
      */
-    public function setDeliveryMethods($delivery_methods)
+    public function setResponsiblePersons($responsible_persons)
     {
-        $this->container['delivery_methods'] = $delivery_methods;
+        $this->container['responsible_persons'] = $responsible_persons;
 
         return $this;
     }

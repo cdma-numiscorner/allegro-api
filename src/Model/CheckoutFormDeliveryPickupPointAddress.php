@@ -62,7 +62,8 @@ class CheckoutFormDeliveryPickupPointAddress implements ModelInterface, ArrayAcc
     protected static $openAPITypes = [
         'street' => 'string',
         'zip_code' => 'string',
-        'city' => 'string'
+        'city' => 'string',
+        'country_code' => 'string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class CheckoutFormDeliveryPickupPointAddress implements ModelInterface, ArrayAcc
     protected static $openAPIFormats = [
         'street' => null,
         'zip_code' => null,
-        'city' => null
+        'city' => null,
+        'country_code' => null
     ];
 
     /**
@@ -107,7 +109,8 @@ class CheckoutFormDeliveryPickupPointAddress implements ModelInterface, ArrayAcc
     protected static $attributeMap = [
         'street' => 'street',
         'zip_code' => 'zipCode',
-        'city' => 'city'
+        'city' => 'city',
+        'country_code' => 'countryCode'
     ];
 
     /**
@@ -118,7 +121,8 @@ class CheckoutFormDeliveryPickupPointAddress implements ModelInterface, ArrayAcc
     protected static $setters = [
         'street' => 'setStreet',
         'zip_code' => 'setZipCode',
-        'city' => 'setCity'
+        'city' => 'setCity',
+        'country_code' => 'setCountryCode'
     ];
 
     /**
@@ -129,7 +133,8 @@ class CheckoutFormDeliveryPickupPointAddress implements ModelInterface, ArrayAcc
     protected static $getters = [
         'street' => 'getStreet',
         'zip_code' => 'getZipCode',
-        'city' => 'getCity'
+        'city' => 'getCity',
+        'country_code' => 'getCountryCode'
     ];
 
     /**
@@ -195,6 +200,7 @@ class CheckoutFormDeliveryPickupPointAddress implements ModelInterface, ArrayAcc
         $this->container['street'] = $data['street'] ?? null;
         $this->container['zip_code'] = $data['zip_code'] ?? null;
         $this->container['city'] = $data['city'] ?? null;
+        $this->container['country_code'] = $data['country_code'] ?? null;
     }
 
     /**
@@ -289,6 +295,30 @@ class CheckoutFormDeliveryPickupPointAddress implements ModelInterface, ArrayAcc
     public function setCity($city)
     {
         $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets country_code
+     *
+     * @return string|null
+     */
+    public function getCountryCode()
+    {
+        return $this->container['country_code'];
+    }
+
+    /**
+     * Sets country_code
+     *
+     * @param string|null $country_code Country code
+     *
+     * @return self
+     */
+    public function setCountryCode($country_code)
+    {
+        $this->container['country_code'] = $country_code;
 
         return $this;
     }

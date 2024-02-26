@@ -1222,14 +1222,15 @@ class DisputesApi
      * @param  string $checkout_form_id Checkout form identifier. (optional)
      * @param  int $limit The maximum number of disputes in a response. (optional, default to 10)
      * @param  int $offset Index of first returned dispute. (optional, default to 0)
+     * @param  string[] $status Filter disputes with given set of statuses. (optional)
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \AllegroApi\Model\DisputeListResponse
      */
-    public function getListOfDisputesUsingGET($checkout_form_id = null, $limit = 10, $offset = 0)
+    public function getListOfDisputesUsingGET($checkout_form_id = null, $limit = 10, $offset = 0, $status = null)
     {
-        list($response) = $this->getListOfDisputesUsingGETWithHttpInfo($checkout_form_id, $limit, $offset);
+        list($response) = $this->getListOfDisputesUsingGETWithHttpInfo($checkout_form_id, $limit, $offset, $status);
         return $response;
     }
 
@@ -1241,14 +1242,15 @@ class DisputesApi
      * @param  string $checkout_form_id Checkout form identifier. (optional)
      * @param  int $limit The maximum number of disputes in a response. (optional, default to 10)
      * @param  int $offset Index of first returned dispute. (optional, default to 0)
+     * @param  string[] $status Filter disputes with given set of statuses. (optional)
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \AllegroApi\Model\DisputeListResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getListOfDisputesUsingGETWithHttpInfo($checkout_form_id = null, $limit = 10, $offset = 0)
+    public function getListOfDisputesUsingGETWithHttpInfo($checkout_form_id = null, $limit = 10, $offset = 0, $status = null)
     {
-        $request = $this->getListOfDisputesUsingGETRequest($checkout_form_id, $limit, $offset);
+        $request = $this->getListOfDisputesUsingGETRequest($checkout_form_id, $limit, $offset, $status);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1331,13 +1333,14 @@ class DisputesApi
      * @param  string $checkout_form_id Checkout form identifier. (optional)
      * @param  int $limit The maximum number of disputes in a response. (optional, default to 10)
      * @param  int $offset Index of first returned dispute. (optional, default to 0)
+     * @param  string[] $status Filter disputes with given set of statuses. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getListOfDisputesUsingGETAsync($checkout_form_id = null, $limit = 10, $offset = 0)
+    public function getListOfDisputesUsingGETAsync($checkout_form_id = null, $limit = 10, $offset = 0, $status = null)
     {
-        return $this->getListOfDisputesUsingGETAsyncWithHttpInfo($checkout_form_id, $limit, $offset)
+        return $this->getListOfDisputesUsingGETAsyncWithHttpInfo($checkout_form_id, $limit, $offset, $status)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1353,14 +1356,15 @@ class DisputesApi
      * @param  string $checkout_form_id Checkout form identifier. (optional)
      * @param  int $limit The maximum number of disputes in a response. (optional, default to 10)
      * @param  int $offset Index of first returned dispute. (optional, default to 0)
+     * @param  string[] $status Filter disputes with given set of statuses. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getListOfDisputesUsingGETAsyncWithHttpInfo($checkout_form_id = null, $limit = 10, $offset = 0)
+    public function getListOfDisputesUsingGETAsyncWithHttpInfo($checkout_form_id = null, $limit = 10, $offset = 0, $status = null)
     {
         $returnType = '\AllegroApi\Model\DisputeListResponse';
-        $request = $this->getListOfDisputesUsingGETRequest($checkout_form_id, $limit, $offset);
+        $request = $this->getListOfDisputesUsingGETRequest($checkout_form_id, $limit, $offset, $status);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1402,11 +1406,12 @@ class DisputesApi
      * @param  string $checkout_form_id Checkout form identifier. (optional)
      * @param  int $limit The maximum number of disputes in a response. (optional, default to 10)
      * @param  int $offset Index of first returned dispute. (optional, default to 0)
+     * @param  string[] $status Filter disputes with given set of statuses. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getListOfDisputesUsingGETRequest($checkout_form_id = null, $limit = 10, $offset = 0)
+    public function getListOfDisputesUsingGETRequest($checkout_form_id = null, $limit = 10, $offset = 0, $status = null)
     {
         if ($limit !== null && $limit > 100) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling DisputesApi.getListOfDisputesUsingGET, must be smaller than or equal to 100.');
@@ -1458,6 +1463,17 @@ class DisputesApi
             }
             else {
                 $queryParams['offset'] = $offset;
+            }
+        }
+        // query params
+        if ($status !== null) {
+            if('form' === 'form' && is_array($status)) {
+                foreach($status as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['status'] = $status;
             }
         }
 

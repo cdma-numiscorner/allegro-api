@@ -63,8 +63,7 @@ class CheckoutFormsOrderInvoice implements ModelInterface, ArrayAccess, \JsonSer
         'id' => 'string',
         'invoice_number' => 'string',
         'created_at' => '\DateTime',
-        'file' => '\AllegroApi\Model\CheckoutFormsOrderInvoiceFile',
-        'ept_verification' => '\AllegroApi\Model\CheckoutFormsOrderInvoiceEptVerification'
+        'file' => '\AllegroApi\Model\CheckoutFormsOrderInvoiceFile'
     ];
 
     /**
@@ -78,8 +77,7 @@ class CheckoutFormsOrderInvoice implements ModelInterface, ArrayAccess, \JsonSer
         'id' => null,
         'invoice_number' => null,
         'created_at' => 'date-time',
-        'file' => null,
-        'ept_verification' => null
+        'file' => null
     ];
 
     /**
@@ -112,8 +110,7 @@ class CheckoutFormsOrderInvoice implements ModelInterface, ArrayAccess, \JsonSer
         'id' => 'id',
         'invoice_number' => 'invoiceNumber',
         'created_at' => 'createdAt',
-        'file' => 'file',
-        'ept_verification' => 'eptVerification'
+        'file' => 'file'
     ];
 
     /**
@@ -125,8 +122,7 @@ class CheckoutFormsOrderInvoice implements ModelInterface, ArrayAccess, \JsonSer
         'id' => 'setId',
         'invoice_number' => 'setInvoiceNumber',
         'created_at' => 'setCreatedAt',
-        'file' => 'setFile',
-        'ept_verification' => 'setEptVerification'
+        'file' => 'setFile'
     ];
 
     /**
@@ -138,8 +134,7 @@ class CheckoutFormsOrderInvoice implements ModelInterface, ArrayAccess, \JsonSer
         'id' => 'getId',
         'invoice_number' => 'getInvoiceNumber',
         'created_at' => 'getCreatedAt',
-        'file' => 'getFile',
-        'ept_verification' => 'getEptVerification'
+        'file' => 'getFile'
     ];
 
     /**
@@ -206,7 +201,6 @@ class CheckoutFormsOrderInvoice implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['invoice_number'] = $data['invoice_number'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['file'] = $data['file'] ?? null;
-        $this->container['ept_verification'] = $data['ept_verification'] ?? null;
     }
 
     /**
@@ -325,30 +319,6 @@ class CheckoutFormsOrderInvoice implements ModelInterface, ArrayAccess, \JsonSer
     public function setFile($file)
     {
         $this->container['file'] = $file;
-
-        return $this;
-    }
-
-    /**
-     * Gets ept_verification
-     *
-     * @return \AllegroApi\Model\CheckoutFormsOrderInvoiceEptVerification|null
-     */
-    public function getEptVerification()
-    {
-        return $this->container['ept_verification'];
-    }
-
-    /**
-     * Sets ept_verification
-     *
-     * @param \AllegroApi\Model\CheckoutFormsOrderInvoiceEptVerification|null $ept_verification ept_verification
-     *
-     * @return self
-     */
-    public function setEptVerification($ept_verification)
-    {
-        $this->container['ept_verification'] = $ept_verification;
 
         return $this;
     }

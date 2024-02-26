@@ -66,6 +66,7 @@ class SaleProductOfferRequestBaseAllOf implements ModelInterface, ArrayAccess, \
         'delivery' => 'DeliveryProductOfferRequest',
         'after_sales_services' => '\AllegroApi\Model\AfterSalesServicesProductOfferRequest',
         'size_table' => 'SizeTable',
+        'contact' => 'Contact',
         'discounts' => '\AllegroApi\Model\DiscountsProductOfferRequest'
     ];
 
@@ -83,6 +84,7 @@ class SaleProductOfferRequestBaseAllOf implements ModelInterface, ArrayAccess, \
         'delivery' => null,
         'after_sales_services' => null,
         'size_table' => null,
+        'contact' => null,
         'discounts' => null
     ];
 
@@ -119,6 +121,7 @@ class SaleProductOfferRequestBaseAllOf implements ModelInterface, ArrayAccess, \
         'delivery' => 'delivery',
         'after_sales_services' => 'afterSalesServices',
         'size_table' => 'sizeTable',
+        'contact' => 'contact',
         'discounts' => 'discounts'
     ];
 
@@ -134,6 +137,7 @@ class SaleProductOfferRequestBaseAllOf implements ModelInterface, ArrayAccess, \
         'delivery' => 'setDelivery',
         'after_sales_services' => 'setAfterSalesServices',
         'size_table' => 'setSizeTable',
+        'contact' => 'setContact',
         'discounts' => 'setDiscounts'
     ];
 
@@ -149,6 +153,7 @@ class SaleProductOfferRequestBaseAllOf implements ModelInterface, ArrayAccess, \
         'delivery' => 'getDelivery',
         'after_sales_services' => 'getAfterSalesServices',
         'size_table' => 'getSizeTable',
+        'contact' => 'getContact',
         'discounts' => 'getDiscounts'
     ];
 
@@ -218,6 +223,7 @@ class SaleProductOfferRequestBaseAllOf implements ModelInterface, ArrayAccess, \
         $this->container['delivery'] = $data['delivery'] ?? null;
         $this->container['after_sales_services'] = $data['after_sales_services'] ?? null;
         $this->container['size_table'] = $data['size_table'] ?? null;
+        $this->container['contact'] = $data['contact'] ?? null;
         $this->container['discounts'] = $data['discounts'] ?? null;
     }
 
@@ -378,13 +384,37 @@ class SaleProductOfferRequestBaseAllOf implements ModelInterface, ArrayAccess, \
     /**
      * Sets size_table
      *
-     * @param SizeTable|null $size_table The size table information. You should enter the size tabe identifier or name.
+     * @param SizeTable|null $size_table The size table information. You can enter the size tabe identifier or name.
      *
      * @return self
      */
     public function setSizeTable($size_table)
     {
         $this->container['size_table'] = $size_table;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact
+     *
+     * @return Contact|null
+     */
+    public function getContact()
+    {
+        return $this->container['contact'];
+    }
+
+    /**
+     * Sets contact
+     *
+     * @param Contact|null $contact Identifier of contact data for sales format ADVERTISEMENT (classified ad). You can enter the contact identifier or name.
+     *
+     * @return self
+     */
+    public function setContact($contact)
+    {
+        $this->container['contact'] = $contact;
 
         return $this;
     }

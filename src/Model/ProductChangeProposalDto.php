@@ -66,7 +66,8 @@ class ProductChangeProposalDto implements ModelInterface, ArrayAccess, \JsonSeri
         'note' => 'string',
         'images' => '\AllegroApi\Model\ProductImageProposal[]',
         'parameters' => '\AllegroApi\Model\ProductParameterProposal[]',
-        'notify_via_email_after_verification' => 'bool'
+        'notify_via_email_after_verification' => 'bool',
+        'language' => 'string'
     ];
 
     /**
@@ -83,7 +84,8 @@ class ProductChangeProposalDto implements ModelInterface, ArrayAccess, \JsonSeri
         'note' => null,
         'images' => null,
         'parameters' => null,
-        'notify_via_email_after_verification' => null
+        'notify_via_email_after_verification' => null,
+        'language' => 'BCP-47 language code'
     ];
 
     /**
@@ -119,7 +121,8 @@ class ProductChangeProposalDto implements ModelInterface, ArrayAccess, \JsonSeri
         'note' => 'note',
         'images' => 'images',
         'parameters' => 'parameters',
-        'notify_via_email_after_verification' => 'notifyViaEmailAfterVerification'
+        'notify_via_email_after_verification' => 'notifyViaEmailAfterVerification',
+        'language' => 'language'
     ];
 
     /**
@@ -134,7 +137,8 @@ class ProductChangeProposalDto implements ModelInterface, ArrayAccess, \JsonSeri
         'note' => 'setNote',
         'images' => 'setImages',
         'parameters' => 'setParameters',
-        'notify_via_email_after_verification' => 'setNotifyViaEmailAfterVerification'
+        'notify_via_email_after_verification' => 'setNotifyViaEmailAfterVerification',
+        'language' => 'setLanguage'
     ];
 
     /**
@@ -149,7 +153,8 @@ class ProductChangeProposalDto implements ModelInterface, ArrayAccess, \JsonSeri
         'note' => 'getNote',
         'images' => 'getImages',
         'parameters' => 'getParameters',
-        'notify_via_email_after_verification' => 'getNotifyViaEmailAfterVerification'
+        'notify_via_email_after_verification' => 'getNotifyViaEmailAfterVerification',
+        'language' => 'getLanguage'
     ];
 
     /**
@@ -219,6 +224,7 @@ class ProductChangeProposalDto implements ModelInterface, ArrayAccess, \JsonSeri
         $this->container['images'] = $data['images'] ?? null;
         $this->container['parameters'] = $data['parameters'] ?? null;
         $this->container['notify_via_email_after_verification'] = $data['notify_via_email_after_verification'] ?? null;
+        $this->container['language'] = $data['language'] ?? null;
     }
 
     /**
@@ -417,6 +423,30 @@ class ProductChangeProposalDto implements ModelInterface, ArrayAccess, \JsonSeri
     public function setNotifyViaEmailAfterVerification($notify_via_email_after_verification)
     {
         $this->container['notify_via_email_after_verification'] = $notify_via_email_after_verification;
+
+        return $this;
+    }
+
+    /**
+     * Gets language
+     *
+     * @return string|null
+     */
+    public function getLanguage()
+    {
+        return $this->container['language'];
+    }
+
+    /**
+     * Sets language
+     *
+     * @param string|null $language Language of provided suggestion data.
+     *
+     * @return self
+     */
+    public function setLanguage($language)
+    {
+        $this->container['language'] = $language;
 
         return $this;
     }

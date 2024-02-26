@@ -53,6 +53,8 @@ class AttachmentType
     const GAME_INSTRUCTIONS = 'GAME_INSTRUCTIONS';
     const ENERGY_LABEL = 'ENERGY_LABEL';
     const PRODUCT_INFORMATION_SHEET = 'PRODUCT_INFORMATION_SHEET';
+    const TIRE_LABEL = 'TIRE_LABEL';
+    const SAFETY_INFORMATION_MANUAL = 'SAFETY_INFORMATION_MANUAL';
     
     /**
      * Gets allowable values of the enum
@@ -70,6 +72,8 @@ class AttachmentType
             self::GAME_INSTRUCTIONS,
             self::ENERGY_LABEL,
             self::PRODUCT_INFORMATION_SHEET,
+            self::TIRE_LABEL,
+            self::SAFETY_INFORMATION_MANUAL,
         ];
     }
 }

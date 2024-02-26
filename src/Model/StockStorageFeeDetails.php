@@ -61,6 +61,7 @@ class StockStorageFeeDetails implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
+        'fee_payable_at' => 'string',
         'charged_items_quantity' => 'float',
         'amount_gross' => 'float',
         'currency' => 'string'
@@ -74,6 +75,7 @@ class StockStorageFeeDetails implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'fee_payable_at' => null,
         'charged_items_quantity' => null,
         'amount_gross' => null,
         'currency' => null
@@ -106,6 +108,7 @@ class StockStorageFeeDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
+        'fee_payable_at' => 'feePayableAt',
         'charged_items_quantity' => 'chargedItemsQuantity',
         'amount_gross' => 'amountGross',
         'currency' => 'currency'
@@ -117,6 +120,7 @@ class StockStorageFeeDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
+        'fee_payable_at' => 'setFeePayableAt',
         'charged_items_quantity' => 'setChargedItemsQuantity',
         'amount_gross' => 'setAmountGross',
         'currency' => 'setCurrency'
@@ -128,6 +132,7 @@ class StockStorageFeeDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
+        'fee_payable_at' => 'getFeePayableAt',
         'charged_items_quantity' => 'getChargedItemsQuantity',
         'amount_gross' => 'getAmountGross',
         'currency' => 'getCurrency'
@@ -193,6 +198,7 @@ class StockStorageFeeDetails implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
+        $this->container['fee_payable_at'] = $data['fee_payable_at'] ?? null;
         $this->container['charged_items_quantity'] = $data['charged_items_quantity'] ?? null;
         $this->container['amount_gross'] = $data['amount_gross'] ?? null;
         $this->container['currency'] = $data['currency'] ?? null;
@@ -221,6 +227,30 @@ class StockStorageFeeDetails implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets fee_payable_at
+     *
+     * @return string|null
+     */
+    public function getFeePayableAt()
+    {
+        return $this->container['fee_payable_at'];
+    }
+
+    /**
+     * Sets fee_payable_at
+     *
+     * @param string|null $fee_payable_at Predicted date when the fee will be charged based on quantity and average sales. Only present in case of PREDICTION status, null otherwise.
+     *
+     * @return self
+     */
+    public function setFeePayableAt($fee_payable_at)
+    {
+        $this->container['fee_payable_at'] = $fee_payable_at;
+
+        return $this;
+    }
 
     /**
      * Gets charged_items_quantity

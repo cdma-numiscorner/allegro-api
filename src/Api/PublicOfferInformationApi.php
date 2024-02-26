@@ -124,7 +124,11 @@ class PublicOfferInformationApi
      * @param  string $phrase The search phrase. The phrase is searched in different fields of the offers depending on the value of the &#x60;searchMode&#x60; parameter. (optional)
      * @param  string $seller_id The identifier of a seller, to limit the results to offers from this seller. May be provided more than once. Should not be provided when seller.login is given. (optional)
      * @param  string $seller_login The login of a seller, to limit the results to offers from this seller. May be provided more than once. Should not be provided when seller.id is given. (optional)
-     * @param  string $search_mode Defines where the given phrase should be searched in. Allowed values:    - *REGULAR* - searching for a phrase in the title,   - *DESCRIPTIONS* - searching for a phrase in the title and the descriptions,   - *CLOSED* - searching for a phrase in the title of closed offers. (optional, default to 'REGULAR')
+     * @param  string $marketplace_id Id of a marketplace where offers are visible. *Acceptable values* : &#x60;allegro-pl&#x60;, &#x60;allegro-cz&#x60;. (optional, default to 'allegro-pl')
+     * @param  string $shipping_country Limits the result to offers with specified delivery country. *Default value* : depends on marketplace, for allegro-pl: &#x60;PL&#x60;, for allegro-cz: &#x60;CZ&#x60;. Check endpoint GET /marketplaces for acceptable values. (optional)
+     * @param  string $currency Currency of the offer prices. *Default value* : depends on marketplace, for allegro-pl: &#x60;PLN&#x60;, for allegro-cz: &#x60;CZK&#x60;. Check endpoint GET /marketplaces for acceptable currency values. (optional)
+     * @param  string $accept_language Limits offers to the only translated to specified language. Also expected language of messages. *Default value* : depends on marketplace, for allegro-pl: &#x60;pl-PL&#x60;, for allegro-cz: &#x60;cs-CZ&#x60;. Check endpoint GET /marketplaces for acceptable language values. (optional)
+     * @param  string $search_mode Defines where the given phrase should be searched in. Allowed values:    - *REGULAR* - searching for a phrase in the title,   - *DESCRIPTIONS* - searching for a phrase in the title and the descriptions,   - *CLOSED* - searching for a phrase in the title of closed offers. Available only for &#x60;allegro-pl&#x60; marketplace. (optional, default to 'REGULAR')
      * @param  int $offset Index of the first returned offer from all search results. Max offset is &#x60;600 - &lt;limit&gt;&#x60;. (optional, default to 0)
      * @param  int $limit The maximum number of offers in a response. (optional, default to 60)
      * @param  string $sort Search results sorting order. &#x60;+&#x60; or no prefix in the value means ascending order. &#x60;-&#x60; prefix means descending order. (optional, default to 'relevance')
@@ -136,9 +140,9 @@ class PublicOfferInformationApi
      * @throws \InvalidArgumentException
      * @return \AllegroApi\Model\ListingResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
      */
-    public function getListing($category_id = null, $phrase = null, $seller_id = null, $seller_login = null, $search_mode = 'REGULAR', $offset = 0, $limit = 60, $sort = 'relevance', $include = null, $fallback = true, $dynamic_filters = null)
+    public function getListing($category_id = null, $phrase = null, $seller_id = null, $seller_login = null, $marketplace_id = 'allegro-pl', $shipping_country = null, $currency = null, $accept_language = null, $search_mode = 'REGULAR', $offset = 0, $limit = 60, $sort = 'relevance', $include = null, $fallback = true, $dynamic_filters = null)
     {
-        list($response) = $this->getListingWithHttpInfo($category_id, $phrase, $seller_id, $seller_login, $search_mode, $offset, $limit, $sort, $include, $fallback, $dynamic_filters);
+        list($response) = $this->getListingWithHttpInfo($category_id, $phrase, $seller_id, $seller_login, $marketplace_id, $shipping_country, $currency, $accept_language, $search_mode, $offset, $limit, $sort, $include, $fallback, $dynamic_filters);
         return $response;
     }
 
@@ -151,7 +155,11 @@ class PublicOfferInformationApi
      * @param  string $phrase The search phrase. The phrase is searched in different fields of the offers depending on the value of the &#x60;searchMode&#x60; parameter. (optional)
      * @param  string $seller_id The identifier of a seller, to limit the results to offers from this seller. May be provided more than once. Should not be provided when seller.login is given. (optional)
      * @param  string $seller_login The login of a seller, to limit the results to offers from this seller. May be provided more than once. Should not be provided when seller.id is given. (optional)
-     * @param  string $search_mode Defines where the given phrase should be searched in. Allowed values:    - *REGULAR* - searching for a phrase in the title,   - *DESCRIPTIONS* - searching for a phrase in the title and the descriptions,   - *CLOSED* - searching for a phrase in the title of closed offers. (optional, default to 'REGULAR')
+     * @param  string $marketplace_id Id of a marketplace where offers are visible. *Acceptable values* : &#x60;allegro-pl&#x60;, &#x60;allegro-cz&#x60;. (optional, default to 'allegro-pl')
+     * @param  string $shipping_country Limits the result to offers with specified delivery country. *Default value* : depends on marketplace, for allegro-pl: &#x60;PL&#x60;, for allegro-cz: &#x60;CZ&#x60;. Check endpoint GET /marketplaces for acceptable values. (optional)
+     * @param  string $currency Currency of the offer prices. *Default value* : depends on marketplace, for allegro-pl: &#x60;PLN&#x60;, for allegro-cz: &#x60;CZK&#x60;. Check endpoint GET /marketplaces for acceptable currency values. (optional)
+     * @param  string $accept_language Limits offers to the only translated to specified language. Also expected language of messages. *Default value* : depends on marketplace, for allegro-pl: &#x60;pl-PL&#x60;, for allegro-cz: &#x60;cs-CZ&#x60;. Check endpoint GET /marketplaces for acceptable language values. (optional)
+     * @param  string $search_mode Defines where the given phrase should be searched in. Allowed values:    - *REGULAR* - searching for a phrase in the title,   - *DESCRIPTIONS* - searching for a phrase in the title and the descriptions,   - *CLOSED* - searching for a phrase in the title of closed offers. Available only for &#x60;allegro-pl&#x60; marketplace. (optional, default to 'REGULAR')
      * @param  int $offset Index of the first returned offer from all search results. Max offset is &#x60;600 - &lt;limit&gt;&#x60;. (optional, default to 0)
      * @param  int $limit The maximum number of offers in a response. (optional, default to 60)
      * @param  string $sort Search results sorting order. &#x60;+&#x60; or no prefix in the value means ascending order. &#x60;-&#x60; prefix means descending order. (optional, default to 'relevance')
@@ -163,9 +171,9 @@ class PublicOfferInformationApi
      * @throws \InvalidArgumentException
      * @return array of \AllegroApi\Model\ListingResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getListingWithHttpInfo($category_id = null, $phrase = null, $seller_id = null, $seller_login = null, $search_mode = 'REGULAR', $offset = 0, $limit = 60, $sort = 'relevance', $include = null, $fallback = true, $dynamic_filters = null)
+    public function getListingWithHttpInfo($category_id = null, $phrase = null, $seller_id = null, $seller_login = null, $marketplace_id = 'allegro-pl', $shipping_country = null, $currency = null, $accept_language = null, $search_mode = 'REGULAR', $offset = 0, $limit = 60, $sort = 'relevance', $include = null, $fallback = true, $dynamic_filters = null)
     {
-        $request = $this->getListingRequest($category_id, $phrase, $seller_id, $seller_login, $search_mode, $offset, $limit, $sort, $include, $fallback, $dynamic_filters);
+        $request = $this->getListingRequest($category_id, $phrase, $seller_id, $seller_login, $marketplace_id, $shipping_country, $currency, $accept_language, $search_mode, $offset, $limit, $sort, $include, $fallback, $dynamic_filters);
 
         try {
             $options = $this->createHttpClientOption();
@@ -389,7 +397,11 @@ class PublicOfferInformationApi
      * @param  string $phrase The search phrase. The phrase is searched in different fields of the offers depending on the value of the &#x60;searchMode&#x60; parameter. (optional)
      * @param  string $seller_id The identifier of a seller, to limit the results to offers from this seller. May be provided more than once. Should not be provided when seller.login is given. (optional)
      * @param  string $seller_login The login of a seller, to limit the results to offers from this seller. May be provided more than once. Should not be provided when seller.id is given. (optional)
-     * @param  string $search_mode Defines where the given phrase should be searched in. Allowed values:    - *REGULAR* - searching for a phrase in the title,   - *DESCRIPTIONS* - searching for a phrase in the title and the descriptions,   - *CLOSED* - searching for a phrase in the title of closed offers. (optional, default to 'REGULAR')
+     * @param  string $marketplace_id Id of a marketplace where offers are visible. *Acceptable values* : &#x60;allegro-pl&#x60;, &#x60;allegro-cz&#x60;. (optional, default to 'allegro-pl')
+     * @param  string $shipping_country Limits the result to offers with specified delivery country. *Default value* : depends on marketplace, for allegro-pl: &#x60;PL&#x60;, for allegro-cz: &#x60;CZ&#x60;. Check endpoint GET /marketplaces for acceptable values. (optional)
+     * @param  string $currency Currency of the offer prices. *Default value* : depends on marketplace, for allegro-pl: &#x60;PLN&#x60;, for allegro-cz: &#x60;CZK&#x60;. Check endpoint GET /marketplaces for acceptable currency values. (optional)
+     * @param  string $accept_language Limits offers to the only translated to specified language. Also expected language of messages. *Default value* : depends on marketplace, for allegro-pl: &#x60;pl-PL&#x60;, for allegro-cz: &#x60;cs-CZ&#x60;. Check endpoint GET /marketplaces for acceptable language values. (optional)
+     * @param  string $search_mode Defines where the given phrase should be searched in. Allowed values:    - *REGULAR* - searching for a phrase in the title,   - *DESCRIPTIONS* - searching for a phrase in the title and the descriptions,   - *CLOSED* - searching for a phrase in the title of closed offers. Available only for &#x60;allegro-pl&#x60; marketplace. (optional, default to 'REGULAR')
      * @param  int $offset Index of the first returned offer from all search results. Max offset is &#x60;600 - &lt;limit&gt;&#x60;. (optional, default to 0)
      * @param  int $limit The maximum number of offers in a response. (optional, default to 60)
      * @param  string $sort Search results sorting order. &#x60;+&#x60; or no prefix in the value means ascending order. &#x60;-&#x60; prefix means descending order. (optional, default to 'relevance')
@@ -400,9 +412,9 @@ class PublicOfferInformationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getListingAsync($category_id = null, $phrase = null, $seller_id = null, $seller_login = null, $search_mode = 'REGULAR', $offset = 0, $limit = 60, $sort = 'relevance', $include = null, $fallback = true, $dynamic_filters = null)
+    public function getListingAsync($category_id = null, $phrase = null, $seller_id = null, $seller_login = null, $marketplace_id = 'allegro-pl', $shipping_country = null, $currency = null, $accept_language = null, $search_mode = 'REGULAR', $offset = 0, $limit = 60, $sort = 'relevance', $include = null, $fallback = true, $dynamic_filters = null)
     {
-        return $this->getListingAsyncWithHttpInfo($category_id, $phrase, $seller_id, $seller_login, $search_mode, $offset, $limit, $sort, $include, $fallback, $dynamic_filters)
+        return $this->getListingAsyncWithHttpInfo($category_id, $phrase, $seller_id, $seller_login, $marketplace_id, $shipping_country, $currency, $accept_language, $search_mode, $offset, $limit, $sort, $include, $fallback, $dynamic_filters)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -419,7 +431,11 @@ class PublicOfferInformationApi
      * @param  string $phrase The search phrase. The phrase is searched in different fields of the offers depending on the value of the &#x60;searchMode&#x60; parameter. (optional)
      * @param  string $seller_id The identifier of a seller, to limit the results to offers from this seller. May be provided more than once. Should not be provided when seller.login is given. (optional)
      * @param  string $seller_login The login of a seller, to limit the results to offers from this seller. May be provided more than once. Should not be provided when seller.id is given. (optional)
-     * @param  string $search_mode Defines where the given phrase should be searched in. Allowed values:    - *REGULAR* - searching for a phrase in the title,   - *DESCRIPTIONS* - searching for a phrase in the title and the descriptions,   - *CLOSED* - searching for a phrase in the title of closed offers. (optional, default to 'REGULAR')
+     * @param  string $marketplace_id Id of a marketplace where offers are visible. *Acceptable values* : &#x60;allegro-pl&#x60;, &#x60;allegro-cz&#x60;. (optional, default to 'allegro-pl')
+     * @param  string $shipping_country Limits the result to offers with specified delivery country. *Default value* : depends on marketplace, for allegro-pl: &#x60;PL&#x60;, for allegro-cz: &#x60;CZ&#x60;. Check endpoint GET /marketplaces for acceptable values. (optional)
+     * @param  string $currency Currency of the offer prices. *Default value* : depends on marketplace, for allegro-pl: &#x60;PLN&#x60;, for allegro-cz: &#x60;CZK&#x60;. Check endpoint GET /marketplaces for acceptable currency values. (optional)
+     * @param  string $accept_language Limits offers to the only translated to specified language. Also expected language of messages. *Default value* : depends on marketplace, for allegro-pl: &#x60;pl-PL&#x60;, for allegro-cz: &#x60;cs-CZ&#x60;. Check endpoint GET /marketplaces for acceptable language values. (optional)
+     * @param  string $search_mode Defines where the given phrase should be searched in. Allowed values:    - *REGULAR* - searching for a phrase in the title,   - *DESCRIPTIONS* - searching for a phrase in the title and the descriptions,   - *CLOSED* - searching for a phrase in the title of closed offers. Available only for &#x60;allegro-pl&#x60; marketplace. (optional, default to 'REGULAR')
      * @param  int $offset Index of the first returned offer from all search results. Max offset is &#x60;600 - &lt;limit&gt;&#x60;. (optional, default to 0)
      * @param  int $limit The maximum number of offers in a response. (optional, default to 60)
      * @param  string $sort Search results sorting order. &#x60;+&#x60; or no prefix in the value means ascending order. &#x60;-&#x60; prefix means descending order. (optional, default to 'relevance')
@@ -430,10 +446,10 @@ class PublicOfferInformationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getListingAsyncWithHttpInfo($category_id = null, $phrase = null, $seller_id = null, $seller_login = null, $search_mode = 'REGULAR', $offset = 0, $limit = 60, $sort = 'relevance', $include = null, $fallback = true, $dynamic_filters = null)
+    public function getListingAsyncWithHttpInfo($category_id = null, $phrase = null, $seller_id = null, $seller_login = null, $marketplace_id = 'allegro-pl', $shipping_country = null, $currency = null, $accept_language = null, $search_mode = 'REGULAR', $offset = 0, $limit = 60, $sort = 'relevance', $include = null, $fallback = true, $dynamic_filters = null)
     {
         $returnType = '\AllegroApi\Model\ListingResponse';
-        $request = $this->getListingRequest($category_id, $phrase, $seller_id, $seller_login, $search_mode, $offset, $limit, $sort, $include, $fallback, $dynamic_filters);
+        $request = $this->getListingRequest($category_id, $phrase, $seller_id, $seller_login, $marketplace_id, $shipping_country, $currency, $accept_language, $search_mode, $offset, $limit, $sort, $include, $fallback, $dynamic_filters);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -476,7 +492,11 @@ class PublicOfferInformationApi
      * @param  string $phrase The search phrase. The phrase is searched in different fields of the offers depending on the value of the &#x60;searchMode&#x60; parameter. (optional)
      * @param  string $seller_id The identifier of a seller, to limit the results to offers from this seller. May be provided more than once. Should not be provided when seller.login is given. (optional)
      * @param  string $seller_login The login of a seller, to limit the results to offers from this seller. May be provided more than once. Should not be provided when seller.id is given. (optional)
-     * @param  string $search_mode Defines where the given phrase should be searched in. Allowed values:    - *REGULAR* - searching for a phrase in the title,   - *DESCRIPTIONS* - searching for a phrase in the title and the descriptions,   - *CLOSED* - searching for a phrase in the title of closed offers. (optional, default to 'REGULAR')
+     * @param  string $marketplace_id Id of a marketplace where offers are visible. *Acceptable values* : &#x60;allegro-pl&#x60;, &#x60;allegro-cz&#x60;. (optional, default to 'allegro-pl')
+     * @param  string $shipping_country Limits the result to offers with specified delivery country. *Default value* : depends on marketplace, for allegro-pl: &#x60;PL&#x60;, for allegro-cz: &#x60;CZ&#x60;. Check endpoint GET /marketplaces for acceptable values. (optional)
+     * @param  string $currency Currency of the offer prices. *Default value* : depends on marketplace, for allegro-pl: &#x60;PLN&#x60;, for allegro-cz: &#x60;CZK&#x60;. Check endpoint GET /marketplaces for acceptable currency values. (optional)
+     * @param  string $accept_language Limits offers to the only translated to specified language. Also expected language of messages. *Default value* : depends on marketplace, for allegro-pl: &#x60;pl-PL&#x60;, for allegro-cz: &#x60;cs-CZ&#x60;. Check endpoint GET /marketplaces for acceptable language values. (optional)
+     * @param  string $search_mode Defines where the given phrase should be searched in. Allowed values:    - *REGULAR* - searching for a phrase in the title,   - *DESCRIPTIONS* - searching for a phrase in the title and the descriptions,   - *CLOSED* - searching for a phrase in the title of closed offers. Available only for &#x60;allegro-pl&#x60; marketplace. (optional, default to 'REGULAR')
      * @param  int $offset Index of the first returned offer from all search results. Max offset is &#x60;600 - &lt;limit&gt;&#x60;. (optional, default to 0)
      * @param  int $limit The maximum number of offers in a response. (optional, default to 60)
      * @param  string $sort Search results sorting order. &#x60;+&#x60; or no prefix in the value means ascending order. &#x60;-&#x60; prefix means descending order. (optional, default to 'relevance')
@@ -487,7 +507,7 @@ class PublicOfferInformationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getListingRequest($category_id = null, $phrase = null, $seller_id = null, $seller_login = null, $search_mode = 'REGULAR', $offset = 0, $limit = 60, $sort = 'relevance', $include = null, $fallback = true, $dynamic_filters = null)
+    public function getListingRequest($category_id = null, $phrase = null, $seller_id = null, $seller_login = null, $marketplace_id = 'allegro-pl', $shipping_country = null, $currency = null, $accept_language = null, $search_mode = 'REGULAR', $offset = 0, $limit = 60, $sort = 'relevance', $include = null, $fallback = true, $dynamic_filters = null)
     {
         if ($offset !== null && $offset > 599) {
             throw new \InvalidArgumentException('invalid value for "$offset" when calling PublicOfferInformationApi.getListing, must be smaller than or equal to 599.');
@@ -553,6 +573,39 @@ class PublicOfferInformationApi
             }
             else {
                 $queryParams['seller.login'] = $seller_login;
+            }
+        }
+        // query params
+        if ($marketplace_id !== null) {
+            if('form' === 'form' && is_array($marketplace_id)) {
+                foreach($marketplace_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['marketplaceId'] = $marketplace_id;
+            }
+        }
+        // query params
+        if ($shipping_country !== null) {
+            if('form' === 'form' && is_array($shipping_country)) {
+                foreach($shipping_country as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['shipping.country'] = $shipping_country;
+            }
+        }
+        // query params
+        if ($currency !== null) {
+            if('form' === 'form' && is_array($currency)) {
+                foreach($currency as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['currency'] = $currency;
             }
         }
         // query params
@@ -633,6 +686,10 @@ class PublicOfferInformationApi
             }
         }
 
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
 
 
 

@@ -61,7 +61,6 @@ class BadgeApplicationSubmittedPrices implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'market' => '\AllegroApi\Model\BadgeApplicationSubmittedMarketPrice',
         'bargain' => '\AllegroApi\Model\BadgeApplicationBargainPrice',
         'subsidy' => '\AllegroApi\Model\BadgeApplicationSubsidyPrices'
     ];
@@ -74,7 +73,6 @@ class BadgeApplicationSubmittedPrices implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'market' => null,
         'bargain' => null,
         'subsidy' => null
     ];
@@ -106,7 +104,6 @@ class BadgeApplicationSubmittedPrices implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'market' => 'market',
         'bargain' => 'bargain',
         'subsidy' => 'subsidy'
     ];
@@ -117,7 +114,6 @@ class BadgeApplicationSubmittedPrices implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'market' => 'setMarket',
         'bargain' => 'setBargain',
         'subsidy' => 'setSubsidy'
     ];
@@ -128,7 +124,6 @@ class BadgeApplicationSubmittedPrices implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'market' => 'getMarket',
         'bargain' => 'getBargain',
         'subsidy' => 'getSubsidy'
     ];
@@ -193,7 +188,6 @@ class BadgeApplicationSubmittedPrices implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->container['market'] = $data['market'] ?? null;
         $this->container['bargain'] = $data['bargain'] ?? null;
         $this->container['subsidy'] = $data['subsidy'] ?? null;
     }
@@ -221,30 +215,6 @@ class BadgeApplicationSubmittedPrices implements ModelInterface, ArrayAccess, \J
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets market
-     *
-     * @return \AllegroApi\Model\BadgeApplicationSubmittedMarketPrice|null
-     */
-    public function getMarket()
-    {
-        return $this->container['market'];
-    }
-
-    /**
-     * Sets market
-     *
-     * @param \AllegroApi\Model\BadgeApplicationSubmittedMarketPrice|null $market market
-     *
-     * @return self
-     */
-    public function setMarket($market)
-    {
-        $this->container['market'] = $market;
-
-        return $this;
-    }
 
     /**
      * Gets bargain

@@ -64,7 +64,7 @@ class ParcelItemDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
         'dimensions' => '\AllegroApi\Model\ParcelItemDetailsWithWaybillDimensions',
         'weight' => '\AllegroApi\Model\ParcelItemDetailsWithWaybillWeight',
         'description' => 'string',
-        'value' => '\AllegroApi\Model\ParcelItemDetailsWithWaybillValue',
+        'value' => '\AllegroApi\Model\ParcelItemDetailsValue',
         'type' => 'string'
     ];
 
@@ -335,7 +335,7 @@ class ParcelItemDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets value
      *
-     * @return \AllegroApi\Model\ParcelItemDetailsWithWaybillValue|null
+     * @return \AllegroApi\Model\ParcelItemDetailsValue|null
      */
     public function getValue()
     {
@@ -345,7 +345,7 @@ class ParcelItemDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets value
      *
-     * @param \AllegroApi\Model\ParcelItemDetailsWithWaybillValue|null $value value
+     * @param \AllegroApi\Model\ParcelItemDetailsValue|null $value value
      *
      * @return self
      */

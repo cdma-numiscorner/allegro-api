@@ -71,6 +71,7 @@ class CheckoutForm implements ModelInterface, ArrayAccess, \JsonSerializable
         'line_items' => '\AllegroApi\Model\CheckoutFormLineItem[]',
         'surcharges' => '\AllegroApi\Model\CheckoutFormPaymentReference[]',
         'discounts' => '\AllegroApi\Model\CheckoutFormDiscount[]',
+        'note' => '\AllegroApi\Model\CheckoutFormNoteReference',
         'marketplace' => '\AllegroApi\Model\CheckoutFormMarketplace',
         'summary' => '\AllegroApi\Model\CheckoutFormSummary',
         'updated_at' => 'string',
@@ -96,6 +97,7 @@ class CheckoutForm implements ModelInterface, ArrayAccess, \JsonSerializable
         'line_items' => null,
         'surcharges' => null,
         'discounts' => null,
+        'note' => null,
         'marketplace' => null,
         'summary' => null,
         'updated_at' => null,
@@ -140,6 +142,7 @@ class CheckoutForm implements ModelInterface, ArrayAccess, \JsonSerializable
         'line_items' => 'lineItems',
         'surcharges' => 'surcharges',
         'discounts' => 'discounts',
+        'note' => 'note',
         'marketplace' => 'marketplace',
         'summary' => 'summary',
         'updated_at' => 'updatedAt',
@@ -163,6 +166,7 @@ class CheckoutForm implements ModelInterface, ArrayAccess, \JsonSerializable
         'line_items' => 'setLineItems',
         'surcharges' => 'setSurcharges',
         'discounts' => 'setDiscounts',
+        'note' => 'setNote',
         'marketplace' => 'setMarketplace',
         'summary' => 'setSummary',
         'updated_at' => 'setUpdatedAt',
@@ -186,6 +190,7 @@ class CheckoutForm implements ModelInterface, ArrayAccess, \JsonSerializable
         'line_items' => 'getLineItems',
         'surcharges' => 'getSurcharges',
         'discounts' => 'getDiscounts',
+        'note' => 'getNote',
         'marketplace' => 'getMarketplace',
         'summary' => 'getSummary',
         'updated_at' => 'getUpdatedAt',
@@ -263,6 +268,7 @@ class CheckoutForm implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['line_items'] = $data['line_items'] ?? null;
         $this->container['surcharges'] = $data['surcharges'] ?? null;
         $this->container['discounts'] = $data['discounts'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
         $this->container['marketplace'] = $data['marketplace'] ?? null;
         $this->container['summary'] = $data['summary'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -574,6 +580,30 @@ class CheckoutForm implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDiscounts($discounts)
     {
         $this->container['discounts'] = $discounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets note
+     *
+     * @return \AllegroApi\Model\CheckoutFormNoteReference|null
+     */
+    public function getNote()
+    {
+        return $this->container['note'];
+    }
+
+    /**
+     * Sets note
+     *
+     * @param \AllegroApi\Model\CheckoutFormNoteReference|null $note note
+     *
+     * @return self
+     */
+    public function setNote($note)
+    {
+        $this->container['note'] = $note;
 
         return $this;
     }

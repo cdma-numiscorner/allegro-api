@@ -36,7 +36,7 @@ use \AllegroApi\ObjectSerializer;
  * CheckoutFormDeliveryTimeGuaranteed Class Doc Comment
  *
  * @category Class
- * @description Guaranteed date when first delivery attempt takes place. This is always filled for X-press Couriers delivery method.
+ * @description Guaranteed date when first delivery attempt takes place. This is always filled for Allegro One Courier delivery method. This field is deprecated in favor of &#x60;delivery.time.from&#x60; and &#x60;delivery.time.to&#x60;.
  * @package  AllegroApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

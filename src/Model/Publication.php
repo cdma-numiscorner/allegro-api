@@ -197,6 +197,7 @@ class Publication implements ModelInterface, ArrayAccess, \JsonSerializable
     const ENDED_BY_ADMIN = 'ADMIN';
     const ENDED_BY_EXPIRATION = 'EXPIRATION';
     const ENDED_BY_EMPTY_STOCK = 'EMPTY_STOCK';
+    const ENDED_BY_PRODUCT_DETACHMENT = 'PRODUCT_DETACHMENT';
     const ENDED_BY_ERROR = 'ERROR';
     
 
@@ -213,6 +214,7 @@ class Publication implements ModelInterface, ArrayAccess, \JsonSerializable
             self::ENDED_BY_ADMIN,
             self::ENDED_BY_EXPIRATION,
             self::ENDED_BY_EMPTY_STOCK,
+            self::ENDED_BY_PRODUCT_DETACHMENT,
             self::ENDED_BY_ERROR,
         ];
     }
@@ -288,7 +290,7 @@ class Publication implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets duration
      *
-     * @param string|null $duration Publication duration, ISO 8601 duration format. This field must be set to one of the following: PT0S for immediately, PT24H, P2D, P3D, P4D, P5D, P7D, P10D, P14D, P21D, P30D, P60D.
+     * @param string|null $duration Publication duration, ISO 8601 duration format. This field must be set to one of the following:<br/> - for auctions: `PT24H`, `P3D`, `P5D`, `P7D`, `P10D`<br/> - for buy-now offers: `P3D`, `P5D`, `P7D`, `P10D`, `P20D`, `P30D`<br/> - for advertisements: `P10D`, `P20D`, `P30D`.
      *
      * @return self
      */
@@ -408,7 +410,7 @@ class Publication implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ended_by
      *
-     * @param string|null $ended_by Indicates the reason for ending the offer:  - `USER` - offer ended by the seller.  - `ADMIN` - offer ended by an admin.  - `EXPIRATION` - offer duration had expired (valid for offers with specified duration).  - `EMPTY_STOCK` - offer ended because all available items had been sold out.  - `ERROR` - offer ended due to internal problem with offer publication. The publication command responded with    success status, but further processing failed.
+     * @param string|null $ended_by Indicates the reason for ending the offer:  - `USER` - offer ended by the seller.  - `ADMIN` - offer ended by an admin.  - `EXPIRATION` - offer duration had expired (valid for offers with specified duration).  - `EMPTY_STOCK` - offer ended because all available items had been sold out.  - `PRODUCT_DETACHMENT` - offer ended because its link to the product was removed. Status will only occur    if the base marketplace of offer requires full productization.  - `ERROR` - offer ended due to internal problem with offer publication. The publication command responded with    success status, but further processing failed.
      *
      * @return self
      */

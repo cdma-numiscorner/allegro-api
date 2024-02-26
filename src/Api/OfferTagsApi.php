@@ -212,6 +212,14 @@ class OfferTagsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AllegroApi\Model\ErrorsHolder',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -992,7 +1000,7 @@ class OfferTagsApi
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \AllegroApi\Model\TagListResponse|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder
+     * @return \AllegroApi\Model\TagListResponse|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
      */
     public function listAssignedOfferTagsGET($offer_id)
     {
@@ -1009,7 +1017,7 @@ class OfferTagsApi
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \AllegroApi\Model\TagListResponse|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AllegroApi\Model\TagListResponse|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAssignedOfferTagsGETWithHttpInfo($offer_id)
     {
@@ -1081,6 +1089,18 @@ class OfferTagsApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 404:
+                    if ('\AllegroApi\Model\ErrorsHolder' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\ErrorsHolder', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\AllegroApi\Model\TagListResponse';
@@ -1116,6 +1136,14 @@ class OfferTagsApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AllegroApi\Model\ErrorsHolder',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\AllegroApi\Model\ErrorsHolder',
@@ -1711,6 +1739,14 @@ class OfferTagsApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AllegroApi\Model\ErrorsHolder',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\AllegroApi\Model\ErrorsHolder',

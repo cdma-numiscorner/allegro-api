@@ -351,7 +351,7 @@ class RefundClaim implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string|null $status Status of the returned refund application. - `IN_PROGRESS` - the application is being processed or awaits user or admin action. - `WAITING_FOR_PAYMENT_REFUND` - the application is being processed and awaits payment refund to buyer. - `GRANTED` - the application was accepted and a commission refund was granted as requested,   or the application was rejected and the seller successfully appealed.  - `REJECTED` - the application was rejected and no commission was refunded. - `REJECTED_AFTER_APPEAL` - the application was initially rejected and the seller unsuccessfully appealed. - `CANCELLED` - the application was cancelled by the seller. - `APPEALED` - the application was rejected and the seller appealed, but the appeal has not yet finished processing.
+     * @param string|null $status Status of the returned refund application. - `IN_PROGRESS` - the application is being processed or awaits user or admin action. - `WAITING_FOR_PAYMENT_REFUND` - the application is being processed and awaits payment refund to buyer. - `GRANTED` - the application was accepted and a commission refund was granted as requested,   or the application was rejected and the seller successfully appealed. - `REJECTED` - the application was rejected and no commission was refunded. - `REJECTED_AFTER_APPEAL` - the application was initially rejected and the seller unsuccessfully appealed. - `CANCELLED` - the application was cancelled by the seller. - `APPEALED` - the application was rejected and the seller appealed, but the appeal has not yet finished processing.
      *
      * @return self
      */

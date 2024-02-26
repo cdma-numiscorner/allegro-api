@@ -71,8 +71,7 @@ class SaleProductOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'size_table' => '\AllegroApi\Model\SizeTable',
         'tax' => '\AllegroApi\Model\ExtendedTax',
         'tax_settings' => '\AllegroApi\Model\OfferTaxSettings',
-        'message_to_seller_settings' => '\AllegroApi\Model\MessageToSellerSettings',
-        'additional_marketplaces' => 'map[string,\AllegroApi\Model\OfferAdditionalMarketplace]'
+        'message_to_seller_settings' => '\AllegroApi\Model\MessageToSellerSettings'
     ];
 
     /**
@@ -93,8 +92,7 @@ class SaleProductOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'size_table' => null,
         'tax' => null,
         'tax_settings' => null,
-        'message_to_seller_settings' => null,
-        'additional_marketplaces' => null
+        'message_to_seller_settings' => null
     ];
 
     /**
@@ -134,8 +132,7 @@ class SaleProductOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'size_table' => 'sizeTable',
         'tax' => 'tax',
         'tax_settings' => 'taxSettings',
-        'message_to_seller_settings' => 'messageToSellerSettings',
-        'additional_marketplaces' => 'additionalMarketplaces'
+        'message_to_seller_settings' => 'messageToSellerSettings'
     ];
 
     /**
@@ -154,8 +151,7 @@ class SaleProductOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'size_table' => 'setSizeTable',
         'tax' => 'setTax',
         'tax_settings' => 'setTaxSettings',
-        'message_to_seller_settings' => 'setMessageToSellerSettings',
-        'additional_marketplaces' => 'setAdditionalMarketplaces'
+        'message_to_seller_settings' => 'setMessageToSellerSettings'
     ];
 
     /**
@@ -174,8 +170,7 @@ class SaleProductOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'size_table' => 'getSizeTable',
         'tax' => 'getTax',
         'tax_settings' => 'getTaxSettings',
-        'message_to_seller_settings' => 'getMessageToSellerSettings',
-        'additional_marketplaces' => 'getAdditionalMarketplaces'
+        'message_to_seller_settings' => 'getMessageToSellerSettings'
     ];
 
     /**
@@ -249,7 +244,6 @@ class SaleProductOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['tax'] = $data['tax'] ?? null;
         $this->container['tax_settings'] = $data['tax_settings'] ?? null;
         $this->container['message_to_seller_settings'] = $data['message_to_seller_settings'] ?? null;
-        $this->container['additional_marketplaces'] = $data['additional_marketplaces'] ?? null;
     }
 
     /**
@@ -261,8 +255,8 @@ class SaleProductOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 50)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 50.";
+        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 75)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 75.";
         }
 
         return $invalidProperties;
@@ -293,14 +287,14 @@ class SaleProductOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string|null $name Name (title) of an offer. Length cannot be more than 50 characters. Read more: <a href=\"../../tutorials/jak-jednym-requestem-wystawic-oferte-powiazana-z-produktem-D7Kj9gw4xFA#tytul-oferty\" target=\"_blank\">PL</a>  / <a href=\"../../tutorials/list-offer-assigned-product-one-request-D7Kj9M71Bu6#offer-title\" target=\"_blank\">EN</a> .
+     * @param string|null $name Name (title) of an offer. Length cannot be more than 75 characters. Read more: <a href=\"../../tutorials/jak-jednym-requestem-wystawic-oferte-powiazana-z-produktem-D7Kj9gw4xFA#tytul-oferty\" target=\"_blank\">PL</a>  / <a href=\"../../tutorials/list-offer-assigned-product-one-request-D7Kj9M71Bu6#offer-title\" target=\"_blank\">EN</a> .
      *
      * @return self
      */
     public function setName($name)
     {
-        if (!is_null($name) && (mb_strlen($name) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling SaleProductOffer., must be smaller than or equal to 50.');
+        if (!is_null($name) && (mb_strlen($name) > 75)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling SaleProductOffer., must be smaller than or equal to 75.');
         }
 
         $this->container['name'] = $name;
@@ -544,30 +538,6 @@ class SaleProductOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMessageToSellerSettings($message_to_seller_settings)
     {
         $this->container['message_to_seller_settings'] = $message_to_seller_settings;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_marketplaces
-     *
-     * @return map[string,\AllegroApi\Model\OfferAdditionalMarketplace]|null
-     */
-    public function getAdditionalMarketplaces()
-    {
-        return $this->container['additional_marketplaces'];
-    }
-
-    /**
-     * Sets additional_marketplaces
-     *
-     * @param map[string,\AllegroApi\Model\OfferAdditionalMarketplace]|null $additional_marketplaces Settings for each additional marketplace.
-     *
-     * @return self
-     */
-    public function setAdditionalMarketplaces($additional_marketplaces)
-    {
-        $this->container['additional_marketplaces'] = $additional_marketplaces;
 
         return $this;
     }

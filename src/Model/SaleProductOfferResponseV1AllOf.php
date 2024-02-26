@@ -77,7 +77,7 @@ class SaleProductOfferResponseV1AllOf implements ModelInterface, ArrayAccess, \J
         'discounts' => '\AllegroApi\Model\DiscountsProductOfferResponse',
         'stock' => '\AllegroApi\Model\Stock',
         'parameters' => '\AllegroApi\Model\ParameterProductOfferResponse[]',
-        'contact' => 'JustId',
+        'contact' => 'Contact',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime'
     ];
@@ -734,7 +734,7 @@ class SaleProductOfferResponseV1AllOf implements ModelInterface, ArrayAccess, \J
     /**
      * Gets contact
      *
-     * @return JustId|null
+     * @return Contact|null
      */
     public function getContact()
     {
@@ -744,7 +744,7 @@ class SaleProductOfferResponseV1AllOf implements ModelInterface, ArrayAccess, \J
     /**
      * Sets contact
      *
-     * @param JustId|null $contact Identifier of contact data for sales format ADVERTISEMENT (classified ad); retrieve it via GET /sale/offer-contacts.
+     * @param Contact|null $contact Identifier of contact data for sales format ADVERTISEMENT (classified ad); retrieve it via GET /sale/offer-contacts.
      *
      * @return self
      */

@@ -854,36 +854,36 @@ class UsersOfferInformationApi
     }
 
     /**
-     * Operation getOfferUsingGET
+     * Operation getProductOffer
      *
-     * Get all fields of the particular offer
+     * Get all data of the particular product-offer
      *
      * @param  string $offer_id Offer identifier. (required)
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \AllegroApi\Model\OfferResponse
+     * @return \AllegroApi\Model\SaleProductOfferResponseV1
      */
-    public function getOfferUsingGET($offer_id)
+    public function getProductOffer($offer_id)
     {
-        list($response) = $this->getOfferUsingGETWithHttpInfo($offer_id);
+        list($response) = $this->getProductOfferWithHttpInfo($offer_id);
         return $response;
     }
 
     /**
-     * Operation getOfferUsingGETWithHttpInfo
+     * Operation getProductOfferWithHttpInfo
      *
-     * Get all fields of the particular offer
+     * Get all data of the particular product-offer
      *
      * @param  string $offer_id Offer identifier. (required)
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \AllegroApi\Model\OfferResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AllegroApi\Model\SaleProductOfferResponseV1, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOfferUsingGETWithHttpInfo($offer_id)
+    public function getProductOfferWithHttpInfo($offer_id)
     {
-        $request = $this->getOfferUsingGETRequest($offer_id);
+        $request = $this->getProductOfferRequest($offer_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -916,20 +916,20 @@ class UsersOfferInformationApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\AllegroApi\Model\OfferResponse' === '\SplFileObject') {
+                    if ('\AllegroApi\Model\SaleProductOfferResponseV1' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\OfferResponse', []),
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\SaleProductOfferResponseV1', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\AllegroApi\Model\OfferResponse';
+            $returnType = '\AllegroApi\Model\SaleProductOfferResponseV1';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -948,7 +948,7 @@ class UsersOfferInformationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AllegroApi\Model\OfferResponse',
+                        '\AllegroApi\Model\SaleProductOfferResponseV1',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -959,18 +959,18 @@ class UsersOfferInformationApi
     }
 
     /**
-     * Operation getOfferUsingGETAsync
+     * Operation getProductOfferAsync
      *
-     * Get all fields of the particular offer
+     * Get all data of the particular product-offer
      *
      * @param  string $offer_id Offer identifier. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfferUsingGETAsync($offer_id)
+    public function getProductOfferAsync($offer_id)
     {
-        return $this->getOfferUsingGETAsyncWithHttpInfo($offer_id)
+        return $this->getProductOfferAsyncWithHttpInfo($offer_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -979,19 +979,19 @@ class UsersOfferInformationApi
     }
 
     /**
-     * Operation getOfferUsingGETAsyncWithHttpInfo
+     * Operation getProductOfferAsyncWithHttpInfo
      *
-     * Get all fields of the particular offer
+     * Get all data of the particular product-offer
      *
      * @param  string $offer_id Offer identifier. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfferUsingGETAsyncWithHttpInfo($offer_id)
+    public function getProductOfferAsyncWithHttpInfo($offer_id)
     {
-        $returnType = '\AllegroApi\Model\OfferResponse';
-        $request = $this->getOfferUsingGETRequest($offer_id);
+        $returnType = '\AllegroApi\Model\SaleProductOfferResponseV1';
+        $request = $this->getProductOfferRequest($offer_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1028,23 +1028,23 @@ class UsersOfferInformationApi
     }
 
     /**
-     * Create request for operation 'getOfferUsingGET'
+     * Create request for operation 'getProductOffer'
      *
      * @param  string $offer_id Offer identifier. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOfferUsingGETRequest($offer_id)
+    public function getProductOfferRequest($offer_id)
     {
         // verify the required parameter 'offer_id' is set
         if ($offer_id === null || (is_array($offer_id) && count($offer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $offer_id when calling getOfferUsingGET'
+                'Missing the required parameter $offer_id when calling getProductOffer'
             );
         }
 
-        $resourcePath = '/sale/offers/{offerId}';
+        $resourcePath = '/sale/product-offers/{offerId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1134,7 +1134,7 @@ class UsersOfferInformationApi
      * @param  float $selling_mode_price_amount_gte The lower threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. (optional)
      * @param  float $selling_mode_price_amount_lte The upper threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. (optional)
      * @param  string[] $publication_status The publication status of the offer. Passing more than one value will search for offers with any of the given statuses. By default all statuses are included. Example: &#x60;publication.status&#x3D;INACTIVE&amp;publication.status&#x3D;ACTIVE&#x60; - returns offers with status &#x60;INACTIVE&#x60; or &#x60;ACTIVE&#x60;. (optional)
-     * @param  \AllegroApi\Model\MarketplaceId $publication_marketplace Either the base marketplace or an additional marketplace of the offer.  When passing the parameter &#x60;publication.marketplace&#x60;, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace. (optional)
+     * @param  string $publication_marketplace Either the base marketplace or an additional marketplace of the offer.  When passing the parameter &#x60;publication.marketplace&#x60;, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace. (optional)
      * @param  string[] $selling_mode_format The offer&#39;s selling format. Passing more than one value will search for offers with any of the given formats. By default all formats are included. Example: &#x60;sellingMode.format&#x3D;BUY_NOW&amp;sellingMode.format&#x3D;ADVERTISEMENT&#x60; - returns offers with with format &#x60;BUY_NOW&#x60; or &#x60;ADVERTISEMENT&#x60;. (optional)
      * @param  string[] $external_id The ID from the client&#39;s external system. Passing more than one value will search for offers with any of the given IDs. By default no ID is included. Example: &#x60;external.id&#x3D;1233&amp;external.id&#x3D;1234&#x60; - returns offers with ID &#x60;1233&#x60; or &#x60;1234&#x60;. Single ID length shouldn&#39;t exceed 100 characters. (optional)
      * @param  string $delivery_shipping_rates_id The ID of shipping rates. Returns offers with given shipping rates ID. (optional)
@@ -1169,7 +1169,7 @@ class UsersOfferInformationApi
      * @param  float $selling_mode_price_amount_gte The lower threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. (optional)
      * @param  float $selling_mode_price_amount_lte The upper threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. (optional)
      * @param  string[] $publication_status The publication status of the offer. Passing more than one value will search for offers with any of the given statuses. By default all statuses are included. Example: &#x60;publication.status&#x3D;INACTIVE&amp;publication.status&#x3D;ACTIVE&#x60; - returns offers with status &#x60;INACTIVE&#x60; or &#x60;ACTIVE&#x60;. (optional)
-     * @param  \AllegroApi\Model\MarketplaceId $publication_marketplace Either the base marketplace or an additional marketplace of the offer.  When passing the parameter &#x60;publication.marketplace&#x60;, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace. (optional)
+     * @param  string $publication_marketplace Either the base marketplace or an additional marketplace of the offer.  When passing the parameter &#x60;publication.marketplace&#x60;, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace. (optional)
      * @param  string[] $selling_mode_format The offer&#39;s selling format. Passing more than one value will search for offers with any of the given formats. By default all formats are included. Example: &#x60;sellingMode.format&#x3D;BUY_NOW&amp;sellingMode.format&#x3D;ADVERTISEMENT&#x60; - returns offers with with format &#x60;BUY_NOW&#x60; or &#x60;ADVERTISEMENT&#x60;. (optional)
      * @param  string[] $external_id The ID from the client&#39;s external system. Passing more than one value will search for offers with any of the given IDs. By default no ID is included. Example: &#x60;external.id&#x3D;1233&amp;external.id&#x3D;1234&#x60; - returns offers with ID &#x60;1233&#x60; or &#x60;1234&#x60;. Single ID length shouldn&#39;t exceed 100 characters. (optional)
      * @param  string $delivery_shipping_rates_id The ID of shipping rates. Returns offers with given shipping rates ID. (optional)
@@ -1315,7 +1315,7 @@ class UsersOfferInformationApi
      * @param  float $selling_mode_price_amount_gte The lower threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. (optional)
      * @param  float $selling_mode_price_amount_lte The upper threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. (optional)
      * @param  string[] $publication_status The publication status of the offer. Passing more than one value will search for offers with any of the given statuses. By default all statuses are included. Example: &#x60;publication.status&#x3D;INACTIVE&amp;publication.status&#x3D;ACTIVE&#x60; - returns offers with status &#x60;INACTIVE&#x60; or &#x60;ACTIVE&#x60;. (optional)
-     * @param  \AllegroApi\Model\MarketplaceId $publication_marketplace Either the base marketplace or an additional marketplace of the offer.  When passing the parameter &#x60;publication.marketplace&#x60;, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace. (optional)
+     * @param  string $publication_marketplace Either the base marketplace or an additional marketplace of the offer.  When passing the parameter &#x60;publication.marketplace&#x60;, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace. (optional)
      * @param  string[] $selling_mode_format The offer&#39;s selling format. Passing more than one value will search for offers with any of the given formats. By default all formats are included. Example: &#x60;sellingMode.format&#x3D;BUY_NOW&amp;sellingMode.format&#x3D;ADVERTISEMENT&#x60; - returns offers with with format &#x60;BUY_NOW&#x60; or &#x60;ADVERTISEMENT&#x60;. (optional)
      * @param  string[] $external_id The ID from the client&#39;s external system. Passing more than one value will search for offers with any of the given IDs. By default no ID is included. Example: &#x60;external.id&#x3D;1233&amp;external.id&#x3D;1234&#x60; - returns offers with ID &#x60;1233&#x60; or &#x60;1234&#x60;. Single ID length shouldn&#39;t exceed 100 characters. (optional)
      * @param  string $delivery_shipping_rates_id The ID of shipping rates. Returns offers with given shipping rates ID. (optional)
@@ -1353,7 +1353,7 @@ class UsersOfferInformationApi
      * @param  float $selling_mode_price_amount_gte The lower threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. (optional)
      * @param  float $selling_mode_price_amount_lte The upper threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. (optional)
      * @param  string[] $publication_status The publication status of the offer. Passing more than one value will search for offers with any of the given statuses. By default all statuses are included. Example: &#x60;publication.status&#x3D;INACTIVE&amp;publication.status&#x3D;ACTIVE&#x60; - returns offers with status &#x60;INACTIVE&#x60; or &#x60;ACTIVE&#x60;. (optional)
-     * @param  \AllegroApi\Model\MarketplaceId $publication_marketplace Either the base marketplace or an additional marketplace of the offer.  When passing the parameter &#x60;publication.marketplace&#x60;, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace. (optional)
+     * @param  string $publication_marketplace Either the base marketplace or an additional marketplace of the offer.  When passing the parameter &#x60;publication.marketplace&#x60;, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace. (optional)
      * @param  string[] $selling_mode_format The offer&#39;s selling format. Passing more than one value will search for offers with any of the given formats. By default all formats are included. Example: &#x60;sellingMode.format&#x3D;BUY_NOW&amp;sellingMode.format&#x3D;ADVERTISEMENT&#x60; - returns offers with with format &#x60;BUY_NOW&#x60; or &#x60;ADVERTISEMENT&#x60;. (optional)
      * @param  string[] $external_id The ID from the client&#39;s external system. Passing more than one value will search for offers with any of the given IDs. By default no ID is included. Example: &#x60;external.id&#x3D;1233&amp;external.id&#x3D;1234&#x60; - returns offers with ID &#x60;1233&#x60; or &#x60;1234&#x60;. Single ID length shouldn&#39;t exceed 100 characters. (optional)
      * @param  string $delivery_shipping_rates_id The ID of shipping rates. Returns offers with given shipping rates ID. (optional)
@@ -1418,7 +1418,7 @@ class UsersOfferInformationApi
      * @param  float $selling_mode_price_amount_gte The lower threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. (optional)
      * @param  float $selling_mode_price_amount_lte The upper threshold of price.  If additionally a &#x60;publication.marketplace&#x60; is provided, searches using the price on the given marketplace. (optional)
      * @param  string[] $publication_status The publication status of the offer. Passing more than one value will search for offers with any of the given statuses. By default all statuses are included. Example: &#x60;publication.status&#x3D;INACTIVE&amp;publication.status&#x3D;ACTIVE&#x60; - returns offers with status &#x60;INACTIVE&#x60; or &#x60;ACTIVE&#x60;. (optional)
-     * @param  \AllegroApi\Model\MarketplaceId $publication_marketplace Either the base marketplace or an additional marketplace of the offer.  When passing the parameter &#x60;publication.marketplace&#x60;, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace. (optional)
+     * @param  string $publication_marketplace Either the base marketplace or an additional marketplace of the offer.  When passing the parameter &#x60;publication.marketplace&#x60;, searches for offers with the given marketplace as either its base marketplace or one of its additional marketplaces. When the parameter is omitted, searches for offers with all marketplaces.  In addition to searching, passing the parameter also influences the functionality of other query parameter by searching and sorting by data (e.g. price) on the given marketplace. (optional)
      * @param  string[] $selling_mode_format The offer&#39;s selling format. Passing more than one value will search for offers with any of the given formats. By default all formats are included. Example: &#x60;sellingMode.format&#x3D;BUY_NOW&amp;sellingMode.format&#x3D;ADVERTISEMENT&#x60; - returns offers with with format &#x60;BUY_NOW&#x60; or &#x60;ADVERTISEMENT&#x60;. (optional)
      * @param  string[] $external_id The ID from the client&#39;s external system. Passing more than one value will search for offers with any of the given IDs. By default no ID is included. Example: &#x60;external.id&#x3D;1233&amp;external.id&#x3D;1234&#x60; - returns offers with ID &#x60;1233&#x60; or &#x60;1234&#x60;. Single ID length shouldn&#39;t exceed 100 characters. (optional)
      * @param  string $delivery_shipping_rates_id The ID of shipping rates. Returns offers with given shipping rates ID. (optional)

@@ -62,14 +62,15 @@ class SaleProductDto implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
-        'category' => 'ProductCategory',
+        'category' => '\AllegroApi\Model\ProductCategoryWithPath',
         'images' => '\AllegroApi\Model\ImageUrl[]',
         'parameters' => '\AllegroApi\Model\ProductParameterDto[]',
         'offer_requirements' => '\AllegroApi\Model\OfferRequirements',
         'compatibility_list' => '\AllegroApi\Model\SaleProductCompatibilityList',
         'tecdoc_specification' => '\AllegroApi\Model\TecdocSpecification',
         'description' => '\AllegroApi\Model\StandardizedDescription',
-        'is_draft' => 'bool'
+        'is_draft' => 'bool',
+        'ai_co_created_content' => '\AllegroApi\Model\AiCoCreatedContent'
     ];
 
     /**
@@ -89,7 +90,8 @@ class SaleProductDto implements ModelInterface, ArrayAccess, \JsonSerializable
         'compatibility_list' => null,
         'tecdoc_specification' => null,
         'description' => null,
-        'is_draft' => null
+        'is_draft' => null,
+        'ai_co_created_content' => null
     ];
 
     /**
@@ -128,7 +130,8 @@ class SaleProductDto implements ModelInterface, ArrayAccess, \JsonSerializable
         'compatibility_list' => 'compatibilityList',
         'tecdoc_specification' => 'tecdocSpecification',
         'description' => 'description',
-        'is_draft' => 'isDraft'
+        'is_draft' => 'isDraft',
+        'ai_co_created_content' => 'aiCoCreatedContent'
     ];
 
     /**
@@ -146,7 +149,8 @@ class SaleProductDto implements ModelInterface, ArrayAccess, \JsonSerializable
         'compatibility_list' => 'setCompatibilityList',
         'tecdoc_specification' => 'setTecdocSpecification',
         'description' => 'setDescription',
-        'is_draft' => 'setIsDraft'
+        'is_draft' => 'setIsDraft',
+        'ai_co_created_content' => 'setAiCoCreatedContent'
     ];
 
     /**
@@ -164,7 +168,8 @@ class SaleProductDto implements ModelInterface, ArrayAccess, \JsonSerializable
         'compatibility_list' => 'getCompatibilityList',
         'tecdoc_specification' => 'getTecdocSpecification',
         'description' => 'getDescription',
-        'is_draft' => 'getIsDraft'
+        'is_draft' => 'getIsDraft',
+        'ai_co_created_content' => 'getAiCoCreatedContent'
     ];
 
     /**
@@ -237,6 +242,7 @@ class SaleProductDto implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['tecdoc_specification'] = $data['tecdoc_specification'] ?? null;
         $this->container['description'] = $data['description'] ?? null;
         $this->container['is_draft'] = $data['is_draft'] ?? null;
+        $this->container['ai_co_created_content'] = $data['ai_co_created_content'] ?? null;
     }
 
     /**
@@ -323,7 +329,7 @@ class SaleProductDto implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets category
      *
-     * @return ProductCategory
+     * @return \AllegroApi\Model\ProductCategoryWithPath
      */
     public function getCategory()
     {
@@ -333,7 +339,7 @@ class SaleProductDto implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets category
      *
-     * @param ProductCategory $category category
+     * @param \AllegroApi\Model\ProductCategoryWithPath $category category
      *
      * @return self
      */
@@ -508,6 +514,30 @@ class SaleProductDto implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIsDraft($is_draft)
     {
         $this->container['is_draft'] = $is_draft;
+
+        return $this;
+    }
+
+    /**
+     * Gets ai_co_created_content
+     *
+     * @return \AllegroApi\Model\AiCoCreatedContent|null
+     */
+    public function getAiCoCreatedContent()
+    {
+        return $this->container['ai_co_created_content'];
+    }
+
+    /**
+     * Sets ai_co_created_content
+     *
+     * @param \AllegroApi\Model\AiCoCreatedContent|null $ai_co_created_content ai_co_created_content
+     *
+     * @return self
+     */
+    public function setAiCoCreatedContent($ai_co_created_content)
+    {
+        $this->container['ai_co_created_content'] = $ai_co_created_content;
 
         return $this;
     }

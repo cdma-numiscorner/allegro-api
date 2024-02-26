@@ -242,8 +242,8 @@ class RefundLineItem implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        if (!is_null($this->container['quantity']) && ($this->container['quantity'] < 1)) {
-            $invalidProperties[] = "invalid value for 'quantity', must be bigger than or equal to 1.";
+        if (!is_null($this->container['quantity']) && ($this->container['quantity'] < 0)) {
+            $invalidProperties[] = "invalid value for 'quantity', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -339,8 +339,8 @@ class RefundLineItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setQuantity($quantity)
     {
 
-        if (!is_null($quantity) && ($quantity < 1)) {
-            throw new \InvalidArgumentException('invalid value for $quantity when calling RefundLineItem., must be bigger than or equal to 1.');
+        if (!is_null($quantity) && ($quantity < 0)) {
+            throw new \InvalidArgumentException('invalid value for $quantity when calling RefundLineItem., must be bigger than or equal to 0.');
         }
 
         $this->container['quantity'] = $quantity;

@@ -282,7 +282,7 @@ class DictionaryCategoryParameterAllOfDictionary implements ModelInterface, Arra
     /**
      * Sets depends_on_value_ids
      *
-     * @param string[]|null $depends_on_value_ids depends_on_value_ids
+     * @param string[]|null $depends_on_value_ids The IDs of dictionary values from another parameter that this parameter value can be combined with. The other parameter has the id from `options.dependsOnParameterId`. Empty if this parameter value can be combined with any value from other parameters. Otherwise, this value might be set in the offer only when one of the given values of `dependsOnValueIds` is set as well.
      *
      * @return self
      */

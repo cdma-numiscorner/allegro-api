@@ -61,7 +61,8 @@ class AllegroPricesEligibilityResponse implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPITypes = [
         'consent' => 'string',
-        'qualification' => '\AllegroApi\Model\AllegroPricesQualificationResponse'
+        'qualification' => '\AllegroApi\Model\AllegroPricesQualificationResponse',
+        'additional_marketplaces' => 'map[string,\AllegroApi\Model\AllegroPricesEligibilityResponseAdditionalMarketplaces]'
     ];
 
     /**
@@ -73,7 +74,8 @@ class AllegroPricesEligibilityResponse implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPIFormats = [
         'consent' => null,
-        'qualification' => null
+        'qualification' => null,
+        'additional_marketplaces' => null
     ];
 
     /**
@@ -104,7 +106,8 @@ class AllegroPricesEligibilityResponse implements ModelInterface, ArrayAccess, \
      */
     protected static $attributeMap = [
         'consent' => 'consent',
-        'qualification' => 'qualification'
+        'qualification' => 'qualification',
+        'additional_marketplaces' => 'additionalMarketplaces'
     ];
 
     /**
@@ -114,7 +117,8 @@ class AllegroPricesEligibilityResponse implements ModelInterface, ArrayAccess, \
      */
     protected static $setters = [
         'consent' => 'setConsent',
-        'qualification' => 'setQualification'
+        'qualification' => 'setQualification',
+        'additional_marketplaces' => 'setAdditionalMarketplaces'
     ];
 
     /**
@@ -124,7 +128,8 @@ class AllegroPricesEligibilityResponse implements ModelInterface, ArrayAccess, \
      */
     protected static $getters = [
         'consent' => 'getConsent',
-        'qualification' => 'getQualification'
+        'qualification' => 'getQualification',
+        'additional_marketplaces' => 'getAdditionalMarketplaces'
     ];
 
     /**
@@ -204,6 +209,7 @@ class AllegroPricesEligibilityResponse implements ModelInterface, ArrayAccess, \
     {
         $this->container['consent'] = $data['consent'] ?? null;
         $this->container['qualification'] = $data['qualification'] ?? null;
+        $this->container['additional_marketplaces'] = $data['additional_marketplaces'] ?? null;
     }
 
     /**
@@ -293,6 +299,30 @@ class AllegroPricesEligibilityResponse implements ModelInterface, ArrayAccess, \
     public function setQualification($qualification)
     {
         $this->container['qualification'] = $qualification;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_marketplaces
+     *
+     * @return map[string,\AllegroApi\Model\AllegroPricesEligibilityResponseAdditionalMarketplaces]|null
+     */
+    public function getAdditionalMarketplaces()
+    {
+        return $this->container['additional_marketplaces'];
+    }
+
+    /**
+     * Sets additional_marketplaces
+     *
+     * @param map[string,\AllegroApi\Model\AllegroPricesEligibilityResponseAdditionalMarketplaces]|null $additional_marketplaces Eligibility state on marketplces other than the base marketplace of the account.
+     *
+     * @return self
+     */
+    public function setAdditionalMarketplaces($additional_marketplaces)
+    {
+        $this->container['additional_marketplaces'] = $additional_marketplaces;
 
         return $this;
     }

@@ -36,7 +36,7 @@ use \AllegroApi\ObjectSerializer;
  * OfferReference Class Doc Comment
  *
  * @category Class
- * @description Offer identifier
+ * @description Offer identifier.
  * @package  AllegroApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -63,7 +63,8 @@ class OfferReference implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
-        'external' => '\AllegroApi\Model\ExternalId'
+        'external' => '\AllegroApi\Model\ExternalId',
+        'product_set' => '\AllegroApi\Model\OfferProductSetReference'
     ];
 
     /**
@@ -76,7 +77,8 @@ class OfferReference implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'external' => null
+        'external' => null,
+        'product_set' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class OfferReference implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'external' => 'external'
+        'external' => 'external',
+        'product_set' => 'productSet'
     ];
 
     /**
@@ -119,7 +122,8 @@ class OfferReference implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'external' => 'setExternal'
+        'external' => 'setExternal',
+        'product_set' => 'setProductSet'
     ];
 
     /**
@@ -130,7 +134,8 @@ class OfferReference implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'external' => 'getExternal'
+        'external' => 'getExternal',
+        'product_set' => 'getProductSet'
     ];
 
     /**
@@ -196,6 +201,7 @@ class OfferReference implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['external'] = $data['external'] ?? null;
+        $this->container['product_set'] = $data['product_set'] ?? null;
     }
 
     /**
@@ -265,7 +271,7 @@ class OfferReference implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name Offer name
+     * @param string $name Offer name.
      *
      * @return self
      */
@@ -296,6 +302,30 @@ class OfferReference implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setExternal($external)
     {
         $this->container['external'] = $external;
+
+        return $this;
+    }
+
+    /**
+     * Gets product_set
+     *
+     * @return \AllegroApi\Model\OfferProductSetReference|null
+     */
+    public function getProductSet()
+    {
+        return $this->container['product_set'];
+    }
+
+    /**
+     * Sets product_set
+     *
+     * @param \AllegroApi\Model\OfferProductSetReference|null $product_set product_set
+     *
+     * @return self
+     */
+    public function setProductSet($product_set)
+    {
+        $this->container['product_set'] = $product_set;
 
         return $this;
     }

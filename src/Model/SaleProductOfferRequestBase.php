@@ -66,6 +66,7 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
         'delivery' => 'DeliveryProductOfferRequest',
         'after_sales_services' => '\AllegroApi\Model\AfterSalesServicesProductOfferRequest',
         'size_table' => '\AllegroApi\Model\SizeTable',
+        'contact' => 'Contact',
         'discounts' => '\AllegroApi\Model\DiscountsProductOfferRequest',
         'name' => 'string',
         'payments' => '\AllegroApi\Model\Payments',
@@ -76,8 +77,7 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
         'external' => '\AllegroApi\Model\ExternalId',
         'tax' => '\AllegroApi\Model\ExtendedTax',
         'tax_settings' => '\AllegroApi\Model\OfferTaxSettings',
-        'message_to_seller_settings' => '\AllegroApi\Model\MessageToSellerSettings',
-        'additional_marketplaces' => 'map[string,\AllegroApi\Model\OfferAdditionalMarketplace]'
+        'message_to_seller_settings' => '\AllegroApi\Model\MessageToSellerSettings'
     ];
 
     /**
@@ -94,6 +94,7 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
         'delivery' => null,
         'after_sales_services' => null,
         'size_table' => null,
+        'contact' => null,
         'discounts' => null,
         'name' => null,
         'payments' => null,
@@ -104,8 +105,7 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
         'external' => null,
         'tax' => null,
         'tax_settings' => null,
-        'message_to_seller_settings' => null,
-        'additional_marketplaces' => null
+        'message_to_seller_settings' => null
     ];
 
     /**
@@ -141,6 +141,7 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
         'delivery' => 'delivery',
         'after_sales_services' => 'afterSalesServices',
         'size_table' => 'sizeTable',
+        'contact' => 'contact',
         'discounts' => 'discounts',
         'name' => 'name',
         'payments' => 'payments',
@@ -151,8 +152,7 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
         'external' => 'external',
         'tax' => 'tax',
         'tax_settings' => 'taxSettings',
-        'message_to_seller_settings' => 'messageToSellerSettings',
-        'additional_marketplaces' => 'additionalMarketplaces'
+        'message_to_seller_settings' => 'messageToSellerSettings'
     ];
 
     /**
@@ -167,6 +167,7 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
         'delivery' => 'setDelivery',
         'after_sales_services' => 'setAfterSalesServices',
         'size_table' => 'setSizeTable',
+        'contact' => 'setContact',
         'discounts' => 'setDiscounts',
         'name' => 'setName',
         'payments' => 'setPayments',
@@ -177,8 +178,7 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
         'external' => 'setExternal',
         'tax' => 'setTax',
         'tax_settings' => 'setTaxSettings',
-        'message_to_seller_settings' => 'setMessageToSellerSettings',
-        'additional_marketplaces' => 'setAdditionalMarketplaces'
+        'message_to_seller_settings' => 'setMessageToSellerSettings'
     ];
 
     /**
@@ -193,6 +193,7 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
         'delivery' => 'getDelivery',
         'after_sales_services' => 'getAfterSalesServices',
         'size_table' => 'getSizeTable',
+        'contact' => 'getContact',
         'discounts' => 'getDiscounts',
         'name' => 'getName',
         'payments' => 'getPayments',
@@ -203,8 +204,7 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
         'external' => 'getExternal',
         'tax' => 'getTax',
         'tax_settings' => 'getTaxSettings',
-        'message_to_seller_settings' => 'getMessageToSellerSettings',
-        'additional_marketplaces' => 'getAdditionalMarketplaces'
+        'message_to_seller_settings' => 'getMessageToSellerSettings'
     ];
 
     /**
@@ -273,6 +273,7 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
         $this->container['delivery'] = $data['delivery'] ?? null;
         $this->container['after_sales_services'] = $data['after_sales_services'] ?? null;
         $this->container['size_table'] = $data['size_table'] ?? null;
+        $this->container['contact'] = $data['contact'] ?? null;
         $this->container['discounts'] = $data['discounts'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['payments'] = $data['payments'] ?? null;
@@ -284,7 +285,6 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
         $this->container['tax'] = $data['tax'] ?? null;
         $this->container['tax_settings'] = $data['tax_settings'] ?? null;
         $this->container['message_to_seller_settings'] = $data['message_to_seller_settings'] ?? null;
-        $this->container['additional_marketplaces'] = $data['additional_marketplaces'] ?? null;
     }
 
     /**
@@ -296,8 +296,8 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 50)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 50.";
+        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 75)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 75.";
         }
 
         return $invalidProperties;
@@ -460,6 +460,30 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
+     * Gets contact
+     *
+     * @return Contact|null
+     */
+    public function getContact()
+    {
+        return $this->container['contact'];
+    }
+
+    /**
+     * Sets contact
+     *
+     * @param Contact|null $contact Identifier of contact data for sales format ADVERTISEMENT (classified ad). You can enter the contact identifier or name.
+     *
+     * @return self
+     */
+    public function setContact($contact)
+    {
+        $this->container['contact'] = $contact;
+
+        return $this;
+    }
+
+    /**
      * Gets discounts
      *
      * @return \AllegroApi\Model\DiscountsProductOfferRequest|null
@@ -496,14 +520,14 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets name
      *
-     * @param string|null $name Name (title) of an offer. Length cannot be more than 50 characters. Read more: <a href=\"../../tutorials/jak-jednym-requestem-wystawic-oferte-powiazana-z-produktem-D7Kj9gw4xFA#tytul-oferty\" target=\"_blank\">PL</a>  / <a href=\"../../tutorials/list-offer-assigned-product-one-request-D7Kj9M71Bu6#offer-title\" target=\"_blank\">EN</a> .
+     * @param string|null $name Name (title) of an offer. Length cannot be more than 75 characters. Read more: <a href=\"../../tutorials/jak-jednym-requestem-wystawic-oferte-powiazana-z-produktem-D7Kj9gw4xFA#tytul-oferty\" target=\"_blank\">PL</a>  / <a href=\"../../tutorials/list-offer-assigned-product-one-request-D7Kj9M71Bu6#offer-title\" target=\"_blank\">EN</a> .
      *
      * @return self
      */
     public function setName($name)
     {
-        if (!is_null($name) && (mb_strlen($name) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling SaleProductOfferRequestBase., must be smaller than or equal to 50.');
+        if (!is_null($name) && (mb_strlen($name) > 75)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling SaleProductOfferRequestBase., must be smaller than or equal to 75.');
         }
 
         $this->container['name'] = $name;
@@ -723,30 +747,6 @@ class SaleProductOfferRequestBase implements ModelInterface, ArrayAccess, \JsonS
     public function setMessageToSellerSettings($message_to_seller_settings)
     {
         $this->container['message_to_seller_settings'] = $message_to_seller_settings;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_marketplaces
-     *
-     * @return map[string,\AllegroApi\Model\OfferAdditionalMarketplace]|null
-     */
-    public function getAdditionalMarketplaces()
-    {
-        return $this->container['additional_marketplaces'];
-    }
-
-    /**
-     * Sets additional_marketplaces
-     *
-     * @param map[string,\AllegroApi\Model\OfferAdditionalMarketplace]|null $additional_marketplaces Settings for each additional marketplace.
-     *
-     * @return self
-     */
-    public function setAdditionalMarketplaces($additional_marketplaces)
-    {
-        $this->container['additional_marketplaces'] = $additional_marketplaces;
 
         return $this;
     }

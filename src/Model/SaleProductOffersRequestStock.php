@@ -258,7 +258,7 @@ class SaleProductOffersRequestStock implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets available
      *
-     * @param int|null $available Quantity of this offer available for sale - how many times this offer can be sold. Setting to 0 is possible only for offers in 'ENDED' status.
+     * @param int|null $available Quantity of this offer available for sale - how many times this offer can be sold. Offer can be activated only with stock being greater then 0. Setting this quantity to 0 for 'ACTIVE' or 'ACTIVATING' offer will trigger changing its status to 'ENDED'.
      *
      * @return self
      */

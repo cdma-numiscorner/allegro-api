@@ -261,7 +261,7 @@ class ReturnPolicyAddress implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets name
      *
-     * @param string $name Company or person name. Length is dependent on specified 'countryCode' - for CZ length is equal to 50 characters, for other countries - 200.
+     * @param string $name Company or person name. Length is dependent on specified 'countryCode' - for CZ and SK length is equal to 50 characters, for other countries - 200.
      *
      * @return self
      */
@@ -285,7 +285,7 @@ class ReturnPolicyAddress implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets street
      *
-     * @param string $street Street name. Length is dependent on specified 'countryCode' - for PL and CZ length is equal to 35 characters, for other countries - 200.
+     * @param string $street Street name. Length is dependent on specified 'countryCode' - for PL, CZ and SK length is equal to 35 characters, for other countries - 200.
      *
      * @return self
      */
@@ -309,7 +309,7 @@ class ReturnPolicyAddress implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets post_code
      *
-     * @param string $post_code Post code format is dependent on 'countryCode' - PL='XX-XXX', CZ='XXX XX' for other countries format is less restrictive - 16 characters alphanumeric with ' '(space) and '-' allowed.
+     * @param string $post_code Post code format is dependent on 'countryCode' - PL='XX-XXX', CZ='XXX XX', SK='XXX XX' for other countries format is less restrictive - 16 characters alphanumeric with ' '(space) and '-' allowed.
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class ReturnPolicyAddress implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets city
      *
-     * @param string $city City name. Length is dependent on specified 'countryCode' - for PL and CZ length is equal to 30 characters, for other countries - 200.
+     * @param string $city City name. Length is dependent on specified 'countryCode' - for PL, CZ and SK length is equal to 30 characters, for other countries - 200.
      *
      * @return self
      */

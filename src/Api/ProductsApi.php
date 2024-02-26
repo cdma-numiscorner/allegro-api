@@ -416,14 +416,15 @@ class ProductsApi
      * Get all data of the particular product changes proposal
      *
      * @param  string $change_proposal_id The product changes proposal identifier. (required)
+     * @param  string $accept_language Expected language of messages. (optional, default to 'en-US')
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \AllegroApi\Model\ProductChangeProposalDto|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
      */
-    public function getProductChangeProposal($change_proposal_id)
+    public function getProductChangeProposal($change_proposal_id, $accept_language = 'en-US')
     {
-        list($response) = $this->getProductChangeProposalWithHttpInfo($change_proposal_id);
+        list($response) = $this->getProductChangeProposalWithHttpInfo($change_proposal_id, $accept_language);
         return $response;
     }
 
@@ -433,14 +434,15 @@ class ProductsApi
      * Get all data of the particular product changes proposal
      *
      * @param  string $change_proposal_id The product changes proposal identifier. (required)
+     * @param  string $accept_language Expected language of messages. (optional, default to 'en-US')
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \AllegroApi\Model\ProductChangeProposalDto|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getProductChangeProposalWithHttpInfo($change_proposal_id)
+    public function getProductChangeProposalWithHttpInfo($change_proposal_id, $accept_language = 'en-US')
     {
-        $request = $this->getProductChangeProposalRequest($change_proposal_id);
+        $request = $this->getProductChangeProposalRequest($change_proposal_id, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -581,13 +583,14 @@ class ProductsApi
      * Get all data of the particular product changes proposal
      *
      * @param  string $change_proposal_id The product changes proposal identifier. (required)
+     * @param  string $accept_language Expected language of messages. (optional, default to 'en-US')
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductChangeProposalAsync($change_proposal_id)
+    public function getProductChangeProposalAsync($change_proposal_id, $accept_language = 'en-US')
     {
-        return $this->getProductChangeProposalAsyncWithHttpInfo($change_proposal_id)
+        return $this->getProductChangeProposalAsyncWithHttpInfo($change_proposal_id, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -601,14 +604,15 @@ class ProductsApi
      * Get all data of the particular product changes proposal
      *
      * @param  string $change_proposal_id The product changes proposal identifier. (required)
+     * @param  string $accept_language Expected language of messages. (optional, default to 'en-US')
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductChangeProposalAsyncWithHttpInfo($change_proposal_id)
+    public function getProductChangeProposalAsyncWithHttpInfo($change_proposal_id, $accept_language = 'en-US')
     {
         $returnType = '\AllegroApi\Model\ProductChangeProposalDto';
-        $request = $this->getProductChangeProposalRequest($change_proposal_id);
+        $request = $this->getProductChangeProposalRequest($change_proposal_id, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -648,11 +652,12 @@ class ProductsApi
      * Create request for operation 'getProductChangeProposal'
      *
      * @param  string $change_proposal_id The product changes proposal identifier. (required)
+     * @param  string $accept_language Expected language of messages. (optional, default to 'en-US')
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getProductChangeProposalRequest($change_proposal_id)
+    public function getProductChangeProposalRequest($change_proposal_id, $accept_language = 'en-US')
     {
         // verify the required parameter 'change_proposal_id' is set
         if ($change_proposal_id === null || (is_array($change_proposal_id) && count($change_proposal_id) === 0)) {
@@ -669,6 +674,10 @@ class ProductsApi
         $multipart = false;
 
 
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
 
         // path params
         if ($change_proposal_id !== null) {
@@ -1571,14 +1580,15 @@ class ProductsApi
      *
      * @param  string $product_id The product identifier. (required)
      * @param  \AllegroApi\Model\ProductChangeProposalRequest $product_change_proposal_request product_change_proposal_request (required)
+     * @param  string $accept_language Expected language of messages. (optional, default to 'en-US')
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \AllegroApi\Model\ProductChangeProposalDto|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
      */
-    public function productChangeProposal($product_id, $product_change_proposal_request)
+    public function productChangeProposal($product_id, $product_change_proposal_request, $accept_language = 'en-US')
     {
-        list($response) = $this->productChangeProposalWithHttpInfo($product_id, $product_change_proposal_request);
+        list($response) = $this->productChangeProposalWithHttpInfo($product_id, $product_change_proposal_request, $accept_language);
         return $response;
     }
 
@@ -1589,14 +1599,15 @@ class ProductsApi
      *
      * @param  string $product_id The product identifier. (required)
      * @param  \AllegroApi\Model\ProductChangeProposalRequest $product_change_proposal_request (required)
+     * @param  string $accept_language Expected language of messages. (optional, default to 'en-US')
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \AllegroApi\Model\ProductChangeProposalDto|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\AuthError|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productChangeProposalWithHttpInfo($product_id, $product_change_proposal_request)
+    public function productChangeProposalWithHttpInfo($product_id, $product_change_proposal_request, $accept_language = 'en-US')
     {
-        $request = $this->productChangeProposalRequest($product_id, $product_change_proposal_request);
+        $request = $this->productChangeProposalRequest($product_id, $product_change_proposal_request, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1758,13 +1769,14 @@ class ProductsApi
      *
      * @param  string $product_id The product identifier. (required)
      * @param  \AllegroApi\Model\ProductChangeProposalRequest $product_change_proposal_request (required)
+     * @param  string $accept_language Expected language of messages. (optional, default to 'en-US')
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productChangeProposalAsync($product_id, $product_change_proposal_request)
+    public function productChangeProposalAsync($product_id, $product_change_proposal_request, $accept_language = 'en-US')
     {
-        return $this->productChangeProposalAsyncWithHttpInfo($product_id, $product_change_proposal_request)
+        return $this->productChangeProposalAsyncWithHttpInfo($product_id, $product_change_proposal_request, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1779,14 +1791,15 @@ class ProductsApi
      *
      * @param  string $product_id The product identifier. (required)
      * @param  \AllegroApi\Model\ProductChangeProposalRequest $product_change_proposal_request (required)
+     * @param  string $accept_language Expected language of messages. (optional, default to 'en-US')
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productChangeProposalAsyncWithHttpInfo($product_id, $product_change_proposal_request)
+    public function productChangeProposalAsyncWithHttpInfo($product_id, $product_change_proposal_request, $accept_language = 'en-US')
     {
         $returnType = '\AllegroApi\Model\ProductChangeProposalDto';
-        $request = $this->productChangeProposalRequest($product_id, $product_change_proposal_request);
+        $request = $this->productChangeProposalRequest($product_id, $product_change_proposal_request, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1827,11 +1840,12 @@ class ProductsApi
      *
      * @param  string $product_id The product identifier. (required)
      * @param  \AllegroApi\Model\ProductChangeProposalRequest $product_change_proposal_request (required)
+     * @param  string $accept_language Expected language of messages. (optional, default to 'en-US')
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productChangeProposalRequest($product_id, $product_change_proposal_request)
+    public function productChangeProposalRequest($product_id, $product_change_proposal_request, $accept_language = 'en-US')
     {
         // verify the required parameter 'product_id' is set
         if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
@@ -1854,6 +1868,10 @@ class ProductsApi
         $multipart = false;
 
 
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
 
         // path params
         if ($product_id !== null) {

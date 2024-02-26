@@ -202,6 +202,9 @@ class InitializeRefund implements ModelInterface, ArrayAccess, \JsonSerializable
     const REASON_COMPLAINT = 'COMPLAINT';
     const REASON_PRODUCT_NOT_AVAILABLE = 'PRODUCT_NOT_AVAILABLE';
     const REASON_PAID_VALUE_TOO_LOW = 'PAID_VALUE_TOO_LOW';
+    const REASON_OVERPAID = 'OVERPAID';
+    const REASON_CANCELLED_BY_BUYER = 'CANCELLED_BY_BUYER';
+    const REASON_NOT_COLLECTED = 'NOT_COLLECTED';
     
 
     
@@ -217,6 +220,9 @@ class InitializeRefund implements ModelInterface, ArrayAccess, \JsonSerializable
             self::REASON_COMPLAINT,
             self::REASON_PRODUCT_NOT_AVAILABLE,
             self::REASON_PAID_VALUE_TOO_LOW,
+            self::REASON_OVERPAID,
+            self::REASON_CANCELLED_BY_BUYER,
+            self::REASON_NOT_COLLECTED,
         ];
     }
     

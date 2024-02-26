@@ -120,6 +120,7 @@ class FulfillmentProductsApi
      *
      * Get list of available products
      *
+     * @param  string $accept_language Expected language of product name translation. (optional, default to 'en-US')
      * @param  int $offset The offset of elements in the response. (optional, default to 0)
      * @param  int $limit Maximum number of elements in response. (optional, default to 50)
      *
@@ -127,9 +128,9 @@ class FulfillmentProductsApi
      * @throws \InvalidArgumentException
      * @return \AllegroApi\Model\AvailableProductsList|\AllegroApi\Model\ErrorsHolder
      */
-    public function getAvailableProducts($offset = 0, $limit = 50)
+    public function getAvailableProducts($accept_language = 'en-US', $offset = 0, $limit = 50)
     {
-        list($response) = $this->getAvailableProductsWithHttpInfo($offset, $limit);
+        list($response) = $this->getAvailableProductsWithHttpInfo($accept_language, $offset, $limit);
         return $response;
     }
 
@@ -138,6 +139,7 @@ class FulfillmentProductsApi
      *
      * Get list of available products
      *
+     * @param  string $accept_language Expected language of product name translation. (optional, default to 'en-US')
      * @param  int $offset The offset of elements in the response. (optional, default to 0)
      * @param  int $limit Maximum number of elements in response. (optional, default to 50)
      *
@@ -145,9 +147,9 @@ class FulfillmentProductsApi
      * @throws \InvalidArgumentException
      * @return array of \AllegroApi\Model\AvailableProductsList|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAvailableProductsWithHttpInfo($offset = 0, $limit = 50)
+    public function getAvailableProductsWithHttpInfo($accept_language = 'en-US', $offset = 0, $limit = 50)
     {
-        $request = $this->getAvailableProductsRequest($offset, $limit);
+        $request = $this->getAvailableProductsRequest($accept_language, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -247,15 +249,16 @@ class FulfillmentProductsApi
      *
      * Get list of available products
      *
+     * @param  string $accept_language Expected language of product name translation. (optional, default to 'en-US')
      * @param  int $offset The offset of elements in the response. (optional, default to 0)
      * @param  int $limit Maximum number of elements in response. (optional, default to 50)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAvailableProductsAsync($offset = 0, $limit = 50)
+    public function getAvailableProductsAsync($accept_language = 'en-US', $offset = 0, $limit = 50)
     {
-        return $this->getAvailableProductsAsyncWithHttpInfo($offset, $limit)
+        return $this->getAvailableProductsAsyncWithHttpInfo($accept_language, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -268,16 +271,17 @@ class FulfillmentProductsApi
      *
      * Get list of available products
      *
+     * @param  string $accept_language Expected language of product name translation. (optional, default to 'en-US')
      * @param  int $offset The offset of elements in the response. (optional, default to 0)
      * @param  int $limit Maximum number of elements in response. (optional, default to 50)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAvailableProductsAsyncWithHttpInfo($offset = 0, $limit = 50)
+    public function getAvailableProductsAsyncWithHttpInfo($accept_language = 'en-US', $offset = 0, $limit = 50)
     {
         $returnType = '\AllegroApi\Model\AvailableProductsList';
-        $request = $this->getAvailableProductsRequest($offset, $limit);
+        $request = $this->getAvailableProductsRequest($accept_language, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -316,13 +320,14 @@ class FulfillmentProductsApi
     /**
      * Create request for operation 'getAvailableProducts'
      *
+     * @param  string $accept_language Expected language of product name translation. (optional, default to 'en-US')
      * @param  int $offset The offset of elements in the response. (optional, default to 0)
      * @param  int $limit Maximum number of elements in response. (optional, default to 50)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAvailableProductsRequest($offset = 0, $limit = 50)
+    public function getAvailableProductsRequest($accept_language = 'en-US', $offset = 0, $limit = 50)
     {
         if ($offset !== null && $offset < 0) {
             throw new \InvalidArgumentException('invalid value for "$offset" when calling FulfillmentProductsApi.getAvailableProducts, must be bigger than or equal to 0.');
@@ -366,6 +371,10 @@ class FulfillmentProductsApi
             }
         }
 
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
 
 
 

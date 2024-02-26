@@ -453,7 +453,7 @@ class DeliveryApi
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \AllegroApi\Model\InlineResponse2001|\AllegroApi\Model\AuthError
+     * @return \AllegroApi\Model\InlineResponse2002|\AllegroApi\Model\AuthError
      */
     public function getListOfDeliveryMethodsUsingGET($marketplace = null)
     {
@@ -470,7 +470,7 @@ class DeliveryApi
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \AllegroApi\Model\InlineResponse2001|\AllegroApi\Model\AuthError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AllegroApi\Model\InlineResponse2002|\AllegroApi\Model\AuthError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getListOfDeliveryMethodsUsingGETWithHttpInfo($marketplace = null)
     {
@@ -507,14 +507,14 @@ class DeliveryApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\AllegroApi\Model\InlineResponse2001' === '\SplFileObject') {
+                    if ('\AllegroApi\Model\InlineResponse2002' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\InlineResponse2001', []),
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\InlineResponse2002', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -532,7 +532,7 @@ class DeliveryApi
                     ];
             }
 
-            $returnType = '\AllegroApi\Model\InlineResponse2001';
+            $returnType = '\AllegroApi\Model\InlineResponse2002';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -551,7 +551,7 @@ class DeliveryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AllegroApi\Model\InlineResponse2001',
+                        '\AllegroApi\Model\InlineResponse2002',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -601,7 +601,7 @@ class DeliveryApi
      */
     public function getListOfDeliveryMethodsUsingGETAsyncWithHttpInfo($marketplace = null)
     {
-        $returnType = '\AllegroApi\Model\InlineResponse2001';
+        $returnType = '\AllegroApi\Model\InlineResponse2002';
         $request = $this->getListOfDeliveryMethodsUsingGETRequest($marketplace);
 
         return $this->client

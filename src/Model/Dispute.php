@@ -68,7 +68,9 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
         'checkout_form' => '\AllegroApi\Model\DisputeCheckoutForm',
         'message' => '\AllegroApi\Model\DisputeFirstMessage',
         'messages_count' => 'int',
-        'last_message_creation_date' => '\DateTime'
+        'opened_date' => '\DateTime',
+        'last_message_creation_date' => '\DateTime',
+        'claim' => '\AllegroApi\Model\DisputeClaim'
     ];
 
     /**
@@ -87,7 +89,9 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
         'checkout_form' => null,
         'message' => null,
         'messages_count' => 'int32',
-        'last_message_creation_date' => 'date-time'
+        'opened_date' => 'date-time',
+        'last_message_creation_date' => 'date-time',
+        'claim' => null
     ];
 
     /**
@@ -125,7 +129,9 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
         'checkout_form' => 'checkoutForm',
         'message' => 'message',
         'messages_count' => 'messagesCount',
-        'last_message_creation_date' => 'lastMessageCreationDate'
+        'opened_date' => 'openedDate',
+        'last_message_creation_date' => 'lastMessageCreationDate',
+        'claim' => 'claim'
     ];
 
     /**
@@ -142,7 +148,9 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
         'checkout_form' => 'setCheckoutForm',
         'message' => 'setMessage',
         'messages_count' => 'setMessagesCount',
-        'last_message_creation_date' => 'setLastMessageCreationDate'
+        'opened_date' => 'setOpenedDate',
+        'last_message_creation_date' => 'setLastMessageCreationDate',
+        'claim' => 'setClaim'
     ];
 
     /**
@@ -159,7 +167,9 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
         'checkout_form' => 'getCheckoutForm',
         'message' => 'getMessage',
         'messages_count' => 'getMessagesCount',
-        'last_message_creation_date' => 'getLastMessageCreationDate'
+        'opened_date' => 'getOpenedDate',
+        'last_message_creation_date' => 'getLastMessageCreationDate',
+        'claim' => 'getClaim'
     ];
 
     /**
@@ -266,7 +276,9 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['checkout_form'] = $data['checkout_form'] ?? null;
         $this->container['message'] = $data['message'] ?? null;
         $this->container['messages_count'] = $data['messages_count'] ?? null;
+        $this->container['opened_date'] = $data['opened_date'] ?? null;
         $this->container['last_message_creation_date'] = $data['last_message_creation_date'] ?? null;
+        $this->container['claim'] = $data['claim'] ?? null;
     }
 
     /**
@@ -560,6 +572,30 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets opened_date
+     *
+     * @return \DateTime|null
+     */
+    public function getOpenedDate()
+    {
+        return $this->container['opened_date'];
+    }
+
+    /**
+     * Sets opened_date
+     *
+     * @param \DateTime|null $opened_date Recent date when the dispute has been opened or reopened
+     *
+     * @return self
+     */
+    public function setOpenedDate($opened_date)
+    {
+        $this->container['opened_date'] = $opened_date;
+
+        return $this;
+    }
+
+    /**
      * Gets last_message_creation_date
      *
      * @return \DateTime
@@ -579,6 +615,30 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastMessageCreationDate($last_message_creation_date)
     {
         $this->container['last_message_creation_date'] = $last_message_creation_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets claim
+     *
+     * @return \AllegroApi\Model\DisputeClaim|null
+     */
+    public function getClaim()
+    {
+        return $this->container['claim'];
+    }
+
+    /**
+     * Sets claim
+     *
+     * @param \AllegroApi\Model\DisputeClaim|null $claim claim
+     *
+     * @return self
+     */
+    public function setClaim($claim)
+    {
+        $this->container['claim'] = $claim;
 
         return $this;
     }

@@ -118,13 +118,13 @@ class AllegroPricesApi
     /**
      * Operation getAllegroPricesConsentForOffer
      *
-     * Get the current consent value for an offer
+     * Get the current consents' state for an offer
      *
      * @param  string $offer_id The offer ID. (required)
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \AllegroApi\Model\AllegroPricesConsentChangeResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
+     * @return \AllegroApi\Model\AllegroPricesOfferConsentChangeResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
      */
     public function getAllegroPricesConsentForOffer($offer_id)
     {
@@ -135,13 +135,13 @@ class AllegroPricesApi
     /**
      * Operation getAllegroPricesConsentForOfferWithHttpInfo
      *
-     * Get the current consent value for an offer
+     * Get the current consents' state for an offer
      *
      * @param  string $offer_id The offer ID. (required)
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \AllegroApi\Model\AllegroPricesConsentChangeResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AllegroApi\Model\AllegroPricesOfferConsentChangeResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllegroPricesConsentForOfferWithHttpInfo($offer_id)
     {
@@ -178,14 +178,14 @@ class AllegroPricesApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\AllegroApi\Model\AllegroPricesConsentChangeResponse' === '\SplFileObject') {
+                    if ('\AllegroApi\Model\AllegroPricesOfferConsentChangeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\AllegroPricesConsentChangeResponse', []),
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\AllegroPricesOfferConsentChangeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -227,7 +227,7 @@ class AllegroPricesApi
                     ];
             }
 
-            $returnType = '\AllegroApi\Model\AllegroPricesConsentChangeResponse';
+            $returnType = '\AllegroApi\Model\AllegroPricesOfferConsentChangeResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -246,7 +246,7 @@ class AllegroPricesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AllegroApi\Model\AllegroPricesConsentChangeResponse',
+                        '\AllegroApi\Model\AllegroPricesOfferConsentChangeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -283,7 +283,7 @@ class AllegroPricesApi
     /**
      * Operation getAllegroPricesConsentForOfferAsync
      *
-     * Get the current consent value for an offer
+     * Get the current consents' state for an offer
      *
      * @param  string $offer_id The offer ID. (required)
      *
@@ -303,7 +303,7 @@ class AllegroPricesApi
     /**
      * Operation getAllegroPricesConsentForOfferAsyncWithHttpInfo
      *
-     * Get the current consent value for an offer
+     * Get the current consents' state for an offer
      *
      * @param  string $offer_id The offer ID. (required)
      *
@@ -312,7 +312,7 @@ class AllegroPricesApi
      */
     public function getAllegroPricesConsentForOfferAsyncWithHttpInfo($offer_id)
     {
-        $returnType = '\AllegroApi\Model\AllegroPricesConsentChangeResponse';
+        $returnType = '\AllegroApi\Model\AllegroPricesOfferConsentChangeResponse';
         $request = $this->getAllegroPricesConsentForOfferRequest($offer_id);
 
         return $this->client
@@ -721,34 +721,34 @@ class AllegroPricesApi
     /**
      * Operation updateAllegroPricesConsentForAccount
      *
-     * Update consent value for the account
+     * Update consents for the account
      *
-     * @param  \AllegroApi\Model\AllegroPricesChangeRequest $allegro_prices_change_request allegro_prices_change_request (required)
+     * @param  \AllegroApi\Model\AllegroPricesAccountChangeRequest $allegro_prices_account_change_request allegro_prices_account_change_request (required)
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \AllegroApi\Model\AllegroPricesConsentChangeResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
+     * @return \AllegroApi\Model\AllegroPricesAccountConsentChangeResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
      */
-    public function updateAllegroPricesConsentForAccount($allegro_prices_change_request)
+    public function updateAllegroPricesConsentForAccount($allegro_prices_account_change_request)
     {
-        list($response) = $this->updateAllegroPricesConsentForAccountWithHttpInfo($allegro_prices_change_request);
+        list($response) = $this->updateAllegroPricesConsentForAccountWithHttpInfo($allegro_prices_account_change_request);
         return $response;
     }
 
     /**
      * Operation updateAllegroPricesConsentForAccountWithHttpInfo
      *
-     * Update consent value for the account
+     * Update consents for the account
      *
-     * @param  \AllegroApi\Model\AllegroPricesChangeRequest $allegro_prices_change_request (required)
+     * @param  \AllegroApi\Model\AllegroPricesAccountChangeRequest $allegro_prices_account_change_request (required)
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \AllegroApi\Model\AllegroPricesConsentChangeResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AllegroApi\Model\AllegroPricesAccountConsentChangeResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateAllegroPricesConsentForAccountWithHttpInfo($allegro_prices_change_request)
+    public function updateAllegroPricesConsentForAccountWithHttpInfo($allegro_prices_account_change_request)
     {
-        $request = $this->updateAllegroPricesConsentForAccountRequest($allegro_prices_change_request);
+        $request = $this->updateAllegroPricesConsentForAccountRequest($allegro_prices_account_change_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -781,14 +781,14 @@ class AllegroPricesApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\AllegroApi\Model\AllegroPricesConsentChangeResponse' === '\SplFileObject') {
+                    if ('\AllegroApi\Model\AllegroPricesAccountConsentChangeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\AllegroPricesConsentChangeResponse', []),
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\AllegroPricesAccountConsentChangeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -830,7 +830,7 @@ class AllegroPricesApi
                     ];
             }
 
-            $returnType = '\AllegroApi\Model\AllegroPricesConsentChangeResponse';
+            $returnType = '\AllegroApi\Model\AllegroPricesAccountConsentChangeResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -849,7 +849,7 @@ class AllegroPricesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AllegroApi\Model\AllegroPricesConsentChangeResponse',
+                        '\AllegroApi\Model\AllegroPricesAccountConsentChangeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -886,16 +886,16 @@ class AllegroPricesApi
     /**
      * Operation updateAllegroPricesConsentForAccountAsync
      *
-     * Update consent value for the account
+     * Update consents for the account
      *
-     * @param  \AllegroApi\Model\AllegroPricesChangeRequest $allegro_prices_change_request (required)
+     * @param  \AllegroApi\Model\AllegroPricesAccountChangeRequest $allegro_prices_account_change_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAllegroPricesConsentForAccountAsync($allegro_prices_change_request)
+    public function updateAllegroPricesConsentForAccountAsync($allegro_prices_account_change_request)
     {
-        return $this->updateAllegroPricesConsentForAccountAsyncWithHttpInfo($allegro_prices_change_request)
+        return $this->updateAllegroPricesConsentForAccountAsyncWithHttpInfo($allegro_prices_account_change_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -906,17 +906,17 @@ class AllegroPricesApi
     /**
      * Operation updateAllegroPricesConsentForAccountAsyncWithHttpInfo
      *
-     * Update consent value for the account
+     * Update consents for the account
      *
-     * @param  \AllegroApi\Model\AllegroPricesChangeRequest $allegro_prices_change_request (required)
+     * @param  \AllegroApi\Model\AllegroPricesAccountChangeRequest $allegro_prices_account_change_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAllegroPricesConsentForAccountAsyncWithHttpInfo($allegro_prices_change_request)
+    public function updateAllegroPricesConsentForAccountAsyncWithHttpInfo($allegro_prices_account_change_request)
     {
-        $returnType = '\AllegroApi\Model\AllegroPricesConsentChangeResponse';
-        $request = $this->updateAllegroPricesConsentForAccountRequest($allegro_prices_change_request);
+        $returnType = '\AllegroApi\Model\AllegroPricesAccountConsentChangeResponse';
+        $request = $this->updateAllegroPricesConsentForAccountRequest($allegro_prices_account_change_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -955,17 +955,17 @@ class AllegroPricesApi
     /**
      * Create request for operation 'updateAllegroPricesConsentForAccount'
      *
-     * @param  \AllegroApi\Model\AllegroPricesChangeRequest $allegro_prices_change_request (required)
+     * @param  \AllegroApi\Model\AllegroPricesAccountChangeRequest $allegro_prices_account_change_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateAllegroPricesConsentForAccountRequest($allegro_prices_change_request)
+    public function updateAllegroPricesConsentForAccountRequest($allegro_prices_account_change_request)
     {
-        // verify the required parameter 'allegro_prices_change_request' is set
-        if ($allegro_prices_change_request === null || (is_array($allegro_prices_change_request) && count($allegro_prices_change_request) === 0)) {
+        // verify the required parameter 'allegro_prices_account_change_request' is set
+        if ($allegro_prices_account_change_request === null || (is_array($allegro_prices_account_change_request) && count($allegro_prices_account_change_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $allegro_prices_change_request when calling updateAllegroPricesConsentForAccount'
+                'Missing the required parameter $allegro_prices_account_change_request when calling updateAllegroPricesConsentForAccount'
             );
         }
 
@@ -992,11 +992,11 @@ class AllegroPricesApi
         }
 
         // for model (json/xml)
-        if (isset($allegro_prices_change_request)) {
+        if (isset($allegro_prices_account_change_request)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($allegro_prices_change_request));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($allegro_prices_account_change_request));
             } else {
-                $httpBody = $allegro_prices_change_request;
+                $httpBody = $allegro_prices_account_change_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1050,36 +1050,36 @@ class AllegroPricesApi
     /**
      * Operation updateAllegroPricesConsentForOffer
      *
-     * Update consent value for an offer
+     * Update consents for an offer
      *
      * @param  string $offer_id The offer ID. (required)
-     * @param  \AllegroApi\Model\AllegroPricesChangeRequest $allegro_prices_change_request allegro_prices_change_request (required)
+     * @param  \AllegroApi\Model\AllegroPricesOfferChangeRequest $allegro_prices_offer_change_request allegro_prices_offer_change_request (required)
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \AllegroApi\Model\AllegroPricesConsentChangeResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
+     * @return \AllegroApi\Model\AllegroPricesOfferConsentChangeResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder
      */
-    public function updateAllegroPricesConsentForOffer($offer_id, $allegro_prices_change_request)
+    public function updateAllegroPricesConsentForOffer($offer_id, $allegro_prices_offer_change_request)
     {
-        list($response) = $this->updateAllegroPricesConsentForOfferWithHttpInfo($offer_id, $allegro_prices_change_request);
+        list($response) = $this->updateAllegroPricesConsentForOfferWithHttpInfo($offer_id, $allegro_prices_offer_change_request);
         return $response;
     }
 
     /**
      * Operation updateAllegroPricesConsentForOfferWithHttpInfo
      *
-     * Update consent value for an offer
+     * Update consents for an offer
      *
      * @param  string $offer_id The offer ID. (required)
-     * @param  \AllegroApi\Model\AllegroPricesChangeRequest $allegro_prices_change_request (required)
+     * @param  \AllegroApi\Model\AllegroPricesOfferChangeRequest $allegro_prices_offer_change_request (required)
      *
      * @throws \AllegroApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \AllegroApi\Model\AllegroPricesConsentChangeResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AllegroApi\Model\AllegroPricesOfferConsentChangeResponse|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder|\AllegroApi\Model\ErrorsHolder, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateAllegroPricesConsentForOfferWithHttpInfo($offer_id, $allegro_prices_change_request)
+    public function updateAllegroPricesConsentForOfferWithHttpInfo($offer_id, $allegro_prices_offer_change_request)
     {
-        $request = $this->updateAllegroPricesConsentForOfferRequest($offer_id, $allegro_prices_change_request);
+        $request = $this->updateAllegroPricesConsentForOfferRequest($offer_id, $allegro_prices_offer_change_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1112,14 +1112,14 @@ class AllegroPricesApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\AllegroApi\Model\AllegroPricesConsentChangeResponse' === '\SplFileObject') {
+                    if ('\AllegroApi\Model\AllegroPricesOfferConsentChangeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\AllegroPricesConsentChangeResponse', []),
+                        ObjectSerializer::deserialize($content, '\AllegroApi\Model\AllegroPricesOfferConsentChangeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1185,7 +1185,7 @@ class AllegroPricesApi
                     ];
             }
 
-            $returnType = '\AllegroApi\Model\AllegroPricesConsentChangeResponse';
+            $returnType = '\AllegroApi\Model\AllegroPricesOfferConsentChangeResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1204,7 +1204,7 @@ class AllegroPricesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AllegroApi\Model\AllegroPricesConsentChangeResponse',
+                        '\AllegroApi\Model\AllegroPricesOfferConsentChangeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1257,17 +1257,17 @@ class AllegroPricesApi
     /**
      * Operation updateAllegroPricesConsentForOfferAsync
      *
-     * Update consent value for an offer
+     * Update consents for an offer
      *
      * @param  string $offer_id The offer ID. (required)
-     * @param  \AllegroApi\Model\AllegroPricesChangeRequest $allegro_prices_change_request (required)
+     * @param  \AllegroApi\Model\AllegroPricesOfferChangeRequest $allegro_prices_offer_change_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAllegroPricesConsentForOfferAsync($offer_id, $allegro_prices_change_request)
+    public function updateAllegroPricesConsentForOfferAsync($offer_id, $allegro_prices_offer_change_request)
     {
-        return $this->updateAllegroPricesConsentForOfferAsyncWithHttpInfo($offer_id, $allegro_prices_change_request)
+        return $this->updateAllegroPricesConsentForOfferAsyncWithHttpInfo($offer_id, $allegro_prices_offer_change_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1278,18 +1278,18 @@ class AllegroPricesApi
     /**
      * Operation updateAllegroPricesConsentForOfferAsyncWithHttpInfo
      *
-     * Update consent value for an offer
+     * Update consents for an offer
      *
      * @param  string $offer_id The offer ID. (required)
-     * @param  \AllegroApi\Model\AllegroPricesChangeRequest $allegro_prices_change_request (required)
+     * @param  \AllegroApi\Model\AllegroPricesOfferChangeRequest $allegro_prices_offer_change_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAllegroPricesConsentForOfferAsyncWithHttpInfo($offer_id, $allegro_prices_change_request)
+    public function updateAllegroPricesConsentForOfferAsyncWithHttpInfo($offer_id, $allegro_prices_offer_change_request)
     {
-        $returnType = '\AllegroApi\Model\AllegroPricesConsentChangeResponse';
-        $request = $this->updateAllegroPricesConsentForOfferRequest($offer_id, $allegro_prices_change_request);
+        $returnType = '\AllegroApi\Model\AllegroPricesOfferConsentChangeResponse';
+        $request = $this->updateAllegroPricesConsentForOfferRequest($offer_id, $allegro_prices_offer_change_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1329,12 +1329,12 @@ class AllegroPricesApi
      * Create request for operation 'updateAllegroPricesConsentForOffer'
      *
      * @param  string $offer_id The offer ID. (required)
-     * @param  \AllegroApi\Model\AllegroPricesChangeRequest $allegro_prices_change_request (required)
+     * @param  \AllegroApi\Model\AllegroPricesOfferChangeRequest $allegro_prices_offer_change_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateAllegroPricesConsentForOfferRequest($offer_id, $allegro_prices_change_request)
+    public function updateAllegroPricesConsentForOfferRequest($offer_id, $allegro_prices_offer_change_request)
     {
         // verify the required parameter 'offer_id' is set
         if ($offer_id === null || (is_array($offer_id) && count($offer_id) === 0)) {
@@ -1342,10 +1342,10 @@ class AllegroPricesApi
                 'Missing the required parameter $offer_id when calling updateAllegroPricesConsentForOffer'
             );
         }
-        // verify the required parameter 'allegro_prices_change_request' is set
-        if ($allegro_prices_change_request === null || (is_array($allegro_prices_change_request) && count($allegro_prices_change_request) === 0)) {
+        // verify the required parameter 'allegro_prices_offer_change_request' is set
+        if ($allegro_prices_offer_change_request === null || (is_array($allegro_prices_offer_change_request) && count($allegro_prices_offer_change_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $allegro_prices_change_request when calling updateAllegroPricesConsentForOffer'
+                'Missing the required parameter $allegro_prices_offer_change_request when calling updateAllegroPricesConsentForOffer'
             );
         }
 
@@ -1380,11 +1380,11 @@ class AllegroPricesApi
         }
 
         // for model (json/xml)
-        if (isset($allegro_prices_change_request)) {
+        if (isset($allegro_prices_offer_change_request)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($allegro_prices_change_request));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($allegro_prices_offer_change_request));
             } else {
-                $httpBody = $allegro_prices_change_request;
+                $httpBody = $allegro_prices_offer_change_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

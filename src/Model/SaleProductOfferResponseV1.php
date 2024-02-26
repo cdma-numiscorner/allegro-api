@@ -61,14 +61,14 @@ class SaleProductOfferResponseV1 implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'product_set' => '\AllegroApi\Model\ProductSetElementQuantity[]',
+        'product_set' => 'ProductSetElementQuantity[]',
         'category' => '\AllegroApi\Model\OfferCategory',
         'attachments' => 'object[]',
         'fundraising_campaign' => '\AllegroApi\Model\ProductOfferFundraisingCampaignResponse',
         'additional_services' => '\AllegroApi\Model\ProductOfferAdditionalServicesResponse',
         'delivery' => '\AllegroApi\Model\DeliveryProductOfferResponse',
         'publication' => '\AllegroApi\Model\SaleProductOfferPublicationResponse',
-        'additional_marketplaces' => 'map[string,\AllegroApi\Model\OfferAdditionalMarketplace]',
+        'additional_marketplaces' => 'map[string,object]',
         'b2b' => '\AllegroApi\Model\B2b',
         'compatibility_list' => '\AllegroApi\Model\CompatibilityListProductOfferResponse',
         'language' => 'string',
@@ -77,7 +77,7 @@ class SaleProductOfferResponseV1 implements ModelInterface, ArrayAccess, \JsonSe
         'discounts' => '\AllegroApi\Model\DiscountsProductOfferResponse',
         'stock' => '\AllegroApi\Model\Stock',
         'parameters' => '\AllegroApi\Model\ParameterProductOfferResponse[]',
-        'contact' => 'JustId',
+        'contact' => 'Contact',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
         'name' => 'string',
@@ -374,8 +374,8 @@ class SaleProductOfferResponseV1 implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 50)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 50.";
+        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 75)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 75.";
         }
 
         return $invalidProperties;
@@ -588,7 +588,7 @@ class SaleProductOfferResponseV1 implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets additional_marketplaces
      *
-     * @return map[string,\AllegroApi\Model\OfferAdditionalMarketplace]|null
+     * @return map[string,object]|null
      */
     public function getAdditionalMarketplaces()
     {
@@ -598,7 +598,7 @@ class SaleProductOfferResponseV1 implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets additional_marketplaces
      *
-     * @param map[string,\AllegroApi\Model\OfferAdditionalMarketplace]|null $additional_marketplaces Settings for each additional marketplace.
+     * @param map[string,object]|null $additional_marketplaces Selected information about the offer in each additional service. This field does not contain information about the base marketplace of the offer. You will find all available marketplaces here. Even if the seller does not want the offer to be visible in the additional service, we will return it in response.
      *
      * @return self
      */
@@ -804,7 +804,7 @@ class SaleProductOfferResponseV1 implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets contact
      *
-     * @return JustId|null
+     * @return Contact|null
      */
     public function getContact()
     {
@@ -814,7 +814,7 @@ class SaleProductOfferResponseV1 implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets contact
      *
-     * @param JustId|null $contact Identifier of contact data for sales format ADVERTISEMENT (classified ad); retrieve it via GET /sale/offer-contacts.
+     * @param Contact|null $contact Identifier of contact data for sales format ADVERTISEMENT (classified ad); retrieve it via GET /sale/offer-contacts.
      *
      * @return self
      */
@@ -886,14 +886,14 @@ class SaleProductOfferResponseV1 implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets name
      *
-     * @param string|null $name Name (title) of an offer. Length cannot be more than 50 characters. Read more: <a href=\"../../tutorials/jak-jednym-requestem-wystawic-oferte-powiazana-z-produktem-D7Kj9gw4xFA#tytul-oferty\" target=\"_blank\">PL</a>  / <a href=\"../../tutorials/list-offer-assigned-product-one-request-D7Kj9M71Bu6#offer-title\" target=\"_blank\">EN</a> .
+     * @param string|null $name Name (title) of an offer. Length cannot be more than 75 characters. Read more: <a href=\"../../tutorials/jak-jednym-requestem-wystawic-oferte-powiazana-z-produktem-D7Kj9gw4xFA#tytul-oferty\" target=\"_blank\">PL</a>  / <a href=\"../../tutorials/list-offer-assigned-product-one-request-D7Kj9M71Bu6#offer-title\" target=\"_blank\">EN</a> .
      *
      * @return self
      */
     public function setName($name)
     {
-        if (!is_null($name) && (mb_strlen($name) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling SaleProductOfferResponseV1., must be smaller than or equal to 50.');
+        if (!is_null($name) && (mb_strlen($name) > 75)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling SaleProductOfferResponseV1., must be smaller than or equal to 75.');
         }
 
         $this->container['name'] = $name;

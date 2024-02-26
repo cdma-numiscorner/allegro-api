@@ -229,7 +229,7 @@ class BadgeApplicationSubsidySellerPrice implements ModelInterface, ArrayAccess,
     /**
      * Sets amount
      *
-     * @param string|null $amount Positive number. Must be equal to or greater than 1.
+     * @param string|null $amount Value must be greater than minimal, decimal places aligned with market rules.
      *
      * @return self
      */
@@ -253,7 +253,7 @@ class BadgeApplicationSubsidySellerPrice implements ModelInterface, ArrayAccess,
     /**
      * Sets currency
      *
-     * @param string|null $currency The currency provided as a 3-letter code in accordance with ISO 4217 standard (https://en.wikipedia.org/wiki/ISO_4217). Only PLN values is supported.
+     * @param string|null $currency The currency provided as a 3-letter code in accordance with ISO 4217 standard (https://en.wikipedia.org/wiki/ISO_4217). Only base currency for a given marketplace is supported, example: PLN for allegro-pl, CZK for allegro-cz, EUR for allegro-sk.
      *
      * @return self
      */

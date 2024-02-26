@@ -61,10 +61,12 @@ class SaleProductOfferPublicationResponse implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'duration' => 'string',
+        'ending_at' => '\DateTime',
+        'marketplaces' => '\AllegroApi\Model\SaleProductOfferPublicationMarketplacesResponse',
         'starting_at' => '\DateTime',
         'status' => '\AllegroApi\Model\OfferStatus',
-        'republish' => 'bool',
-        'marketplaces' => '\AllegroApi\Model\SaleProductOfferPublicationMarketplacesResponse'
+        'ended_by' => 'string',
+        'republish' => 'bool'
     ];
 
     /**
@@ -76,10 +78,12 @@ class SaleProductOfferPublicationResponse implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'duration' => null,
+        'ending_at' => 'date-time',
+        'marketplaces' => null,
         'starting_at' => 'date-time',
         'status' => null,
-        'republish' => null,
-        'marketplaces' => null
+        'ended_by' => null,
+        'republish' => null
     ];
 
     /**
@@ -110,10 +114,12 @@ class SaleProductOfferPublicationResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'duration' => 'duration',
+        'ending_at' => 'endingAt',
+        'marketplaces' => 'marketplaces',
         'starting_at' => 'startingAt',
         'status' => 'status',
-        'republish' => 'republish',
-        'marketplaces' => 'marketplaces'
+        'ended_by' => 'endedBy',
+        'republish' => 'republish'
     ];
 
     /**
@@ -123,10 +129,12 @@ class SaleProductOfferPublicationResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'duration' => 'setDuration',
+        'ending_at' => 'setEndingAt',
+        'marketplaces' => 'setMarketplaces',
         'starting_at' => 'setStartingAt',
         'status' => 'setStatus',
-        'republish' => 'setRepublish',
-        'marketplaces' => 'setMarketplaces'
+        'ended_by' => 'setEndedBy',
+        'republish' => 'setRepublish'
     ];
 
     /**
@@ -136,10 +144,12 @@ class SaleProductOfferPublicationResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'duration' => 'getDuration',
+        'ending_at' => 'getEndingAt',
+        'marketplaces' => 'getMarketplaces',
         'starting_at' => 'getStartingAt',
         'status' => 'getStatus',
-        'republish' => 'getRepublish',
-        'marketplaces' => 'getMarketplaces'
+        'ended_by' => 'getEndedBy',
+        'republish' => 'getRepublish'
     ];
 
     /**
@@ -183,8 +193,31 @@ class SaleProductOfferPublicationResponse implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const ENDED_BY_USER = 'USER';
+    const ENDED_BY_ADMIN = 'ADMIN';
+    const ENDED_BY_EXPIRATION = 'EXPIRATION';
+    const ENDED_BY_EMPTY_STOCK = 'EMPTY_STOCK';
+    const ENDED_BY_PRODUCT_DETACHMENT = 'PRODUCT_DETACHMENT';
+    const ENDED_BY_ERROR = 'ERROR';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getEndedByAllowableValues()
+    {
+        return [
+            self::ENDED_BY_USER,
+            self::ENDED_BY_ADMIN,
+            self::ENDED_BY_EXPIRATION,
+            self::ENDED_BY_EMPTY_STOCK,
+            self::ENDED_BY_PRODUCT_DETACHMENT,
+            self::ENDED_BY_ERROR,
+        ];
+    }
     
 
     /**
@@ -203,10 +236,12 @@ class SaleProductOfferPublicationResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['duration'] = $data['duration'] ?? null;
+        $this->container['ending_at'] = $data['ending_at'] ?? null;
+        $this->container['marketplaces'] = $data['marketplaces'] ?? null;
         $this->container['starting_at'] = $data['starting_at'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
+        $this->container['ended_by'] = $data['ended_by'] ?? null;
         $this->container['republish'] = $data['republish'] ?? null;
-        $this->container['marketplaces'] = $data['marketplaces'] ?? null;
     }
 
     /**
@@ -217,6 +252,15 @@ class SaleProductOfferPublicationResponse implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getEndedByAllowableValues();
+        if (!is_null($this->container['ended_by']) && !in_array($this->container['ended_by'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'ended_by', must be one of '%s'",
+                $this->container['ended_by'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -246,13 +290,61 @@ class SaleProductOfferPublicationResponse implements ModelInterface, ArrayAccess
     /**
      * Sets duration
      *
-     * @param string|null $duration Publication duration, ISO 8601 duration format. This field must be set to one of the following: PT0S for immediately, PT24H, P2D, P3D, P4D, P5D, P7D, P10D, P14D, P21D, P30D, P60D.
+     * @param string|null $duration Publication duration, ISO 8601 duration format. This field must be set to one of the following:<br/> - for auctions: `PT24H`, `P3D`, `P5D`, `P7D`, `P10D`<br/> - for buy-now offers: `P3D`, `P5D`, `P7D`, `P10D`, `P20D`, `P30D`<br/> - for advertisements: `P10D`, `P20D`, `P30D`.
      *
      * @return self
      */
     public function setDuration($duration)
     {
         $this->container['duration'] = $duration;
+
+        return $this;
+    }
+
+    /**
+     * Gets ending_at
+     *
+     * @return \DateTime|null
+     */
+    public function getEndingAt()
+    {
+        return $this->container['ending_at'];
+    }
+
+    /**
+     * Sets ending_at
+     *
+     * @param \DateTime|null $ending_at Publication ending date: Format (ISO 8601) - yyyy-MM-dd'T'HH:mm:ss.SSSZ. Cannot be modified
+     *
+     * @return self
+     */
+    public function setEndingAt($ending_at)
+    {
+        $this->container['ending_at'] = $ending_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets marketplaces
+     *
+     * @return \AllegroApi\Model\SaleProductOfferPublicationMarketplacesResponse|null
+     */
+    public function getMarketplaces()
+    {
+        return $this->container['marketplaces'];
+    }
+
+    /**
+     * Sets marketplaces
+     *
+     * @param \AllegroApi\Model\SaleProductOfferPublicationMarketplacesResponse|null $marketplaces marketplaces
+     *
+     * @return self
+     */
+    public function setMarketplaces($marketplaces)
+    {
+        $this->container['marketplaces'] = $marketplaces;
 
         return $this;
     }
@@ -306,6 +398,40 @@ class SaleProductOfferPublicationResponse implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets ended_by
+     *
+     * @return string|null
+     */
+    public function getEndedBy()
+    {
+        return $this->container['ended_by'];
+    }
+
+    /**
+     * Sets ended_by
+     *
+     * @param string|null $ended_by Indicates the reason for ending the offer:  - `USER` - offer ended by the seller.  - `ADMIN` - offer ended by an admin.  - `EXPIRATION` - offer duration had expired (valid for offers with specified duration).  - `EMPTY_STOCK` - offer ended because all available items had been sold out.  - `PRODUCT_DETACHMENT` - offer ended because its link to the product was removed. Status will only occur    if the base marketplace of offer requires full productization.  - `ERROR` - offer ended due to internal problem with offer publication. The publication command responded with    success status, but further processing failed.
+     *
+     * @return self
+     */
+    public function setEndedBy($ended_by)
+    {
+        $allowedValues = $this->getEndedByAllowableValues();
+        if (!is_null($ended_by) && !in_array($ended_by, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'ended_by', must be one of '%s'",
+                    $ended_by,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['ended_by'] = $ended_by;
+
+        return $this;
+    }
+
+    /**
      * Gets republish
      *
      * @return bool|null
@@ -325,30 +451,6 @@ class SaleProductOfferPublicationResponse implements ModelInterface, ArrayAccess
     public function setRepublish($republish)
     {
         $this->container['republish'] = $republish;
-
-        return $this;
-    }
-
-    /**
-     * Gets marketplaces
-     *
-     * @return \AllegroApi\Model\SaleProductOfferPublicationMarketplacesResponse|null
-     */
-    public function getMarketplaces()
-    {
-        return $this->container['marketplaces'];
-    }
-
-    /**
-     * Sets marketplaces
-     *
-     * @param \AllegroApi\Model\SaleProductOfferPublicationMarketplacesResponse|null $marketplaces marketplaces
-     *
-     * @return self
-     */
-    public function setMarketplaces($marketplaces)
-    {
-        $this->container['marketplaces'] = $marketplaces;
 
         return $this;
     }

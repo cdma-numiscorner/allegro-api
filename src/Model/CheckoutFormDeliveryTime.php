@@ -60,7 +60,10 @@ class CheckoutFormDeliveryTime implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'guaranteed' => '\AllegroApi\Model\CheckoutFormDeliveryTimeGuaranteed'
+        'from' => '\DateTime',
+        'to' => '\DateTime',
+        'guaranteed' => '\AllegroApi\Model\CheckoutFormDeliveryTimeGuaranteed',
+        'dispatch' => '\AllegroApi\Model\CheckoutFormDeliveryTimeDispatch'
     ];
 
     /**
@@ -71,7 +74,10 @@ class CheckoutFormDeliveryTime implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'guaranteed' => null
+        'from' => 'date-time',
+        'to' => 'date-time',
+        'guaranteed' => null,
+        'dispatch' => null
     ];
 
     /**
@@ -101,7 +107,10 @@ class CheckoutFormDeliveryTime implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'guaranteed' => 'guaranteed'
+        'from' => 'from',
+        'to' => 'to',
+        'guaranteed' => 'guaranteed',
+        'dispatch' => 'dispatch'
     ];
 
     /**
@@ -110,7 +119,10 @@ class CheckoutFormDeliveryTime implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'guaranteed' => 'setGuaranteed'
+        'from' => 'setFrom',
+        'to' => 'setTo',
+        'guaranteed' => 'setGuaranteed',
+        'dispatch' => 'setDispatch'
     ];
 
     /**
@@ -119,7 +131,10 @@ class CheckoutFormDeliveryTime implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'guaranteed' => 'getGuaranteed'
+        'from' => 'getFrom',
+        'to' => 'getTo',
+        'guaranteed' => 'getGuaranteed',
+        'dispatch' => 'getDispatch'
     ];
 
     /**
@@ -182,7 +197,10 @@ class CheckoutFormDeliveryTime implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
+        $this->container['from'] = $data['from'] ?? null;
+        $this->container['to'] = $data['to'] ?? null;
         $this->container['guaranteed'] = $data['guaranteed'] ?? null;
+        $this->container['dispatch'] = $data['dispatch'] ?? null;
     }
 
     /**
@@ -210,6 +228,54 @@ class CheckoutFormDeliveryTime implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
+     * Gets from
+     *
+     * @return \DateTime|null
+     */
+    public function getFrom()
+    {
+        return $this->container['from'];
+    }
+
+    /**
+     * Sets from
+     *
+     * @param \DateTime|null $from ISO date when the earliest delivery attempt can take place.
+     *
+     * @return self
+     */
+    public function setFrom($from)
+    {
+        $this->container['from'] = $from;
+
+        return $this;
+    }
+
+    /**
+     * Gets to
+     *
+     * @return \DateTime|null
+     */
+    public function getTo()
+    {
+        return $this->container['to'];
+    }
+
+    /**
+     * Sets to
+     *
+     * @param \DateTime|null $to ISO date when the latest delivery attempt can take place.
+     *
+     * @return self
+     */
+    public function setTo($to)
+    {
+        $this->container['to'] = $to;
+
+        return $this;
+    }
+
+    /**
      * Gets guaranteed
      *
      * @return \AllegroApi\Model\CheckoutFormDeliveryTimeGuaranteed|null
@@ -229,6 +295,30 @@ class CheckoutFormDeliveryTime implements ModelInterface, ArrayAccess, \JsonSeri
     public function setGuaranteed($guaranteed)
     {
         $this->container['guaranteed'] = $guaranteed;
+
+        return $this;
+    }
+
+    /**
+     * Gets dispatch
+     *
+     * @return \AllegroApi\Model\CheckoutFormDeliveryTimeDispatch|null
+     */
+    public function getDispatch()
+    {
+        return $this->container['dispatch'];
+    }
+
+    /**
+     * Sets dispatch
+     *
+     * @param \AllegroApi\Model\CheckoutFormDeliveryTimeDispatch|null $dispatch dispatch
+     *
+     * @return self
+     */
+    public function setDispatch($dispatch)
+    {
+        $this->container['dispatch'] = $dispatch;
 
         return $this;
     }
