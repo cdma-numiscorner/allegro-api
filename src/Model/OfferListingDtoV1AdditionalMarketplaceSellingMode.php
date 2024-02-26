@@ -61,7 +61,7 @@ class OfferListingDtoV1AdditionalMarketplaceSellingMode implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
-        'price' => 'BuyNowPrice'
+        'price' => 'AllegroApi\Model\BuyNowPrice'
     ];
 
     /**

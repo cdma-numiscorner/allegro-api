@@ -46,6 +46,7 @@ class MarketplaceId
      */
     const PL = 'allegro-pl';
     const CZ = 'allegro-cz';
+    const SK = 'allegro-sk';
     
     /**
      * Gets allowable values of the enum
@@ -56,6 +57,7 @@ class MarketplaceId
         return [
             self::PL,
             self::CZ,
+            self::SK,
         ];
     }
 }

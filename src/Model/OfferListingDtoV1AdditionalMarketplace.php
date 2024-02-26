@@ -63,7 +63,7 @@ class OfferListingDtoV1AdditionalMarketplace implements ModelInterface, ArrayAcc
     protected static $openAPITypes = [
         'publication' => '\AllegroApi\Model\OfferListingDtoV1AdditionalMarketplacePublication',
         'selling_mode' => '\AllegroApi\Model\OfferListingDtoV1AdditionalMarketplaceSellingMode',
-        'stats' => 'OfferListingDtoV1Stats',
+        'stats' => '\AllegroApi\Model\OfferListingDtoV1Stats',
         'stock' => '\AllegroApi\Model\OfferListingDtoV1AdditionalMarketplaceStock'
     ];
 
