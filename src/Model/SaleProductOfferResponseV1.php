@@ -61,7 +61,7 @@ class SaleProductOfferResponseV1 implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'product_set' => '\AllegroApi\Model\ProductSetElementQuantity[]',
+        'product_set' => 'ProductSetElementQuantity[]',
         'category' => '\AllegroApi\Model\OfferCategory',
         'attachments' => 'object[]',
         'fundraising_campaign' => '\AllegroApi\Model\ProductOfferFundraisingCampaignResponse',

@@ -62,7 +62,7 @@ class SaleProductOfferPublicationMarketplacesResponse implements ModelInterface,
       */
     protected static $openAPITypes = [
         'additional' => '\AllegroApi\Model\JustId[]',
-        'base' => '\AllegroApi\Model\JustId'
+        'base' => 'JustId'
     ];
 
     /**

@@ -61,7 +61,7 @@ class OfferListingDtoV1PublicationMarketplaces implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'base' => '\AllegroApi\Model\MarketplaceReference',
+        'base' => 'MarketplaceReference',
         'additional' => '\AllegroApi\Model\MarketplaceReference[]'
     ];
 
