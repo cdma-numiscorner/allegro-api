@@ -160,4 +160,13 @@ class CategoryParameterTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "dictionary"
+     */
+    public function testPropertyDictionary()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

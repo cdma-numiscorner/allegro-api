@@ -68,7 +68,8 @@ class CategoryParameter implements ModelInterface, ArrayAccess, \JsonSerializabl
         'required_if' => '\AllegroApi\Model\CategoryParameterRequirementConditions',
         'displayed_if' => '\AllegroApi\Model\CategoryParameterDisplayConditions',
         'unit' => 'string',
-        'options' => '\AllegroApi\Model\CategoryParameterOptions'
+        'options' => '\AllegroApi\Model\CategoryParameterOptions',
+        'dictionary' => '\AllegroApi\Model\DictionaryCategoryParameterAllOfDictionary[]'
     ];
 
     /**
@@ -87,7 +88,8 @@ class CategoryParameter implements ModelInterface, ArrayAccess, \JsonSerializabl
         'required_if' => null,
         'displayed_if' => null,
         'unit' => null,
-        'options' => null
+        'options' => null,
+        'dictionary' => null
     ];
 
     /**
@@ -125,7 +127,8 @@ class CategoryParameter implements ModelInterface, ArrayAccess, \JsonSerializabl
         'required_if' => 'requiredIf',
         'displayed_if' => 'displayedIf',
         'unit' => 'unit',
-        'options' => 'options'
+        'options' => 'options',
+        'dictionary' => 'dictionary'
     ];
 
     /**
@@ -142,7 +145,8 @@ class CategoryParameter implements ModelInterface, ArrayAccess, \JsonSerializabl
         'required_if' => 'setRequiredIf',
         'displayed_if' => 'setDisplayedIf',
         'unit' => 'setUnit',
-        'options' => 'setOptions'
+        'options' => 'setOptions',
+        'dictionary' => 'setDictionary'
     ];
 
     /**
@@ -159,7 +163,8 @@ class CategoryParameter implements ModelInterface, ArrayAccess, \JsonSerializabl
         'required_if' => 'getRequiredIf',
         'displayed_if' => 'getDisplayedIf',
         'unit' => 'getUnit',
-        'options' => 'getOptions'
+        'options' => 'getOptions',
+        'dictionary' => 'getDictionary'
     ];
 
     /**
@@ -231,6 +236,7 @@ class CategoryParameter implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->container['displayed_if'] = $data['displayed_if'] ?? null;
         $this->container['unit'] = $data['unit'] ?? null;
         $this->container['options'] = $data['options'] ?? null;
+        $this->container['dictionary'] = $data['dictionary'] && $data['type'] == 'dictionary' ?? null;
 
         // Initialize discriminator property with the model name.
         $this->container['type'] = static::$openAPIModelName;
@@ -478,6 +484,33 @@ class CategoryParameter implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
+    /**
+     * Gets dictionary
+     *
+     * @return \AllegroApi\Model\DictionaryCategoryParameterAllOfDictionary[]|null
+     */
+    public function getDictionary()
+    {
+        return $this->container['dictionary'];
+    }
+
+    /**
+     * Sets dictionary
+     *
+     * @param \AllegroApi\Model\DictionaryCategoryParameterAllOfDictionary[]|null $dictionary dictionary
+     *
+     * @return self
+     */
+    public function setDictionary($dictionary)
+    {
+        if ($this->getType() == 'dictionary') {
+            $this->container['dictionary'] = $dictionary;
+        }
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

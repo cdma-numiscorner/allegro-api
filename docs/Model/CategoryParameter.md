@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **displayed_if** | [**\AllegroApi\Model\CategoryParameterDisplayConditions**](CategoryParameterDisplayConditions.md) |  | [optional]
 **unit** | **string** | The unit in which values of the parameter are used. May be &#x60;null&#x60;. | [optional]
 **options** | [**\AllegroApi\Model\CategoryParameterOptions**](CategoryParameterOptions.md) |  | [optional]
+**dictionary** | [**\AllegroApi\Model\DictionaryCategoryParameterAllOfDictionary[]**](DictionaryCategoryParameterAllOfDictionary.md) | Only available when type field is `dictionary` | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
