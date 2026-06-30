@@ -48,7 +48,7 @@ class Authenticator
             ]
         );
 
-        $authorizationTokens = $res->getBody()->getContents();
+        $authorizationTokens = (string) $res->getBody();
 
         return json_decode($authorizationTokens, true);
     }
@@ -65,7 +65,7 @@ class Authenticator
             ]
         );
 
-        $authorizationTokens = $res->getBody()->getContents();
+        $authorizationTokens =  (string) $res->getBody();
 
         return json_decode($authorizationTokens, true);
     }
@@ -82,7 +82,7 @@ class Authenticator
             ]
         ]);
 
-        $authorizationTokens = $res->getBody()->getContents();
+        $authorizationTokens =  (string) $res->getBody();
 
         return json_decode($authorizationTokens, true);
     }
@@ -103,7 +103,7 @@ class Authenticator
         }
         catch (\GuzzleHttp\Exception\ClientException $clientException)
         {
-            $errorContentBody = $clientException->getResponse()->getBody()->getContents();
+            $errorContentBody = (string) $clientException->getResponse()->getBody();
             $errorContent = json_decode($errorContentBody, true);
 
             if ('authorization_pending' === $errorContent['error'])
@@ -114,7 +114,7 @@ class Authenticator
             throw $clientException;
         }
 
-        $authorizationTokens = $res->getBody()->getContents();
+        $authorizationTokens =  (string) $res->getBody();
 
         return json_decode($authorizationTokens, true);
     }
