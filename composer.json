@@ -1,6 +1,6 @@
 {
     "name": "cdma-numiscorner/allegro-api",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "https://developer.allegro.pl/about  Documentation is generated from [this](https://developer.allegro.pl/swagger.yaml) OpenAPI 3.0 specification file.",
     "keywords": [
         "openapitools",
@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.2.5",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
